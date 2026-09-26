@@ -55,9 +55,7 @@ npm run dev
 
 Next.js 정적 export를 사용하며 `npm run build` 결과는 `out/`에 생성됩니다. GitHub Pages 프로젝트 사이트의 하위 경로를 로컬에서 확인하려면 `PAGES_BASE_PATH=/fe-mouigosa npm run build`를 실행합니다.
 
-이 폴더를 GitHub 저장소에 올리고 기본 브랜치를 `main`으로 설정한 뒤, 저장소 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다. 이후 `main`에 푸시하거나 Actions에서 `Deploy to GitHub Pages`를 수동 실행하면 `.github/workflows/deploy-pages.yml`이 Pages에서 제공한 하위 경로로 정적 파일을 배포합니다. 프로젝트 사이트 주소는 `https://<계정명>.github.io/<저장소명>/` 형태입니다.
-
-저장소는 [icecokel/fe-mouigosa](https://github.com/icecokel/fe-mouigosa)입니다. GitHub Pages의 배포 소스를 **GitHub Actions**로 지정해야 첫 배포가 시작됩니다.
+저장소는 [icecokel/fe-mouigosa](https://github.com/icecokel/fe-mouigosa)이며, Pages 배포 소스는 **GitHub Actions**로 설정되어 있습니다. `main`에 푸시하거나 Actions에서 `Deploy to GitHub Pages`를 수동 실행하면 `.github/workflows/deploy-pages.yml`이 Pages에서 제공한 하위 경로로 정적 파일을 배포합니다. 배포 주소는 [icecokel.github.io/fe-mouigosa](https://icecokel.github.io/fe-mouigosa/)입니다.
 
 `npm run check:questions`는 목업 문항의 번호, 카테고리, 유형, 배점, 정답, 선택지 수를 확인합니다. 현재 분류와 문항별 비중은 [기획서](docs/기획서.md#4-출제-기획)에 정리했습니다.
 
