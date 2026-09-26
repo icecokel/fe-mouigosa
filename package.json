@@ -14,7 +14,7 @@
     "prebuild": "npm run check:questions",
     "check:question-schema": "node scripts/check-question-schema.mjs",
     "precheck:results": "npm run check:questions",
-    "check": "npm run check:questions && npm run check:question-schema && node scripts/check-exam.mjs && node scripts/check-results.mjs && npm run check:countdown && npm run check:candidate",
+    "check": "npm run check:questions && npm run check:question-schema && node scripts/check-exam.mjs && node scripts/check-exam-session.mjs && node scripts/check-results.mjs && npm run check:countdown && npm run check:candidate",
     "check:exam": "npm run check:questions && node scripts/check-exam.mjs"
   },
   "dependencies": {

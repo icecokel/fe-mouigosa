@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatTime, remainingSeconds } from "./countdown.mjs";
 import { questionBank } from "./questions.mjs";
 import { createExam } from "./exam.mjs";
+import { EXAM_DURATION_MS, EXAM_SESSION_KEY, restoreExamSession } from "./exam-session.mjs";
 import { createExamIdentity } from "./candidate.mjs";
 import { gradeExam, isAnswered, shareExamResult } from "./results.mjs";
 import MatchingInput from "./matching-input";
@@ -11,6 +12,10 @@ import MatchingInput from "./matching-input";
 const choices = ["①", "②", "③", "④", "⑤"];
 const leftLabels = ["ㄱ", "ㄴ", "ㄷ", "ㄹ"];
 const rightLabels = ["A", "B", "C", "D"];
+
+function saveExamSession(session) {
+  try { localStorage.setItem(EXAM_SESSION_KEY, JSON.stringify(session)); } catch { /* 저장소를 사용할 수 없어도 시험은 진행한다. */ }
+}
 
 function CandidateRecord({ candidate }) {
   return (
@@ -286,22 +291,55 @@ export default function Home() {
   const [answers, setAnswers] = useState({});
   const [submittedAnswers, setSubmittedAnswers] = useState(null);
   const [secondsLeft, setSecondsLeft] = useState(20 * 60);
+  const [deadline, setDeadline] = useState(null);
   const nameInputRef = useRef(null);
 
   useEffect(() => {
     setIdentity(createExamIdentity());
+    try {
+      const saved = JSON.parse(localStorage.getItem(EXAM_SESSION_KEY) ?? "null");
+      const session = restoreExamSession(saved);
+      if (!session) return;
+      setQuestions(session.questions);
+      setCandidate(session.candidate);
+      setAnswers(session.answers);
+      setDeadline(session.deadline);
+      setSecondsLeft(remainingSeconds(session.deadline, Date.now()));
+      if (session.submitted) {
+        setSubmittedAnswers({ ...session.answers });
+        setView("result");
+        if (!saved.submitted) saveExamSession(session);
+      }
+    } catch { /* 저장된 시험이 손상되었으면 시작 화면을 표시한다. */ }
   }, []);
 
   useEffect(() => {
-    if (!questions.length || submittedAnswers) return;
-    const deadline = Date.now() + 20 * 60 * 1000;
-    const interval = setInterval(() => {
+    if (!questions.length || !candidate || !deadline || submittedAnswers) return;
+    saveExamSession({ questions, candidate, answers, deadline, submitted: false });
+  }, [questions, candidate, answers, deadline, submittedAnswers]);
+
+  useEffect(() => {
+    if (!questions.length || !candidate || !deadline || submittedAnswers) return;
+    let ended = false;
+    const tick = () => {
+      if (ended) return;
       const seconds = remainingSeconds(deadline, Date.now());
       setSecondsLeft(seconds);
-      if (seconds === 0) clearInterval(interval);
+      if (seconds === 0) {
+        ended = true;
+        saveExamSession({ questions, candidate, answers, deadline, submitted: true });
+        setSubmittedAnswers({ ...answers });
+        setView("result");
+        window.scrollTo(0, 0);
+      }
+    };
+    tick();
+    if (ended) return;
+    const interval = setInterval(() => {
+      tick();
     }, 1000);
     return () => clearInterval(interval);
-  }, [questions, submittedAnswers]);
+  }, [questions, candidate, answers, deadline, submittedAnswers]);
 
   const showView = (nextView) => {
     setView(nextView);
@@ -309,7 +347,9 @@ export default function Home() {
   };
 
   const finishExam = () => {
-    setSubmittedAnswers({ ...answers });
+    const finalAnswers = { ...answers };
+    saveExamSession({ questions, candidate, answers: finalAnswers, deadline, submitted: true });
+    setSubmittedAnswers(finalAnswers);
     showView("result");
   };
 
@@ -322,30 +362,38 @@ export default function Home() {
       nameInputRef.current?.focus();
       return;
     }
+    let nextQuestions;
     try {
-      setQuestions(createExam(questionBank));
-      setExamError("");
+      nextQuestions = createExam(questionBank);
     } catch (error) {
       setExamError(error.message);
       return;
     }
     const issued = createExamIdentity();
-    setCandidate({
+    const nextCandidate = {
       name,
       affiliation: String(data.get("affiliation") ?? "").trim(),
       ...(identity?.date === issued.date ? identity : issued),
-    });
+    };
+    const nextDeadline = Date.now() + EXAM_DURATION_MS;
+    saveExamSession({ questions: nextQuestions, candidate: nextCandidate, answers: {}, deadline: nextDeadline, submitted: false });
+    setQuestions(nextQuestions);
+    setCandidate(nextCandidate);
     setAnswers({});
     setSecondsLeft(20 * 60);
+    setDeadline(nextDeadline);
     setSubmittedAnswers(null);
+    setExamError("");
     showView("exam");
   };
 
   const retryExam = () => {
+    try { localStorage.removeItem(EXAM_SESSION_KEY); } catch { /* 저장소를 사용할 수 없어도 새 시험을 시작할 수 있다. */ }
     setQuestions([]);
     setAnswers({});
     setSubmittedAnswers(null);
     setSecondsLeft(20 * 60);
+    setDeadline(null);
     setIdentity(createExamIdentity());
     setExamError("");
     showView("exam");
@@ -396,11 +444,12 @@ export default function Home() {
                 </label>
                 <div className="candidate-cell"><span>시행일</span><time dateTime={identity?.date}>{identity?.date?.replaceAll("-", ".") ?? "확인 중"}</time></div>
               </div>
-              <p className="candidate-note">수험번호는 한국 시간 시행일을 기준으로 임의 발급됩니다. 입력 정보는 서버에 저장하지 않습니다.</p>
+              <p className="candidate-note">수험번호는 한국 시간 시행일을 기준으로 임의 발급됩니다. 진행 중인 시험과 답안은 이 브라우저에 저장되며 서버에는 저장하지 않습니다.</p>
             </section>
             <h2>수험생 유의사항</h2>
             <ol>
-              <li>시험 시간은 20분이며, 시작 버튼을 누르면 시간이 흐릅니다.</li>
+              <li>시험 시간은 20분이며, 시간이 끝나면 자동으로 제출됩니다.</li>
+              <li>종료 전 새로고침하거나 브라우저를 다시 열어도 같은 시험을 이어 풀 수 있습니다.</li>
               <li>문항은 매번 무작위로 출제되며 20문항 이상, 총 100점입니다.</li>
               <li>문항별 배점은 2~5점입니다. 각 문항의 배점을 확인하십시오.</li>
               <li>단일·중복 선택, 단답, 선긋기 문항은 문제지의 안내에 따라 답하십시오.</li>
