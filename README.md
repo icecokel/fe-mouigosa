@@ -61,6 +61,8 @@ Next.js 정적 export를 사용하며 `npm run build` 결과는 `out/`에 생성
 
 저장소는 [icecokel/fe-mouigosa](https://github.com/icecokel/fe-mouigosa)이며, Pages 배포 소스는 **GitHub Actions**로 설정되어 있습니다. `main`에 푸시하거나 Actions에서 `Deploy to GitHub Pages`를 수동 실행하면 `.github/workflows/deploy-pages.yml`이 Pages에서 제공한 하위 경로로 정적 파일을 배포합니다. 배포 주소는 [icecokel.github.io/fe-mouigosa](https://icecokel.github.io/fe-mouigosa/)입니다.
 
+공유 미리보기에는 시험지 형태의 OG 이미지를 사용합니다. 편집용 원본은 [`assets/og-image.svg`](assets/og-image.svg), 배포 이미지는 [`public/og-image.png`](public/og-image.png)입니다.
+
 문제는 `content/questions/<category>.json`의 `questions` 배열에 추가합니다. `npm run check:questions`는 카테고리·문항 스키마·ID 및 동일 지문·코드 중복과 100점 시험 구성 가능 여부를 검증하고 전체 문제은행 데이터를 생성합니다. 개발 서버와 빌드 시작 전에도 자동 실행됩니다. 추가 방법은 [문제 기여 안내](CONTRIBUTING.md)에 정리했습니다.
 
 `npm run check`는 무작위 선별·100점 구성·채점을 포함한 모든 검증을 실행합니다. PR에서는 검증과 정적 빌드가 자동 실행됩니다.
