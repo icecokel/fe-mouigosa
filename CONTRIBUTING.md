@@ -28,8 +28,15 @@ npm run dev
 | `content/questions/css.json` | `CSS` |
 | `content/questions/web-performance.json` | `Web Performance` |
 | `content/questions/design-pattern.json` | `Design Pattern` |
+| `content/questions/nextjs.json` | `Next.js` |
+| `content/questions/web-fundamentals.json` | `Web Fundamentals` |
+| `content/questions/accessibility-seo.json` | `Accessibility & SEO` |
+| `content/questions/ai-concepts.json` | `AI Concepts` |
+| `content/questions/web-security.json` | `Web Security` |
+| `content/questions/e2e-testing.json` | `E2E Testing` |
+| `content/questions/design-system.json` | `Design System` |
 
-기존 각 영역은 100문항이며, 2·3·4·5점 문항이 각각 25개였습니다. 답안 형식 예시 3개를 추가해 현재 JavaScript·Browser·CSS는 101문항, 나머지는 100문항입니다. 100개를 상한으로 제한하지 않습니다.
+각 영역은 최소 100문항이며, JavaScript·Browser·CSS는 답안 형식 예시가 1개씩 추가되어 101문항입니다. 100개를 상한으로 제한하지 않습니다.
 
 각 파일은 `{ "category": "JavaScript", "questions": [...] }` 형태입니다. **문항 객체에도 `category`를 필수로 적고 파일의 값과 일치시킵니다.** `type`은 풀이 방식, `format`은 답안 입력 형태입니다.
 
@@ -77,7 +84,7 @@ npm run dev
 | 문항 필드 | 필수 | 규칙 |
 | --- | --- | --- |
 | `id` | O | 소문자 영문으로 시작하는 영문·숫자·하이픈 고유 이름. 예: `javascript-array-map`. 카테고리 간에도 중복 금지, 등록 후 유지 |
-| `category` | O | 파일 상단의 카테고리와 같은 값. 7개 허용값은 [카테고리 스키마](content/category.schema.json)에 정의 |
+| `category` | O | 파일 상단의 카테고리와 같은 값. 14개 허용값은 [카테고리 스키마](content/category.schema.json)에 정의 |
 | `type` | O | 풀이 방식: `개념 판단`, `결과 예측`, `타입 분석`, `버그 찾기`, `렌더링 횟수 예측`, `브라우저 동작` 중 하나 |
 | `format` | O | 답안 형식: `객관식 단일`, `객관식 중복`, `주관식 단답`, `선긋기` 중 하나 |
 | `points` | O | 정수 `2`, `3`, `4`, `5` 중 하나 |
@@ -114,8 +121,8 @@ npm run dev
 - 모의고사 시작·다시 응시를 누를 때 브라우저에서 문항을 새로 선별하고 순서를 섞습니다.
 - 한 시험 안에서는 고유 ID 중복 없이 **최소 20문항, 합계 정확히 100점**으로 구성합니다.
 - 문항의 원래 배점(2~5점)을 유지합니다. 따라서 문항 수는 20~50개 범위에서 달라질 수 있습니다.
-- 모든 카테고리를 포함하고, 총점 100점을 카테고리 수로 나눈 균등 목표에 최대한 가깝게 구성합니다. 현재 7개 영역에서는 14점인 영역 5개와 15점인 영역 2개가 됩니다. 어느 영역이 15점인지는 추첨에 따라 바뀔 수 있습니다.
-- 각 영역에서 가능한 배점 조합을 구한 뒤, 총점 100점인 조합 중 균등 목표와의 제곱 오차 합이 최소인 조합을 사용합니다. 문항이 부족해 정확한 균등 배분이 불가능하면 가능한 조합 중 편차가 가장 작은 것을 고릅니다. 영역을 누락해 총점만 맞추지는 않습니다.
+- 카테고리 가중치를 추첨에 반영합니다. 가중치가 높을수록 출제 비중이 커질 가능성이 높지만, 영역별 문항 수나 점수를 고정하지 않습니다. 출제되지 않는 카테고리가 있어도 정상입니다.
+- 현재 가중치는 JavaScript 5, TypeScript·React·CSS 4, Browser·Next.js·Web Fundamentals·Web Performance·Accessibility & SEO·Web Security·AI Concepts 3, Design Pattern·E2E Testing·Design System 2입니다. 값은 출제 로직의 상수에서 관리합니다.
 - 응시 중과 제출 후 문제지·성적표 이동에서는 같은 문항과 순서를 유지합니다.
 - 화면 번호는 1부터 부여하고 원본 고유 ID는 `questionId`로 보존합니다.
 - 제한 시간은 시작 버튼을 누른 시점부터 20분입니다. 시간이 끝나면 자동 제출하고 성적표로 이동합니다.
@@ -124,7 +131,7 @@ npm run dev
 
 원본 JSON을 검증한 뒤 전체 문제은행을 `app/questions.generated.json`으로 생성합니다. 이 파일은 직접 수정하거나 커밋하지 않습니다. `npm run dev`와 `npm run build` 시작 전에 자동 생성되며, 개발 중 원본 JSON을 수정하면 `npm run check:questions`로 다시 생성하거나 개발 서버를 재시작합니다.
 
-등록된 카테고리가 누락되거나, 모든 영역을 포함하는 100점 조합을 만들 수 없으면 빌드 검증에서 실패합니다. 이미 응시 중인 시험에는 새 데이터가 섞이지 않습니다.
+등록된 문항에 오류가 있거나 최소 20문항·100점 조합을 만들 수 없으면 빌드 검증에서 실패합니다. 이미 응시 중인 시험에는 새 데이터가 섞이지 않습니다.
 
 ## PR 자동 검사
 

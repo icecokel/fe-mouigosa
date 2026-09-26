@@ -1,0 +1,2305 @@
+{
+  "category": "Web Security",
+  "questions": [
+    {
+      "id": "web-security-xss-reflected",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "검색어가 응답 HTML에 그대로 삽입될 때 발생할 수 있는 XSS 유형은?",
+      "options": [
+        "반사형 XSS",
+        "저장형 XSS만",
+        "CSRF",
+        "클릭재킹",
+        "DNS 스푸핑"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "요청의 악성 입력이 같은 응답에 반사되어 실행되면 반사형 XSS다."
+    },
+    {
+      "id": "web-security-xss-stored",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "게시글에 저장된 악성 스크립트가 다른 방문자에게 실행된다. 유형은?",
+      "options": [
+        "SRI 검증",
+        "HSTS 차단",
+        "저장형 XSS",
+        "반사형 XSS만",
+        "CORS 오류"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "저장된 공격 페이로드가 이후 응답을 통해 다른 사용자에게 전달되면 저장형 XSS다."
+    },
+    {
+      "id": "web-security-xss-dom",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 5,
+      "prompt": "서버 응답은 안전하지만 클라이언트가 location.hash를 innerHTML에 넣어 실행한다. 유형은?",
+      "options": [
+        "서버 측 SQL 삽입",
+        "CSRF",
+        "클릭재킹",
+        "HTTPS 다운그레이드",
+        "DOM 기반 XSS"
+      ],
+      "sources": [
+        {
+          "title": "OWASP DOM-based XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "브라우저 측 JS가 공격자 입력을 위험한 DOM sink에 넣어 발생하는 DOM 기반 XSS다."
+    },
+    {
+      "id": "web-security-xss-innerhtml",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 2,
+      "prompt": "사용자 댓글을 element.innerHTML에 직접 넣는 코드의 주요 위험은?",
+      "options": [
+        "브라우저가 모든 태그를 제거한다",
+        "HTML로 해석되어 악성 마크업이 실행될 수 있다",
+        "자동으로 HTML 이스케이프된다",
+        "항상 문자열 길이가 0이 된다",
+        "SameSite 쿠키가 자동 적용된다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP DOM-based XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "innerHTML은 문자열을 HTML로 파싱하므로 신뢰되지 않은 입력에 위험하다."
+    },
+    {
+      "id": "web-security-xss-textcontent",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 4,
+      "prompt": "사용자 입력을 단순 텍스트로 보여줄 때 안전한 DOM 속성은?",
+      "options": [
+        "outerHTML",
+        "document.write",
+        "insertAdjacentHTML",
+        "textContent",
+        "innerHTML"
+      ],
+      "sources": [
+        {
+          "title": "OWASP DOM-based XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "textContent는 입력을 HTML이 아닌 텍스트로 다룬다."
+    },
+    {
+      "id": "web-security-xss-context",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "동일한 문자열을 HTML 텍스트와 JS 문자열에 삽입한다. 인코딩 전략은?",
+      "options": [
+        "출력 문맥마다 맞는 인코딩을 적용",
+        "한 번의 HTML 인코딩으로 모든 문맥 해결",
+        "URL 인코딩만 모든 곳에 적용",
+        "Base64로 감싸면 안전",
+        "문맥과 상관없이 trim만 수행"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "HTML·속성·URL·JS 문맥마다 안전한 인코딩 규칙이 다르다."
+    },
+    {
+      "id": "web-security-xss-url",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "사용자가 입력한 링크를 href에 넣을 때 추가로 검증할 것은?",
+      "options": [
+        "링크 색상",
+        "파일 확장자가 jpg인지",
+        "javascript: 같은 위험한 URL 스킴 차단",
+        "문자열 길이만 10자 이상인지",
+        "대문자만 허용"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "URL 출력은 인코딩뿐 아니라 허용 스킴 검증이 필요하다."
+    },
+    {
+      "id": "web-security-xss-eval",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 5,
+      "prompt": "신뢰되지 않은 문자열을 eval에 전달하는 설계의 위험은?",
+      "options": [
+        "자동 HTML 이스케이프된다",
+        "CSP가 항상 무력화된다",
+        "쿠키 Path가 바뀐다",
+        "Promise가 취소된다",
+        "입력이 코드로 실행될 수 있다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP DOM-based XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "eval은 문자열을 실행 가능한 코드로 해석하므로 공격자 입력을 전달해서는 안 된다."
+    },
+    {
+      "id": "web-security-xss-react-escape",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "React에서 사용자 문자열을 일반 JSX 텍스트로 렌더링할 때 기본 보호는?",
+      "options": [
+        "dangerouslySetInnerHTML에도 동일 적용",
+        "특수 문자를 이스케이프해 텍스트로 렌더링",
+        "임의 URL까지 모두 안전하게 허용",
+        "악성 HTML을 자동 삭제해 원문 보존",
+        "서버 저장 데이터만 이스케이프"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "React의 일반 텍스트 렌더링은 기본 이스케이프가 적용되지만 우회 API와 URL은 별도 검토가 필요하다."
+    },
+    {
+      "id": "web-security-xss-dangerous-html",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 4,
+      "prompt": "React의 dangerouslySetInnerHTML에 사용자 HTML을 전달해야 한다. 가장 적절한 방어는?",
+      "options": [
+        "CSS로 가리기",
+        "입력의 공백만 제거",
+        "쿠키를 HttpOnly로만 설정",
+        "신뢰할 수 있는 HTML sanitizer로 허용 태그·속성만 남긴다",
+        "Base64 인코딩 후 그대로 삽입"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "HTML을 의도적으로 주입하는 경로에서는 적절한 sanitization이 필요하다."
+    },
+    {
+      "id": "web-security-xss-csp-layer",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "CSP를 설정했다면 출력 인코딩을 생략해도 되는가?",
+      "options": [
+        "아니오, CSP는 심층 방어이며 올바른 인코딩이 여전히 필요",
+        "예, CSP가 모든 브라우저에서 모든 XSS를 차단",
+        "예, 문자열이 자동 삭제",
+        "예, 서버 인가도 불필요",
+        "예, HTML 파서는 입력을 읽지 않는다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "CSP만으로 XSS를 모두 막지 못하므로 출력 문맥 방어를 유지한다."
+    },
+    {
+      "id": "web-security-xss-html-attr",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "사용자 이름을 따옴표로 감싼 HTML 속성 값에 넣는다. 필요한 처리는?",
+      "options": [
+        "쿠키 SameSite만 변경",
+        "문자열을 소문자로만",
+        "HTML 속성 문맥에 맞는 인코딩",
+        "오직 CSS 이스케이프",
+        "오직 SQL 파라미터화"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "속성에 삽입하는 데이터는 따옴표 등 문맥에 맞게 인코딩해야 한다."
+    },
+    {
+      "id": "web-security-xss-unquoted",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "신뢰되지 않은 값을 따옴표 없는 HTML 속성에 넣는 템플릿을 개선하려면?",
+      "options": [
+        "공백만 제거하고 유지",
+        "CSS opacity를 0으로",
+        "alt 속성으로 이동",
+        "HTTP 204 반환",
+        "속성 값을 따옴표로 감싸고 문맥별 인코딩"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "따옴표 없는 속성은 값 경계가 깨지기 쉬워 인코딩과 인용이 중요하다."
+    },
+    {
+      "id": "web-security-xss-html-sanitizer",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "사용자가 일부 서식을 입력할 수 있는 게시판에서 HTML을 받아야 한다. 적절한 방식은?",
+      "options": [
+        "모든 이벤트 속성을 허용",
+        "검증된 sanitizer로 허용 목록에 맞춰 정화",
+        "정규식 한 줄로 모든 script 태그만 제거",
+        "Base64로 표시 후 다시 HTML 파싱",
+        "메시지를 콘솔에만 기록"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "HTML 허용이 필요하면 검증된 sanitizer로 위험한 태그·속성을 제거해야 한다."
+    },
+    {
+      "id": "web-security-xss-json-response",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "API의 JSON 문자열을 나중에 innerHTML로 삽입한다. JSON 응답이라는 사실만으로 안전한가?",
+      "options": [
+        "예, Content-Type만 있으면 언제나 안전",
+        "예, HTTPS가 JS 실행을 막는다",
+        "예, 200 상태면 무해하다",
+        "아니오, 위험한 HTML sink에 넣으면 XSS가 가능",
+        "예, JSON은 HTML로 절대 변환되지 않는다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "데이터 형식이 JSON이어도 클라이언트가 이를 HTML로 해석하면 위험하다."
+    },
+    {
+      "id": "web-security-xss-event-attribute",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "사용자 입력을 onclick HTML 속성의 일부로 넣는 설계는?",
+      "options": [
+        "실행 문맥이므로 피하고 이벤트 리스너와 안전한 데이터 처리를 사용",
+        "HTML 인코딩만으로 항상 완전 안전",
+        "내용을 Base64로 바꾸면 완전 안전",
+        "aria-label에 같은 값을 추가하면 해결",
+        "쿠키 만료를 줄이면 해결"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "이벤트 핸들러 속성은 JS 실행 문맥이어서 비신뢰 데이터를 직접 넣지 않아야 한다."
+    },
+    {
+      "id": "web-security-xss-trusted-types",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "Trusted Types 강제를 도입할 때 목표는?",
+      "options": [
+        "검색 엔진 색인 보장",
+        "쿠키를 localStorage로 이동",
+        "위험한 DOM sink에 임의 문자열을 직접 넣는 경로 제한",
+        "모든 네트워크 요청 암호화",
+        "모든 사용자 인증 대체"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Trusted Types는 DOM XSS sink에 검증된 타입만 전달하도록 제한한다."
+    },
+    {
+      "id": "web-security-xss-encoding-server",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "DB에 저장된 텍스트를 여러 화면에서 HTML·JS·URL 문맥에 쓴다. 어디에서 인코딩할까?",
+      "options": [
+        "DB 저장 전에 HTML 인코딩만 한 번",
+        "로그 출력 때만",
+        "프록시에서 Base64로만",
+        "모든 데이터를 삭제한 뒤",
+        "각 출력 문맥에 가까운 지점"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "출력 인코딩은 실제 사용 문맥을 아는 렌더링 지점에서 적용해야 한다."
+    },
+    {
+      "id": "web-security-xss-filter-alone",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "서버 필터에서 문자열 \"script\"만 제거하면 XSS가 해결되는가?",
+      "options": [
+        "예, DOM 기반 공격도 자동 차단",
+        "아니오, 다양한 문법·문맥이 있어 안전한 출력 처리가 필요",
+        "예, 모든 실행 구문에 script가 필수",
+        "예, HTML 태그가 무조건 제거",
+        "예, URL 속성은 실행 불가"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "단순 문자열 차단은 우회 가능하며 문맥별 인코딩과 안전한 DOM API가 필요하다."
+    },
+    {
+      "id": "web-security-xss-cookie-httponly",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "HttpOnly 쿠키를 쓰면 XSS 자체가 사라지는가?",
+      "options": [
+        "예, CSP가 자동 생성된다",
+        "예, 공격자 입력이 무시된다",
+        "예, 모든 요청이 차단된다",
+        "아니오, 쿠키 읽기 제한은 일부 피해를 줄일 뿐 실행을 막지 못한다",
+        "예, 모든 DOM sink가 삭제된다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP XSS Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "HttpOnly는 JS의 쿠키 접근을 제한하지만 XSS 코드 실행 자체를 막지는 않는다."
+    },
+    {
+      "id": "web-security-csrf-definition",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 1,
+      "prompt": "로그인 쿠키가 자동 전송되는 사이트에서 공격 페이지가 상태 변경 요청을 유도한다. 공격은?",
+      "options": [
+        "CSRF",
+        "SRI",
+        "클릭재킹만",
+        "DOM XSS만",
+        "MIME 스니핑"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "CSRF는 피해자의 인증 상태를 이용해 의도하지 않은 요청을 보내게 한다."
+    },
+    {
+      "id": "web-security-csrf-token",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 3,
+      "prompt": "서버가 상태 변경 요청을 보호할 때 CSRF 토큰에 필요한 속성은?",
+      "options": [
+        "비밀번호와 동일한 값",
+        "CSS 클래스 이름",
+        "공격자가 예측하거나 읽기 어려운 값",
+        "모든 사용자에게 같은 고정값",
+        "URL에 공개된 값"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "CSRF 토큰은 공격자가 알 수 없어야 유효한 요청을 구별할 수 있다."
+    },
+    {
+      "id": "web-security-csrf-custom-header",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 5,
+      "prompt": "SPA가 CSRF 토큰을 요청에 넣을 때 OWASP가 권장하는 위치 중 하나는?",
+      "options": [
+        "공개 URL 쿼리만",
+        "Referer 경로만",
+        "CSS 헤더 주석",
+        "HTML title",
+        "커스텀 HTTP 요청 헤더"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "커스텀 헤더는 동일 출처 정책과 프리플라이트 특성을 이용한 방어에 유용하다."
+    },
+    {
+      "id": "web-security-csrf-samesite",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 2,
+      "prompt": "SameSite 쿠키 속성의 주된 보안 목적 중 하나는?",
+      "options": [
+        "CSP 정책 생성",
+        "교차 사이트 요청에서 쿠키 전송을 제한해 CSRF 위험 완화",
+        "쿠키 값을 암호화",
+        "XSS 코드 실행을 완전히 차단",
+        "TLS 인증서 발급"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "SameSite는 교차 사이트 문맥에서 쿠키 전송을 제어한다."
+    },
+    {
+      "id": "web-security-csrf-lax",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 4,
+      "prompt": "SameSite=Lax 쿠키는 일반적인 최상위 안전 메서드 탐색에서 어떻게 되는가?",
+      "options": [
+        "항상 JS에서 읽을 수 없다",
+        "쿠키 값이 자동 변경된다",
+        "오직 POST에서만 전송된다",
+        "일정 조건에서 함께 전송될 수 있다",
+        "모든 교차 사이트 상황에서 절대 전송되지 않는다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Lax는 일부 최상위 안전 탐색을 허용하므로 Strict와 다르다."
+    },
+    {
+      "id": "web-security-csrf-strict",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 1,
+      "prompt": "SameSite=Strict 쿠키의 교차 사이트 탐색 동작은?",
+      "options": [
+        "교차 사이트 문맥에서 전송되지 않는다",
+        "모든 서드파티 iframe에 전송된다",
+        "JavaScript가 자동으로 삭제한다",
+        "HTTP에서만 전송된다",
+        "Domain이 항상 무시된다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Strict는 교차 사이트 문맥의 쿠키 전송을 막는다."
+    },
+    {
+      "id": "web-security-csrf-none-secure",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 3,
+      "prompt": "SameSite=None으로 교차 사이트 쿠키 전송을 허용하려면 함께 필요한 속성은?",
+      "options": [
+        "Domain=*",
+        "Expires=0",
+        "Secure",
+        "HttpOnly만",
+        "Path=/private만"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "현대 브라우저에서 SameSite=None 쿠키에는 Secure가 요구된다."
+    },
+    {
+      "id": "web-security-csrf-origin-check",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 5,
+      "prompt": "상태 변경 요청의 출처를 서버에서 확인할 때 볼 수 있는 헤더는?",
+      "options": [
+        "Accept-Language만",
+        "User-Agent만",
+        "Content-Length만",
+        "Cache-Control만",
+        "Origin 또는 Referer"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Origin·Referer 검증은 요청이 신뢰하는 출처에서 왔는지 확인하는 보조 방어다."
+    },
+    {
+      "id": "web-security-csrf-fetch-site",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 2,
+      "prompt": "Sec-Fetch-Site: cross-site 요청을 서버가 확인했다. 이 값이 뜻하는 것은?",
+      "options": [
+        "서버가 로컬 호스트임",
+        "요청이 대상과 다른 사이트 문맥에서 시작됨",
+        "요청이 암호화되지 않음",
+        "응답 MIME이 JSON임",
+        "쿠키가 반드시 누락됨"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Fetch Metadata의 Sec-Fetch-Site는 요청 시작 문맥과 대상의 사이트 관계를 나타낸다."
+    },
+    {
+      "id": "web-security-csrf-get",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 4,
+      "prompt": "GET 요청으로 계정 삭제가 가능하다. CSRF 방어 관점의 핵심 개선은?",
+      "options": [
+        "응답에 이미지 추가",
+        "HTTP 캐시만 비우기",
+        "버튼 색상 변경",
+        "상태 변경을 안전하지 않은 메서드로 옮기고 검증",
+        "GET URL을 길게만 만들기"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "안전한 메서드인 GET으로 상태를 변경하면 교차 사이트 유도에 취약해진다."
+    },
+    {
+      "id": "web-security-csrf-double-submit",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 1,
+      "prompt": "더블 서밋 쿠키 패턴의 검증 대상은?",
+      "options": [
+        "쿠키의 토큰과 요청에 포함된 토큰의 일치",
+        "두 번 클릭한 횟수",
+        "쿠키와 CSS 클래스 이름",
+        "원본 파일의 해시",
+        "브라우저 창 수"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "서버는 쿠키와 별도 요청 채널에 담긴 CSRF 토큰을 비교한다."
+    },
+    {
+      "id": "web-security-csrf-xss",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 3,
+      "prompt": "사이트에 XSS가 있으면 CSRF 토큰 방어만으로 충분한가?",
+      "options": [
+        "예, Origin 헤더가 사라진다",
+        "예, 브라우저가 모든 요청을 막는다",
+        "아니오, XSS가 토큰을 읽거나 요청을 보낼 수 있다",
+        "예, 토큰은 JS에서 절대 보이지 않는다",
+        "예, XSS는 쿠키와 무관하다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "XSS는 많은 CSRF 방어를 우회할 수 있으므로 XSS도 막아야 한다."
+    },
+    {
+      "id": "web-security-csrf-client-side",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 5,
+      "prompt": "클라이언트 코드가 URL 조각의 공격자 입력으로 요청 경로를 구성하고 토큰까지 붙인다. 위험은?",
+      "options": [
+        "SRI 해시 실패",
+        "검색 색인 중복",
+        "접근성 오류만",
+        "HTTPS 인증서 만료",
+        "클라이언트 측 CSRF"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "공격자가 제어하는 입력으로 앱 자체가 인증된 요청을 보내면 클라이언트 측 CSRF가 된다."
+    },
+    {
+      "id": "web-security-csrf-subdomain",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 2,
+      "prompt": "공격자가 같은 사이트의 다른 서브도메인을 제어한다. SameSite만 신뢰하면 위험한 이유는?",
+      "options": [
+        "모든 요청이 OPTIONS로 바뀌어서",
+        "같은 사이트와 같은 출처는 달라서 서브도메인 요청에 쿠키가 실릴 수 있다",
+        "모든 서브도메인이 같은 DOM을 공유해서",
+        "쿠키가 Base64로 변해서",
+        "서브도메인은 HTTPS를 못 써서"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "SameSite의 사이트 경계는 출처 경계보다 넓을 수 있다."
+    },
+    {
+      "id": "web-security-csrf-token-leak",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 4,
+      "prompt": "CSRF 토큰을 URL 쿼리 문자열에 넣는 관행의 문제는?",
+      "options": [
+        "쿠키가 항상 삭제된다",
+        "CORS가 자동으로 모든 요청 허용",
+        "검색 결과 제목이 바뀐다",
+        "브라우저 기록·로그·Referer 등으로 노출될 수 있다",
+        "URL이 자동 암호화된다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSRF Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "토큰을 URL에 넣으면 여러 기록 경로에 남을 수 있으므로 피한다."
+    },
+    {
+      "id": "web-security-csp-script-src",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 1,
+      "prompt": "CSP에서 JavaScript 로드 출처를 제어하는 지시문은?",
+      "options": [
+        "script-src",
+        "img-src",
+        "style-src",
+        "font-src",
+        "frame-ancestors"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "script-src는 스크립트 리소스의 허용 출처와 실행 조건을 정한다."
+    },
+    {
+      "id": "web-security-csp-img-src",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 3,
+      "prompt": "CSP에서 이미지 로드 출처를 제한하는 지시문은?",
+      "options": [
+        "base-uri",
+        "frame-ancestors",
+        "img-src",
+        "script-src",
+        "connect-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "img-src는 이미지 리소스의 허용 출처를 제어한다."
+    },
+    {
+      "id": "web-security-csp-connect-src",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 5,
+      "prompt": "CSP에서 fetch·WebSocket 연결 대상을 제한하는 지시문은?",
+      "options": [
+        "style-src",
+        "object-src",
+        "form-action",
+        "frame-ancestors",
+        "connect-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "connect-src는 스크립트가 연결할 네트워크 엔드포인트를 제어한다."
+    },
+    {
+      "id": "web-security-csp-nonce",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 2,
+      "prompt": "인라인 스크립트를 제한적으로 허용하는 CSP nonce의 운영 원칙은?",
+      "options": [
+        "스크립트 본문을 Base64로 변환",
+        "응답마다 예측 불가능한 새 값을 생성",
+        "빌드 때 고정값 하나를 모든 응답에 사용",
+        "사용자 이름을 nonce로 사용",
+        "쿠키 경로를 nonce로 사용"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "nonce는 공격자가 예측하거나 재사용할 수 없게 응답마다 새로 생성해야 한다."
+    },
+    {
+      "id": "web-security-csp-hash",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 4,
+      "prompt": "고정된 인라인 스크립트를 CSP로 허용할 때 사용할 수 있는 것은?",
+      "options": [
+        "쿠키 만료",
+        "이미지 alt",
+        "HTTP 상태 코드",
+        "스크립트 내용의 해시",
+        "파일명 길이"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "CSP 해시를 사용하면 일치하는 인라인 스크립트만 허용할 수 있다."
+    },
+    {
+      "id": "web-security-csp-report-only",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 1,
+      "prompt": "운영 영향 없이 CSP 위반을 관찰하려는 초기 배포 헤더는?",
+      "options": [
+        "Content-Security-Policy-Report-Only",
+        "X-Frame-Options만",
+        "Access-Control-Allow-Origin",
+        "Clear-Site-Data",
+        "Accept-Encoding"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "Report-Only 정책은 위반을 보고하지만 강제 차단하지 않는다."
+    },
+    {
+      "id": "web-security-csp-frame-ancestors",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 3,
+      "prompt": "다른 사이트가 내 페이지를 iframe에 담는 것을 제한할 지시문은?",
+      "options": [
+        "img-src",
+        "connect-src",
+        "frame-ancestors",
+        "frame-src",
+        "child-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "frame-ancestors는 현재 페이지를 어떤 상위 문서가 임베드할 수 있는지 제어한다."
+    },
+    {
+      "id": "web-security-csp-frame-src",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 5,
+      "prompt": "내 페이지가 어떤 iframe을 로드할지 제한할 지시문은?",
+      "options": [
+        "frame-ancestors",
+        "script-src",
+        "form-action",
+        "base-uri",
+        "frame-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "frame-src는 이 문서가 자식 프레임으로 로드하는 출처를 제한한다."
+    },
+    {
+      "id": "web-security-csp-unsafe-inline",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 2,
+      "prompt": "script-src에 'unsafe-inline'을 광범위하게 허용하는 문제는?",
+      "options": [
+        "이미지 alt가 사라진다",
+        "인라인 스크립트 실행 제한의 효과가 약해진다",
+        "모든 쿠키가 자동 삭제된다",
+        "CORS가 무조건 실패한다",
+        "HTTPS가 HTTP로 바뀐다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "unsafe-inline은 인라인 스크립트를 허용해 CSP의 XSS 완화 효과를 약화한다."
+    },
+    {
+      "id": "web-security-csp-unsafe-eval",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 4,
+      "prompt": "script-src의 'unsafe-eval' 허용이 늘리는 공격 표면은?",
+      "options": [
+        "쿠키 Secure 강제",
+        "CORS 프리플라이트",
+        "접근성 트리 생성",
+        "문자열을 코드로 평가하는 실행",
+        "이미지 지연 로딩"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "unsafe-eval은 eval 같은 문자열 코드 평가를 허용한다."
+    },
+    {
+      "id": "web-security-csp-object-none",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 1,
+      "prompt": "레거시 플러그인 콘텐츠를 사용하지 않는 사이트에서 권장되는 CSP 지시문은?",
+      "options": [
+        "object-src 'none'",
+        "object-src *",
+        "script-src *",
+        "img-src data:만",
+        "frame-ancestors *"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "object-src 'none'은 불필요한 객체 임베딩을 차단한다."
+    },
+    {
+      "id": "web-security-csp-base-uri",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 3,
+      "prompt": "주입된 base 태그가 상대 URL의 기준을 바꾸는 위험을 줄일 CSP 지시문은?",
+      "options": [
+        "font-src",
+        "manifest-src",
+        "base-uri",
+        "form-action",
+        "style-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "base-uri는 문서의 base 요소가 설정할 수 있는 URL을 제한한다."
+    },
+    {
+      "id": "web-security-csp-upgrade",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 5,
+      "prompt": "CSP에서 HTTP 하위 리소스 URL을 HTTPS로 업그레이드하도록 요청하는 지시문은?",
+      "options": [
+        "block-all-mixed-content만",
+        "unsafe-eval",
+        "report-uri",
+        "navigate-to",
+        "upgrade-insecure-requests"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "upgrade-insecure-requests는 보안되지 않은 리소스 요청을 HTTPS로 전환한다."
+    },
+    {
+      "id": "web-security-csp-default-src",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 2,
+      "prompt": "특정 리소스 지시문이 없을 때 여러 fetch 지시문의 기본값 역할을 하는 것은?",
+      "options": [
+        "sandbox만",
+        "default-src",
+        "frame-ancestors",
+        "base-uri",
+        "form-action"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "default-src는 별도 지시문이 없는 여러 리소스 유형에 대한 대체 정책이다."
+    },
+    {
+      "id": "web-security-csp-meta-limit",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 4,
+      "prompt": "HTML meta 태그로 CSP를 전달할 때 적용할 수 없는 지시문은?",
+      "options": [
+        "script-src",
+        "style-src",
+        "font-src",
+        "frame-ancestors",
+        "img-src"
+      ],
+      "sources": [
+        {
+          "title": "OWASP CSP Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "frame-ancestors는 HTTP 응답 헤더로 전달해야 하며 meta CSP에서는 사용할 수 없다."
+    },
+    {
+      "id": "web-security-cors-acao",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 1,
+      "prompt": "api.other.example의 응답을 app.example의 JS가 읽게 하려면 서버에 필요한 헤더는?",
+      "options": [
+        "적절한 Access-Control-Allow-Origin",
+        "요청의 Content-Length만",
+        "응답의 Cache-Control만",
+        "브라우저의 User-Agent 변경",
+        "클라이언트의 CSS 설정"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "교차 출처 응답 읽기 허용은 대상 서버의 CORS 응답 헤더로 결정된다."
+    },
+    {
+      "id": "web-security-cors-wildcard-credentials",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 3,
+      "prompt": "쿠키를 포함한 교차 출처 요청에 Access-Control-Allow-Origin: *를 사용한다. 결과는?",
+      "options": [
+        "프리플라이트가 완전히 사라진다",
+        "응답이 무조건 301이 된다",
+        "자격 증명을 포함한 응답을 JS가 읽도록 허용되지 않는다",
+        "항상 모든 쿠키가 읽힌다",
+        "서버 인증이 자동 통과한다"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "credentials와 와일드카드 허용 출처는 함께 사용할 수 없다."
+    },
+    {
+      "id": "web-security-cors-preflight",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 5,
+      "prompt": "비단순 교차 출처 요청 전에 브라우저가 보내는 확인 요청의 메서드는?",
+      "options": [
+        "TRACE",
+        "CONNECT",
+        "PATCH",
+        "HEAD만",
+        "OPTIONS"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "브라우저는 필요할 때 OPTIONS 프리플라이트로 실제 요청의 허용 여부를 확인한다."
+    },
+    {
+      "id": "web-security-cors-preflight-method",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 2,
+      "prompt": "프리플라이트 응답에서 허용할 실제 HTTP 메서드를 알려주는 헤더는?",
+      "options": [
+        "Cross-Origin-Opener-Policy",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Expose-Headers",
+        "Content-Language",
+        "Accept-Encoding"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "Access-Control-Allow-Methods는 실제 교차 출처 요청 메서드 허용 목록이다."
+    },
+    {
+      "id": "web-security-cors-preflight-header",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 4,
+      "prompt": "요청의 커스텀 헤더가 허용되는지 알려주는 프리플라이트 응답 헤더는?",
+      "options": [
+        "Access-Control-Expose-Headers",
+        "Referrer-Policy",
+        "X-Content-Type-Options",
+        "Access-Control-Allow-Headers",
+        "Access-Control-Max-Age"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "Access-Control-Allow-Headers는 실제 요청에 넣을 수 있는 헤더 이름을 지정한다."
+    },
+    {
+      "id": "web-security-cors-simple-side-effect",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 1,
+      "prompt": "교차 출처 단순 POST가 프리플라이트 없이 전송됐다. CORS가 막으면 서버 상태 변경도 취소되는가?",
+      "options": [
+        "아니오, 요청 자체가 서버에 도달할 수 있어 CSRF 방어가 별도로 필요",
+        "예, 브라우저가 항상 전송 전 취소",
+        "예, 서버가 자동 롤백",
+        "예, 응답 상태가 반드시 204",
+        "예, 쿠키가 자동 암호화"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "CORS는 주로 응답 읽기를 제어하며 단순 요청은 서버에 도달해 부작용을 만들 수 있다."
+    },
+    {
+      "id": "web-security-cors-credentials-include",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 3,
+      "prompt": "fetch로 다른 출처에 쿠키를 보내려면 클라이언트에서 지정할 수 있는 옵션은?",
+      "options": [
+        "redirect: \"error\"만",
+        "referrer: \"\"만",
+        "credentials: \"include\"",
+        "mode: \"no-cors\"만",
+        "cache: \"reload\"만"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "교차 출처 fetch의 쿠키 포함은 credentials 옵션과 서버 허용 정책 등의 조건을 따른다."
+    },
+    {
+      "id": "web-security-cors-expose",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 5,
+      "prompt": "교차 출처 응답의 사용자 지정 헤더를 JS에서 읽게 하려면 서버가 사용할 헤더는?",
+      "options": [
+        "Access-Control-Allow-Methods",
+        "Access-Control-Max-Age",
+        "Content-Encoding",
+        "Strict-Transport-Security",
+        "Access-Control-Expose-Headers"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "안전 목록 외 응답 헤더를 스크립트에 노출하려면 Expose-Headers로 명시한다."
+    },
+    {
+      "id": "web-security-cors-vary",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 2,
+      "prompt": "서버가 요청 Origin별로 Access-Control-Allow-Origin 값을 다르게 반환한다. 캐시와 함께 필요한 응답 헤더는?",
+      "options": [
+        "ETag: Origin",
+        "Vary: Origin",
+        "Age: 0만",
+        "Allow: GET만",
+        "Location: Origin"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "출처별 응답이 다르면 Vary: Origin으로 캐시가 출처별 응답을 구분하게 한다."
+    },
+    {
+      "id": "web-security-cors-not-auth",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 4,
+      "prompt": "CORS 정책이 허용 출처를 제한하면 API 인증·인가를 생략해도 되는가?",
+      "options": [
+        "예, 쿠키가 자동 발급",
+        "예, 서버에 요청이 절대 도착하지 않는다",
+        "예, Origin은 비밀 키다",
+        "아니오, CORS는 브라우저의 응답 접근 제어이지 서버 권한 검사가 아니다",
+        "예, 모든 HTTP 클라이언트가 CORS를 강제"
+      ],
+      "sources": [
+        {
+          "title": "MDN CORS Guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ],
+      "explanation": "CORS 헤더는 인증·인가를 대체하지 않는다."
+    },
+    {
+      "id": "web-security-origin-tuple",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 1,
+      "prompt": "웹 출처(origin)를 결정하는 세 요소는?",
+      "options": [
+        "스킴·호스트·포트",
+        "경로·쿼리·해시",
+        "제목·설명·언어",
+        "쿠키 이름·값·만료",
+        "파일명·확장자·크기"
+      ],
+      "sources": [
+        {
+          "title": "MDN Same-origin Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy"
+        }
+      ],
+      "explanation": "출처는 프로토콜(스킴), 호스트, 포트의 조합이다."
+    },
+    {
+      "id": "web-security-origin-port",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 3,
+      "prompt": "https://example.com:443과 https://example.com:8443은 같은 출처인가?",
+      "options": [
+        "예, 경로가 같으면 된다",
+        "예, 쿠키 이름이 같으면 된다",
+        "아니오, 포트가 다르다",
+        "예, 호스트만 같으면 된다",
+        "예, HTTPS면 모두 같다"
+      ],
+      "sources": [
+        {
+          "title": "MDN Same-origin Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy"
+        }
+      ],
+      "explanation": "출처 비교에는 포트가 포함된다."
+    },
+    {
+      "id": "web-security-origin-scheme",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 5,
+      "prompt": "http://example.com과 https://example.com은 같은 출처인가?",
+      "options": [
+        "예, 호스트만 같으면 된다",
+        "예, 두 주소 모두 80포트다",
+        "예, 경로가 비어 있어서",
+        "예, 서버가 CORS를 쓰면 출처 자체가 같다",
+        "아니오, 스킴이 다르다"
+      ],
+      "sources": [
+        {
+          "title": "MDN Same-origin Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy"
+        }
+      ],
+      "explanation": "스킴이 다르면 두 문서는 다른 출처다."
+    },
+    {
+      "id": "web-security-cookie-httponly",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 2,
+      "prompt": "세션 쿠키에 HttpOnly를 주면 무엇이 제한되는가?",
+      "options": [
+        "HTTPS 접속",
+        "document.cookie 같은 JS 접근",
+        "HTTP 요청에 쿠키 전송",
+        "서버의 Set-Cookie 설정",
+        "쿠키 만료"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "HttpOnly는 JavaScript의 쿠키 읽기·수정을 막지만 요청 전송 자체는 막지 않는다."
+    },
+    {
+      "id": "web-security-cookie-secure",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 4,
+      "prompt": "쿠키의 Secure 속성이 뜻하는 바는?",
+      "options": [
+        "XSS 완전 차단",
+        "동일 출처 JS 읽기 차단",
+        "CSRF 토큰 자동 생성",
+        "보안된 채널에서만 전송",
+        "쿠키 값의 자동 암호화"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Secure는 쿠키를 HTTPS 등 보안 전송 채널에 제한한다."
+    },
+    {
+      "id": "web-security-cookie-path",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 1,
+      "prompt": "Path=/admin 쿠키를 권한 경계로 신뢰할 수 없는 이유는?",
+      "options": [
+        "Path는 전송 범위 지정이지 보안 격리 경계가 아니다",
+        "Path는 암호화 키라서",
+        "서브도메인이 항상 삭제돼서",
+        "쿠키가 자동으로 HttpOnly가 돼서",
+        "URL이 모두 404가 돼서"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Path 속성은 쿠키 전송 범위용이며 접근 제어를 대신하지 않는다."
+    },
+    {
+      "id": "web-security-cookie-domain",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 3,
+      "prompt": "Domain=example.com인 쿠키의 범위에 관한 설명은?",
+      "options": [
+        "항상 JS에서 읽을 수 없다",
+        "쿠키가 자동으로 Secure가 된다",
+        "해당 도메인과 하위 도메인에도 전송될 수 있다",
+        "오직 현재 경로에만 전송",
+        "모든 인터넷 도메인에 전송"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Domain 속성은 쿠키가 적용될 호스트 범위를 넓힐 수 있다."
+    },
+    {
+      "id": "web-security-cookie-host-prefix",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 5,
+      "prompt": "__Host- 접두어 쿠키에 요구되는 조합은?",
+      "options": [
+        "HttpOnly만",
+        "Domain=*와 Path=/",
+        "SameSite=None만",
+        "Expires 필수",
+        "Secure, Path=/, Domain 없음"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "__Host-는 Secure와 루트 Path를 요구하고 Domain을 허용하지 않는다."
+    },
+    {
+      "id": "web-security-cookie-localstorage",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 2,
+      "prompt": "인증 관련 비밀을 localStorage에 두면 XSS 관점에서 생기는 위험은?",
+      "options": [
+        "CSP가 무조건 삭제한다",
+        "같은 출처에서 실행된 악성 JS가 값을 읽을 수 있다",
+        "브라우저가 항상 자동 암호화한다",
+        "쿠키보다 무조건 안전하다",
+        "서버가 localStorage를 자동 검증한다"
+      ],
+      "sources": [
+        {
+          "title": "OWASP HTML5 Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "localStorage는 같은 출처 JS가 접근 가능하므로 XSS가 있으면 비밀이 노출될 수 있다."
+    },
+    {
+      "id": "web-security-cookie-expiry",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 4,
+      "prompt": "쿠키의 Max-Age 속성은 무엇을 제어하는가?",
+      "options": [
+        "요청의 출처",
+        "JS 실행 권한",
+        "HTTP 응답 MIME 타입",
+        "쿠키가 유지되는 상대 시간",
+        "접근 가능한 경로"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Max-Age는 쿠키의 수명을 초 단위로 지정한다."
+    },
+    {
+      "id": "web-security-cookie-session",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 1,
+      "prompt": "Expires와 Max-Age를 지정하지 않은 일반 세션 쿠키는 보통 언제까지 유지되는가?",
+      "options": [
+        "브라우저 세션 동안, 복원 정책에 따라 달라질 수 있다",
+        "무조건 정확히 24시간",
+        "영구적으로",
+        "요청 한 번만",
+        "서비스 워커 설치 전까지만"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "만료를 지정하지 않은 쿠키는 세션 쿠키로 취급되며 브라우저의 세션 복원 정책이 영향을 줄 수 있다."
+    },
+    {
+      "id": "web-security-cookie-samesite-origin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 3,
+      "prompt": "same-site와 same-origin에 관한 올바른 설명은?",
+      "options": [
+        "same-origin은 포트를 무시",
+        "same-site이면 CORS 검사가 사라진다",
+        "사이트가 같아도 스킴·호스트·포트가 달라 출처는 다를 수 있다",
+        "둘은 항상 동일한 뜻",
+        "same-site는 URL 경로까지 비교"
+      ],
+      "sources": [
+        {
+          "title": "MDN Using HTTP Cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "쿠키의 사이트 경계와 동일 출처 정책의 출처 경계는 다르다."
+    },
+    {
+      "id": "web-security-click-overlay",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "투명한 iframe을 진짜 버튼 위에 겹쳐 사용자의 클릭을 유도한다. 공격은?",
+      "options": [
+        "CSRF 토큰 검증",
+        "SRI 검사",
+        "HSTS 적용",
+        "CORS 프리플라이트",
+        "클릭재킹"
+      ],
+      "sources": [
+        {
+          "title": "OWASP Clickjacking Defense Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "클릭재킹은 사용자가 보는 UI와 실제 클릭 대상이 다르게 겹치게 한다."
+    },
+    {
+      "id": "web-security-click-frame-ancestors",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "내 페이지를 어떤 사이트가 iframe에 넣을지 제한하는 현대적인 정책은?",
+      "options": [
+        "SRI integrity",
+        "CSP frame-ancestors",
+        "CORS Access-Control-Allow-Origin",
+        "쿠키 Path",
+        "HTML title"
+      ],
+      "sources": [
+        {
+          "title": "OWASP Clickjacking Defense Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "frame-ancestors는 상위 프레임으로 허용할 출처를 제한해 클릭재킹 방어에 쓴다."
+    },
+    {
+      "id": "web-security-click-xfo",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "모든 프레임 임베딩을 거부하는 X-Frame-Options 값은?",
+      "options": [
+        "SAMEPAGE",
+        "NONE",
+        "BLOCK",
+        "DENY",
+        "ALLOWALL"
+      ],
+      "sources": [
+        {
+          "title": "OWASP HTTP Headers Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "X-Frame-Options: DENY는 페이지를 프레임에 담지 못하도록 한다."
+    },
+    {
+      "id": "web-security-link-noopener",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "새 탭 링크에서 열린 문서가 원래 탭의 window.opener에 접근하지 못하게 할 rel 값은?",
+      "options": [
+        "noopener",
+        "preload",
+        "canonical",
+        "stylesheet",
+        "author"
+      ],
+      "sources": [
+        {
+          "title": "MDN rel=noopener",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener"
+        }
+      ],
+      "explanation": "rel=noopener는 새 문서의 opener 참조를 끊는다."
+    },
+    {
+      "id": "web-security-link-noreferrer",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "외부 링크 이동 시 Referer 정보를 보내지 않으려면 사용할 rel 값은?",
+      "options": [
+        "canonical",
+        "alternate",
+        "noreferrer",
+        "nofollow만",
+        "external만"
+      ],
+      "sources": [
+        {
+          "title": "MDN rel=noreferrer",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noreferrer"
+        }
+      ],
+      "explanation": "rel=noreferrer는 링크 이동의 referrer 정보를 숨긴다."
+    },
+    {
+      "id": "web-security-mixed-script",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 5,
+      "prompt": "HTTPS 페이지가 HTTP 주소의 script를 로드하려 한다. 브라우저의 일반적 처리로 옳은 것은?",
+      "options": [
+        "항상 안전하게 실행",
+        "스크립트만 자동 쿠키화",
+        "요청이 301로 고정",
+        "CORS만 허용하면 HTTP 실행",
+        "보안상 차단되는 혼합 콘텐츠"
+      ],
+      "sources": [
+        {
+          "title": "MDN Mixed Content",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Mixed_content"
+        }
+      ],
+      "explanation": "HTTP script는 변경 가능 위험이 커서 차단되는 혼합 콘텐츠에 해당한다."
+    },
+    {
+      "id": "web-security-hsts-future",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "HSTS를 학습한 브라우저가 이후 같은 호스트의 http URL에 접속하면?",
+      "options": [
+        "CSP를 무조건 제거",
+        "HTTPS로 자동 업그레이드",
+        "HTTP로 먼저 전송 후 경고만",
+        "쿠키를 모두 삭제",
+        "도메인을 IP로 변환"
+      ],
+      "sources": [
+        {
+          "title": "MDN HSTS Header",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security"
+        }
+      ],
+      "explanation": "HSTS는 일정 기간 해당 호스트에 HTTPS 사용을 강제한다."
+    },
+    {
+      "id": "web-security-nosniff",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "X-Content-Type-Options: nosniff가 줄이는 위험은?",
+      "options": [
+        "쿠키 만료",
+        "프레임 임베딩만",
+        "URL 리디렉션 루프",
+        "MIME 타입 추측으로 비실행 리소스가 실행되는 문제",
+        "CSRF 토큰 탈취만"
+      ],
+      "sources": [
+        {
+          "title": "OWASP HTTP Headers Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html"
+        }
+      ],
+      "explanation": "nosniff는 브라우저가 선언된 MIME 타입을 따르도록 해 타입 혼동을 줄인다."
+    },
+    {
+      "id": "web-security-ref-no-referrer",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "Referrer-Policy: no-referrer 설정의 효과는?",
+      "options": [
+        "요청에 Referer 헤더를 보내지 않는다",
+        "모든 요청을 막는다",
+        "CORS를 해제한다",
+        "현재 URL 경로를 암호화한다",
+        "페이지를 색인에서 제거한다"
+      ],
+      "sources": [
+        {
+          "title": "MDN Referrer-Policy Header",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy"
+        }
+      ],
+      "explanation": "no-referrer는 요청에 referrer 정보를 포함하지 않도록 한다."
+    },
+    {
+      "id": "web-security-permissions-camera",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "문서와 iframe의 카메라 API 사용 범위를 제한하는 데 쓰는 정책은?",
+      "options": [
+        "ETag",
+        "X-Content-Type-Options만",
+        "Permissions-Policy",
+        "robots.txt",
+        "SRI"
+      ],
+      "sources": [
+        {
+          "title": "MDN Permissions Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy"
+        }
+      ],
+      "explanation": "Permissions-Policy는 특정 브라우저 기능의 사용 가능 범위를 선언한다."
+    },
+    {
+      "id": "web-security-post-target-origin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 5,
+      "prompt": "비밀 데이터를 iframe에 postMessage로 보낼 때 targetOrigin은?",
+      "options": [
+        "항상 \"*\"",
+        "빈 문자열만",
+        "수신 파일 경로의 해시만",
+        "쿠키 이름",
+        "정확한 수신 출처"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "targetOrigin을 특정 출처로 제한해야 예기치 않은 다른 문서에 전달되지 않는다."
+    },
+    {
+      "id": "web-security-post-receive-origin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 2,
+      "prompt": "message 이벤트 수신자가 보낸 사이트를 검증할 때 확인할 필드는?",
+      "options": [
+        "event.data.length만",
+        "event.origin",
+        "event.timeStamp만",
+        "event.isTrusted만",
+        "event.type만"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "event.origin은 메시지를 보낸 문서의 출처를 나타낸다."
+    },
+    {
+      "id": "web-security-post-receive-source",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 4,
+      "prompt": "허용 출처의 여러 창 중 특정 iframe만 신뢰하려면 추가로 확인할 필드는?",
+      "options": [
+        "event.cancelable",
+        "event.key",
+        "event.targetOrigin",
+        "event.source",
+        "event.bubbles"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "event.source는 메시지를 보낸 Window 참조를 식별한다."
+    },
+    {
+      "id": "web-security-post-data-validation",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 1,
+      "prompt": "event.origin이 예상 출처와 일치하면 event.data를 검증 없이 명령으로 실행해도 되는가?",
+      "options": [
+        "아니오, 메시지 형식과 값도 검증해야 한다",
+        "예, origin이 같으면 데이터는 항상 안전",
+        "예, JSON이면 실행돼도 안전",
+        "예, HTTPS면 eval도 안전",
+        "예, 쿠키가 HttpOnly면 안전"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "발신 출처 검증과 별개로 전달 데이터가 기대한 구조와 값인지 확인해야 한다."
+    },
+    {
+      "id": "web-security-post-wildcard",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 3,
+      "prompt": "targetOrigin=\"*\"가 민감한 메시지에 위험한 이유는?",
+      "options": [
+        "브라우저가 항상 차단한다",
+        "동일 출처 정책이 완전히 꺼진다",
+        "수신 창이 다른 출처로 이동해도 메시지를 받을 수 있다",
+        "메시지가 자동 암호화된다",
+        "메시지가 서버에만 저장된다"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "와일드카드는 수신 출처 제한이 없어 민감 데이터가 다른 문서에 노출될 수 있다."
+    },
+    {
+      "id": "web-security-post-cross-origin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 5,
+      "prompt": "서로 다른 출처의 부모 문서와 iframe이 통신할 때 표준적인 API는?",
+      "options": [
+        "직접 iframe.contentDocument 읽기",
+        "공유 localStorage",
+        "서로의 document.cookie 읽기",
+        "CSS @import",
+        "window.postMessage"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "postMessage는 서로 다른 출처의 창 사이에 통제된 메시지 통신을 제공한다."
+    },
+    {
+      "id": "web-security-post-async",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 2,
+      "prompt": "postMessage 호출 직후 상대 창의 message 핸들러가 같은 호출 스택에서 동기 실행되는가?",
+      "options": [
+        "예, 쿠키를 먼저 지운다",
+        "아니오, 현재 실행 작업 이후 메시지 이벤트가 전달된다",
+        "예, 함수 호출과 완전히 동일",
+        "예, 항상 마이크로태스크보다 먼저",
+        "예, 서버 응답 전 강제 실행"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "postMessage 메시지 이벤트는 현재 실행 컨텍스트가 끝난 뒤 전달된다."
+    },
+    {
+      "id": "web-security-post-exact-match",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 4,
+      "prompt": "event.origin을 검증할 때 올바른 비교는?",
+      "options": [
+        "경로 접미사만 확인",
+        "페이지 title만 확인",
+        "쿠키 Domain만 확인",
+        "스킴·호스트·포트를 포함한 정확한 출처 비교",
+        "문자열에 example.com이 포함되는지만 확인"
+      ],
+      "sources": [
+        {
+          "title": "MDN Window.postMessage",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ],
+      "explanation": "부분 문자열 비교는 공격자 도메인에도 맞을 수 있으므로 정확한 출처를 비교한다."
+    },
+    {
+      "id": "web-security-sri-purpose",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 1,
+      "prompt": "CDN에서 가져온 JS에 integrity 해시를 설정하는 목적은?",
+      "options": [
+        "다운로드한 파일이 예상한 내용인지 검증",
+        "JS 번들을 자동 압축",
+        "API 인증 대체",
+        "검색 순위 개선",
+        "서버 쿠키 생성"
+      ],
+      "sources": [
+        {
+          "title": "MDN Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity"
+        }
+      ],
+      "explanation": "SRI는 외부 리소스 내용이 기대한 해시와 일치하는지 확인한다."
+    },
+    {
+      "id": "web-security-sri-mismatch",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 3,
+      "prompt": "integrity 해시와 다운로드한 스크립트 내용이 다르면 일반적으로 어떻게 되는가?",
+      "options": [
+        "로컬 스토리지에만 저장",
+        "CSP가 자동 해제",
+        "브라우저가 실행을 거부한다",
+        "해시를 자동 갱신해 실행",
+        "HTTP를 HTTPS로 변경"
+      ],
+      "sources": [
+        {
+          "title": "MDN Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity"
+        }
+      ],
+      "explanation": "SRI 검증 실패 시 브라우저는 해당 리소스의 로드·실행을 거부한다."
+    },
+    {
+      "id": "web-security-sri-crossorigin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 5,
+      "prompt": "교차 출처 CDN 스크립트에 SRI를 쓰려면 추가로 고려할 것은?",
+      "options": [
+        "쿠키 Max-Age만",
+        "SEO canonical",
+        "aria-live",
+        "robots.txt의 Allow",
+        "CORS 허용과 crossorigin 속성"
+      ],
+      "sources": [
+        {
+          "title": "MDN Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity"
+        }
+      ],
+      "explanation": "교차 출처 SRI 리소스는 CORS 모드와 서버의 CORS 허용이 필요하다."
+    },
+    {
+      "id": "web-security-sri-hash-update",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 2,
+      "prompt": "CDN 라이브러리 파일 내용을 업데이트했다면 integrity 값은?",
+      "options": [
+        "hash 대신 alt 작성",
+        "새 파일 내용에 맞춰 재계산",
+        "옛 해시를 그대로 사용",
+        "파일명만 바꾸고 해시는 삭제하지 않음",
+        "쿠키에 해시 저장"
+      ],
+      "sources": [
+        {
+          "title": "MDN Subresource Integrity",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity"
+        }
+      ],
+      "explanation": "SRI 해시는 정확한 파일 내용에 결합되므로 내용이 바뀌면 다시 계산해야 한다."
+    },
+    {
+      "id": "web-security-trusted-sink",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 4,
+      "prompt": "Trusted Types가 보호하려는 대표적인 DOM sink는?",
+      "options": [
+        "console.log",
+        "Date.now",
+        "Array.map",
+        "element.innerHTML",
+        "element.textContent"
+      ],
+      "sources": [
+        {
+          "title": "MDN Trusted Types API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API"
+        }
+      ],
+      "explanation": "innerHTML처럼 문자열을 HTML로 해석하는 sink를 검증된 타입으로 제한할 수 있다."
+    },
+    {
+      "id": "web-security-trusted-policy",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 1,
+      "prompt": "Trusted Types 정책의 핵심 역할은?",
+      "options": [
+        "입력을 변환·정화해 허용된 타입을 생성",
+        "쿠키를 자동 암호화",
+        "CORS 출처를 자동 승인",
+        "검색 인덱스 갱신",
+        "사용자 로그인"
+      ],
+      "sources": [
+        {
+          "title": "MDN Trusted Types API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API"
+        }
+      ],
+      "explanation": "정책은 위험한 sink에 전달할 값을 검증·변환하여 TrustedHTML 등으로 만든다."
+    },
+    {
+      "id": "web-security-trusted-csp",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 3,
+      "prompt": "문자열을 DOM XSS sink에 직접 넣지 못하도록 강제하는 CSP 지시문은?",
+      "options": [
+        "base-uri *",
+        "report-to만",
+        "require-trusted-types-for 'script'",
+        "frame-src *",
+        "img-src data:"
+      ],
+      "sources": [
+        {
+          "title": "MDN Trusted Types API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API"
+        }
+      ],
+      "explanation": "이 지시문은 지원 브라우저에서 관련 sink에 신뢰된 타입을 요구한다."
+    },
+    {
+      "id": "web-security-trusted-not-sanitizer",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 3,
+      "answer": 5,
+      "prompt": "Trusted Types를 사용하면 모든 정책 구현이 자동으로 안전한 HTML을 만드는가?",
+      "options": [
+        "예, 브라우저가 모든 HTML을 자동 삭제",
+        "예, URL 스킴도 항상 검사",
+        "예, 서버의 XSS 방어가 모두 불필요",
+        "예, 공격자 입력이 들어오지 않는다",
+        "아니오, 정책의 변환·정화 코드가 안전해야 한다"
+      ],
+      "sources": [
+        {
+          "title": "MDN Trusted Types API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API"
+        }
+      ],
+      "explanation": "Trusted Types는 검증 경로를 강제하지만 정책이 무해한 값을 만들도록 구현해야 한다."
+    },
+    {
+      "id": "web-security-coop-opener",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 2,
+      "prompt": "COOP 헤더가 새 창과 원래 창의 관계에서 제어하는 것은?",
+      "options": [
+        "SRI 해시",
+        "브라우징 컨텍스트 그룹과 opener 참조 격리",
+        "쿠키 만료 시간",
+        "URL의 검색 순위",
+        "CSP 이미지 출처"
+      ],
+      "sources": [
+        {
+          "title": "MDN Cross-Origin-Opener-Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy"
+        }
+      ],
+      "explanation": "COOP는 문서가 새 창과 같은 브라우징 컨텍스트 그룹에 속할지 제어한다."
+    },
+    {
+      "id": "web-security-coop-same-origin",
+      "category": "Web Security",
+      "format": "객관식 단일",
+      "type": "브라우저 동작",
+      "points": 5,
+      "answer": 4,
+      "prompt": "Cross-Origin-Opener-Policy: same-origin을 쓰는 목적 중 하나는?",
+      "options": [
+        "CORS를 완전히 끄기",
+        "이미지 로딩을 금지",
+        "쿠키 Secure 자동 설정",
+        "교차 출처 문서와 opener 관계를 분리해 격리 강화",
+        "모든 출처의 DOM 읽기 허용"
+      ],
+      "sources": [
+        {
+          "title": "MDN Cross-Origin-Opener-Policy",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy"
+        }
+      ],
+      "explanation": "same-origin COOP는 교차 출처 문서와의 브라우징 컨텍스트 격리를 강화한다."
+    }
+  ]
+}

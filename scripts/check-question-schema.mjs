@@ -14,6 +14,11 @@ assert.match(validateQuestionData({
   ...template, sources: [{ title: "근거", url: "https://example.com" }, { title: "중복", url: "https://example.com/" }],
 }).join(" "), /근거 URL/);
 assert.equal(compile(template)[0].id, template.id);
+for (const [category, filename] of [["Next.js", "nextjs.json"], ["Accessibility & SEO", "accessibility-seo.json"]]) {
+  assert.doesNotThrow(() => compileQuestions([{
+    filename, data: { category, questions: [{ ...template, category }] },
+  }]));
+}
 
 for (const patch of [
   { id: "Invalid ID" }, { category: "Unknown" }, { category: "CSS" }, { category: undefined },

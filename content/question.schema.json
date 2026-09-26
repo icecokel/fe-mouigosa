@@ -11,7 +11,7 @@
       "description": "문제은행 전체에서 유일한 문항 ID. 등록 후 유지합니다."
     },
     "category": {
-      "enum": ["JavaScript", "TypeScript", "React", "Browser", "CSS", "Web Performance", "Design Pattern"]
+      "enum": ["JavaScript", "TypeScript", "React", "Browser", "CSS", "Web Performance", "Design Pattern", "Next.js", "Web Fundamentals", "Accessibility & SEO", "AI Concepts", "Web Security", "E2E Testing", "Design System"]
     },
     "type": {
       "enum": ["개념 판단", "결과 예측", "타입 분석", "버그 찾기", "렌더링 횟수 예측", "브라우저 동작"]

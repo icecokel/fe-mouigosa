@@ -1,0 +1,2305 @@
+{
+  "category": "E2E Testing",
+  "questions": [
+    {
+      "id": "e2e-testing-locators-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "이름이 “결제”인 버튼을 역할과 접근 가능한 이름으로 찾는 locator는?",
+      "options": [
+        "getByTestId",
+        "getByAltText",
+        "getByPlaceholder",
+        "getByRole",
+        "getByLabel"
+      ],
+      "answer": 4,
+      "explanation": "getByRole은 역할과 접근 가능한 이름을 함께 지정해 사용자 관점에서 요소를 찾습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locators-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "“이메일” label과 연결된 입력창을 찾는 locator는?",
+      "options": [
+        "getByRole",
+        "getByLabel",
+        "getByTestId",
+        "getByAltText",
+        "getByPlaceholder"
+      ],
+      "answer": 2,
+      "explanation": "getByLabel은 form control과 연결된 label 텍스트로 입력창을 찾습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locators-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "차트 내부에 data-testid=\"plot\"이 있다. 이를 기준으로 찾는 locator는?",
+      "options": [
+        "getByAltText",
+        "getByPlaceholder",
+        "getByRole",
+        "getByLabel",
+        "getByTestId"
+      ],
+      "answer": 5,
+      "explanation": "getByTestId는 data-testid 같은 명시적 테스트 계약을 사용합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locators-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "대체 텍스트가 “회사 로고”인 이미지를 찾는 locator는?",
+      "options": [
+        "getByLabel",
+        "getByTestId",
+        "getByAltText",
+        "getByPlaceholder",
+        "getByRole"
+      ],
+      "answer": 3,
+      "explanation": "getByAltText는 이미지의 alt 텍스트를 기준으로 찾습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locators-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "label 없는 입력창의 placeholder “검색어”로 찾는 locator는?",
+      "options": [
+        "getByPlaceholder",
+        "getByRole",
+        "getByLabel",
+        "getByTestId",
+        "getByAltText"
+      ],
+      "answer": 1,
+      "explanation": "getByPlaceholder는 placeholder를 기준으로 찾습니다. 실제 UI에는 label도 제공하는 편이 좋습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertions-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "비동기 렌더링 뒤 알림 요소가 보이는지 재시도하며 검사할 matcher는?",
+      "options": [
+        "toHaveURL",
+        "toBeChecked",
+        "toHaveCount",
+        "toBeVisible",
+        "toHaveText"
+      ],
+      "answer": 4,
+      "explanation": "toBeVisible은 요소가 화면에 나타날 때까지 재시도합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertions-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "제출 후 상태 문구가 “완료”로 바뀌는지 재시도하며 검사할 matcher는?",
+      "options": [
+        "toBeVisible",
+        "toHaveText",
+        "toHaveURL",
+        "toBeChecked",
+        "toHaveCount"
+      ],
+      "answer": 2,
+      "explanation": "toHaveText는 텍스트가 기대값에 맞을 때까지 재시도합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertions-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "로그인 후 현재 주소가 /dashboard인지 확인할 Page matcher는?",
+      "options": [
+        "toBeChecked",
+        "toHaveCount",
+        "toBeVisible",
+        "toHaveText",
+        "toHaveURL"
+      ],
+      "answer": 5,
+      "explanation": "toHaveURL은 페이지 URL을 기대값과 비교합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertions-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "이용약관 체크박스가 선택됐는지 확인할 matcher는?",
+      "options": [
+        "toHaveText",
+        "toHaveURL",
+        "toBeChecked",
+        "toHaveCount",
+        "toBeVisible"
+      ],
+      "answer": 3,
+      "explanation": "toBeChecked는 체크박스나 라디오의 선택 상태를 검사합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertions-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "검색 결과 카드가 정확히 세 개 생겼는지 확인할 matcher는?",
+      "options": [
+        "toHaveCount",
+        "toBeVisible",
+        "toHaveText",
+        "toHaveURL",
+        "toBeChecked"
+      ],
+      "answer": 1,
+      "explanation": "toHaveCount는 locator가 가리키는 요소 수를 재시도하며 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-input-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "사용자처럼 제출 버튼을 누르는 locator 메서드는?",
+      "options": [
+        "check()",
+        "selectOption()",
+        "press()",
+        "click()",
+        "fill()"
+      ],
+      "answer": 4,
+      "explanation": "click()은 버튼에 포인터 클릭을 수행합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Input",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-input-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "입력창의 기존 값을 대체해 새 이메일을 넣는 메서드는?",
+      "options": [
+        "click()",
+        "fill()",
+        "check()",
+        "selectOption()",
+        "press()"
+      ],
+      "answer": 2,
+      "explanation": "fill()은 입력 필드의 값을 새 문자열로 채웁니다.",
+      "sources": [
+        {
+          "title": "Playwright — Input",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-input-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "현재 상태와 무관하게 동의 체크박스를 선택 상태로 만드는 메서드는?",
+      "options": [
+        "selectOption()",
+        "press()",
+        "click()",
+        "fill()",
+        "check()"
+      ],
+      "answer": 5,
+      "explanation": "check()는 체크박스 또는 라디오를 체크합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Input",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-input-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "네이티브 select에서 value가 kr인 옵션을 고르는 메서드는?",
+      "options": [
+        "fill()",
+        "check()",
+        "selectOption()",
+        "press()",
+        "click()"
+      ],
+      "answer": 3,
+      "explanation": "selectOption()은 select 요소의 옵션을 선택합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Input",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-input-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "검색창에 포커스를 주고 Enter 키를 보내는 메서드는?",
+      "options": [
+        "press()",
+        "click()",
+        "fill()",
+        "check()",
+        "selectOption()"
+      ],
+      "answer": 1,
+      "explanation": "press()는 대상 요소에 키 입력을 보냅니다.",
+      "sources": [
+        {
+          "title": "Playwright — Input",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-actionability-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "버튼이 display:none인 경우 충족하지 못하는 click 조건은?",
+      "options": [
+        "Receives Events",
+        "Enabled",
+        "Editable",
+        "Visible",
+        "Stable"
+      ],
+      "answer": 4,
+      "explanation": "Visible 검사는 대상이 사용자에게 보이는지 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Auto-waiting",
+          "url": "https://playwright.dev/docs/actionability"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-actionability-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "버튼이 이동 애니메이션 중이어서 클릭을 기다리는 조건은?",
+      "options": [
+        "Visible",
+        "Stable",
+        "Receives Events",
+        "Enabled",
+        "Editable"
+      ],
+      "answer": 2,
+      "explanation": "Stable은 대상이 움직이지 않는 상태인지 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Auto-waiting",
+          "url": "https://playwright.dev/docs/actionability"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-actionability-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "투명한 오버레이가 버튼의 클릭을 가로챌 때 실패하는 조건은?",
+      "options": [
+        "Enabled",
+        "Editable",
+        "Visible",
+        "Stable",
+        "Receives Events"
+      ],
+      "answer": 5,
+      "explanation": "Receives Events는 클릭 지점에서 대상이 실제로 이벤트를 받는지 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Auto-waiting",
+          "url": "https://playwright.dev/docs/actionability"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-actionability-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "disabled 버튼 클릭이 제한 시간까지 기다리는 이유인 조건은?",
+      "options": [
+        "Stable",
+        "Receives Events",
+        "Enabled",
+        "Editable",
+        "Visible"
+      ],
+      "answer": 3,
+      "explanation": "Enabled는 대상이 비활성화되지 않았는지 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Auto-waiting",
+          "url": "https://playwright.dev/docs/actionability"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-actionability-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "readonly input에 fill()하려 할 때 충족하지 못하는 조건은?",
+      "options": [
+        "Editable",
+        "Visible",
+        "Stable",
+        "Receives Events",
+        "Enabled"
+      ],
+      "answer": 1,
+      "explanation": "Editable은 입력할 수 있는 상태인지 확인합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Auto-waiting",
+          "url": "https://playwright.dev/docs/actionability"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-config-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "E2E 시작 전에 로컬 앱 서버를 띄우고 준비 상태를 확인하는 설정은?",
+      "options": [
+        "projects",
+        "retries",
+        "workers",
+        "webServer",
+        "baseURL"
+      ],
+      "answer": 4,
+      "explanation": "webServer는 테스트 전에 서버를 실행하고 지정 URL을 기다립니다.",
+      "sources": [
+        {
+          "title": "Playwright — Test configuration",
+          "url": "https://playwright.dev/docs/test-configuration"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-config-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "page.goto(\"/login\")에서 호스트 주소를 생략하게 하는 설정은?",
+      "options": [
+        "webServer",
+        "baseURL",
+        "projects",
+        "retries",
+        "workers"
+      ],
+      "answer": 2,
+      "explanation": "baseURL은 상대 경로의 기준 주소입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Test configuration",
+          "url": "https://playwright.dev/docs/test-configuration"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-config-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "같은 테스트를 Chromium과 Firefox 설정으로 각각 실행하는 구성은?",
+      "options": [
+        "retries",
+        "workers",
+        "webServer",
+        "baseURL",
+        "projects"
+      ],
+      "answer": 5,
+      "explanation": "projects는 서로 다른 실행 환경을 정의합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Test configuration",
+          "url": "https://playwright.dev/docs/test-configuration"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-config-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "실패한 테스트를 자동으로 다시 실행할 최대 횟수 설정은?",
+      "options": [
+        "baseURL",
+        "projects",
+        "retries",
+        "workers",
+        "webServer"
+      ],
+      "answer": 3,
+      "explanation": "retries는 실패 테스트의 재시도 횟수입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Test configuration",
+          "url": "https://playwright.dev/docs/test-configuration"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-config-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "한 머신에서 동시 실행할 worker 프로세스 수를 제한하는 설정은?",
+      "options": [
+        "workers",
+        "webServer",
+        "baseURL",
+        "projects",
+        "retries"
+      ],
+      "answer": 1,
+      "explanation": "workers는 병렬 프로세스 수를 제어합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Test configuration",
+          "url": "https://playwright.dev/docs/test-configuration"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-isolation-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "쿠키·localStorage를 서로 격리해 두 사용자 세션을 표현하는 단위는?",
+      "options": [
+        "storageState",
+        "browser.newContext()",
+        "context.close()",
+        "BrowserContext",
+        "Page"
+      ],
+      "answer": 4,
+      "explanation": "BrowserContext는 독립된 세션 저장소를 가진 브라우저 실행 문맥입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Browser contexts",
+          "url": "https://playwright.dev/docs/browser-contexts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-isolation-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "하나의 브라우저 탭을 나타내고 goto()를 호출할 수 있는 객체는?",
+      "options": [
+        "BrowserContext",
+        "Page",
+        "storageState",
+        "browser.newContext()",
+        "context.close()"
+      ],
+      "answer": 2,
+      "explanation": "Page는 개별 탭 또는 팝업을 나타냅니다.",
+      "sources": [
+        {
+          "title": "Playwright — Browser contexts",
+          "url": "https://playwright.dev/docs/browser-contexts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-isolation-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "별도 테스트 문맥에 쿠키·출처별 저장 상태를 불러오기 위한 데이터는?",
+      "options": [
+        "browser.newContext()",
+        "context.close()",
+        "BrowserContext",
+        "Page",
+        "storageState"
+      ],
+      "answer": 5,
+      "explanation": "storageState는 저장된 브라우저 인증 상태를 제공합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Browser contexts",
+          "url": "https://playwright.dev/docs/browser-contexts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-isolation-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "이미 실행 중인 browser에서 새 독립 세션을 만들 메서드는?",
+      "options": [
+        "Page",
+        "storageState",
+        "browser.newContext()",
+        "context.close()",
+        "BrowserContext"
+      ],
+      "answer": 3,
+      "explanation": "browser.newContext()는 새로운 격리 문맥을 생성합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Browser contexts",
+          "url": "https://playwright.dev/docs/browser-contexts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-isolation-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "테스트에서 직접 만든 세션을 사용 후 해제할 메서드는?",
+      "options": [
+        "context.close()",
+        "BrowserContext",
+        "Page",
+        "storageState",
+        "browser.newContext()"
+      ],
+      "answer": 1,
+      "explanation": "context.close()는 해당 브라우저 문맥과 페이지를 닫습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Browser contexts",
+          "url": "https://playwright.dev/docs/browser-contexts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-auth-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "여러 테스트 전에 한 번만 UI 로그인을 수행하려 한다. Playwright가 권장하는 준비 단계는?",
+      "options": [
+        "인증 파일을 .gitignore에 추가",
+        "쓰기 테스트마다 독립 계정",
+        "빈 storageState 사용",
+        "설정 프로젝트에서 로그인",
+        "저장된 storageState 재사용"
+      ],
+      "answer": 4,
+      "explanation": "설정 프로젝트가 인증을 수행하고 결과를 저장하도록 구성할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Authentication",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-auth-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "읽기 전용 화면 테스트들이 매번 로그인하지 않게 할 방법은?",
+      "options": [
+        "설정 프로젝트에서 로그인",
+        "저장된 storageState 재사용",
+        "인증 파일을 .gitignore에 추가",
+        "쓰기 테스트마다 독립 계정",
+        "빈 storageState 사용"
+      ],
+      "answer": 2,
+      "explanation": "저장된 storageState를 각 독립 테스트 문맥에 불러옵니다.",
+      "sources": [
+        {
+          "title": "Playwright — Authentication",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-auth-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "세션 쿠키가 담긴 인증 상태 파일의 저장소 노출을 막는 조치는?",
+      "options": [
+        "쓰기 테스트마다 독립 계정",
+        "빈 storageState 사용",
+        "설정 프로젝트에서 로그인",
+        "저장된 storageState 재사용",
+        "인증 파일을 .gitignore에 추가"
+      ],
+      "answer": 5,
+      "explanation": "인증 파일에는 계정 사칭에 쓸 수 있는 비밀 상태가 있어 Git에서 제외해야 합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Authentication",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-auth-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "병렬로 프로필을 수정하는 테스트가 같은 계정에서 충돌한다. 설계 변경은?",
+      "options": [
+        "저장된 storageState 재사용",
+        "인증 파일을 .gitignore에 추가",
+        "쓰기 테스트마다 독립 계정",
+        "빈 storageState 사용",
+        "설정 프로젝트에서 로그인"
+      ],
+      "answer": 3,
+      "explanation": "서버 측 상태를 바꾸는 테스트는 계정을 분리해야 합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Authentication",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-auth-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "전역 인증 설정이 있는 프로젝트에서 로그아웃 화면을 시험하려면?",
+      "options": [
+        "빈 storageState 사용",
+        "설정 프로젝트에서 로그인",
+        "저장된 storageState 재사용",
+        "인증 파일을 .gitignore에 추가",
+        "쓰기 테스트마다 독립 계정"
+      ],
+      "answer": 1,
+      "explanation": "빈 storageState를 지정해 그 테스트의 인증 상태를 지울 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Authentication",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-routing-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "가격 API를 실제 호출하지 않고 정해진 JSON으로 응답하려면?",
+      "options": [
+        "route.abort()",
+        "route.fetch()",
+        "routeFromHAR()",
+        "route.fulfill()",
+        "route.continue()"
+      ],
+      "answer": 4,
+      "explanation": "route.fulfill()은 가로챈 요청에 직접 응답합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Mock APIs",
+          "url": "https://playwright.dev/docs/mock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-routing-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "가로챈 요청의 헤더를 수정하고 실제 네트워크로 진행하려면?",
+      "options": [
+        "route.fulfill()",
+        "route.continue()",
+        "route.abort()",
+        "route.fetch()",
+        "routeFromHAR()"
+      ],
+      "answer": 2,
+      "explanation": "route.continue()는 수정한 요청을 계속 보냅니다.",
+      "sources": [
+        {
+          "title": "Playwright — Mock APIs",
+          "url": "https://playwright.dev/docs/mock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-routing-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "오프라인 오류 UI를 시험하려고 특정 요청을 중단하려면?",
+      "options": [
+        "route.fetch()",
+        "routeFromHAR()",
+        "route.fulfill()",
+        "route.continue()",
+        "route.abort()"
+      ],
+      "answer": 5,
+      "explanation": "route.abort()는 네트워크 요청을 실패 처리합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Mock APIs",
+          "url": "https://playwright.dev/docs/mock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-routing-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "실제 응답을 받아 일부 내용만 고쳐 반환하려면 원본을 어떤 API로 가져오는가?",
+      "options": [
+        "route.continue()",
+        "route.abort()",
+        "route.fetch()",
+        "routeFromHAR()",
+        "route.fulfill()"
+      ],
+      "answer": 3,
+      "explanation": "route.fetch()로 원래 응답을 가져와 수정할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Mock APIs",
+          "url": "https://playwright.dev/docs/mock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-routing-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "기록한 요청·응답 묶음을 HAR 파일에서 재생하려면?",
+      "options": [
+        "routeFromHAR()",
+        "route.fulfill()",
+        "route.continue()",
+        "route.abort()",
+        "route.fetch()"
+      ],
+      "answer": 1,
+      "explanation": "routeFromHAR()는 HAR에 기록된 교환을 사용합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Mock APIs",
+          "url": "https://playwright.dev/docs/mock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-trace-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "CI에서 실패한 클릭 전후 상태를 시각적으로 탐색하는 도구는?",
+      "options": [
+        "network tab",
+        "action timeline",
+        "trace.zip",
+        "trace viewer",
+        "DOM snapshot"
+      ],
+      "answer": 4,
+      "explanation": "trace viewer는 기록된 테스트 액션과 관련 자료를 보여줍니다.",
+      "sources": [
+        {
+          "title": "Playwright — Trace viewer",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-trace-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "클릭 당시 페이지의 DOM 구조를 복원해 확인하는 기록은?",
+      "options": [
+        "trace viewer",
+        "DOM snapshot",
+        "network tab",
+        "action timeline",
+        "trace.zip"
+      ],
+      "answer": 2,
+      "explanation": "DOM snapshot은 해당 시점의 문서 상태를 보여줍니다.",
+      "sources": [
+        {
+          "title": "Playwright — Trace viewer",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-trace-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "실패 직전 API 요청과 응답을 trace 화면에서 확인하는 영역은?",
+      "options": [
+        "action timeline",
+        "trace.zip",
+        "trace viewer",
+        "DOM snapshot",
+        "network tab"
+      ],
+      "answer": 5,
+      "explanation": "network tab은 기록된 네트워크 교환을 보여줍니다.",
+      "sources": [
+        {
+          "title": "Playwright — Trace viewer",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-trace-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "어느 단계에서 버튼이 가려졌는지 시간순으로 추적할 때 보는 축은?",
+      "options": [
+        "DOM snapshot",
+        "network tab",
+        "action timeline",
+        "trace.zip",
+        "trace viewer"
+      ],
+      "answer": 3,
+      "explanation": "action timeline에서 각 단계와 그 시점의 화면을 비교할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Trace viewer",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-trace-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "CI에서 생성된 trace를 공유할 때 주로 다루는 아카이브 파일은?",
+      "options": [
+        "trace.zip",
+        "trace viewer",
+        "DOM snapshot",
+        "network tab",
+        "action timeline"
+      ],
+      "answer": 1,
+      "explanation": "trace.zip에는 viewer가 읽을 액션·DOM·네트워크 자료가 들어갑니다.",
+      "sources": [
+        {
+          "title": "Playwright — Trace viewer",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-timeouts-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "한 테스트 전체 실행에 허용되는 최대 시간을 조정하려 한다. 대상은?",
+      "options": [
+        "action timeout",
+        "navigation timeout",
+        "test.slow()",
+        "test timeout",
+        "expect timeout"
+      ],
+      "answer": 4,
+      "explanation": "test timeout은 테스트 본문과 관련 훅의 실행 제한입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Timeouts",
+          "url": "https://playwright.dev/docs/test-timeouts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-timeouts-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "toHaveText의 자동 재시도 제한만 늘리려 한다. 대상은?",
+      "options": [
+        "test timeout",
+        "expect timeout",
+        "action timeout",
+        "navigation timeout",
+        "test.slow()"
+      ],
+      "answer": 2,
+      "explanation": "expect timeout은 비동기 assertion이 재시도하는 시간입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Timeouts",
+          "url": "https://playwright.dev/docs/test-timeouts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-timeouts-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "클릭 대상이 활성화되기를 기다리는 개별 작업의 한도는?",
+      "options": [
+        "navigation timeout",
+        "test.slow()",
+        "test timeout",
+        "expect timeout",
+        "action timeout"
+      ],
+      "answer": 5,
+      "explanation": "action timeout은 click 같은 동작에 적용됩니다.",
+      "sources": [
+        {
+          "title": "Playwright — Timeouts",
+          "url": "https://playwright.dev/docs/test-timeouts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-timeouts-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "페이지 이동을 기다리는 작업의 한도를 별도로 바꾸려 한다. 대상은?",
+      "options": [
+        "expect timeout",
+        "action timeout",
+        "navigation timeout",
+        "test.slow()",
+        "test timeout"
+      ],
+      "answer": 3,
+      "explanation": "navigation timeout은 탐색 작업에 적용됩니다.",
+      "sources": [
+        {
+          "title": "Playwright — Timeouts",
+          "url": "https://playwright.dev/docs/test-timeouts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-timeouts-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "의도적으로 오래 걸리는 특정 테스트의 허용 시간을 간단히 늘리는 호출은?",
+      "options": [
+        "test.slow()",
+        "test timeout",
+        "expect timeout",
+        "action timeout",
+        "navigation timeout"
+      ],
+      "answer": 1,
+      "explanation": "test.slow()는 현재 테스트를 느린 테스트로 표시해 제한을 늘립니다.",
+      "sources": [
+        {
+          "title": "Playwright — Timeouts",
+          "url": "https://playwright.dev/docs/test-timeouts"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locator-design-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "텍스트가 같은 버튼 둘 중 접근 가능한 이름이 “저장”인 버튼만 지정한다. 가장 의미 있는 기준은?",
+      "options": [
+        "locator.nth(0)",
+        "getByTestId",
+        "frameLocator",
+        "getByRole의 name 옵션",
+        "locator.filter({ hasText })"
+      ],
+      "answer": 4,
+      "explanation": "getByRole의 name 옵션은 역할과 접근 가능한 이름을 함께 지정합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locator-design-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "상품 카드 목록에서 “연필”을 포함한 카드 내부의 구매 버튼을 찾는다. 카드 locator를 좁힐 방법은?",
+      "options": [
+        "getByRole의 name 옵션",
+        "locator.filter({ hasText })",
+        "locator.nth(0)",
+        "getByTestId",
+        "frameLocator"
+      ],
+      "answer": 2,
+      "explanation": "filter({ hasText })로 특정 카드만 남긴 뒤 내부 버튼을 찾을 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locator-design-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "고정된 순서가 명세인 첫 번째 항목만 골라야 한다. locator 집합에서 사용할 API는?",
+      "options": [
+        "getByTestId",
+        "frameLocator",
+        "getByRole의 name 옵션",
+        "locator.filter({ hasText })",
+        "locator.nth(0)"
+      ],
+      "answer": 5,
+      "explanation": "nth(0)은 첫 번째 매칭 요소를 고르지만 순서가 계약인지 확인해야 합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locator-design-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "캔버스처럼 사용자 의미로 찾기 어려운 내부 표시를 명시적 테스트 계약으로 고른다. 기준은?",
+      "options": [
+        "locator.filter({ hasText })",
+        "locator.nth(0)",
+        "getByTestId",
+        "frameLocator",
+        "getByRole의 name 옵션"
+      ],
+      "answer": 3,
+      "explanation": "getByTestId는 test id가 제공된 경우 안정적인 계약을 사용할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-locator-design-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "결제 폼이 iframe 안에 들어 있다. 내부 입력창을 찾기 위해 먼저 사용할 locator는?",
+      "options": [
+        "frameLocator",
+        "getByRole의 name 옵션",
+        "locator.filter({ hasText })",
+        "locator.nth(0)",
+        "getByTestId"
+      ],
+      "answer": 1,
+      "explanation": "frameLocator로 iframe 내부 문맥을 지정합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Locators",
+          "url": "https://playwright.dev/docs/locators"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertion-strategy-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "비동기 렌더링 뒤 텍스트가 바뀌는 UI를 검증한다. 가장 직접적인 전략은?",
+      "options": [
+        "expect.poll",
+        "expect.toPass",
+        "waitForTimeout",
+        "자동 재시도 locator assertion",
+        "즉시 실행하는 일반 expect"
+      ],
+      "answer": 4,
+      "explanation": "toHaveText 같은 locator assertion은 상태가 될 때까지 재시도합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertion-strategy-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "이미 계산이 끝난 동기식 순수 숫자 두 개를 비교한다. 적절한 방식은?",
+      "options": [
+        "자동 재시도 locator assertion",
+        "즉시 실행하는 일반 expect",
+        "expect.poll",
+        "expect.toPass",
+        "waitForTimeout"
+      ],
+      "answer": 2,
+      "explanation": "일반 expect는 즉시 값을 비교하며 비동기 대기가 필요 없는 값에 맞습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertion-strategy-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "브라우저 외부의 API 상태를 반복 조회해 기대값이 되는지 확인하려 한다. 적합한 도구는?",
+      "options": [
+        "expect.toPass",
+        "waitForTimeout",
+        "자동 재시도 locator assertion",
+        "즉시 실행하는 일반 expect",
+        "expect.poll"
+      ],
+      "answer": 5,
+      "explanation": "expect.poll은 함수를 반복 실행해 비동기 상태를 검사합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertion-strategy-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "여러 assertion을 하나의 블록으로 반복 시도해야 한다. 해당 기능은?",
+      "options": [
+        "즉시 실행하는 일반 expect",
+        "expect.poll",
+        "expect.toPass",
+        "waitForTimeout",
+        "자동 재시도 locator assertion"
+      ],
+      "answer": 3,
+      "explanation": "expect.toPass는 블록 전체를 재시도할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-assertion-strategy-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "불가피하게 일정 시간을 기다려야 하지만 상태를 검사하지 않는다. 해당 API는?",
+      "options": [
+        "waitForTimeout",
+        "자동 재시도 locator assertion",
+        "즉시 실행하는 일반 expect",
+        "expect.poll",
+        "expect.toPass"
+      ],
+      "answer": 1,
+      "explanation": "waitForTimeout은 고정 지연입니다. 상태 기반 대기가 가능하면 그쪽이 더 안정적입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Assertions",
+          "url": "https://playwright.dev/docs/test-assertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-visual-baseline-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "색·간격·배치가 기준 이미지와 달라졌는지 자동 검사할 matcher는?",
+      "options": [
+        "maxDiffPixels",
+        "mask 옵션",
+        "요소 locator 스크린샷",
+        "toHaveScreenshot()",
+        "기준 이미지 업데이트"
+      ],
+      "answer": 4,
+      "explanation": "toHaveScreenshot()은 현재 렌더링을 저장된 기준 이미지와 비교합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Visual comparisons",
+          "url": "https://playwright.dev/docs/test-snapshots"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-visual-baseline-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "승인한 디자인 변경을 새로운 시각 비교 기준에 반영할 작업은?",
+      "options": [
+        "toHaveScreenshot()",
+        "기준 이미지 업데이트",
+        "maxDiffPixels",
+        "mask 옵션",
+        "요소 locator 스크린샷"
+      ],
+      "answer": 2,
+      "explanation": "기준 이미지 업데이트는 이후 비교의 기준을 새 결과로 바꿉니다.",
+      "sources": [
+        {
+          "title": "Playwright — Visual comparisons",
+          "url": "https://playwright.dev/docs/test-snapshots"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-visual-baseline-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "몇 개 픽셀의 차이까지 허용할지 정량적으로 설정하는 옵션은?",
+      "options": [
+        "mask 옵션",
+        "요소 locator 스크린샷",
+        "toHaveScreenshot()",
+        "기준 이미지 업데이트",
+        "maxDiffPixels"
+      ],
+      "answer": 5,
+      "explanation": "maxDiffPixels는 허용할 다른 픽셀 수를 정합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Visual comparisons",
+          "url": "https://playwright.dev/docs/test-snapshots"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-visual-baseline-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "매 실행 다른 사용자 아바타 영역을 비교에서 가리고 싶다. 사용할 옵션은?",
+      "options": [
+        "기준 이미지 업데이트",
+        "maxDiffPixels",
+        "mask 옵션",
+        "요소 locator 스크린샷",
+        "toHaveScreenshot()"
+      ],
+      "answer": 3,
+      "explanation": "mask 옵션으로 동적인 영역을 가려 비교할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — LocatorAssertions.toHaveScreenshot",
+          "url": "https://playwright.dev/docs/api/class-locatorassertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-visual-baseline-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "페이지 전체가 아닌 카드 하나의 외형만 기준과 비교하고 싶다. 비교 대상은?",
+      "options": [
+        "요소 locator 스크린샷",
+        "toHaveScreenshot()",
+        "기준 이미지 업데이트",
+        "maxDiffPixels",
+        "mask 옵션"
+      ],
+      "answer": 1,
+      "explanation": "요소 locator에 toHaveScreenshot()을 적용하면 해당 요소만 비교할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — LocatorAssertions.toHaveScreenshot",
+          "url": "https://playwright.dev/docs/api/class-locatorassertions"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-parallel-work-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "병렬 테스트 둘이 같은 주문을 삭제해 충돌한다. 데이터 측면의 해결책은?",
+      "options": [
+        "fullyParallel",
+        "workers: 1",
+        "실패 후 새 worker",
+        "독립 테스트 데이터",
+        "worker 프로세스"
+      ],
+      "answer": 4,
+      "explanation": "각 테스트가 별도 주문 등 독립 데이터를 사용해야 서로 간섭하지 않습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Parallelism",
+          "url": "https://playwright.dev/docs/test-parallel"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-parallel-work-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "Playwright가 병렬 실행을 위해 띄우는 격리된 OS 실행 단위는?",
+      "options": [
+        "독립 테스트 데이터",
+        "worker 프로세스",
+        "fullyParallel",
+        "workers: 1",
+        "실패 후 새 worker"
+      ],
+      "answer": 2,
+      "explanation": "worker는 독립 프로세스로 테스트를 실행합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Parallelism",
+          "url": "https://playwright.dev/docs/test-parallel"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-parallel-work-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "한 파일 안의 테스트도 별도 worker에서 병렬화하려는 프로젝트 설정은?",
+      "options": [
+        "workers: 1",
+        "실패 후 새 worker",
+        "독립 테스트 데이터",
+        "worker 프로세스",
+        "fullyParallel"
+      ],
+      "answer": 5,
+      "explanation": "fullyParallel을 사용하면 단일 파일 내 테스트도 병렬 실행할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Parallelism",
+          "url": "https://playwright.dev/docs/test-parallel"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-parallel-work-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "전역 병렬 실행을 잠시 끄고 원인을 조사한다. 설정은?",
+      "options": [
+        "worker 프로세스",
+        "fullyParallel",
+        "workers: 1",
+        "실패 후 새 worker",
+        "독립 테스트 데이터"
+      ],
+      "answer": 3,
+      "explanation": "workers: 1은 동시에 실행하는 worker를 하나로 제한합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Parallelism",
+          "url": "https://playwright.dev/docs/test-parallel"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-parallel-work-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "테스트 실패 뒤 다음 테스트에 깨끗한 환경을 주는 Playwright 동작은?",
+      "options": [
+        "실패 후 새 worker",
+        "독립 테스트 데이터",
+        "worker 프로세스",
+        "fullyParallel",
+        "workers: 1"
+      ],
+      "answer": 1,
+      "explanation": "Playwright는 실패 후 worker를 종료하고 새 worker에서 후속 테스트를 실행합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Parallelism",
+          "url": "https://playwright.dev/docs/test-parallel"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-api-state-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "브라우저 없이 HTTP API로 E2E의 서버 전제 데이터를 준비할 때 쓰는 객체는?",
+      "options": [
+        "request.post()",
+        "response.status()",
+        "response.json()",
+        "APIRequestContext",
+        "request.get()"
+      ],
+      "answer": 4,
+      "explanation": "APIRequestContext는 서버에 HTTP 요청을 직접 보낼 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — API testing",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-api-state-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "댓글 삭제 후 댓글 목록 API를 조회해 사후 상태를 확인할 메서드는?",
+      "options": [
+        "APIRequestContext",
+        "request.get()",
+        "request.post()",
+        "response.status()",
+        "response.json()"
+      ],
+      "answer": 2,
+      "explanation": "request.get()은 HTTP GET 요청을 보냅니다.",
+      "sources": [
+        {
+          "title": "Playwright — API testing",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-api-state-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "상품 페이지 검증 전 테스트 상품을 API로 생성할 메서드는?",
+      "options": [
+        "response.status()",
+        "response.json()",
+        "APIRequestContext",
+        "request.get()",
+        "request.post()"
+      ],
+      "answer": 5,
+      "explanation": "request.post()로 HTTP POST 요청을 보낼 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — API testing",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-api-state-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "API 응답이 201인지 정수 상태 코드를 읽어 검사하려 한다. 호출할 메서드는?",
+      "options": [
+        "request.get()",
+        "request.post()",
+        "response.status()",
+        "response.json()",
+        "APIRequestContext"
+      ],
+      "answer": 3,
+      "explanation": "response.status()는 HTTP 응답 상태 코드를 반환합니다.",
+      "sources": [
+        {
+          "title": "Playwright — API testing",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-api-state-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "API가 반환한 JSON 본문에서 새 주문 ID를 읽으려 한다. 호출할 메서드는?",
+      "options": [
+        "response.json()",
+        "APIRequestContext",
+        "request.get()",
+        "request.post()",
+        "response.status()"
+      ],
+      "answer": 1,
+      "explanation": "response.json()은 응답 본문을 JSON으로 파싱합니다.",
+      "sources": [
+        {
+          "title": "Playwright — API testing",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-clock-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "앱이 타이머를 등록하기 전에 브라우저의 시간 관련 API를 가상 시계로 교체할 초기 호출은?",
+      "options": [
+        "clock.fastForward()",
+        "clock.runFor()",
+        "clock.resume()",
+        "clock.install()",
+        "clock.setFixedTime()"
+      ],
+      "answer": 4,
+      "explanation": "clock.install()은 시간·타이머 API 제어를 준비하며 관련 호출 전에 실행해야 합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Clock",
+          "url": "https://playwright.dev/docs/clock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-clock-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "타이머는 자연스럽게 흐르게 두고 Date.now()의 기준 날짜만 고정하려 한다. 쓸 메서드는?",
+      "options": [
+        "clock.install()",
+        "clock.setFixedTime()",
+        "clock.fastForward()",
+        "clock.runFor()",
+        "clock.resume()"
+      ],
+      "answer": 2,
+      "explanation": "clock.setFixedTime()은 현재 날짜를 고정하되 타이머의 자연스러운 진행은 유지합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Clock",
+          "url": "https://playwright.dev/docs/clock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-clock-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "유휴 20분 만료를 실제 대기 없이 앞당기되 그 사이의 반복 타이머를 전부 실행할 필요는 없다. 쓸 메서드는?",
+      "options": [
+        "clock.runFor()",
+        "clock.resume()",
+        "clock.install()",
+        "clock.setFixedTime()",
+        "clock.fastForward()"
+      ],
+      "answer": 5,
+      "explanation": "clock.fastForward()는 시간을 건너뛰며 도래한 타이머를 한 번 즉시 실행하는 방식입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Clock",
+          "url": "https://playwright.dev/docs/clock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-clock-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "1초마다 바뀌는 카운트다운을 각 타이머 실행까지 포함해 5초 진행하려 한다. 쓸 메서드는?",
+      "options": [
+        "clock.setFixedTime()",
+        "clock.fastForward()",
+        "clock.runFor()",
+        "clock.resume()",
+        "clock.install()"
+      ],
+      "answer": 3,
+      "explanation": "clock.runFor()는 지정 시간 동안 발생하는 타이머를 순서대로 실행합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Clock",
+          "url": "https://playwright.dev/docs/clock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-clock-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "가상 시간을 일시 정지했다가 이후 실제 시간 흐름을 다시 허용하려 한다. 쓸 메서드는?",
+      "options": [
+        "clock.resume()",
+        "clock.install()",
+        "clock.setFixedTime()",
+        "clock.fastForward()",
+        "clock.runFor()"
+      ],
+      "answer": 1,
+      "explanation": "clock.resume()은 멈춘 시계를 다시 진행시킵니다.",
+      "sources": [
+        {
+          "title": "Playwright — Clock",
+          "url": "https://playwright.dev/docs/clock"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-sharding-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "CI 네 대에서 시험을 나눌 때 첫 머신이 수행할 조각을 지정하는 옵션은?",
+      "options": [
+        "blob reporter",
+        "merge-reports",
+        "파일 단위 샤딩",
+        "--shard=1/4",
+        "fullyParallel: true"
+      ],
+      "answer": 4,
+      "explanation": "--shard=1/4는 전체 네 조각 중 첫 번째만 실행합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Sharding",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-sharding-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "샤드 간 개별 테스트 단위로 더 고르게 배분하려는 설정은?",
+      "options": [
+        "--shard=1/4",
+        "fullyParallel: true",
+        "blob reporter",
+        "merge-reports",
+        "파일 단위 샤딩"
+      ],
+      "answer": 2,
+      "explanation": "fullyParallel을 켜면 샤딩이 테스트 단위까지 세분화됩니다.",
+      "sources": [
+        {
+          "title": "Playwright — Sharding",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-sharding-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "샤드별 결과를 나중에 합치기 위해 CI에서 저장할 보고 형식은?",
+      "options": [
+        "merge-reports",
+        "파일 단위 샤딩",
+        "--shard=1/4",
+        "fullyParallel: true",
+        "blob reporter"
+      ],
+      "answer": 5,
+      "explanation": "blob reporter는 샤드 결과 병합에 사용할 보고 파일을 생성합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Sharding",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-sharding-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "서로 다른 샤드의 blob 결과를 한 리포트로 합치는 Playwright 명령은?",
+      "options": [
+        "fullyParallel: true",
+        "blob reporter",
+        "merge-reports",
+        "파일 단위 샤딩",
+        "--shard=1/4"
+      ],
+      "answer": 3,
+      "explanation": "merge-reports 명령은 수집한 blob 보고서를 결합합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Sharding",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-sharding-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "fullyParallel이 꺼졌을 때 기본적인 샤딩 분배 단위는?",
+      "options": [
+        "파일 단위 샤딩",
+        "--shard=1/4",
+        "fullyParallel: true",
+        "blob reporter",
+        "merge-reports"
+      ],
+      "answer": 1,
+      "explanation": "fullyParallel이 없으면 샤딩은 테스트 파일 단위로 이루어집니다.",
+      "sources": [
+        {
+          "title": "Playwright — Sharding",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-event-flow-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "현재 페이지의 버튼이 새 팝업을 연다. 클릭 전에 그 페이지가 생성할 팝업만 기다리려면?",
+      "options": [
+        "page.waitForEvent('download')",
+        "page.waitForResponse()",
+        "page.frameLocator()",
+        "page.waitForEvent('popup')",
+        "context.waitForEvent('page')"
+      ],
+      "answer": 4,
+      "explanation": "page.waitForEvent('popup')을 클릭 전에 등록하면 해당 페이지에서 연 팝업을 포착합니다.",
+      "sources": [
+        {
+          "title": "Playwright — E2E events and frames",
+          "url": "https://playwright.dev/docs/pages"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-event-flow-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "보고서 버튼 클릭 직후 파일 다운로드가 시작된다. 이벤트를 놓치지 않고 Download 객체를 받으려면?",
+      "options": [
+        "page.waitForEvent('popup')",
+        "page.waitForEvent('download')",
+        "page.waitForResponse()",
+        "page.frameLocator()",
+        "context.waitForEvent('page')"
+      ],
+      "answer": 2,
+      "explanation": "page.waitForEvent('download')를 클릭 전에 등록해 다운로드 시작을 기다립니다.",
+      "sources": [
+        {
+          "title": "Playwright — E2E events and frames",
+          "url": "https://playwright.dev/docs/downloads"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-event-flow-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "저장 버튼이 보내는 POST 응답의 상태를 확인하려 한다. 클릭 전에 시작할 대기는?",
+      "options": [
+        "page.waitForEvent('popup')",
+        "page.waitForEvent('download')",
+        "page.frameLocator()",
+        "context.waitForEvent('page')",
+        "page.waitForResponse()"
+      ],
+      "answer": 5,
+      "explanation": "page.waitForResponse()에 요청 조건을 지정하고 클릭 전에 등록하면 빠른 응답도 포착합니다.",
+      "sources": [
+        {
+          "title": "Playwright — E2E events and frames",
+          "url": "https://playwright.dev/docs/network"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-event-flow-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "결제 위젯이 iframe 내부에 렌더된다. 그 안의 버튼을 찾는 시작 locator는?",
+      "options": [
+        "page.waitForEvent('popup')",
+        "page.waitForEvent('download')",
+        "page.frameLocator()",
+        "page.waitForResponse()",
+        "context.waitForEvent('page')"
+      ],
+      "answer": 3,
+      "explanation": "page.frameLocator()로 해당 iframe을 지정한 뒤 내부 요소를 찾습니다.",
+      "sources": [
+        {
+          "title": "Playwright — E2E events and frames",
+          "url": "https://playwright.dev/docs/frames"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-event-flow-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "어떤 탭이 열릴지 트리거한 부모 page를 모른다. 컨텍스트에서 새 페이지 이벤트를 기다리려면?",
+      "options": [
+        "context.waitForEvent('page')",
+        "page.waitForEvent('popup')",
+        "page.waitForEvent('download')",
+        "page.waitForResponse()",
+        "page.frameLocator()"
+      ],
+      "answer": 1,
+      "explanation": "context.waitForEvent('page')는 그 컨텍스트에서 생성되는 새 페이지를 포착합니다.",
+      "sources": [
+        {
+          "title": "Playwright — E2E events and frames",
+          "url": "https://playwright.dev/docs/pages"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-retry-result-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "테스트가 첫 실행에 성공했다. Playwright가 분류하는 상태는?",
+      "options": [
+        "failed",
+        "retries: 0",
+        "새 worker에서 재시도",
+        "passed",
+        "flaky"
+      ],
+      "answer": 4,
+      "explanation": "첫 시도에 통과한 테스트는 passed입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Retries",
+          "url": "https://playwright.dev/docs/test-retries"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-retry-result-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "첫 실행은 실패했지만 한 번 재시도해 성공했다. 분류 상태는?",
+      "options": [
+        "passed",
+        "flaky",
+        "failed",
+        "retries: 0",
+        "새 worker에서 재시도"
+      ],
+      "answer": 2,
+      "explanation": "재시도에서만 성공한 테스트는 flaky로 분류됩니다.",
+      "sources": [
+        {
+          "title": "Playwright — Retries",
+          "url": "https://playwright.dev/docs/test-retries"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-retry-result-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "초기 실행과 허용된 모든 재시도가 실패했다. 분류 상태는?",
+      "options": [
+        "retries: 0",
+        "새 worker에서 재시도",
+        "passed",
+        "flaky",
+        "failed"
+      ],
+      "answer": 5,
+      "explanation": "모든 시도가 실패하면 failed입니다.",
+      "sources": [
+        {
+          "title": "Playwright — Retries",
+          "url": "https://playwright.dev/docs/test-retries"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-retry-result-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "간헐 실패 원인 조사 중 재시도에 가려지지 않도록 기본 동작을 명시하려 한다. 설정은?",
+      "options": [
+        "flaky",
+        "failed",
+        "retries: 0",
+        "새 worker에서 재시도",
+        "passed"
+      ],
+      "answer": 3,
+      "explanation": "retries: 0이면 실패한 테스트를 다시 시도하지 않습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Retries",
+          "url": "https://playwright.dev/docs/test-retries"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-retry-result-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "이전 실패가 남긴 테스트 프로세스 상태를 재시도에 섞지 않는 Playwright 동작은?",
+      "options": [
+        "새 worker에서 재시도",
+        "passed",
+        "flaky",
+        "failed",
+        "retries: 0"
+      ],
+      "answer": 1,
+      "explanation": "실패한 worker는 종료되고 테스트는 새 worker에서 재시도됩니다.",
+      "sources": [
+        {
+          "title": "Playwright — Retries",
+          "url": "https://playwright.dev/docs/test-retries"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-project-matrix-1",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "같은 스펙을 Chromium과 Firefox에 실행하되 테스트 본문은 복제하지 않는다. 지정할 속성은?",
+      "options": [
+        "프로젝트 dependency",
+        "프로젝트별 use 설정",
+        "--project 필터",
+        "프로젝트별 browserName",
+        "devices 프리셋"
+      ],
+      "answer": 4,
+      "explanation": "각 프로젝트의 browserName으로 브라우저를 구분할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Projects",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-project-matrix-2",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "모바일 기기의 viewport와 user agent 설정을 묶어 적용하려 한다. 사용할 구성은?",
+      "options": [
+        "프로젝트별 browserName",
+        "devices 프리셋",
+        "프로젝트 dependency",
+        "프로젝트별 use 설정",
+        "--project 필터"
+      ],
+      "answer": 2,
+      "explanation": "devices 프리셋은 기기별 브라우저 설정 묶음을 제공합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Projects",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-project-matrix-3",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "인증 setup 프로젝트가 끝난 뒤에만 앱 스펙 프로젝트를 실행하게 한다. 관계 설정은?",
+      "options": [
+        "프로젝트별 use 설정",
+        "--project 필터",
+        "프로젝트별 browserName",
+        "devices 프리셋",
+        "프로젝트 dependency"
+      ],
+      "answer": 5,
+      "explanation": "프로젝트 dependency는 선행 프로젝트의 실행을 요구합니다.",
+      "sources": [
+        {
+          "title": "Playwright — Projects",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-project-matrix-4",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "서로 다른 프로젝트에 다른 locale과 storageState를 지정하려 한다. 어디에 둘까?",
+      "options": [
+        "devices 프리셋",
+        "프로젝트 dependency",
+        "프로젝트별 use 설정",
+        "--project 필터",
+        "프로젝트별 browserName"
+      ],
+      "answer": 3,
+      "explanation": "프로젝트별 use 설정이 해당 환경의 옵션을 담습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Projects",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    },
+    {
+      "id": "e2e-testing-project-matrix-5",
+      "category": "E2E Testing",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "여러 프로젝트 중 WebKit 프로젝트만 CLI에서 실행하려 한다. 사용할 선택 옵션은?",
+      "options": [
+        "--project 필터",
+        "프로젝트별 browserName",
+        "devices 프리셋",
+        "프로젝트 dependency",
+        "프로젝트별 use 설정"
+      ],
+      "answer": 1,
+      "explanation": "--project 필터로 이름이 지정된 프로젝트만 실행할 수 있습니다.",
+      "sources": [
+        {
+          "title": "Playwright — Projects",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    }
+  ]
+}

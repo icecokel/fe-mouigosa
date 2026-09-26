@@ -47,7 +47,7 @@ export function compileQuestions(entries) {
     if (!validateCategory(data)) {
       throw new Error(`${filename}: ${ajv.errorsText(validateCategory.errors, { separator: "; " })}`);
     }
-    const expected = `${data.category.toLowerCase().replaceAll(" ", "-")}.json`;
+    const expected = `${data.category.toLowerCase().replaceAll(".", "").replaceAll(/[^a-z0-9]+/g, "-")}.json`;
     if (filename !== expected) throw new Error(`${filename}: 카테고리 파일명은 ${expected}이어야 합니다.`);
     for (const question of data.questions) {
       if (bank.has(question.id)) throw new Error(`${filename}: 중복 ID ${question.id}`);

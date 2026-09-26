@@ -20,7 +20,7 @@ try {
   for (const category of schema.properties.category.enum) {
     if (!questions.some((question) => question.category === category)) throw new Error(`${category} 문제은행이 누락됐습니다.`);
   }
-  const exam = createExam(questions); // 모든 영역을 포함하는 100점 조합을 빌드 전에 확인한다.
+  const exam = createExam(questions); // 출제 가능한 100점 조합을 빌드 전에 확인한다.
   console.table(entries.map(({ data }) => ({
     category: data.category,
     count: data.questions.length,

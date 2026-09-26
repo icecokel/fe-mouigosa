@@ -1,0 +1,2825 @@
+{
+  "category": "AI Concepts",
+  "questions": [
+    {
+      "id": "ai-concepts-001",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "언어 모델이 다음 단위를 예측할 때 사용하는 텍스트의 기본 단위는 무엇인가?",
+      "options": [
+        "토큰",
+        "토큰화",
+        "임베딩",
+        "컨텍스트 창",
+        "추론"
+      ],
+      "answer": 1,
+      "explanation": "정답은 토큰입니다. 토큰은 단어·하위 단어·문자 등이 될 수 있는 예측 단위다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-002",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "입력 문자열을 모델이 처리할 작은 단위로 나누는 과정은 무엇인가?",
+      "options": [
+        "토큰",
+        "토큰화",
+        "임베딩",
+        "컨텍스트 창",
+        "추론"
+      ],
+      "answer": 2,
+      "explanation": "정답은 토큰화입니다. 토큰화는 텍스트를 토큰 시퀀스로 바꾸는 과정이다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-003",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "단어나 문서를 의미를 비교할 수 있는 수치 벡터로 표현한 것은 무엇인가?",
+      "options": [
+        "토큰",
+        "토큰화",
+        "임베딩",
+        "컨텍스트 창",
+        "추론"
+      ],
+      "answer": 3,
+      "explanation": "정답은 임베딩입니다. 임베딩은 입력을 수치 벡터 공간에 나타낸 표현이다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-004",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "한 번의 요청에서 모델이 참고할 수 있는 입력과 출력의 토큰 범위를 가리키는 말은?",
+      "options": [
+        "토큰",
+        "토큰화",
+        "임베딩",
+        "컨텍스트 창",
+        "추론"
+      ],
+      "answer": 4,
+      "explanation": "정답은 컨텍스트 창입니다. 컨텍스트 창은 모델이 한 번에 다룰 수 있는 문맥의 범위다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-005",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "학습을 끝낸 모델에 새 입력을 주고 예측 또는 출력을 얻는 단계는 무엇인가?",
+      "options": [
+        "토큰",
+        "토큰화",
+        "임베딩",
+        "컨텍스트 창",
+        "추론"
+      ],
+      "answer": 5,
+      "explanation": "정답은 추론입니다. 추론은 학습된 모델을 사용해 새 입력에 대한 출력을 계산한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-006",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "정답 레이블이 있는 예시로 입력과 정답의 관계를 학습하는 방식은?",
+      "options": [
+        "지도학습",
+        "비지도학습",
+        "분류",
+        "회귀",
+        "군집화"
+      ],
+      "answer": 1,
+      "explanation": "정답은 지도학습입니다. 지도학습은 레이블이 주어진 데이터로 예측 관계를 학습한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-007",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "정답 레이블 없이 데이터의 구조나 패턴을 찾는 학습 방식은?",
+      "options": [
+        "지도학습",
+        "비지도학습",
+        "분류",
+        "회귀",
+        "군집화"
+      ],
+      "answer": 2,
+      "explanation": "정답은 비지도학습입니다. 비지도학습은 정답 레이블을 직접 제공하지 않는다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-008",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "이메일을 '스팸'과 '정상' 중 하나로 예측하는 과제는?",
+      "options": [
+        "지도학습",
+        "비지도학습",
+        "분류",
+        "회귀",
+        "군집화"
+      ],
+      "answer": 3,
+      "explanation": "정답은 분류입니다. 분류는 입력을 이산적인 범주로 예측한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-009",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "집의 면적을 바탕으로 연속적인 가격을 예측하는 과제는?",
+      "options": [
+        "지도학습",
+        "비지도학습",
+        "분류",
+        "회귀",
+        "군집화"
+      ],
+      "answer": 4,
+      "explanation": "정답은 회귀입니다. 회귀는 연속적인 수치를 예측한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-010",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "정답 그룹 이름을 주지 않고 유사한 고객들을 묶는 작업은?",
+      "options": [
+        "지도학습",
+        "비지도학습",
+        "분류",
+        "회귀",
+        "군집화"
+      ],
+      "answer": 5,
+      "explanation": "정답은 군집화입니다. 군집화는 유사한 예시들을 그룹으로 묶는다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-011",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "문맥 속 토큰 또는 토큰 시퀀스의 가능성을 모델링하는 것은?",
+      "options": [
+        "언어 모델",
+        "자기회귀",
+        "자기주의",
+        "위치 인코딩",
+        "파인튜닝"
+      ],
+      "answer": 1,
+      "explanation": "정답은 언어 모델입니다. 언어 모델은 주어진 문맥에서 토큰 시퀀스의 확률을 다룬다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — Transformers",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm/transformers"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-012",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "앞서 생성한 토큰을 다시 문맥에 넣어 다음 토큰을 이어 만드는 방식은?",
+      "options": [
+        "언어 모델",
+        "자기회귀",
+        "자기주의",
+        "위치 인코딩",
+        "파인튜닝"
+      ],
+      "answer": 2,
+      "explanation": "정답은 자기회귀입니다. 자기회귀 생성은 이전 출력을 조건으로 다음 출력을 예측한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — Transformers",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm/transformers"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-013",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "문장 안 각 토큰이 다른 토큰과의 관련성을 가중해 살피는 메커니즘은?",
+      "options": [
+        "언어 모델",
+        "자기회귀",
+        "자기주의",
+        "위치 인코딩",
+        "파인튜닝"
+      ],
+      "answer": 3,
+      "explanation": "정답은 자기주의입니다. 자기주의는 시퀀스 내부 토큰 사이의 관계에 가중치를 둔다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — Transformers",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm/transformers"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-014",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "토큰 순서 정보를 표현에 보태는 트랜스포머 구성 요소는?",
+      "options": [
+        "언어 모델",
+        "자기회귀",
+        "자기주의",
+        "위치 인코딩",
+        "파인튜닝"
+      ],
+      "answer": 4,
+      "explanation": "정답은 위치 인코딩입니다. 위치 인코딩은 시퀀스에서 토큰의 위치 정보를 제공한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — Transformers",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm/transformers"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-015",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "사전 학습된 모델의 가중치를 특정 데이터나 작업에 맞게 추가 학습하는 것은?",
+      "options": [
+        "언어 모델",
+        "자기회귀",
+        "자기주의",
+        "위치 인코딩",
+        "파인튜닝"
+      ],
+      "answer": 5,
+      "explanation": "정답은 파인튜닝입니다. 파인튜닝은 사전 학습된 모델을 추가 데이터로 조정한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — Transformers",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm/transformers"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-016",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "토큰 선택 확률 분포의 무작위성 정도를 조정하는 값은?",
+      "options": [
+        "temperature",
+        "top-p",
+        "greedy decoding",
+        "최대 출력 토큰 수",
+        "중단 시퀀스"
+      ],
+      "answer": 1,
+      "explanation": "정답은 temperature입니다. temperature는 샘플링 분포의 무작위성에 영향을 준다.",
+      "sources": [
+        {
+          "title": "Hugging Face Transformers — Generation strategies",
+          "url": "https://huggingface.co/docs/transformers/generation_strategies"
+        },
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google AI — Understand and count tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/tokens"
+        },
+        {
+          "title": "Hugging Face Transformers — GenerationConfig",
+          "url": "https://huggingface.co/docs/transformers/main_classes/text_generation"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-017",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "누적 확률이 정한 비율에 이를 때까지의 후보 토큰에서 샘플링하는 방식은?",
+      "options": [
+        "temperature",
+        "top-p",
+        "greedy decoding",
+        "최대 출력 토큰 수",
+        "중단 시퀀스"
+      ],
+      "answer": 2,
+      "explanation": "정답은 top-p입니다. top-p는 누적 확률 기준으로 후보 집합을 제한한다.",
+      "sources": [
+        {
+          "title": "Hugging Face Transformers — Generation strategies",
+          "url": "https://huggingface.co/docs/transformers/generation_strategies"
+        },
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google AI — Understand and count tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/tokens"
+        },
+        {
+          "title": "Hugging Face Transformers — GenerationConfig",
+          "url": "https://huggingface.co/docs/transformers/main_classes/text_generation"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-018",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "매 단계에서 현재 확률이 가장 높은 토큰 하나를 고르는 디코딩은?",
+      "options": [
+        "temperature",
+        "top-p",
+        "greedy decoding",
+        "최대 출력 토큰 수",
+        "중단 시퀀스"
+      ],
+      "answer": 3,
+      "explanation": "정답은 greedy decoding입니다. greedy decoding은 단계마다 가장 가능성 높은 토큰을 택한다.",
+      "sources": [
+        {
+          "title": "Hugging Face Transformers — Generation strategies",
+          "url": "https://huggingface.co/docs/transformers/generation_strategies"
+        },
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google AI — Understand and count tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/tokens"
+        },
+        {
+          "title": "Hugging Face Transformers — GenerationConfig",
+          "url": "https://huggingface.co/docs/transformers/main_classes/text_generation"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-019",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "응답 길이가 무한히 늘지 않도록 생성 가능한 토큰 수에 상한을 두는 설정은?",
+      "options": [
+        "temperature",
+        "top-p",
+        "greedy decoding",
+        "최대 출력 토큰 수",
+        "중단 시퀀스"
+      ],
+      "answer": 4,
+      "explanation": "정답은 최대 출력 토큰 수입니다. 최대 출력 토큰 수는 생성 길이에 제한을 둔다.",
+      "sources": [
+        {
+          "title": "Hugging Face Transformers — Generation strategies",
+          "url": "https://huggingface.co/docs/transformers/generation_strategies"
+        },
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google AI — Understand and count tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/tokens"
+        },
+        {
+          "title": "Hugging Face Transformers — GenerationConfig",
+          "url": "https://huggingface.co/docs/transformers/main_classes/text_generation"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-020",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "지정한 문자열 패턴이 나타나면 생성을 멈추도록 하는 조건은?",
+      "options": [
+        "temperature",
+        "top-p",
+        "greedy decoding",
+        "최대 출력 토큰 수",
+        "중단 시퀀스"
+      ],
+      "answer": 5,
+      "explanation": "정답은 중단 시퀀스입니다. 중단 시퀀스는 해당 패턴이 나오면 생성을 종료하는 조건이다.",
+      "sources": [
+        {
+          "title": "Hugging Face Transformers — Generation strategies",
+          "url": "https://huggingface.co/docs/transformers/generation_strategies"
+        },
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google AI — Understand and count tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/tokens"
+        },
+        {
+          "title": "Hugging Face Transformers — GenerationConfig",
+          "url": "https://huggingface.co/docs/transformers/main_classes/text_generation"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-021",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "예시 정답을 주지 않고 작업 설명만으로 답을 요청하는 방식은?",
+      "options": [
+        "제로샷 프롬프트",
+        "퓨샷 프롬프트",
+        "검색 증강 생성(RAG)",
+        "구조화 출력",
+        "의미 검색"
+      ],
+      "answer": 1,
+      "explanation": "정답은 제로샷 프롬프트입니다. 제로샷 프롬프트는 시범 예시 없이 작업을 요청한다.",
+      "sources": [
+        {
+          "title": "Google AI — Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-022",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "입출력 예시 몇 개를 함께 주어 응답 형식을 유도하는 방식은?",
+      "options": [
+        "제로샷 프롬프트",
+        "퓨샷 프롬프트",
+        "검색 증강 생성(RAG)",
+        "구조화 출력",
+        "의미 검색"
+      ],
+      "answer": 2,
+      "explanation": "정답은 퓨샷 프롬프트입니다. 퓨샷 프롬프트는 소수의 예시를 문맥에 포함한다.",
+      "sources": [
+        {
+          "title": "Google AI — Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-023",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "외부 자료를 찾아 관련 문맥을 제공한 뒤 답을 생성하는 구성은?",
+      "options": [
+        "제로샷 프롬프트",
+        "퓨샷 프롬프트",
+        "검색 증강 생성(RAG)",
+        "구조화 출력",
+        "의미 검색"
+      ],
+      "answer": 3,
+      "explanation": "정답은 검색 증강 생성(RAG)입니다. RAG는 검색된 자료를 생성 단계의 문맥으로 사용한다.",
+      "sources": [
+        {
+          "title": "Google AI — Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-024",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "객체 필드와 타입 등 정해진 데이터 형태로 응답을 받는 기능은?",
+      "options": [
+        "제로샷 프롬프트",
+        "퓨샷 프롬프트",
+        "검색 증강 생성(RAG)",
+        "구조화 출력",
+        "의미 검색"
+      ],
+      "answer": 4,
+      "explanation": "정답은 구조화 출력입니다. 구조화 출력은 응답을 지정한 구조에 맞춘다.",
+      "sources": [
+        {
+          "title": "Google AI — Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-025",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 2,
+      "prompt": "단어가 정확히 같지 않아도 의미가 비슷한 문서를 찾는 검색은?",
+      "options": [
+        "제로샷 프롬프트",
+        "퓨샷 프롬프트",
+        "검색 증강 생성(RAG)",
+        "구조화 출력",
+        "의미 검색"
+      ],
+      "answer": 5,
+      "explanation": "정답은 의미 검색입니다. 의미 검색은 임베딩 등의 의미 표현을 활용한다.",
+      "sources": [
+        {
+          "title": "Google AI — Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-026",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "모델의 가중치를 실제로 조정하는 데 쓰는 데이터 부분집합은?",
+      "options": [
+        "학습 세트",
+        "검증 세트",
+        "테스트 세트",
+        "데이터 누수",
+        "과적합"
+      ],
+      "answer": 1,
+      "explanation": "정답은 학습 세트입니다. 학습 세트는 모델이 패턴을 학습하는 데 사용된다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-027",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "학습 중 모델이나 하이퍼파라미터 선택을 비교하는 데 쓰는 데이터 부분집합은?",
+      "options": [
+        "학습 세트",
+        "검증 세트",
+        "테스트 세트",
+        "데이터 누수",
+        "과적합"
+      ],
+      "answer": 2,
+      "explanation": "정답은 검증 세트입니다. 검증 세트는 개발 중 선택과 조정에 사용된다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-028",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "모델 선택을 마친 뒤 보지 못한 데이터에 대한 최종 평가에 쓰는 부분집합은?",
+      "options": [
+        "학습 세트",
+        "검증 세트",
+        "테스트 세트",
+        "데이터 누수",
+        "과적합"
+      ],
+      "answer": 3,
+      "explanation": "정답은 테스트 세트입니다. 테스트 세트는 최종 일반화 성능을 확인하기 위해 분리한다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-029",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "정답이나 평가용 정보가 학습 입력에 흘러 들어가 점수가 부풀려지는 문제는?",
+      "options": [
+        "학습 세트",
+        "검증 세트",
+        "테스트 세트",
+        "데이터 누수",
+        "과적합"
+      ],
+      "answer": 4,
+      "explanation": "정답은 데이터 누수입니다. 데이터 누수는 평가에서만 알아야 할 정보가 학습으로 넘어오는 현상이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-030",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "학습 데이터 점수는 높지만 새로운 데이터 점수는 낮은 상태는?",
+      "options": [
+        "학습 세트",
+        "검증 세트",
+        "테스트 세트",
+        "데이터 누수",
+        "과적합"
+      ],
+      "answer": 5,
+      "explanation": "정답은 과적합입니다. 과적합은 학습 자료에 지나치게 맞춰져 일반화가 떨어지는 상태다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-031",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "전체 예측 가운데 맞힌 비율을 뜻하는 지표는?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "혼동 행렬"
+      ],
+      "answer": 1,
+      "explanation": "정답은 정확도입니다. 정확도는 TP와 TN을 전체 사례 수로 나눈 값이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-032",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "양성이라고 예측한 것 중 실제 양성의 비율은?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "혼동 행렬"
+      ],
+      "answer": 2,
+      "explanation": "정답은 정밀도입니다. 정밀도는 TP/(TP+FP)다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-033",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "실제 양성 가운데 찾아낸 비율은?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "혼동 행렬"
+      ],
+      "answer": 3,
+      "explanation": "정답은 재현율입니다. 재현율은 TP/(TP+FN)이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-034",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "정밀도와 재현율의 조화평균은?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "혼동 행렬"
+      ],
+      "answer": 4,
+      "explanation": "정답은 F1 점수입니다. F1 점수는 정밀도와 재현율을 함께 요약한다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-035",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "TP·FP·TN·FN을 표로 나누어 분류 결과를 살피는 도구는?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "혼동 행렬"
+      ],
+      "answer": 5,
+      "explanation": "정답은 혼동 행렬입니다. 혼동 행렬은 실제 범주와 예측 범주의 조합을 센다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-036",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "긴 사내 문서를 검색 가능한 작은 단위로 나누는 단계는?",
+      "options": [
+        "문서 분할",
+        "임베딩 생성",
+        "벡터 인덱싱",
+        "유사도 검색",
+        "검색된 문맥 제공"
+      ],
+      "answer": 1,
+      "explanation": "정답은 문서 분할입니다. 문서 분할은 긴 자료를 검색에 쓸 단위로 자른다.",
+      "sources": [
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-037",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "나눈 문서와 질문을 비교 가능한 수치 표현으로 바꾸는 단계는?",
+      "options": [
+        "문서 분할",
+        "임베딩 생성",
+        "벡터 인덱싱",
+        "유사도 검색",
+        "검색된 문맥 제공"
+      ],
+      "answer": 2,
+      "explanation": "정답은 임베딩 생성입니다. 임베딩 생성은 텍스트를 벡터로 변환한다.",
+      "sources": [
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-038",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "생성한 벡터를 빠르게 찾아볼 수 있도록 저장·구성하는 단계는?",
+      "options": [
+        "문서 분할",
+        "임베딩 생성",
+        "벡터 인덱싱",
+        "유사도 검색",
+        "검색된 문맥 제공"
+      ],
+      "answer": 3,
+      "explanation": "정답은 벡터 인덱싱입니다. 벡터 인덱싱은 검색 대상 벡터를 저장하고 찾기 쉽게 만든다.",
+      "sources": [
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-039",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "질문 벡터와 가까운 문서 벡터를 찾는 단계는?",
+      "options": [
+        "문서 분할",
+        "임베딩 생성",
+        "벡터 인덱싱",
+        "유사도 검색",
+        "검색된 문맥 제공"
+      ],
+      "answer": 4,
+      "explanation": "정답은 유사도 검색입니다. 유사도 검색은 벡터 공간에서 관련 자료를 찾는다.",
+      "sources": [
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-040",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "찾은 문서를 모델의 답변 생성 입력에 포함하는 단계는?",
+      "options": [
+        "문서 분할",
+        "임베딩 생성",
+        "벡터 인덱싱",
+        "유사도 검색",
+        "검색된 문맥 제공"
+      ],
+      "answer": 5,
+      "explanation": "정답은 검색된 문맥 제공입니다. 검색된 문맥 제공은 찾은 자료를 생성 요청에 넣는다.",
+      "sources": [
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-041",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "모델이 반환한 JSON 문자열을 객체로 바꾸는 첫 처리 단계는?",
+      "options": [
+        "JSON 파싱",
+        "스키마 검증",
+        "구조화 출력 요청",
+        "필드값의 사실 검증",
+        "오류 처리"
+      ],
+      "answer": 1,
+      "explanation": "정답은 JSON 파싱입니다. JSON 파싱은 문법에 맞는 텍스트를 데이터 구조로 바꾼다.",
+      "sources": [
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-042",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "객체에 필요한 필드·타입·허용값이 맞는지 확인하는 단계는?",
+      "options": [
+        "JSON 파싱",
+        "스키마 검증",
+        "구조화 출력 요청",
+        "필드값의 사실 검증",
+        "오류 처리"
+      ],
+      "answer": 2,
+      "explanation": "정답은 스키마 검증입니다. 스키마 검증은 응답의 구조적 계약을 검사한다.",
+      "sources": [
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-043",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "생성 요청에 원하는 객체 구조를 지정하는 단계는?",
+      "options": [
+        "JSON 파싱",
+        "스키마 검증",
+        "구조화 출력 요청",
+        "필드값의 사실 검증",
+        "오류 처리"
+      ],
+      "answer": 3,
+      "explanation": "정답은 구조화 출력 요청입니다. 구조화 출력 요청은 모델에 출력 스키마를 전달한다.",
+      "sources": [
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-044",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "형식이 맞는 출처 이름이 실제 문서에 존재하는지 대조하는 단계는?",
+      "options": [
+        "JSON 파싱",
+        "스키마 검증",
+        "구조화 출력 요청",
+        "필드값의 사실 검증",
+        "오류 처리"
+      ],
+      "answer": 4,
+      "explanation": "정답은 필드값의 사실 검증입니다. 형식 유효성과 별개로 값의 사실 여부를 확인해야 한다.",
+      "sources": [
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-045",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "응답이 누락되거나 구조가 맞지 않을 때 UI가 실패 상태를 표시하는 단계는?",
+      "options": [
+        "JSON 파싱",
+        "스키마 검증",
+        "구조화 출력 요청",
+        "필드값의 사실 검증",
+        "오류 처리"
+      ],
+      "answer": 5,
+      "explanation": "정답은 오류 처리입니다. 오류 처리는 유효하지 않은 응답을 성공 결과처럼 렌더하지 않는다.",
+      "sources": [
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-046",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "날씨 조회 도구의 이름과 매개변수 형식을 모델에 알려주는 단계는?",
+      "options": [
+        "함수 선언",
+        "모델의 함수 호출 요청",
+        "애플리케이션의 함수 실행",
+        "도구 결과 전달",
+        "최종 응답 생성"
+      ],
+      "answer": 1,
+      "explanation": "정답은 함수 선언입니다. 함수 선언은 호출 가능한 도구와 인자 계약을 모델에 제공한다.",
+      "sources": [
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-047",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "모델이 `getWeather`와 도시 인자를 구조화해 내보내는 단계는?",
+      "options": [
+        "함수 선언",
+        "모델의 함수 호출 요청",
+        "애플리케이션의 함수 실행",
+        "도구 결과 전달",
+        "최종 응답 생성"
+      ],
+      "answer": 2,
+      "explanation": "정답은 모델의 함수 호출 요청입니다. 이것은 실행 결과가 아니라 모델의 함수 호출 요청이다.",
+      "sources": [
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-048",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "권한을 확인한 서버 코드가 실제 날씨 API를 호출하는 단계는?",
+      "options": [
+        "함수 선언",
+        "모델의 함수 호출 요청",
+        "애플리케이션의 함수 실행",
+        "도구 결과 전달",
+        "최종 응답 생성"
+      ],
+      "answer": 3,
+      "explanation": "정답은 애플리케이션의 함수 실행입니다. 실제 함수 실행은 모델이 아니라 애플리케이션이 담당한다.",
+      "sources": [
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-049",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "날씨 API의 반환 값을 다음 모델 입력에 넣는 단계는?",
+      "options": [
+        "함수 선언",
+        "모델의 함수 호출 요청",
+        "애플리케이션의 함수 실행",
+        "도구 결과 전달",
+        "최종 응답 생성"
+      ],
+      "answer": 4,
+      "explanation": "정답은 도구 결과 전달입니다. 도구 결과를 전달해야 모델이 외부 작업 결과를 사용할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-050",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 3,
+      "prompt": "도구 결과를 받은 모델이 사용자에게 읽기 쉬운 날씨 설명을 만드는 단계는?",
+      "options": [
+        "함수 선언",
+        "모델의 함수 호출 요청",
+        "애플리케이션의 함수 실행",
+        "도구 결과 전달",
+        "최종 응답 생성"
+      ],
+      "answer": 5,
+      "explanation": "정답은 최종 응답 생성입니다. 최종 응답 생성은 도구 결과를 바탕으로 사용자 답을 작성한다.",
+      "sources": [
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-051",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "생성 결과를 한 번에 받지 않고 조금씩 받을 때 전송되는 단위는?",
+      "options": [
+        "응답 청크",
+        "완료 신호",
+        "부분 상태",
+        "요청 취소",
+        "오류 상태"
+      ],
+      "answer": 1,
+      "explanation": "정답은 응답 청크입니다. 응답 청크는 스트림을 따라 점진적으로 도착하는 데이터다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-052",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "더는 새 응답 데이터가 없다는 사실을 UI에 확정해 주는 것은?",
+      "options": [
+        "응답 청크",
+        "완료 신호",
+        "부분 상태",
+        "요청 취소",
+        "오류 상태"
+      ],
+      "answer": 2,
+      "explanation": "정답은 완료 신호입니다. 완료 신호를 확인해야 답변을 최종 상태로 처리할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-053",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "문장이 아직 끝나지 않았더라도 지금까지 받은 텍스트를 보여주는 UI 상태는?",
+      "options": [
+        "응답 청크",
+        "완료 신호",
+        "부분 상태",
+        "요청 취소",
+        "오류 상태"
+      ],
+      "answer": 3,
+      "explanation": "정답은 부분 상태입니다. 부분 상태는 완료 전까지 누적된 응답을 임시로 표시한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-054",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "사용자가 '생성 중지'를 누른 뒤 진행 중인 네트워크 작업을 중단하는 동작은?",
+      "options": [
+        "응답 청크",
+        "완료 신호",
+        "부분 상태",
+        "요청 취소",
+        "오류 상태"
+      ],
+      "answer": 4,
+      "explanation": "정답은 요청 취소입니다. 요청 취소는 진행 중인 스트림을 중단한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-055",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "스트림 연결이 끊겼을 때 완료된 답처럼 취급하지 않고 실패를 표시하는 상태는?",
+      "options": [
+        "응답 청크",
+        "완료 신호",
+        "부분 상태",
+        "요청 취소",
+        "오류 상태"
+      ],
+      "answer": 5,
+      "explanation": "정답은 오류 상태입니다. 오류 상태는 비정상 종료를 정상 완료와 구별한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-056",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "사용자가 챗 입력란에 '앞선 지시를 무시하고 비밀을 공개하라'고 직접 넣는 공격은?",
+      "options": [
+        "직접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션",
+        "권한 최소화",
+        "출력 검증",
+        "인간 승인"
+      ],
+      "answer": 1,
+      "explanation": "정답은 직접 프롬프트 인젝션입니다. 직접 인젝션은 사용자가 모델 입력을 통해 지시 우회를 시도한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-057",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "요약할 웹페이지 본문에 숨긴 명령이 모델 행동을 바꾸도록 유도하는 공격은?",
+      "options": [
+        "직접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션",
+        "권한 최소화",
+        "출력 검증",
+        "인간 승인"
+      ],
+      "answer": 2,
+      "explanation": "정답은 간접 프롬프트 인젝션입니다. 간접 인젝션은 외부 자료 같은 낮은 신뢰의 내용에 명령을 숨긴다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-058",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "도구를 연결할 때 해당 작업에 필요한 자원과 동작만 허용하는 원칙은?",
+      "options": [
+        "직접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션",
+        "권한 최소화",
+        "출력 검증",
+        "인간 승인"
+      ],
+      "answer": 3,
+      "explanation": "정답은 권한 최소화입니다. 권한 최소화는 인젝션이 성공해도 피해 범위를 제한한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-059",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "모델이 낸 객체가 허용된 필드·값인지 애플리케이션 코드에서 확인하는 방어는?",
+      "options": [
+        "직접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션",
+        "권한 최소화",
+        "출력 검증",
+        "인간 승인"
+      ],
+      "answer": 4,
+      "explanation": "정답은 출력 검증입니다. 출력 검증은 모델 출력을 신뢰 경계에서 검사한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-060",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "송금처럼 영향이 큰 도구 실행 전에 담당자가 확인하도록 하는 통제는?",
+      "options": [
+        "직접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션",
+        "권한 최소화",
+        "출력 검증",
+        "인간 승인"
+      ],
+      "answer": 5,
+      "explanation": "정답은 인간 승인입니다. 인간 승인은 고위험 작업의 자동 실행을 제한한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-061",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "양성 예측 중 참양성 TP=0, 거짓양성 FP=4이다. 정밀도는?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answer": 1,
+      "explanation": "정답은 0%입니다. 정밀도는 TP/(TP+FP)이므로 0/4=0%다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-062",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "양성 예측 중 참양성 TP=1, 거짓양성 FP=3이다. 정밀도는?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answer": 2,
+      "explanation": "정답은 25%입니다. 정밀도는 1/(1+3)=25%다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-063",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "실제 양성 중 참양성 TP=2, 거짓음성 FN=2이다. 재현율은?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answer": 3,
+      "explanation": "정답은 50%입니다. 재현율은 2/(2+2)=50%다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-064",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "실제 양성 중 참양성 TP=3, 거짓음성 FN=1이다. 재현율은?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answer": 4,
+      "explanation": "정답은 75%입니다. 재현율은 3/(3+1)=75%다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-065",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "실제 양성 중 참양성 TP=4, 거짓음성 FN=0이다. 재현율은?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answer": 5,
+      "explanation": "정답은 100%입니다. 재현율은 4/(4+0)=100%다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-066",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "검색된 문서 조각마다 핵심 문장이 중간에서 끊겨 맥락이 빠진다. 우선 손볼 단계는?",
+      "options": [
+        "문서 청크 조정",
+        "임베딩 재생성",
+        "검색 범위 조정",
+        "재순위화",
+        "출처 표시"
+      ],
+      "answer": 1,
+      "explanation": "정답은 문서 청크 조정입니다. 청크 크기와 겹침을 조정하면 검색 단위의 문맥을 보완할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google Cloud — Reranking for RAG",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/retrieval-and-ranking"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-067",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "문서 벡터는 예전 임베딩 모델로, 질문 벡터는 새 모델로 만들었다. 우선 필요한 작업은?",
+      "options": [
+        "문서 청크 조정",
+        "임베딩 재생성",
+        "검색 범위 조정",
+        "재순위화",
+        "출처 표시"
+      ],
+      "answer": 2,
+      "explanation": "정답은 임베딩 재생성입니다. 비교하려면 문서와 질문 벡터를 호환되는 임베딩으로 맞춰야 한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google Cloud — Reranking for RAG",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/retrieval-and-ranking"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-068",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "관련 없는 문서가 너무 많이 프롬프트에 들어가 답을 흐린다. 우선 조정할 것은?",
+      "options": [
+        "문서 청크 조정",
+        "임베딩 재생성",
+        "검색 범위 조정",
+        "재순위화",
+        "출처 표시"
+      ],
+      "answer": 3,
+      "explanation": "정답은 검색 범위 조정입니다. 검색 범위나 반환 수를 줄여 관련 문맥에 집중하게 할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google Cloud — Reranking for RAG",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/retrieval-and-ranking"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-069",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "1차 검색 결과에는 정답 문서가 있으나 항상 뒤쪽에 밀린다. 추가할 단계는?",
+      "options": [
+        "문서 청크 조정",
+        "임베딩 재생성",
+        "검색 범위 조정",
+        "재순위화",
+        "출처 표시"
+      ],
+      "answer": 4,
+      "explanation": "정답은 재순위화입니다. 재순위화는 1차 후보의 관련성을 다시 평가해 순서를 개선한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google Cloud — Reranking for RAG",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/retrieval-and-ranking"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-070",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "답변 내용은 맞아 보이지만 이용자가 원문을 대조할 방법이 없다. 필요한 UI는?",
+      "options": [
+        "문서 청크 조정",
+        "임베딩 재생성",
+        "검색 범위 조정",
+        "재순위화",
+        "출처 표시"
+      ],
+      "answer": 5,
+      "explanation": "정답은 출처 표시입니다. 출처 표시로 답변의 근거 문서를 사용자가 확인할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google AI — Embeddings",
+          "url": "https://ai.google.dev/gemini-api/docs/embeddings"
+        },
+        {
+          "title": "Google Cloud — Reranking for RAG",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/retrieval-and-ranking"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-071",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "검색 결과에 없는 논문 제목과 DOI를 모델이 그럴듯하게 지어냈다. 이 현상은?",
+      "options": [
+        "환각",
+        "컨텍스트 한도 초과",
+        "편향",
+        "과적합",
+        "데이터 누수"
+      ],
+      "answer": 1,
+      "explanation": "정답은 환각입니다. 근거 없이 사실처럼 내용을 만들어내는 것은 환각이다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        },
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-072",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "입력 문서가 너무 길어 일부 내용이 모델에 전달되지 못했다. 직접적인 원인은?",
+      "options": [
+        "환각",
+        "컨텍스트 한도 초과",
+        "편향",
+        "과적합",
+        "데이터 누수"
+      ],
+      "answer": 2,
+      "explanation": "정답은 컨텍스트 한도 초과입니다. 요청의 토큰 범위가 컨텍스트 한도를 넘으면 전체 문맥을 담지 못한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        },
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-073",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "전체 점수는 비슷하지만 특정 사용자 집단에서만 지속적으로 오분류가 높다. 먼저 의심할 것은?",
+      "options": [
+        "환각",
+        "컨텍스트 한도 초과",
+        "편향",
+        "과적합",
+        "데이터 누수"
+      ],
+      "answer": 3,
+      "explanation": "정답은 편향입니다. 하위집단 성능 차이는 데이터나 모델의 편향을 살펴야 한다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        },
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-074",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "학습 자료에서는 거의 완벽하지만 처음 보는 사례에서 성능이 급락한다. 이는?",
+      "options": [
+        "환각",
+        "컨텍스트 한도 초과",
+        "편향",
+        "과적합",
+        "데이터 누수"
+      ],
+      "answer": 4,
+      "explanation": "정답은 과적합입니다. 새 데이터로 일반화하지 못하는 전형적인 과적합 신호다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        },
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-075",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 4,
+      "prompt": "평가용 정답이 특징 생성 과정에 섞여 오프라인 점수가 비정상적으로 높아졌다. 이는?",
+      "options": [
+        "환각",
+        "컨텍스트 한도 초과",
+        "편향",
+        "과적합",
+        "데이터 누수"
+      ],
+      "answer": 5,
+      "explanation": "정답은 데이터 누수입니다. 평가 정보가 학습·특징에 흘러 들어간 데이터 누수다.",
+      "sources": [
+        {
+          "title": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google ML Crash Course — Overfitting",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+        },
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-076",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "매주 바뀌는 내부 규정 문서를 인용하며 질문에 답해야 한다. 모델 가중치를 다시 학습하지 않는 구성은?",
+      "options": [
+        "검색 증강 생성(RAG)",
+        "파인튜닝",
+        "구조화 출력",
+        "함수 호출",
+        "결정적 코드"
+      ],
+      "answer": 1,
+      "explanation": "정답은 검색 증강 생성(RAG)입니다. RAG는 최신 외부 문서를 검색해 답변 문맥에 넣을 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-077",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "충분한 정답 예시로 특정 문체와 작업에 맞춰 모델 가중치를 추가 조정하려 한다. 해당 방식은?",
+      "options": [
+        "검색 증강 생성(RAG)",
+        "파인튜닝",
+        "구조화 출력",
+        "함수 호출",
+        "결정적 코드"
+      ],
+      "answer": 2,
+      "explanation": "정답은 파인튜닝입니다. 파인튜닝은 예시 데이터를 이용해 기존 모델 가중치를 조정한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-078",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "생성 결과를 고정된 필드와 타입의 객체로 받아 화면에 배치하려 한다. 적합한 기능은?",
+      "options": [
+        "검색 증강 생성(RAG)",
+        "파인튜닝",
+        "구조화 출력",
+        "함수 호출",
+        "결정적 코드"
+      ],
+      "answer": 3,
+      "explanation": "정답은 구조화 출력입니다. 구조화 출력은 응답의 형태를 스키마로 지정한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-079",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "사용자 주문의 현재 배송 상태를 외부 API에서 읽어야 한다. 모델과 앱을 연결하는 방식은?",
+      "options": [
+        "검색 증강 생성(RAG)",
+        "파인튜닝",
+        "구조화 출력",
+        "함수 호출",
+        "결정적 코드"
+      ],
+      "answer": 4,
+      "explanation": "정답은 함수 호출입니다. 함수 호출은 앱이 외부 API를 실행하고 결과를 모델에 전달하게 한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-080",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "세금 포함 결제 합계처럼 같은 입력에 정확히 같은 산술 결과가 필요하다. 맡길 곳은?",
+      "options": [
+        "검색 증강 생성(RAG)",
+        "파인튜닝",
+        "구조화 출력",
+        "함수 호출",
+        "결정적 코드"
+      ],
+      "answer": 5,
+      "explanation": "정답은 결정적 코드입니다. 정확한 산술과 비즈니스 규칙은 결정적 코드로 계산해야 한다.",
+      "sources": [
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google Machine Learning Crash Course — LLM",
+          "url": "https://developers.google.com/machine-learning/crash-course/llm"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google AI — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-081",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "양성과 음성이 비슷한 비율이고 두 종류의 오류 비용도 비슷하다. 전체 정답 비율을 먼저 보려면?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "양성 예측 임계값"
+      ],
+      "answer": 1,
+      "explanation": "정답은 정확도입니다. 정확도는 전체 사례 중 맞힌 비율이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-082",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "오탐으로 고객에게 잘못된 경고를 보내는 비용이 매우 크다. 양성 예측의 신뢰성을 보려면?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "양성 예측 임계값"
+      ],
+      "answer": 2,
+      "explanation": "정답은 정밀도입니다. 정밀도는 양성 예측 중 실제 양성의 비율이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-083",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "위험 사례를 놓치는 거짓음성 비용이 매우 크다. 실제 양성을 얼마나 찾았는지 보려면?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "양성 예측 임계값"
+      ],
+      "answer": 3,
+      "explanation": "정답은 재현율입니다. 재현율은 실제 양성 중 찾아낸 비율이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-084",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "정밀도와 재현율을 한 수치로 균형 있게 요약하려면?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "양성 예측 임계값"
+      ],
+      "answer": 4,
+      "explanation": "정답은 F1 점수입니다. F1은 정밀도와 재현율의 조화평균이다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-085",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "양성·음성 판정의 기준 확률을 바꾸어 오탐과 미탐의 균형을 조절하려면?",
+      "options": [
+        "정확도",
+        "정밀도",
+        "재현율",
+        "F1 점수",
+        "양성 예측 임계값"
+      ],
+      "answer": 5,
+      "explanation": "정답은 양성 예측 임계값입니다. 양성 예측 임계값을 조절하면 분류 경계가 바뀐다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Accuracy, precision, recall",
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-086",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "모델이 관리자 전용 도구 이름을 추측해도 일반 사용자 요청으로 실행되지 않게 막으려면?",
+      "options": [
+        "접근 제어",
+        "입력 출처 구분",
+        "출력 검증",
+        "인간 승인",
+        "감사 로그"
+      ],
+      "answer": 1,
+      "explanation": "정답은 접근 제어입니다. 도구 실행 전 애플리케이션의 접근 제어가 권한을 확인해야 한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-087",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "검색된 웹페이지의 '기존 규칙을 무시하라'는 문구를 사용자 지시로 취급하지 않으려면?",
+      "options": [
+        "접근 제어",
+        "입력 출처 구분",
+        "출력 검증",
+        "인간 승인",
+        "감사 로그"
+      ],
+      "answer": 2,
+      "explanation": "정답은 입력 출처 구분입니다. 외부 문서를 낮은 신뢰의 데이터로 구분해야 한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-088",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "모델이 반환한 URL을 화면에 넣기 전 허용 프로토콜과 형식을 검사하려면?",
+      "options": [
+        "접근 제어",
+        "입력 출처 구분",
+        "출력 검증",
+        "인간 승인",
+        "감사 로그"
+      ],
+      "answer": 3,
+      "explanation": "정답은 출력 검증입니다. 출력 검증은 모델이 낸 값을 신뢰 경계에서 검사한다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-089",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "모델이 제안한 계정 삭제를 실제 실행하기 전에 담당자의 결정을 받으려면?",
+      "options": [
+        "접근 제어",
+        "입력 출처 구분",
+        "출력 검증",
+        "인간 승인",
+        "감사 로그"
+      ],
+      "answer": 4,
+      "explanation": "정답은 인간 승인입니다. 고위험 작업에는 인간 승인을 둘 수 있다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-090",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "잘못된 도구 실행이 발생했을 때 누가 어떤 입력과 결과로 실행했는지 추적하려면?",
+      "options": [
+        "접근 제어",
+        "입력 출처 구분",
+        "출력 검증",
+        "인간 승인",
+        "감사 로그"
+      ],
+      "answer": 5,
+      "explanation": "정답은 감사 로그입니다. 감사 로그는 실행 이력을 남겨 사후 분석을 돕는다.",
+      "sources": [
+        {
+          "title": "OWASP — LLM01 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-091",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "질문 A 뒤에 B를 보냈는데 A의 늦은 청크가 B의 답변에 섞이지 않게 구분하려면?",
+      "options": [
+        "요청 식별자",
+        "AbortController",
+        "누적 버퍼",
+        "완료 후 스키마 검증",
+        "오류 상태"
+      ],
+      "answer": 1,
+      "explanation": "정답은 요청 식별자입니다. 요청 식별자로 청크가 어느 응답에 속하는지 확인한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-092",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "사용자가 중지 버튼을 누르면 진행 중인 fetch 스트림을 중단하려면?",
+      "options": [
+        "요청 식별자",
+        "AbortController",
+        "누적 버퍼",
+        "완료 후 스키마 검증",
+        "오류 상태"
+      ],
+      "answer": 2,
+      "explanation": "정답은 AbortController입니다. AbortController는 진행 중인 요청과 스트림을 취소할 수 있다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-093",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "여러 청크에 나뉘어 도착한 텍스트를 하나의 답변으로 이어 붙이려면?",
+      "options": [
+        "요청 식별자",
+        "AbortController",
+        "누적 버퍼",
+        "완료 후 스키마 검증",
+        "오류 상태"
+      ],
+      "answer": 3,
+      "explanation": "정답은 누적 버퍼입니다. 누적 버퍼에 청크를 순서대로 모은다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-094",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "구조화된 응답의 앞부분만 도착해 JSON이 아직 닫히지 않았다. 객체로 사용하기 전 해야 할 일은?",
+      "options": [
+        "요청 식별자",
+        "AbortController",
+        "누적 버퍼",
+        "완료 후 스키마 검증",
+        "오류 상태"
+      ],
+      "answer": 4,
+      "explanation": "정답은 완료 후 스키마 검증입니다. 최종 응답이 완성된 뒤 스키마를 검증해야 한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-095",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "중간 청크 뒤 연결이 끊겨 완료 신호를 받지 못했다. UI가 보여야 할 것은?",
+      "options": [
+        "요청 식별자",
+        "AbortController",
+        "누적 버퍼",
+        "완료 후 스키마 검증",
+        "오류 상태"
+      ],
+      "answer": 5,
+      "explanation": "정답은 오류 상태입니다. 부분 텍스트를 정상 완료로 확정하지 말고 오류 상태를 표시한다.",
+      "sources": [
+        {
+          "title": "Google AI — Streaming interactions",
+          "url": "https://ai.google.dev/gemini-api/docs/streaming"
+        },
+        {
+          "title": "MDN — AbortController",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        },
+        {
+          "title": "Google AI — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-096",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "모델과 프롬프트 선택을 모두 마친 뒤 보지 못한 사례의 성능을 확인하려면?",
+      "options": [
+        "독립 테스트 세트",
+        "하위집단 성능 평가",
+        "검색 단계 평가",
+        "사용자 대상 실험",
+        "전문가 검토"
+      ],
+      "answer": 1,
+      "explanation": "정답은 독립 테스트 세트입니다. 독립 테스트 세트는 선택 과정에서 사용하지 않은 사례로 최종 평가한다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        },
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google — Rules of Machine Learning",
+          "url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-097",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "전체 평균은 좋지만 특정 언어 사용자에게만 품질이 낮은지 확인하려면?",
+      "options": [
+        "독립 테스트 세트",
+        "하위집단 성능 평가",
+        "검색 단계 평가",
+        "사용자 대상 실험",
+        "전문가 검토"
+      ],
+      "answer": 2,
+      "explanation": "정답은 하위집단 성능 평가입니다. 하위집단별로 나눠 성능을 평가해야 평균에 가려진 문제를 볼 수 있다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        },
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google — Rules of Machine Learning",
+          "url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-098",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "RAG 답변이 틀릴 때 관련 문서가 애초에 검색됐는지 따로 확인하려면?",
+      "options": [
+        "독립 테스트 세트",
+        "하위집단 성능 평가",
+        "검색 단계 평가",
+        "사용자 대상 실험",
+        "전문가 검토"
+      ],
+      "answer": 3,
+      "explanation": "정답은 검색 단계 평가입니다. 검색 단계 평가를 분리해야 검색 실패와 생성 실패를 구분할 수 있다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        },
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google — Rules of Machine Learning",
+          "url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-099",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "오프라인 점수 향상이 실제 사용자의 작업 성공으로 이어지는지 비교하려면?",
+      "options": [
+        "독립 테스트 세트",
+        "하위집단 성능 평가",
+        "검색 단계 평가",
+        "사용자 대상 실험",
+        "전문가 검토"
+      ],
+      "answer": 4,
+      "explanation": "정답은 사용자 대상 실험입니다. 실사용자를 대상으로 한 통제된 실험이 제품 효과를 측정한다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        },
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google — Rules of Machine Learning",
+          "url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    },
+    {
+      "id": "ai-concepts-100",
+      "category": "AI Concepts",
+      "type": "개념 판단",
+      "format": "객관식 단일",
+      "points": 5,
+      "prompt": "고위험 분야 답변의 정확성과 맥락을 자동 지표만으로 판정하기 어렵다. 필요한 절차는?",
+      "options": [
+        "독립 테스트 세트",
+        "하위집단 성능 평가",
+        "검색 단계 평가",
+        "사용자 대상 실험",
+        "전문가 검토"
+      ],
+      "answer": 5,
+      "explanation": "정답은 전문가 검토입니다. 도메인 전문가의 검토로 자동 평가가 놓치는 오류를 확인한다.",
+      "sources": [
+        {
+          "title": "Google ML Crash Course — Dividing datasets",
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+        },
+        {
+          "title": "Google ML Crash Course — Evaluating for bias",
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias"
+        },
+        {
+          "title": "Google AI — File search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search"
+        },
+        {
+          "title": "Google — Rules of Machine Learning",
+          "url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+        },
+        {
+          "title": "Google ML Crash Course — Monitoring production ML",
+          "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring"
+        }
+      ]
+    }
+  ]
+}

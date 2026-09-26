@@ -1,0 +1,2308 @@
+{
+  "category": "Web Fundamentals",
+  "questions": [
+    {
+      "id": "web-fundamentals-http-stateless",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "HTTP가 기본적으로 stateless라는 말의 뜻은?",
+      "options": [
+        "서로 다른 요청 사이의 응용 상태를 프로토콜이 자동 보존하지 않는다.",
+        "HTTP가 응답 본문을 보낼 수 없다.",
+        "모든 연결이 영구 유지된다.",
+        "요청에 헤더를 넣을 수 없다.",
+        "브라우저가 쿠키를 금지한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — http",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+        }
+      ],
+      "explanation": "요청은 독립적이며 애플리케이션이 쿠키나 세션 등으로 필요한 상태를 연결한다."
+    },
+    {
+      "id": "web-fundamentals-get-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "리소스를 조회하는 데 쓰는 HTTP 메서드는?",
+      "options": [
+        "POST",
+        "GET",
+        "PATCH",
+        "DELETE",
+        "CONNECT"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "GET은 대상 리소스의 표현을 요청한다."
+    },
+    {
+      "id": "web-fundamentals-post-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "새 데이터 제출 또는 서버 측 처리를 요청하는 데 흔히 사용하는 메서드는?",
+      "options": [
+        "HEAD",
+        "OPTIONS",
+        "POST",
+        "TRACE",
+        "GET"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "POST는 요청 본문을 대상 리소스에 처리하도록 제출한다."
+    },
+    {
+      "id": "web-fundamentals-status-ok",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 4,
+      "prompt": "성공적인 일반 조회 응답을 나타내는 상태 코드는?",
+      "options": [
+        "301 Moved Permanently",
+        "404 Not Found",
+        "500 Internal Server Error",
+        "200 OK",
+        "401 Unauthorized"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "200은 요청이 성공했음을 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-status-created",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "서버가 새 리소스를 생성했을 때 적절한 성공 상태 코드는?",
+      "options": [
+        "202 Accepted만",
+        "204 No Content",
+        "304 Not Modified",
+        "409 Conflict",
+        "201 Created"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "201은 요청 처리 결과 새 리소스가 생성됐음을 뜻한다."
+    },
+    {
+      "id": "web-fundamentals-status-no-content",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "작업은 성공했지만 응답 본문을 보내지 않을 때 적절한 상태 코드는?",
+      "options": [
+        "204 No Content",
+        "200 OK만",
+        "301 Moved Permanently",
+        "404 Not Found",
+        "500 Internal Server Error"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "204는 응답 본문 없이 성공을 알린다."
+    },
+    {
+      "id": "web-fundamentals-status-not-found",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "요청한 경로의 리소스를 찾지 못했다는 응답 코드는?",
+      "options": [
+        "200 OK",
+        "404 Not Found",
+        "201 Created",
+        "302 Found",
+        "503 Service Unavailable"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "404는 대상 리소스를 찾지 못함을 뜻한다."
+    },
+    {
+      "id": "web-fundamentals-status-server-error",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "서버 내부 오류로 요청을 처리하지 못했다는 대표 상태 코드는?",
+      "options": [
+        "100 Continue",
+        "204 No Content",
+        "500 Internal Server Error",
+        "301 Moved Permanently",
+        "404 Not Found"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "500은 서버 측의 예상치 못한 오류를 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-content-type",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 4,
+      "prompt": "응답 본문의 미디어 형식을 알리는 헤더는?",
+      "options": [
+        "Accept",
+        "Authorization",
+        "Location",
+        "Content-Type",
+        "Cookie"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Content-Type은 본문 표현의 미디어 타입을 명시한다."
+    },
+    {
+      "id": "web-fundamentals-accept",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "클라이언트가 받을 수 있는 응답 미디어 형식을 표현하는 요청 헤더는?",
+      "options": [
+        "Content-Type",
+        "Set-Cookie",
+        "ETag",
+        "Host",
+        "Accept"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Accept는 선호하거나 수용할 표현 형식을 서버에 알린다."
+    },
+    {
+      "id": "web-fundamentals-authorization-header",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "HTTP 인증 자격 증명을 전달하는 대표 요청 헤더는?",
+      "options": [
+        "Authorization",
+        "Content-Length",
+        "Location",
+        "Vary",
+        "Age"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Authorization 요청 헤더에는 선택한 인증 스킴의 자격 증명이 들어간다."
+    },
+    {
+      "id": "web-fundamentals-cookie-request",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "브라우저가 저장된 쿠키를 서버로 보낼 때 쓰는 요청 헤더는?",
+      "options": [
+        "Set-Cookie",
+        "Cookie",
+        "Authorization-Reply",
+        "Cache-Control",
+        "Location"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Cookie는 클라이언트가 해당 요청에 맞는 쿠키 값을 전송할 때 사용한다."
+    },
+    {
+      "id": "web-fundamentals-set-cookie-response",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "서버가 브라우저에 쿠키 저장을 지시하는 응답 헤더는?",
+      "options": [
+        "Cookie",
+        "Accept",
+        "Set-Cookie",
+        "If-None-Match",
+        "Referrer"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Set-Cookie는 서버의 응답에 들어가 쿠키를 설정한다."
+    },
+    {
+      "id": "web-fundamentals-url-scheme",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 4,
+      "prompt": "https://example.com:443/docs?q=1에서 scheme은?",
+      "options": [
+        "example.com",
+        "443",
+        "/docs",
+        "https",
+        "q=1"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — uri",
+          "url": "https://www.rfc-editor.org/rfc/rfc3986"
+        }
+      ],
+      "explanation": "URI 문법에서 맨 앞 콜론 이전의 https가 scheme이다."
+    },
+    {
+      "id": "web-fundamentals-url-hostname",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "결과 예측",
+      "points": 2,
+      "answer": 5,
+      "prompt": "브라우저에서 다음 표현식의 결과는?",
+      "options": [
+        "https",
+        "443",
+        "/docs",
+        "q=1",
+        "example.com"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — url",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+        }
+      ],
+      "explanation": "URL의 hostname은 도메인 이름 부분이며 포트 번호를 제외한다.",
+      "code": "new URL('https://example.com:443/docs?q=1').hostname"
+    },
+    {
+      "id": "web-fundamentals-url-pathname",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "https://example.com/docs?q=1에서 pathname은?",
+      "options": [
+        "/docs",
+        "https://",
+        "example.com",
+        "q=1",
+        "#docs"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — url",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+        }
+      ],
+      "explanation": "pathname은 호스트 뒤에서 쿼리 앞까지의 경로다."
+    },
+    {
+      "id": "web-fundamentals-url-query",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "https://example.com/docs?q=1에서 query는?",
+      "options": [
+        "https",
+        "q=1",
+        "example.com",
+        "/docs",
+        "443"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — uri",
+          "url": "https://www.rfc-editor.org/rfc/rfc3986"
+        }
+      ],
+      "explanation": "물음표 뒤의 q=1이 쿼리 구성 요소다."
+    },
+    {
+      "id": "web-fundamentals-url-fragment",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "https://example.com/docs#intro에서 fragment는?",
+      "options": [
+        "https",
+        "example.com",
+        "intro",
+        "/docs",
+        "443"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — uri",
+          "url": "https://www.rfc-editor.org/rfc/rfc3986"
+        }
+      ],
+      "explanation": "# 뒤의 intro가 fragment 식별자다."
+    },
+    {
+      "id": "web-fundamentals-percent-encoding",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 4,
+      "prompt": "URL에서 공백을 인코딩한 대표 형태는?",
+      "options": [
+        "+20",
+        "%2F",
+        "%25",
+        "%20",
+        "%00"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — uri",
+          "url": "https://www.rfc-editor.org/rfc/rfc3986"
+        }
+      ],
+      "explanation": "percent-encoding은 문자의 UTF-8 바이트를 %와 16진수로 나타내며 공백은 %20이다."
+    },
+    {
+      "id": "web-fundamentals-base64-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "Base64의 주된 역할은?",
+      "options": [
+        "데이터를 암호화한다.",
+        "데이터에 서명한다.",
+        "비밀번호를 해시한다.",
+        "HTTP 연결을 암호화한다.",
+        "바이너리 데이터를 ASCII 문자 집합으로 표현한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — base64",
+          "url": "https://www.rfc-editor.org/rfc/rfc4648"
+        }
+      ],
+      "explanation": "Base64는 바이트를 텍스트 환경에서 다루기 위한 인코딩이다."
+    },
+    {
+      "id": "web-fundamentals-json-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 1,
+      "prompt": "JSON의 기본 목적은?",
+      "options": [
+        "구조화된 데이터를 텍스트로 교환한다.",
+        "HTTP 요청을 암호화한다.",
+        "파일을 압축한다.",
+        "브라우저 이벤트를 등록한다.",
+        "이미지를 렌더한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — json",
+          "url": "https://www.rfc-editor.org/rfc/rfc8259"
+        }
+      ],
+      "explanation": "JSON은 객체·배열·문자열·숫자 등의 데이터 교환 형식이다."
+    },
+    {
+      "id": "web-fundamentals-utf8-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 2,
+      "prompt": "UTF-8은 무엇을 정의하는가?",
+      "options": [
+        "HTTP 상태 코드 목록",
+        "유니코드 문자를 바이트열로 인코딩하는 방식",
+        "JWT 서명 알고리즘",
+        "쿠키 만료일",
+        "URL의 호스트 이름"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — utf8",
+          "url": "https://www.rfc-editor.org/rfc/rfc3629"
+        }
+      ],
+      "explanation": "UTF-8은 유니코드 코드 포인트를 가변 길이 바이트로 표현한다."
+    },
+    {
+      "id": "web-fundamentals-session-id",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "서버 세션 방식에서 브라우저 쿠키에 흔히 들어가는 것은?",
+      "options": [
+        "모든 사용자 데이터베이스 원본",
+        "서버 비밀 키",
+        "서버 측 세션을 찾는 식별자",
+        "서버 메모리 주소",
+        "반드시 전체 사용자 프로필"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "쿠키의 세션 ID로 서버 저장소에서 사용자 상태를 찾는 방식이 일반적이다."
+    },
+    {
+      "id": "web-fundamentals-jwt-shape",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 4,
+      "prompt": "일반적인 JWS compact JWT의 구성은?",
+      "options": [
+        "header만",
+        "payload.signature의 두 부분",
+        "XML 요소 하나",
+        "점으로 나뉜 header.payload.signature",
+        "쿠키 이름과 경로"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "서명된 JWT compact 표현은 세 부분을 점으로 연결한다."
+    },
+    {
+      "id": "web-fundamentals-sso-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 5,
+      "prompt": "SSO의 핵심 사용자 경험은?",
+      "options": [
+        "모든 서비스가 비밀번호를 공개한다.",
+        "사용자가 서비스마다 반드시 다른 계정을 만든다.",
+        "모든 요청이 200을 받는다.",
+        "토큰이 자동으로 암호화된다.",
+        "한 번의 인증으로 여러 연결 서비스에 접근한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oidc",
+          "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
+        }
+      ],
+      "explanation": "중앙 인증 상태를 활용해 연결된 서비스의 반복 로그인 부담을 줄인다."
+    },
+    {
+      "id": "web-fundamentals-get-safe",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "HTTP에서 safe 메서드로 분류되는 것은?",
+      "options": [
+        "GET",
+        "POST",
+        "PATCH",
+        "DELETE",
+        "CONNECT"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "GET은 클라이언트가 서버 상태 변경을 요청하지 않는 safe 메서드다."
+    },
+    {
+      "id": "web-fundamentals-put-idempotent",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "같은 PUT 요청을 여러 번 보내도 의도된 서버 상태가 같아지는 성질은?",
+      "options": [
+        "직렬화",
+        "멱등성",
+        "압축",
+        "암호화",
+        "스트리밍"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "PUT은 의도된 결과가 반복 요청 횟수와 무관한 멱등 메서드다."
+    },
+    {
+      "id": "web-fundamentals-post-not-idempotent",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "중복 주문 생성 위험이 있어 재시도 정책에 별도 주의가 필요한 메서드는?",
+      "options": [
+        "GET",
+        "HEAD",
+        "POST",
+        "OPTIONS",
+        "PUT"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "POST는 일반적으로 멱등성이 보장되지 않아 재시도가 같은 효과라는 전제가 없다."
+    },
+    {
+      "id": "web-fundamentals-head-method",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 4,
+      "prompt": "GET과 유사한 헤더를 받되 응답 본문은 받지 않는 메서드는?",
+      "options": [
+        "POST",
+        "PATCH",
+        "TRACE",
+        "HEAD",
+        "DELETE"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "HEAD 응답에는 메시지 본문이 없다."
+    },
+    {
+      "id": "web-fundamentals-options-method",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "대상 리소스의 통신 옵션을 조회하는 메서드는?",
+      "options": [
+        "POST",
+        "PATCH",
+        "DELETE",
+        "CONNECT",
+        "OPTIONS"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "OPTIONS는 대상 리소스의 허용 통신 방법 등을 조회한다."
+    },
+    {
+      "id": "web-fundamentals-put-vs-patch",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "리소스의 일부만 변경하려는 의도를 가장 직접적으로 나타내는 메서드는?",
+      "options": [
+        "PATCH",
+        "HEAD",
+        "OPTIONS",
+        "TRACE",
+        "CONNECT"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "PATCH는 대상 리소스에 부분 변경 지시를 적용한다."
+    },
+    {
+      "id": "web-fundamentals-location-created",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "201 Created 응답에서 새로 생성된 리소스 URI를 알릴 때 쓰는 헤더는?",
+      "options": [
+        "Accept",
+        "Location",
+        "Cookie",
+        "If-None-Match",
+        "Vary"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Location은 새로 생성된 리소스의 URI를 나타낼 수 있다."
+    },
+    {
+      "id": "web-fundamentals-status-accepted",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "작업 요청은 받아들였지만 처리가 아직 끝나지 않은 상태 코드는?",
+      "options": [
+        "200 OK만",
+        "201 Created",
+        "202 Accepted",
+        "204 No Content",
+        "304 Not Modified"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "202는 요청을 접수했지만 처리가 완료되지 않았음을 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-status-redirect",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 4,
+      "prompt": "리소스가 영구 이동했음을 나타내는 대표 리다이렉트 상태는?",
+      "options": [
+        "200 OK",
+        "201 Created",
+        "302 Found",
+        "301 Moved Permanently",
+        "404 Not Found"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "301은 대상 리소스에 영구적인 새 URI가 있음을 알린다."
+    },
+    {
+      "id": "web-fundamentals-status-unauthorized",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "인증 자격 증명이 없거나 유효하지 않아 인증이 필요한 응답 코드는?",
+      "options": [
+        "200 OK",
+        "201 Created",
+        "403 Forbidden만",
+        "404 Not Found",
+        "401 Unauthorized"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "401은 보호된 리소스에 유효한 인증이 필요하다는 뜻이다."
+    },
+    {
+      "id": "web-fundamentals-status-forbidden",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "인증 여부와 별개로 서버가 요청 처리를 거부하는 상태 코드는?",
+      "options": [
+        "403 Forbidden",
+        "200 OK",
+        "201 Created",
+        "304 Not Modified",
+        "500 Internal Server Error"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "403은 서버가 요청을 이해했지만 수행을 거부함을 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-status-conflict",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "현재 리소스 상태와 요청이 충돌할 때 적절한 상태 코드는?",
+      "options": [
+        "204 No Content",
+        "409 Conflict",
+        "301 Moved Permanently",
+        "304 Not Modified",
+        "505 HTTP Version Not Supported"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "409는 대상 리소스의 현재 상태와 충돌이 있음을 뜻한다."
+    },
+    {
+      "id": "web-fundamentals-status-rate-limit",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "요청 횟수 제한에 걸렸음을 나타내는 상태 코드는?",
+      "options": [
+        "200 OK",
+        "206 Partial Content",
+        "429 Too Many Requests",
+        "304 Not Modified",
+        "451 Unavailable For Legal Reasons"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "429는 일정 시간 동안 요청이 너무 많았음을 뜻한다."
+    },
+    {
+      "id": "web-fundamentals-status-unavailable",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 4,
+      "prompt": "서버가 일시 과부하 또는 점검으로 요청을 처리할 수 없다는 상태는?",
+      "options": [
+        "201 Created",
+        "204 No Content",
+        "304 Not Modified",
+        "503 Service Unavailable",
+        "401 Unauthorized"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "503은 보통 일시적으로 서비스를 제공할 수 없음을 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-retry-after",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "429 또는 503 응답에서 다시 시도할 시각이나 대기 시간을 알리는 헤더는?",
+      "options": [
+        "ETag",
+        "Accept",
+        "Origin",
+        "Range",
+        "Retry-After"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Retry-After는 클라이언트에 재시도 전 기다릴 시간을 알려준다."
+    },
+    {
+      "id": "web-fundamentals-etag-meaning",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "ETag 헤더는 무엇을 식별하는가?",
+      "options": [
+        "응답 표현의 버전 식별자",
+        "현재 사용자의 비밀번호",
+        "서버 호스트의 IP만",
+        "JWT 발급자",
+        "쿠키 이름"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "ETag는 특정 표현 버전을 식별하는 검증자다."
+    },
+    {
+      "id": "web-fundamentals-if-none-match",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "캐시된 ETag와 서버 표현이 같은지 확인하려고 클라이언트가 보내는 헤더는?",
+      "options": [
+        "If-Match",
+        "If-None-Match",
+        "Set-Cookie",
+        "Authorization",
+        "Last-Modified"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "If-None-Match는 보유한 ETag를 조건으로 재검증 요청을 보낸다."
+    },
+    {
+      "id": "web-fundamentals-not-modified",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "조건부 GET에서 표현이 바뀌지 않아 본문 재전송을 생략할 때 상태 코드는?",
+      "options": [
+        "204 No Content",
+        "200 OK",
+        "304 Not Modified",
+        "301 Moved Permanently",
+        "412 Precondition Failed"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "304는 저장된 응답을 재사용할 수 있음을 알려준다."
+    },
+    {
+      "id": "web-fundamentals-cache-no-store",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 4,
+      "prompt": "응답을 어떤 캐시에도 저장하지 말라는 Cache-Control 지시자는?",
+      "options": [
+        "no-cache",
+        "max-age",
+        "public",
+        "no-store",
+        "immutable"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "no-store는 응답 저장을 금지하는 지시자다."
+    },
+    {
+      "id": "web-fundamentals-cache-no-cache",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "Cache-Control: no-cache의 정확한 뜻은?",
+      "options": [
+        "어떤 캐시에도 절대 저장할 수 없다.",
+        "무조건 영구 재사용한다.",
+        "클라이언트 요청 본문을 삭제한다.",
+        "서버만 재시작한다.",
+        "저장할 수 있지만 재사용 전에 서버 재검증이 필요하다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "no-cache는 저장 금지와 다르며 재사용 전에 검증을 요구한다."
+    },
+    {
+      "id": "web-fundamentals-cache-max-age",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "Cache-Control: max-age=60은 무엇을 지정하는가?",
+      "options": [
+        "응답이 60초 동안 신선한 것으로 간주될 수 있다.",
+        "60바이트만 저장한다.",
+        "60번만 요청한다.",
+        "60초 후 자동으로 서버가 종료된다.",
+        "60개 쿠키를 허용한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "max-age는 응답의 신선도 수명을 초 단위로 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-vary-header",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "응답 내용이 Accept-Language 값에 따라 달라질 때 캐시 키 구분에 필요한 헤더는?",
+      "options": [
+        "Content-Length: 0",
+        "Vary: Accept-Language",
+        "Location: Accept-Language",
+        "Authorization: none",
+        "ETag: language"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "Vary는 응답을 선택할 때 고려한 요청 헤더를 캐시에 알린다."
+    },
+    {
+      "id": "web-fundamentals-url-searchparams",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 3,
+      "prompt": "URLSearchParams에서 q=red&q=blue의 모든 q 값을 얻는 메서드는?",
+      "options": [
+        "get('q')만",
+        "set('q')",
+        "getAll('q')",
+        "hasAll('q')",
+        "toJSON('q')"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — query",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
+        }
+      ],
+      "explanation": "getAll은 같은 키로 반복된 쿼리 값들을 배열로 반환한다."
+    },
+    {
+      "id": "web-fundamentals-query-leading",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "결과 예측",
+      "points": 3,
+      "answer": 4,
+      "prompt": "브라우저에서 다음 표현식의 결과는?",
+      "options": [
+        "?q=cat",
+        "q=cat",
+        "null",
+        "cat",
+        "undefined"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — query",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
+        }
+      ],
+      "explanation": "URLSearchParams 생성자는 맨 앞 물음표를 처리해 q의 값을 cat으로 읽는다.",
+      "code": "new URLSearchParams('?q=cat').get('q')"
+    },
+    {
+      "id": "web-fundamentals-base64-padding",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 5,
+      "prompt": "RFC 4648의 일반 Base64에서 끝의 = 문자는 주로 무엇을 나타내는가?",
+      "options": [
+        "암호화 완료 표시",
+        "서명 시작 표시",
+        "UTF-8 BOM",
+        "압축 헤더",
+        "입력 길이를 4문자 단위 출력에 맞추는 패딩"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — base64",
+          "url": "https://www.rfc-editor.org/rfc/rfc4648"
+        }
+      ],
+      "explanation": "패딩은 입력 바이트 수가 3의 배수가 아닐 때 출력 길이를 맞춘다."
+    },
+    {
+      "id": "web-fundamentals-base64url-alphabet",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "Base64url에서 일반 Base64의 +와 /를 대신하는 문자는?",
+      "options": [
+        "-와 _",
+        ".와 :",
+        "%와 &",
+        "@와 #",
+        "(와 )"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — base64",
+          "url": "https://www.rfc-editor.org/rfc/rfc4648"
+        }
+      ],
+      "explanation": "URL에 쓰기 쉬운 Base64url 알파벳은 -와 _를 사용한다."
+    },
+    {
+      "id": "web-fundamentals-jwt-header",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "JWS compact JWT의 첫 부분이 담는 대표 정보는?",
+      "options": [
+        "HTTP 응답 본문",
+        "서명 알고리즘 등 토큰 메타데이터",
+        "브라우저 쿠키 경로",
+        "사용자 비밀번호 원문",
+        "URL fragment"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "첫 부분은 JOSE header로 서명 방법 같은 메타데이터를 담는다."
+    },
+    {
+      "id": "web-fundamentals-jwt-payload",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "JWT의 두 번째 부분에 담기는 내용은?",
+      "options": [
+        "HTTP 상태 코드만",
+        "서명 바이트만",
+        "claim 집합",
+        "TLS 인증서만",
+        "CSS 선택자"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "payload에는 issuer, subject, expiration 같은 claim이 들어갈 수 있다."
+    },
+    {
+      "id": "web-fundamentals-jwt-exp",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "JWT의 exp claim은 무엇을 나타내는가?",
+      "options": [
+        "토큰 발급자",
+        "사용자 표시 이름",
+        "서명 알고리즘",
+        "그 시각 이후 토큰이 수용되면 안 되는 만료 시점",
+        "서비스 URL 경로"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "exp는 만료 시간을 NumericDate로 표현한다."
+    },
+    {
+      "id": "web-fundamentals-jwt-sub",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 5,
+      "prompt": "JWT의 sub claim은 무엇을 식별하는가?",
+      "options": [
+        "서명 알고리즘",
+        "만료 시각",
+        "발급 시각",
+        "요청 메서드",
+        "토큰의 주체"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "sub는 JWT가 다루는 subject 식별자다."
+    },
+    {
+      "id": "web-fundamentals-jwt-iss",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "JWT의 iss claim은 무엇을 식별하는가?",
+      "options": [
+        "토큰 발급자",
+        "토큰 주체",
+        "수신 대상",
+        "만료 시각",
+        "브라우저 저장 위치"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "iss는 JWT를 발급한 주체를 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-jwt-aud",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "JWT의 aud claim은 무엇을 식별하는가?",
+      "options": [
+        "발급자",
+        "토큰의 수신 대상",
+        "발급 시간",
+        "요청 본문 크기",
+        "서명 알고리즘"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "aud는 토큰이 의도된 audience를 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-jwt-nbf",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "JWT의 nbf claim은 무엇을 의미하는가?",
+      "options": [
+        "그 시각에 토큰을 삭제해야 한다.",
+        "사용자 계정 이름이다.",
+        "그 시각 전에는 토큰을 수용하지 않아야 한다.",
+        "서명 키 길이다.",
+        "세션 쿠키 도메인이다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "not before는 사용 가능 시작 시점을 NumericDate로 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-jwt-iat",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "JWT의 iat claim은 무엇을 나타내는가?",
+      "options": [
+        "토큰 수신 대상",
+        "HTTP 응답 시간",
+        "서명 검증 결과",
+        "토큰 발급 시각",
+        "쿠키 만료 지시자"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "issued at은 JWT가 발급된 시각이다."
+    },
+    {
+      "id": "web-fundamentals-oidc-id-token",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 5,
+      "prompt": "OpenID Connect에서 최종 사용자 인증 결과를 표현하는 토큰은?",
+      "options": [
+        "Access Token만",
+        "Refresh Token만",
+        "ETag",
+        "Session Cookie만",
+        "ID Token"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oidc",
+          "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
+        }
+      ],
+      "explanation": "OIDC는 ID Token의 claim으로 인증 결과와 사용자 식별 정보를 클라이언트에 전달한다."
+    },
+    {
+      "id": "web-fundamentals-oauth-access-token",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "OAuth 2.0에서 보호 리소스 API 접근 권한을 표현하는 토큰은?",
+      "options": [
+        "Access Token",
+        "ID Token만",
+        "HTTP ETag",
+        "Base64 문자열만",
+        "URL fragment만"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "리소스 서버는 access token을 근거로 보호 리소스 요청을 처리한다."
+    },
+    {
+      "id": "web-fundamentals-oauth-client",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "OAuth 2.0에서 리소스 소유자를 대신해 보호 리소스에 접근하려는 애플리케이션 역할은?",
+      "options": [
+        "Resource Server",
+        "Client",
+        "Authorization Server",
+        "User Agent만",
+        "Cache Proxy"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "Client는 소유자의 인가를 받아 리소스에 접근하려는 애플리케이션이다."
+    },
+    {
+      "id": "web-fundamentals-oauth-resource-server",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "Access Token을 받아 보호된 API 리소스를 제공하는 역할은?",
+      "options": [
+        "Authorization Server만",
+        "User Agent",
+        "Resource Server",
+        "DNS 서버",
+        "Static File Host"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "Resource Server는 토큰이 나타내는 권한에 따라 보호 리소스를 제공한다."
+    },
+    {
+      "id": "web-fundamentals-oauth-authorization-server",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "OAuth 2.0에서 권한 부여 후 토큰을 발급하는 역할은?",
+      "options": [
+        "Resource Server",
+        "Client",
+        "Browser Cache",
+        "Authorization Server",
+        "CDN"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "Authorization Server는 클라이언트에 Access Token을 발급한다."
+    },
+    {
+      "id": "web-fundamentals-oidc-scope",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 5,
+      "prompt": "OIDC 인증 요청임을 나타내는 필수 scope 값은?",
+      "options": [
+        "profile만",
+        "email만",
+        "offline_access만",
+        "read",
+        "openid"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oidc",
+          "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
+        }
+      ],
+      "explanation": "openid scope를 포함해야 OpenID Connect 요청으로 처리된다."
+    },
+    {
+      "id": "web-fundamentals-auth-code",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "Authorization Code flow에서 redirect를 통해 클라이언트에 먼저 전달되는 것은?",
+      "options": [
+        "짧은 수명의 authorization code",
+        "리소스 서버 DB 원본",
+        "클라이언트 비밀 키",
+        "사용자 비밀번호",
+        "영구 Access Token만"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "인가 서버가 code를 전달하고 클라이언트가 이를 토큰 엔드포인트에서 교환한다."
+    },
+    {
+      "id": "web-fundamentals-oauth-scope",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "OAuth 2.0의 scope가 표현하는 것은?",
+      "options": [
+        "HTTP 응답 크기",
+        "요청하는 접근 범위",
+        "사용자 비밀번호 해시",
+        "JWT 서명 바이트",
+        "TLS 버전"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "scope는 클라이언트가 원하는 권한 범위를 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-http-origin",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "두 URL의 origin을 비교할 때 기본 구성 요소는?",
+      "options": [
+        "pathname, query, fragment",
+        "username, password, path",
+        "scheme, host, port",
+        "헤더, 본문, 상태",
+        "쿠키, 세션, 토큰"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — url",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+        }
+      ],
+      "explanation": "origin은 프로토콜·호스트·포트의 조합이다."
+    },
+    {
+      "id": "web-fundamentals-tls-role",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "HTTPS 연결에서 TLS가 제공하는 핵심 기능은?",
+      "options": [
+        "JWT payload 자동 암호화",
+        "서버 세션 영구 저장",
+        "HTTP 캐시 금지",
+        "전송 중 암호화와 서버 인증",
+        "URL 쿼리 삭제"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — tls",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/TLS"
+        }
+      ],
+      "explanation": "TLS는 전송 계층에서 통신을 보호하고 상대 서버 인증을 지원한다."
+    },
+    {
+      "id": "web-fundamentals-http-body-type",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 5,
+      "prompt": "JSON 본문을 POST할 때 서버에 본문 형식을 알리는 일반적인 헤더 값은?",
+      "options": [
+        "Accept: text/html만",
+        "Cookie: application/json",
+        "Location: application/json",
+        "ETag: application/json",
+        "Content-Type: application/json"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Content-Type은 보낸 본문이 JSON 표현임을 명시한다."
+    },
+    {
+      "id": "web-fundamentals-accept-json",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 1,
+      "prompt": "API 응답으로 JSON을 받고 싶다고 표현하는 요청 헤더는?",
+      "options": [
+        "Accept: application/json",
+        "Content-Type: image/png",
+        "Location: application/json",
+        "Set-Cookie: json",
+        "ETag: application/json"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — headers",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers"
+        }
+      ],
+      "explanation": "Accept는 클라이언트가 수용하는 응답 형식을 표현한다."
+    },
+    {
+      "id": "web-fundamentals-post-repeat",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 2,
+      "prompt": "같은 POST /orders 요청을 네트워크 재시도로 두 번 보내면 기본적으로 어떤 점을 가정하면 안 되는가?",
+      "options": [
+        "서버가 항상 304를 보낸다.",
+        "서버 상태가 반드시 한 번만 바뀐다고 가정하면 안 된다.",
+        "요청 본문이 자동 암호화된다.",
+        "두 번째 요청이 반드시 GET이 된다.",
+        "응답 쿠키가 자동 삭제된다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "POST는 일반적으로 멱등을 보장하지 않아 중복 제출 처리 정책이 필요하다."
+    },
+    {
+      "id": "web-fundamentals-put-repeat",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 3,
+      "prompt": "같은 전체 리소스 표현으로 PUT /profile을 두 번 보냈다. 멱등성의 정확한 의미는?",
+      "options": [
+        "두 응답의 상태 코드가 반드시 같다.",
+        "네트워크 요청이 하나로 합쳐진다.",
+        "의도된 최종 서버 상태가 한 번 보낸 경우와 같다.",
+        "로그 기록도 반드시 하나다.",
+        "서버가 두 번째 요청을 받지 않는다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — methods",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+        }
+      ],
+      "explanation": "멱등은 반복 요청의 의도된 효과에 관한 것이며 응답이나 로그가 반드시 동일하다는 뜻은 아니다."
+    },
+    {
+      "id": "web-fundamentals-status-401-challenge",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 4,
+      "prompt": "인증이 필요한 리소스가 401을 반환할 때 인증 방법을 제시하는 응답 헤더는?",
+      "options": [
+        "Authorization",
+        "Set-Cookie",
+        "Accept",
+        "WWW-Authenticate",
+        "Content-Encoding"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — auth",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication"
+        }
+      ],
+      "explanation": "401 응답의 WWW-Authenticate는 적용 가능한 인증 challenge를 제시한다."
+    },
+    {
+      "id": "web-fundamentals-bearer-syntax",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 4,
+      "answer": 5,
+      "prompt": "Bearer 토큰을 HTTP 요청에 넣는 일반적인 형식은?",
+      "options": [
+        "Cookie: Bearer=<token>만",
+        "Content-Type: Bearer",
+        "Location: Bearer",
+        "ETag: Bearer",
+        "Authorization: Bearer <token>"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — auth",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication"
+        }
+      ],
+      "explanation": "Bearer 인증 스킴은 Authorization 헤더에 토큰을 실어 보낸다."
+    },
+    {
+      "id": "web-fundamentals-cookie-http-only",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "HttpOnly 쿠키에 대한 설명으로 옳은 것은?",
+      "options": [
+        "JavaScript의 document.cookie에서 읽을 수 없지만 HTTP 요청에는 전송될 수 있다.",
+        "네트워크 요청에도 전송되지 않는다.",
+        "모든 서버가 쿠키를 읽을 수 없다.",
+        "쿠키를 자동 암호화한다.",
+        "쿠키가 localStorage로 이동한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "HttpOnly는 스크립트 접근을 막는 속성이지 서버로 보내는 쿠키를 없애지 않는다."
+    },
+    {
+      "id": "web-fundamentals-cookie-secure",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 2,
+      "prompt": "Secure 속성이 붙은 쿠키의 일반적인 전송 조건은?",
+      "options": [
+        "모든 HTTP 요청에 평문으로 보낸다.",
+        "HTTPS처럼 보안 연결에서 전송한다.",
+        "서버 저장소에서만 존재한다.",
+        "반드시 JWT여야 한다.",
+        "브라우저 쿠키가 아니라 응답 본문이 된다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cookies",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies"
+        }
+      ],
+      "explanation": "Secure는 보안 프로토콜로 전송을 제한한다."
+    },
+    {
+      "id": "web-fundamentals-cache-private",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "사용자별 응답을 공유 캐시 대신 개인 브라우저 캐시에서만 재사용하게 할 때 사용할 지시자는?",
+      "options": [
+        "Cache-Control: public",
+        "Cache-Control: immutable",
+        "Cache-Control: private",
+        "Vary: *만",
+        "Location: private"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "private은 공유 캐시 저장을 막고 개인 캐시를 허용한다."
+    },
+    {
+      "id": "web-fundamentals-conditional-get",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "클라이언트가 ETag를 가진 뒤 조건부 GET을 보내고 304를 받았다. 다음 동작으로 적절한 것은?",
+      "options": [
+        "304 응답의 빈 본문을 화면에 그대로 표시한다.",
+        "원래 리소스를 영구 삭제한다.",
+        "POST로 같은 데이터를 다시 보낸다.",
+        "저장된 본문을 재사용하고 새 본문은 받지 않는다.",
+        "ETag를 JWT로 해석한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — cache",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ],
+      "explanation": "304는 캐시된 표현이 여전히 유효하므로 기존 응답 본문을 재사용하도록 한다."
+    },
+    {
+      "id": "web-fundamentals-if-match",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 5,
+      "prompt": "수정 요청에서 현재 서버 표현의 ETag와 일치할 때만 작업하도록 하는 요청 헤더는?",
+      "options": [
+        "If-None-Match",
+        "Vary",
+        "Age",
+        "Accept-Encoding",
+        "If-Match"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — semantics",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110"
+        }
+      ],
+      "explanation": "If-Match는 현재 표현과 지정 검증자가 맞는 경우에만 요청을 처리하게 한다."
+    },
+    {
+      "id": "web-fundamentals-precondition-failed",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "If-Match 조건이 맞지 않아 수정이 적용되지 않은 경우의 상태 코드는?",
+      "options": [
+        "412 Precondition Failed",
+        "200 OK",
+        "204 No Content",
+        "304 Not Modified",
+        "503 Service Unavailable"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "412는 요청의 조건부 전제 조건이 거짓일 때 사용된다."
+    },
+    {
+      "id": "web-fundamentals-redirect-303",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 2,
+      "prompt": "POST 처리 후 결과 페이지로 GET 탐색을 명확히 유도하는 리다이렉트 상태 코드는?",
+      "options": [
+        "301 Moved Permanently",
+        "303 See Other",
+        "304 Not Modified",
+        "307 Temporary Redirect",
+        "308 Permanent Redirect"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "303은 다른 URI의 표현을 GET으로 조회하도록 지시한다."
+    },
+    {
+      "id": "web-fundamentals-redirect-307",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "임시 이동이면서 원래 요청 메서드와 본문을 유지해야 하는 리다이렉트 코드는?",
+      "options": [
+        "302 Found",
+        "303 See Other",
+        "307 Temporary Redirect",
+        "304 Not Modified",
+        "308 Permanent Redirect"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "307은 임시 redirect에서 요청 메서드를 변경하지 않는다."
+    },
+    {
+      "id": "web-fundamentals-redirect-308",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "영구 이동이면서 원래 요청 메서드를 유지해야 하는 리다이렉트 코드는?",
+      "options": [
+        "301 Moved Permanently",
+        "302 Found",
+        "303 See Other",
+        "308 Permanent Redirect",
+        "307 Temporary Redirect"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — status",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+        }
+      ],
+      "explanation": "308은 영구 redirect이며 원래 메서드를 유지한다."
+    },
+    {
+      "id": "web-fundamentals-url-fragment-request",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 5,
+      "prompt": "https://example.com/a#section으로 이동할 때 fragment에 대한 설명은?",
+      "options": [
+        "서버에 Cookie 헤더로 자동 전송된다.",
+        "항상 쿼리 값이 된다.",
+        "scheme 앞에 붙는다.",
+        "HTTP 메서드가 된다.",
+        "fragment는 HTTP 요청 대상에 포함되지 않고 클라이언트에서 해석된다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — uri",
+          "url": "https://www.rfc-editor.org/rfc/rfc3986"
+        }
+      ],
+      "explanation": "fragment는 URL의 클라이언트 측 식별자이며 요청 URI에 포함되지 않는다."
+    },
+    {
+      "id": "web-fundamentals-base64-hello",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "결과 예측",
+      "points": 5,
+      "answer": 1,
+      "prompt": "브라우저에서 다음 표현식의 결과는?",
+      "options": [
+        "aGk=",
+        "aGk",
+        "aGk==",
+        "aGk/",
+        "/hi/"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — base64",
+          "url": "https://www.rfc-editor.org/rfc/rfc4648"
+        }
+      ],
+      "explanation": "h와 i 두 바이트를 6비트 단위로 나누면 aGk=이며 한 패딩 문자가 붙는다.",
+      "code": "btoa('hi')"
+    },
+    {
+      "id": "web-fundamentals-base64-not-security",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 2,
+      "prompt": "JWT payload를 Base64url로 디코딩할 수 있다. 이 사실이 의미하는 것은?",
+      "options": [
+        "서명이 자동 유효하다는 것이다.",
+        "내용은 인코딩돼 있을 뿐 비밀이 아니라는 것이다.",
+        "payload가 암호화돼 있다는 것이다.",
+        "토큰이 만료되지 않았다는 것이다.",
+        "발급자가 신뢰된다는 것이다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — base64",
+          "url": "https://www.rfc-editor.org/rfc/rfc4648"
+        }
+      ],
+      "explanation": "Base64url은 인코딩이므로 디코딩만으로 읽을 수 있고 신뢰성 검증과는 별개다."
+    },
+    {
+      "id": "web-fundamentals-jwt-signature",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "서명된 JWT의 payload를 수정했는데 기존 signature를 유지했다. 올바른 검증 결과는?",
+      "options": [
+        "payload 수정은 서명과 무관하다.",
+        "exp만 바뀌면 언제나 유효하다.",
+        "서명 검증에 실패해야 한다.",
+        "Base64url이 수정분을 자동 암호화한다.",
+        "모든 서버가 새 서명을 자동 발급한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "서명은 header와 payload에 결합되어 있으므로 내용을 바꾸면 기존 서명이 맞지 않는다."
+    },
+    {
+      "id": "web-fundamentals-jwt-not-encrypted",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "일반적인 서명 JWT의 payload에 비밀번호 원문을 넣으면 안 되는 이유는?",
+      "options": [
+        "payload는 브라우저가 전혀 전송하지 않는다.",
+        "JWT에는 문자열을 담을 수 없다.",
+        "서명을 하면 자동 압축된다.",
+        "서명은 기밀성을 제공하지 않아 payload를 디코딩해 읽을 수 있다.",
+        "모든 JWT가 기본적으로 AES 암호화된다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "JWS의 서명은 무결성과 발급자 검증에 쓰지만 내용을 숨기지 않는다."
+    },
+    {
+      "id": "web-fundamentals-jwt-exp-check",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 5,
+      "prompt": "JWT의 exp가 이미 과거이고 서명은 유효하다. 수신자는 어떻게 해야 하는가?",
+      "options": [
+        "서명이 유효하므로 무조건 수용한다.",
+        "payload를 다시 Base64 인코딩한다.",
+        "iss를 현재 시각으로 바꾼다.",
+        "쿠키를 응답 헤더로 보낸다.",
+        "만료된 토큰으로 처리한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "exp는 그 시각 이후 JWT를 수용하면 안 된다는 조건이다."
+    },
+    {
+      "id": "web-fundamentals-jwt-aud-check",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "서비스 A용 access token의 aud가 A인데 서비스 B가 이를 받았다. B의 올바른 판단은?",
+      "options": [
+        "자신이 의도된 수신 대상인지 확인하고 아니면 거부한다.",
+        "서명이 맞으면 대상과 무관하게 허용한다.",
+        "토큰을 Base64로 한 번 더 감싼다.",
+        "sub를 B로 수정한다.",
+        "모든 토큰을 익명으로 취급한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "aud는 토큰이 의도된 수신자를 지정하므로 수신 서비스가 확인해야 한다."
+    },
+    {
+      "id": "web-fundamentals-jwt-nbf-check",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 2,
+      "prompt": "JWT의 nbf가 10분 후이고 현재 시각은 그 전이다. 처리 결과는?",
+      "options": [
+        "exp가 없으면 항상 허용한다.",
+        "아직 사용 가능 시점 전이므로 거부한다.",
+        "iat를 현재 시각으로 고친다.",
+        "서명을 무시하고 허용한다.",
+        "토큰을 쿠키로만 옮긴다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — jwt",
+          "url": "https://www.rfc-editor.org/rfc/rfc7519"
+        }
+      ],
+      "explanation": "nbf는 토큰을 수용할 수 있는 가장 이른 시각을 나타낸다."
+    },
+    {
+      "id": "web-fundamentals-oidc-id-vs-access",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "OIDC 로그인 후 프런트엔드가 ID Token과 Access Token을 받았다. 사용자 인증 결과를 확인하는 목적의 토큰은?",
+      "options": [
+        "Access Token만",
+        "Refresh Token만",
+        "ID Token",
+        "Authorization Code만",
+        "ETag"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oidc",
+          "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
+        }
+      ],
+      "explanation": "ID Token은 클라이언트에 대한 사용자 인증 결과를 담고 Access Token은 보호 API 접근에 쓰인다."
+    },
+    {
+      "id": "web-fundamentals-oidc-nonce",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "OIDC 인증 요청의 nonce가 ID Token에서 다시 확인되는 이유는?",
+      "options": [
+        "HTTP 캐시 수명을 늘리기 위해서",
+        "모든 사용자를 같은 계정으로 묶기 위해서",
+        "토큰을 Base64로 암호화하기 위해서",
+        "인증 요청과 반환된 ID Token을 연결하기 위해서",
+        "쿠키 경로를 설정하기 위해서"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oidc",
+          "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
+        }
+      ],
+      "explanation": "nonce는 클라이언트가 요청에 넣은 값과 ID Token claim을 대조하게 한다."
+    },
+    {
+      "id": "web-fundamentals-oauth-state",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 5,
+      "prompt": "OAuth 로그인 시작 시 넣은 state 값을 callback에서 확인하는 목적은?",
+      "options": [
+        "Access Token의 서명을 대신한다.",
+        "리소스 서버의 DB를 삭제한다.",
+        "JWT를 암호화한다.",
+        "HTTP 메서드를 PUT으로 바꾼다.",
+        "인가 요청과 응답을 연결한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "state는 클라이언트가 보낸 인가 요청과 돌아온 응답을 연관짓는 값이다."
+    },
+    {
+      "id": "web-fundamentals-oauth-code-exchange",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 1,
+      "prompt": "Authorization Code flow에서 받은 code를 토큰으로 교환하는 대상은?",
+      "options": [
+        "Authorization Server의 token endpoint",
+        "Resource Server의 이미지 endpoint",
+        "브라우저 localStorage",
+        "DNS 서버",
+        "HTTP 캐시"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "클라이언트는 token endpoint에 authorization code를 제출해 토큰을 얻는다."
+    },
+    {
+      "id": "web-fundamentals-pkce-verifier",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 2,
+      "prompt": "PKCE에서 토큰 교환 시 클라이언트가 제출하는 원래의 비밀 난수 값은?",
+      "options": [
+        "code_challenge",
+        "code_verifier",
+        "access_token",
+        "id_token",
+        "session_id"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — pkce",
+          "url": "https://www.rfc-editor.org/rfc/rfc7636"
+        }
+      ],
+      "explanation": "code_verifier는 처음 challenge를 만들 때 사용한 원본이며 교환 시 검증된다."
+    },
+    {
+      "id": "web-fundamentals-pkce-challenge",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 3,
+      "prompt": "PKCE의 S256 방식에서 code_challenge를 만드는 방식은?",
+      "options": [
+        "code_verifier를 평문 그대로 보낸다.",
+        "JWT payload를 암호화한다.",
+        "SHA-256(code_verifier)를 Base64url 인코딩한다.",
+        "HTTP 쿠키 이름을 해시한다.",
+        "리소스 서버의 ETag를 복사한다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — pkce",
+          "url": "https://www.rfc-editor.org/rfc/rfc7636"
+        }
+      ],
+      "explanation": "S256 challenge는 verifier의 SHA-256 해시를 Base64url로 표현한다."
+    },
+    {
+      "id": "web-fundamentals-pkce-purpose",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 4,
+      "prompt": "PKCE가 authorization code flow에서 추가로 증명하는 것은?",
+      "options": [
+        "JWT payload의 기밀성",
+        "사용자의 암호 원문",
+        "HTTP 응답 크기",
+        "code를 교환하는 주체가 최초 요청의 verifier를 가진다는 점",
+        "쿠키의 만료 시각"
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — pkce",
+          "url": "https://www.rfc-editor.org/rfc/rfc7636"
+        }
+      ],
+      "explanation": "서버는 최초 challenge와 교환 시 verifier를 대조해 code 가로채기만으로 토큰을 얻지 못하게 한다."
+    },
+    {
+      "id": "web-fundamentals-scope-vs-audience",
+      "category": "Web Fundamentals",
+      "format": "객관식 단일",
+      "type": "개념 판단",
+      "points": 5,
+      "answer": 5,
+      "prompt": "OAuth scope와 JWT aud의 차이를 가장 잘 설명한 것은?",
+      "options": [
+        "둘 다 토큰 만료 시각이다.",
+        "scope는 발급자, aud는 발급 시간이다.",
+        "둘 다 HTTP 쿠키 경로다.",
+        "scope는 서명, aud는 암호화다.",
+        "scope는 허용 작업 범위, aud는 토큰의 의도된 수신 대상이다."
+      ],
+      "sources": [
+        {
+          "title": "공식 문서 — oauth",
+          "url": "https://www.rfc-editor.org/rfc/rfc6749"
+        }
+      ],
+      "explanation": "scope는 권한 범위를, aud는 토큰을 받을 대상을 나타낸다."
+    }
+  ]
+}
