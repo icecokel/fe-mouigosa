@@ -4,12 +4,24 @@ import { useEffect, useRef, useState } from "react";
 import { formatTime, remainingSeconds } from "./countdown.mjs";
 import { questionBank } from "./questions.mjs";
 import { createExam } from "./exam.mjs";
+import { createExamIdentity } from "./candidate.mjs";
 import { gradeExam, isAnswered, shareExamResult } from "./results.mjs";
 import MatchingInput from "./matching-input";
 
 const choices = ["①", "②", "③", "④", "⑤"];
 const leftLabels = ["ㄱ", "ㄴ", "ㄷ", "ㄹ"];
 const rightLabels = ["A", "B", "C", "D"];
+
+function CandidateRecord({ candidate }) {
+  return (
+    <dl className="candidate-record">
+      <div><dt>성명</dt><dd>{candidate.name}</dd></div>
+      <div><dt>수험번호</dt><dd>{candidate.number}</dd></div>
+      <div><dt>시행일</dt><dd><time dateTime={candidate.date}>{candidate.date.replaceAll("-", ".")}</time></dd></div>
+      {candidate.affiliation && <div><dt>소속</dt><dd>{candidate.affiliation}</dd></div>}
+    </dl>
+  );
+}
 
 function answerText(question, value) {
   if (question.format === "객관식 단일") {
@@ -78,7 +90,7 @@ function Question({ question, answer, onAnswer, onChoose, locked }) {
   );
 }
 
-function OMR({ questions, answers, onChoose, onJump, onSubmit, labelId, timeLeft, locked }) {
+function OMR({ questions, answers, candidate, onChoose, onJump, onSubmit, labelId, timeLeft, locked }) {
   const numbers = questions.map((question) => question.id);
   const answered = questions.filter((question) => isAnswered(question, answers[question.id])).length;
 
@@ -88,6 +100,7 @@ function OMR({ questions, answers, onChoose, onJump, onSubmit, labelId, timeLeft
         <div>
           <p className="omr-kicker">2026학년도 · 제 1교시</p>
           <h2 id={labelId}>OMR 답안지</h2>
+          <p className="omr-candidate">{candidate.name} · {candidate.number}</p>
         </div>
         <div className="omr-status">
           <p className="omr-time">남은 시간 <strong role="timer">{timeLeft}</strong></p>
@@ -134,7 +147,7 @@ function OMR({ questions, answers, onChoose, onJump, onSubmit, labelId, timeLeft
   );
 }
 
-function Exam({ questions, answers, onAnswer, onChoose, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
+function Exam({ questions, answers, candidate, onAnswer, onChoose, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
   const pages = Array.from({ length: Math.ceil(questions.length / 4) }, (_, index) => questions.slice(index * 4, index * 4 + 4));
   const answered = questions.filter((question) => isAnswered(question, answers[question.id])).length;
   const jumpToQuestion = (number) => {
@@ -157,6 +170,7 @@ function Exam({ questions, answers, onAnswer, onChoose, onSubmit, dialogRef, ope
                   <span className="period">제 1교시</span>
                   <h1>프론트엔드 영역</h1>
                 </div>
+                <CandidateRecord candidate={candidate} />
               </header>
             ) : (
               <header className="continuation-header">
@@ -182,7 +196,7 @@ function Exam({ questions, answers, onAnswer, onChoose, onSubmit, dialogRef, ope
       </main>
 
       <aside className="desktop-omr" aria-label="답안지">
-        <OMR questions={questions} answers={answers} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} candidate={candidate} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
       </aside>
 
       <button
@@ -206,13 +220,13 @@ function Exam({ questions, answers, onAnswer, onChoose, onSubmit, dialogRef, ope
             닫기
           </button>
         </div>
-        <OMR questions={questions} answers={answers} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} candidate={candidate} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
       </dialog>
     </div>
   );
 }
 
-function Result({ questions, answers, onRetry }) {
+function Result({ questions, answers, candidate, onRetry }) {
   const report = gradeExam(answers, questions);
   const [shareStatus, setShareStatus] = useState({});
   const [sharing, setSharing] = useState(false);
@@ -235,6 +249,7 @@ function Result({ questions, answers, onRetry }) {
         <h1>성적통지표</h1>
         <span>프론트엔드 영역 · 제 1교시</span>
       </header>
+      <CandidateRecord candidate={candidate} />
       <div className="result-body">
         <p className="result-overview">
           <span className="total-score">총점 <strong>{report.score}</strong> / {report.maxScore}점</span>
@@ -351,6 +366,8 @@ function Result({ questions, answers, onRetry }) {
 
 export default function Home() {
   const [questions, setQuestions] = useState([]);
+  const [candidate, setCandidate] = useState(null);
+  const [identity, setIdentity] = useState(null);
   const [examError, setExamError] = useState("");
   const [view, setView] = useState("exam");
   const [answers, setAnswers] = useState({});
@@ -358,6 +375,11 @@ export default function Home() {
   const [secondsLeft, setSecondsLeft] = useState(20 * 60);
   const dialogRef = useRef(null);
   const openButtonRef = useRef(null);
+  const nameInputRef = useRef(null);
+
+  useEffect(() => {
+    setIdentity(createExamIdentity());
+  }, []);
 
   useEffect(() => {
     if (!questions.length || submittedAnswers) return;
@@ -381,7 +403,15 @@ export default function Home() {
     showView("result");
   };
 
-  const retryExam = () => {
+  const startExam = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("candidateName") ?? "").trim();
+    if (!name) {
+      setExamError("성명을 입력해 주세요.");
+      nameInputRef.current?.focus();
+      return;
+    }
     try {
       setQuestions(createExam(questionBank));
       setExamError("");
@@ -389,9 +419,25 @@ export default function Home() {
       setExamError(error.message);
       return;
     }
+    const issued = createExamIdentity();
+    setCandidate({
+      name,
+      affiliation: String(data.get("affiliation") ?? "").trim(),
+      ...(identity?.date === issued.date ? identity : issued),
+    });
     setAnswers({});
     setSecondsLeft(20 * 60);
     setSubmittedAnswers(null);
+    showView("exam");
+  };
+
+  const retryExam = () => {
+    setQuestions([]);
+    setAnswers({});
+    setSubmittedAnswers(null);
+    setSecondsLeft(20 * 60);
+    setIdentity(createExamIdentity());
+    setExamError("");
     showView("exam");
   };
 
@@ -425,19 +471,37 @@ export default function Home() {
             <p className="exam-year">2026학년도 프론트엔드 개발자 모의평가</p>
             <div className="exam-title-row"><span className="period">제 1교시</span><h1>프론트엔드 영역</h1></div>
           </header>
-          <h2>수험생 유의사항</h2>
-          <ol>
-            <li>시험 시간은 20분이며, 시작 버튼을 누르면 시간이 흐릅니다.</li>
-            <li>문항은 매번 무작위로 출제되며 20문항 이상, 총 100점입니다.</li>
-            <li>문항별 배점은 2~5점입니다. 각 문항의 배점을 확인하십시오.</li>
-            <li>단일·중복 선택, 단답, 선긋기 문항은 문제지의 안내에 따라 답하십시오.</li>
-            <li>시험 종료 후 성적표를 확인할 수 있습니다.</li>
-          </ol>
-          <button type="button" className="exam-submit" onClick={retryExam}>모의고사 시작</button>
+          <form onSubmit={startExam}>
+            <section className="candidate-entry" aria-labelledby="candidate-title">
+              <h2 id="candidate-title">수험자 정보 기재</h2>
+              <div className="candidate-grid">
+                <label className="candidate-cell">
+                  <span>성명</span>
+                  <input ref={nameInputRef} name="candidateName" type="text" required maxLength={30} autoComplete="name" defaultValue={candidate?.name ?? ""} placeholder="성명 또는 닉네임" onChange={() => setExamError("")} />
+                </label>
+                <div className="candidate-cell"><span>수험번호</span><output>{identity?.number ?? "자동 발급 중"}</output></div>
+                <label className="candidate-cell">
+                  <span>소속 <small>(선택)</small></span>
+                  <input name="affiliation" type="text" maxLength={50} autoComplete="organization" defaultValue={candidate?.affiliation ?? ""} placeholder="학교·회사·스터디" />
+                </label>
+                <div className="candidate-cell"><span>시행일</span><time dateTime={identity?.date}>{identity?.date?.replaceAll("-", ".") ?? "확인 중"}</time></div>
+              </div>
+              <p className="candidate-note">수험번호는 한국 시간 시행일을 기준으로 임의 발급됩니다. 입력 정보는 서버에 저장하지 않습니다.</p>
+            </section>
+            <h2>수험생 유의사항</h2>
+            <ol>
+              <li>시험 시간은 20분이며, 시작 버튼을 누르면 시간이 흐릅니다.</li>
+              <li>문항은 매번 무작위로 출제되며 20문항 이상, 총 100점입니다.</li>
+              <li>문항별 배점은 2~5점입니다. 각 문항의 배점을 확인하십시오.</li>
+              <li>단일·중복 선택, 단답, 선긋기 문항은 문제지의 안내에 따라 답하십시오.</li>
+              <li>시험 종료 후 성적표를 확인할 수 있습니다.</li>
+            </ol>
+            <button type="submit" className="exam-submit">모의고사 시작</button>
+          </form>
         </main>
       ) : view === "exam" ? (
-        <Exam questions={questions} answers={answers} onAnswer={setAnswer} onChoose={chooseAnswer} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
-      ) : <Result questions={questions} answers={submittedAnswers} onRetry={retryExam} />}
+        <Exam questions={questions} answers={answers} candidate={candidate} onAnswer={setAnswer} onChoose={chooseAnswer} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
+      ) : <Result questions={questions} answers={submittedAnswers} candidate={candidate} onRetry={retryExam} />}
     </>
   );
 }

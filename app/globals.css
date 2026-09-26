@@ -68,6 +68,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
   font-family: var(--font-exam);
 }
 .exam-header { border-bottom: 2px solid var(--rule); padding-bottom: 23px; }
+.candidate-record { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin: 18px 0 0; font: 12px/1.5 var(--font-label); text-align: left; }
+.candidate-record div { display: flex; min-width: 0; gap: 8px; padding: 5px 0; border-top: 1px solid var(--rule-soft); }
+.candidate-record dt { flex: none; min-width: 60px; color: var(--ink-muted); }
+.candidate-record dd { min-width: 0; margin: 0; overflow-wrap: anywhere; font-weight: 700; }
 .exam-year { margin: 0; text-align: center; font: 500 20px/1.5 var(--font-label); }
 .exam-title-row { position: relative; margin-top: 13px; display: flex; align-items: center; justify-content: center; min-height: 56px; }
 .exam-title-row h1 { margin: 0; text-align: center; font: 800 40px/1.25 var(--font-label); letter-spacing: -.035em; }
@@ -109,6 +113,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .omr-heading { min-height: 67px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--omr-green); }
 .omr-kicker { margin: 0 0 3px; font-size: 11px; line-height: 1.5; color: var(--omr-green); }
 .omr-heading h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.4; letter-spacing: .04em; }
+.omr-candidate { margin: -7px 0 10px; color: var(--ink-muted); font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
 .omr-status { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .omr-time { margin: 0; color: var(--ink-muted); font-size: 11px; text-align: right; }
 .omr-time strong { display: block; color: var(--ink); font-size: 18px; font-variant-numeric: tabular-nums; }
@@ -250,7 +255,19 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 
 .exam-start { width: min(794px, calc(100% - 32px)); margin: 24px auto; padding: 40px 32px; }
 .exam-start h2 { margin-top: 40px; font: 700 21px var(--font-exam); }
+.candidate-entry { margin-top: 32px; }
+.exam-start .candidate-entry h2 { margin: 0 0 12px; }
+.candidate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--rule); border-left: 1px solid var(--rule-soft); font-family: var(--font-label); }
+.candidate-cell { display: flex; align-items: stretch; min-width: 0; min-height: 55px; border-right: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+.candidate-cell > span { display: flex; flex: none; align-items: center; gap: 4px; width: 112px; padding: 8px 10px; border-right: 1px solid var(--rule-soft); background: var(--surface-subtle); font-size: 13px; font-weight: 700; }
+.candidate-cell small { color: var(--ink-muted); font-size: 11px; font-weight: 400; }
+.candidate-cell input { width: 100%; min-width: 0; padding: 8px 12px; border: 0; border-radius: 0; background: var(--paper); color: var(--ink); font: 15px/1.4 var(--font-label); }
+.candidate-cell output, .candidate-cell time { align-self: center; min-width: 0; padding: 8px 12px; overflow-wrap: anywhere; font-size: 14px; font-variant-numeric: tabular-nums; }
+.candidate-note { margin: 10px 0 0; color: var(--ink-muted); font: 12px/1.6 var(--font-label); }
 .exam-start ol { padding-left: 24px; font: 400 16px/2 var(--font-exam); }
 .exam-start .exam-submit { margin-top: 32px; }
 .exam-error { max-width: 794px; margin: 24px auto; padding: 16px; border: 1px solid currentColor; }
-@media (max-width: 767px) { .exam-start { padding: 24px 16px; } }
+@media (max-width: 767px) {
+  .exam-start { padding: 24px 16px; }
+  .candidate-grid, .candidate-record { grid-template-columns: minmax(0, 1fr); }
+}
