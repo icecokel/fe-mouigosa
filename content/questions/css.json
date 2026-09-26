@@ -3,6 +3,8 @@
   "questions": [
     {
       "id": "css-border-box",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 2,
       "answer": 3,
@@ -25,6 +27,8 @@
     },
     {
       "id": "css-specificity",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 4,
       "answer": 1,
@@ -47,6 +51,8 @@
     },
     {
       "id": "css-sticky",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "개념 판단",
       "points": 3,
       "answer": 2,
@@ -68,6 +74,8 @@
     },
     {
       "id": "css-flex-direction",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 3,
       "prompt": "기본 가로 쓰기 방향에서 다음 컨테이너의 주축 방향은?",
@@ -90,6 +98,8 @@
     },
     {
       "id": "css-display-none",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "개념 판단",
       "points": 3,
       "prompt": "display: none과 visibility: hidden의 레이아웃 차이로 옳은 것은?",
@@ -111,6 +121,8 @@
     },
     {
       "id": "css-custom-property",
+      "category": "CSS",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 4,
       "prompt": "--accent가 어디에도 정의되어 있지 않다. 다음 요소의 글자색은?",
@@ -133,6 +145,8 @@
     },
     {
       "id": "css-selector-class",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "class=\"notice\"인 요소를 선택하는 선택자는?",
       "explanation": "클래스 선택자는 점으로 시작한다.",
@@ -154,6 +168,8 @@
     },
     {
       "id": "css-selector-child",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "직접 자식인 li만 선택하려면?",
       "explanation": "> 결합자는 직접 자식 관계다.",
@@ -175,6 +191,8 @@
     },
     {
       "id": "css-selector-adjacent",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "h2 바로 뒤의 형제 p 하나를 선택하려면?",
       "explanation": "+는 바로 다음 형제만 선택한다.",
@@ -196,6 +214,8 @@
     },
     {
       "id": "css-selector-attribute",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "disabled 속성을 가진 input을 선택하려면?",
       "explanation": "대괄호는 속성 존재 조건이다.",
@@ -217,6 +237,8 @@
     },
     {
       "id": "css-selector-hover",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "포인터가 올라간 요소에 적용하는 의사 클래스는?",
       "explanation": "hover는 포인터가 요소를 가리키는 상태다.",
@@ -238,6 +260,8 @@
     },
     {
       "id": "css-selector-checked",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "체크된 체크박스를 선택하는 의사 클래스는?",
       "explanation": "checked는 라디오·체크박스 등의 선택 상태다.",
@@ -259,6 +283,8 @@
     },
     {
       "id": "css-selector-root",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "HTML 문서의 루트 요소를 선택하는 의사 클래스는?",
       "explanation": "HTML 문서에서 :root는 html 요소에 해당한다.",
@@ -280,6 +306,8 @@
     },
     {
       "id": "css-pseudo-before",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "요소 앞에 생성 콘텐츠를 삽입하는 의사 요소는?",
       "explanation": "::before와 content로 생성 콘텐츠를 넣을 수 있다.",
@@ -301,6 +329,8 @@
     },
     {
       "id": "css-inherit-color",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "일반적으로 자식에게 기본 상속되는 속성은?",
       "explanation": "글자색은 상속되지만 나머지 제시 속성은 기본 상속되지 않는다.",
@@ -322,6 +352,8 @@
     },
     {
       "id": "css-margin-padding",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "테두리와 콘텐츠 사이의 안쪽 여백을 정하는 속성은?",
       "explanation": "padding은 콘텐츠와 border 사이 공간이다.",
@@ -343,6 +375,8 @@
     },
     {
       "id": "css-outline-layout",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "포커스 표시를 outline으로 그렸을 때 일반적인 특성은?",
       "explanation": "outline은 border와 달리 공간을 차지하지 않는다.",
@@ -364,6 +398,8 @@
     },
     {
       "id": "css-block-flow",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "일반 흐름의 블록 요소는 보통 어떻게 배치되는가?",
       "explanation": "블록 레벨 박스는 일반 흐름에서 세로로 쌓인다.",
@@ -385,6 +421,8 @@
     },
     {
       "id": "css-inline-width",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "일반적인 비대체 인라인 span에 width만 지정했을 때 옳은 것은?",
       "explanation": "비대체 인라인 박스에는 width가 일반 블록과 같이 적용되지 않는다.",
@@ -406,6 +444,8 @@
     },
     {
       "id": "css-inline-block",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "한 줄에 놓이면서 width와 height를 적용하려면 적절한 display 값은?",
       "explanation": "inline-block은 인라인 배치와 블록 크기 지정을 함께 제공한다.",
@@ -427,6 +467,8 @@
     },
     {
       "id": "css-overflow-scroll",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "콘텐츠가 넘칠 때 필요에 따라 스크롤바를 제공하는 값은?",
       "explanation": "auto는 넘침 여부에 따라 스크롤을 제공한다.",
@@ -448,6 +490,8 @@
     },
     {
       "id": "css-visibility-collapse-space",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "opacity: 0이 적용된 일반 버튼에 대한 설명으로 옳은 것은?",
       "explanation": "불투명도만 바꾸며 상호작용을 자동 해제하지 않는다.",
@@ -469,6 +513,8 @@
     },
     {
       "id": "css-position-relative",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "position: relative의 offset을 적용하면 원래 자리의 공간은?",
       "explanation": "relative는 흐름상 공간을 유지한 채 시각적 위치를 이동한다.",
@@ -490,6 +536,8 @@
     },
     {
       "id": "css-absolute-containing-block",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "transform 등 별도 조건이 없을 때 absolute 요소의 기준이 되는 조상은?",
       "explanation": "positioned 조상이 absolute의 containing block을 형성한다.",
@@ -511,6 +559,8 @@
     },
     {
       "id": "css-fixed-position",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "변형 등 containing block을 바꾸는 조상이 없을 때 fixed의 기준은?",
       "explanation": "기본적으로 fixed는 뷰포트에 대해 배치된다.",
@@ -532,6 +582,8 @@
     },
     {
       "id": "css-flex-enable",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "자식들을 flex item으로 배치하는 부모의 선언은?",
       "explanation": "display가 flex formatting context를 만든다.",
@@ -553,6 +605,8 @@
     },
     {
       "id": "css-grid-enable",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "2차원 행·열 레이아웃을 정의하는 display 값은?",
       "explanation": "grid는 행과 열 트랙을 제공한다.",
@@ -574,6 +628,8 @@
     },
     {
       "id": "css-gap-role",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "flex 또는 grid 컨테이너의 gap은 무엇을 지정하는가?",
       "explanation": "gap은 컨테이너 내부 항목 간 간격이다.",
@@ -595,6 +651,8 @@
     },
     {
       "id": "css-background-cover",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "이미지를 비율 유지하며 배경 영역 전체를 덮게 하는 값은?",
       "explanation": "cover는 잘림을 허용해 빈 영역 없이 덮는다.",
@@ -616,6 +674,8 @@
     },
     {
       "id": "css-object-fit-contain",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "고정 크기 img 박스 안에서 이미지 전체를 비율 유지해 보이려면?",
       "explanation": "contain은 전체가 들어오게 하므로 빈 영역이 생길 수 있다.",
@@ -637,6 +697,8 @@
     },
     {
       "id": "css-font-rem",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "1rem의 기준은?",
       "explanation": "rem은 루트 폰트 크기에 상대적인 길이다.",
@@ -658,6 +720,8 @@
     },
     {
       "id": "css-font-em",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "font-size: 2em을 계산할 때 기준은?",
       "explanation": "font-size의 em은 상속된 폰트 크기에 상대적이다.",
@@ -679,6 +743,8 @@
     },
     {
       "id": "css-percent-width",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "일반 블록에서 width: 50%의 보통 기준은?",
       "explanation": "퍼센트 너비는 containing block 너비를 기준으로 계산한다.",
@@ -700,6 +766,8 @@
     },
     {
       "id": "css-viewport-vw",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "100vw의 의미는?",
       "explanation": "vw는 뷰포트 너비 단위다.",
@@ -721,6 +789,8 @@
     },
     {
       "id": "css-line-height-unitless",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "단위 없는 line-height: 1.5를 상속받은 자식의 줄 높이는?",
       "explanation": "숫자를 상속하므로 자식의 글자 크기에 맞춰 계산된다.",
@@ -742,6 +812,8 @@
     },
     {
       "id": "css-box-sizing-content",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "content-box에서 width: 100px, padding: 10px, border: 2px solid일 때 바깥 너비는? margin은 0이다.",
       "explanation": "좌우 padding 20과 border 4를 콘텐츠 너비에 더한다.",
@@ -763,6 +835,8 @@
     },
     {
       "id": "css-margin-shorthand",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "margin: 1px 2px 3px 4px에서 왼쪽 여백은?",
       "explanation": "네 값은 위·오른쪽·아래·왼쪽 순서다.",
@@ -784,6 +858,8 @@
     },
     {
       "id": "css-padding-two-values",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "padding: 8px 16px에서 아래쪽 padding은?",
       "explanation": "두 값이면 첫 값은 위아래, 둘째는 좌우다.",
@@ -805,6 +881,8 @@
     },
     {
       "id": "css-flex-main-align",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "기본 row flex에서 주축 정렬을 제어하는 속성은?",
       "explanation": "justify-content는 주축의 여유 공간 배치를 제어한다.",
@@ -826,6 +904,8 @@
     },
     {
       "id": "css-flex-cross-align",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "기본 row flex에서 항목의 교차축 정렬을 제어하는 속성은?",
       "explanation": "align-items는 교차축에서 각 항목을 정렬한다.",
@@ -847,6 +927,8 @@
     },
     {
       "id": "css-flex-wrap",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "컨테이너 너비가 부족하면 flex 항목을 다음 줄로 넘기려면?",
       "explanation": "wrap을 지정해야 여러 flex 줄이 만들어진다.",
@@ -868,6 +950,8 @@
     },
     {
       "id": "css-flex-grow-share",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "동일한 basis를 가진 두 flex 항목의 grow가 1과 3이다. 여유 공간 80px은 어떻게 분배되는가?",
       "explanation": "양의 여유 공간은 grow 비율 1:3으로 배분된다.",
@@ -889,6 +973,8 @@
     },
     {
       "id": "css-flex-shrink-disable",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "flex 항목이 가용 공간 부족으로 줄어들지 않게 하려면?",
       "explanation": "shrink 계수 0은 해당 항목의 축소를 막는다.",
@@ -910,6 +996,8 @@
     },
     {
       "id": "css-flex-basis",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "flex-basis의 역할은?",
       "explanation": "basis는 주축 크기 계산의 출발점이다.",
@@ -931,6 +1019,8 @@
     },
     {
       "id": "css-flex-order-a11y",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "order로 화면 배치 순서를 바꿨다. 반드시 함께 확인할 것은?",
       "explanation": "시각적 재배치는 DOM 순서를 자동 변경하지 않는다.",
@@ -952,6 +1042,8 @@
     },
     {
       "id": "css-grid-fr",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "grid-template-columns: 1fr 2fr에서 fr은 무엇인가?",
       "explanation": "fr은 트랙에 가용 공간의 몫을 배분한다.",
@@ -973,6 +1065,8 @@
     },
     {
       "id": "css-grid-repeat",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "같은 너비의 열 3개를 정의하는 선언은?",
       "explanation": "repeat가 같은 트랙 정의를 세 번 반복한다.",
@@ -994,6 +1088,8 @@
     },
     {
       "id": "css-grid-span",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "grid-column: span 2는 무엇을 뜻하는가?",
       "explanation": "span 뒤 숫자는 차지할 트랙 수다.",
@@ -1015,6 +1111,8 @@
     },
     {
       "id": "css-grid-minmax",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "minmax(100px, 1fr)의 역할은?",
       "explanation": "minmax는 트랙의 최소·최대 크기 함수를 정의한다.",
@@ -1036,6 +1134,8 @@
     },
     {
       "id": "css-grid-auto-fit",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "auto-fit과 minmax로 반응형 열을 만들 때 auto-fit의 특성은?",
       "explanation": "auto-fit은 배치 후 비어 있는 반복 트랙을 축소한다.",
@@ -1057,6 +1157,8 @@
     },
     {
       "id": "css-media-min-width",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "@media (min-width: 800px)는 언제 적용되는가?",
       "explanation": "min-width는 포함 경계의 최소 너비 조건이다.",
@@ -1078,6 +1180,8 @@
     },
     {
       "id": "css-media-reduced-motion",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "사용자가 동작 감소를 요청했는지 확인하는 기능은?",
       "explanation": "운영체제 등의 동작 감소 선호를 반영한다.",
@@ -1099,6 +1203,8 @@
     },
     {
       "id": "css-media-dark",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "사용자의 어두운 색상 테마 선호를 감지하는 조건은?",
       "explanation": "prefers-color-scheme으로 밝고 어두운 테마 선호를 검사한다.",
@@ -1120,6 +1226,8 @@
     },
     {
       "id": "css-container-query",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "부모 영역 크기에 따라 카드 스타일을 바꾸려 한다. 적합한 기능은?",
       "explanation": "컨테이너 쿼리는 지정된 컨테이너의 크기 등을 기준으로 조건을 건다.",
@@ -1141,6 +1249,8 @@
     },
     {
       "id": "css-specificity-id",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "같은 출처·레이어·중요도에서 #app과 .app이 같은 요소에 충돌한다. 우선하는 것은?",
       "explanation": "ID 선택자의 명시도가 클래스보다 높다.",
@@ -1162,6 +1272,8 @@
     },
     {
       "id": "css-specificity-where",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": ":where(#app .item)의 명시도는?",
       "explanation": ":where와 인수의 명시도는 0이다.",
@@ -1183,6 +1295,8 @@
     },
     {
       "id": "css-specificity-is",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": ":is(.item, #main)의 명시도는?",
       "explanation": ":is는 인수 목록 중 가장 높은 명시도를 사용한다.",
@@ -1204,6 +1318,8 @@
     },
     {
       "id": "css-cascade-source-order",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "출처·중요도·레이어·명시도·스코프 근접도가 같은 선언이 충돌하면?",
       "explanation": "이전 조건이 같으면 소스 순서가 승패를 정한다.",
@@ -1225,6 +1341,8 @@
     },
     {
       "id": "css-important-scope",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "!important가 붙었다는 사실만으로 보장할 수 없는 것은?",
       "explanation": "출처와 레이어 등 캐스케이드 규칙이 여전히 적용된다.",
@@ -1246,6 +1364,8 @@
     },
     {
       "id": "css-layer-normal",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "작성자 일반 선언끼리 비교한다. 레이어 밖 선언과 레이어 안 선언 중 기본적으로 우선하는 것은?",
       "explanation": "레이어 없는 일반 스타일은 레이어 안 일반 스타일보다 우선한다.",
@@ -1267,6 +1387,8 @@
     },
     {
       "id": "css-layer-important",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "같은 작성자 출처의 여러 레이어에서 !important 선언이 충돌할 때 레이어 순서는?",
       "explanation": "중요 선언의 레이어 우선순위는 일반 선언과 반대다.",
@@ -1288,6 +1410,8 @@
     },
     {
       "id": "css-inherit-keyword",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "margin: inherit은 무엇을 뜻하는가?",
       "explanation": "inherit은 비상속 속성에도 명시적 상속을 요청한다.",
@@ -1309,6 +1433,8 @@
     },
     {
       "id": "css-initial-keyword",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "color: initial은 무엇을 뜻하는가?",
       "explanation": "initial은 상속값이 아니라 속성의 초기값이다.",
@@ -1330,6 +1456,8 @@
     },
     {
       "id": "css-unset-keyword",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "상속되는 속성에 unset을 적용하면?",
       "explanation": "unset은 상속 속성에는 inherit, 그 외에는 initial로 동작한다.",
@@ -1351,6 +1479,8 @@
     },
     {
       "id": "css-custom-property-scope",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "부모에 선언한 일반 --accent 변수를 자식에서 읽을 수 있는 기본 이유는?",
       "explanation": "등록으로 상속 동작을 바꾸지 않은 custom property는 상속된다.",
@@ -1372,6 +1502,8 @@
     },
     {
       "id": "css-var-invalid-fallback",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "--size: red가 존재할 때 width: var(--size, 10px)의 fallback은?",
       "explanation": "var fallback은 대상 속성의 문법에 맞는지까지 대신 검사하지 않는다.",
@@ -1393,6 +1525,8 @@
     },
     {
       "id": "css-calc-units",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "뷰포트 너비에서 32px를 뺀 길이를 표현하려면?",
       "explanation": "calc는 서로 다른 호환 길이 단위를 계산할 수 있다.",
@@ -1414,6 +1548,8 @@
     },
     {
       "id": "css-clamp-size",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "clamp(16px, 2vw, 24px)가 제한하는 범위는?",
       "explanation": "중앙 선호값을 최소·최대 사이로 제한한다.",
@@ -1435,6 +1571,8 @@
     },
     {
       "id": "css-min-function",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "min(50%, 300px)의 의미는?",
       "explanation": "min은 계산한 후보 중 가장 작은 값을 선택한다.",
@@ -1456,6 +1594,8 @@
     },
     {
       "id": "css-margin-collapse",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "일반 블록의 인접한 양수 수직 margin이 상쇄된다. 20px과 30px의 결과는?",
       "explanation": "양수 여백끼리 상쇄되면 더 큰 쪽을 사용한다.",
@@ -1477,6 +1617,8 @@
     },
     {
       "id": "css-bfc-flow-root",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "float를 포함한 부모가 독립적인 블록 서식 맥락을 만들게 하는 값은?",
       "explanation": "flow-root는 새 BFC를 만들어 내부 float를 포함한다.",
@@ -1498,6 +1640,8 @@
     },
     {
       "id": "css-flex-minwidth",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "긴 한 단어 때문에 flex 자식이 줄어들지 않는다. 필요한 경우 적용할 수정은?",
       "explanation": "자동 최소 크기를 0으로 낮춰 축소를 허용한다.",
@@ -1519,6 +1663,8 @@
     },
     {
       "id": "css-grid-minmax-zero",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "긴 콘텐츠로 1fr 열이 넘칠 때 minmax(0, 1fr)을 쓰는 이유는?",
       "explanation": "최소값 0을 지정해 콘텐츠 기반 최소 크기보다 줄어들 수 있게 한다.",
@@ -1540,6 +1686,8 @@
     },
     {
       "id": "css-sticky-overflow-ancestor",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "sticky가 예상과 다른 조상에 붙을 때 우선 확인할 것은?",
       "explanation": "스크롤 메커니즘을 만드는 조상이 sticky 기준에 영향을 준다.",
@@ -1561,6 +1709,8 @@
     },
     {
       "id": "css-stacking-context-opacity",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "opacity가 1보다 작은 요소의 대표적인 쌓임 효과는?",
       "explanation": "부분 투명 요소는 독립적인 쌓임 맥락을 형성한다.",
@@ -1582,6 +1732,8 @@
     },
     {
       "id": "css-stacking-context-child",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "낮은 쌓임 맥락 안의 자식에 매우 큰 z-index를 줬다. 옳은 설명은?",
       "explanation": "자식 z-index는 자신의 맥락 내부에서 비교된다.",
@@ -1603,6 +1755,8 @@
     },
     {
       "id": "css-transform-fixed-block",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "transform: translateX(0)이 적용된 조상 안의 fixed 요소가 뷰포트 대신 조상을 기준으로 놓일 수 있는 이유는?",
       "explanation": "none이 아닌 transform은 fixed 자손의 기준 블록에 영향을 준다.",
@@ -1624,6 +1778,8 @@
     },
     {
       "id": "css-transform-layout",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "transform: translateX(20px)을 적용한 일반 요소의 형제 배치는?",
       "explanation": "transform은 일반 레이아웃 계산 후 시각적 변환을 적용한다.",
@@ -1645,6 +1801,8 @@
     },
     {
       "id": "css-transition-trigger",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "transition으로 부드럽게 바뀌기 위해 일반적으로 필요한 것은?",
       "explanation": "transition은 이전 값과 새 값 사이를 보간한다.",
@@ -1666,6 +1824,8 @@
     },
     {
       "id": "css-animation-keyframes",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "여러 단계의 CSS 애니메이션 값을 정의하는 규칙은?",
       "explanation": "keyframes는 시간 구간별 속성 상태를 정의한다.",
@@ -1687,6 +1847,8 @@
     },
     {
       "id": "css-animation-fill-mode",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "애니메이션 종료 후 마지막 키프레임 스타일을 유지하는 값은?",
       "explanation": "forwards는 종료 후 마지막 진행 상태를 유지한다.",
@@ -1708,6 +1870,8 @@
     },
     {
       "id": "css-animation-alternate",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "animation-direction: alternate가 여러 반복에서 만드는 효과는?",
       "explanation": "alternate는 각 반복의 재생 방향을 번갈아 바꾼다.",
@@ -1729,6 +1893,8 @@
     },
     {
       "id": "css-will-change-cost",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "모든 요소에 will-change: transform을 상시 지정하는 접근의 문제는?",
       "explanation": "최적화 힌트의 과도한 사용은 오히려 자원을 낭비할 수 있다.",
@@ -1750,6 +1916,8 @@
     },
     {
       "id": "css-supports-feature",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "CSS 선언 지원 여부에 따라 스타일을 적용하는 at-rule은?",
       "explanation": "supports는 기능 쿼리를 제공한다.",
@@ -1771,6 +1939,8 @@
     },
     {
       "id": "css-font-face",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "웹 폰트 파일과 font-family를 연결하는 규칙은?",
       "explanation": "font-face는 사용할 폰트 리소스와 특성을 정의한다.",
@@ -1792,6 +1962,8 @@
     },
     {
       "id": "css-font-display-swap",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "font-display: swap의 목적에 가까운 것은?",
       "explanation": "swap은 짧은 차단 구간 후 대체 폰트를 사용한다.",
@@ -1813,6 +1985,8 @@
     },
     {
       "id": "css-logical-inline-start",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "LTR·RTL에 맞춰 인라인 시작 쪽 여백을 지정하는 속성은?",
       "explanation": "논리 속성은 쓰기 방향에 맞춰 물리 방향에 대응한다.",
@@ -1834,6 +2008,8 @@
     },
     {
       "id": "css-writing-mode-vertical",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "세로 쓰기에서 logical block-size는 무엇을 따른다?",
       "explanation": "논리 크기는 writing-mode의 축에 따라 물리 크기로 매핑된다.",
@@ -1855,6 +2031,8 @@
     },
     {
       "id": "css-aspect-ratio",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "width: 200px, height: auto인 일반 박스에 aspect-ratio: 2 / 1을 지정했다. 다른 크기 제약이 없을 때 기대 높이는?",
       "explanation": "너비:높이 비율 2:1을 사용한다.",
@@ -1876,6 +2054,8 @@
     },
     {
       "id": "css-text-ellipsis",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "한 줄 말줄임표가 동작하도록 일반적으로 함께 필요한 설정은?",
       "explanation": "text-overflow만으로 넘침과 줄바꿈 조건이 자동 설정되지는 않는다.",
@@ -1897,6 +2077,8 @@
     },
     {
       "id": "css-white-space-pre-wrap",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "공백·개행을 보존하면서 필요하면 줄을 감싸는 값은?",
       "explanation": "pre-wrap은 보존과 자동 줄바꿈을 함께 제공한다.",
@@ -1918,6 +2100,8 @@
     },
     {
       "id": "css-overflow-wrap-anywhere",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "매우 긴 URL을 임의 위치에서도 줄바꿈하도록 허용하려면?",
       "explanation": "anywhere는 넘침 방지를 위해 임의의 줄바꿈 기회를 제공한다.",
@@ -1939,6 +2123,8 @@
     },
     {
       "id": "css-nth-child-even",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": ":nth-child(2n)은 어떤 형제 위치를 선택하는가?",
       "explanation": "형제 위치는 1부터 세므로 2n은 짝수 위치다.",
@@ -1960,6 +2146,8 @@
     },
     {
       "id": "css-nth-of-type",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": ":nth-of-type(2)는 무엇을 기준으로 세는가?",
       "explanation": "형제 중 같은 요소 타입의 위치를 계산한다.",
@@ -1981,6 +2169,8 @@
     },
     {
       "id": "css-has-parent",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "자식 img가 있는 figure를 선택하는 식은?",
       "explanation": ":has는 상대 선택자와 일치하는 관계가 있는 요소를 선택한다.",
@@ -2002,6 +2192,8 @@
     },
     {
       "id": "css-focus-visible",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "키보드 탐색 등 포커스 표시가 필요한 상황에 스타일을 주는 의사 클래스는?",
       "explanation": "브라우저 판단에 따라 포커스 표시가 필요한 경우를 선택한다.",
@@ -2023,6 +2215,8 @@
     },
     {
       "id": "css-pointer-events-none",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "pointer-events: none을 적용한 요소에 대해 주의할 점은?",
       "explanation": "포인터 타깃 동작과 키보드 포커스는 별개다.",
@@ -2044,6 +2238,8 @@
     },
     {
       "id": "css-isolation-isolate",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "isolation: isolate가 제공하는 대표적 효과는?",
       "explanation": "isolation은 쌓임과 혼합 동작의 격리 경계를 만든다.",
@@ -2065,6 +2261,8 @@
     },
     {
       "id": "css-contain-layout",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "contain: layout의 의도는?",
       "explanation": "layout containment는 레이아웃 계산 경계를 만든다.",
@@ -2086,6 +2284,8 @@
     },
     {
       "id": "css-content-visibility",
+      "category": "CSS",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "content-visibility: auto의 주된 목적은?",
       "explanation": "브라우저가 필요 없는 렌더링을 생략할 수 있는 힌트다.",
@@ -2102,6 +2302,40 @@
         {
           "title": "content-visibility CSS property - CSS | MDN",
           "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility"
+        }
+      ]
+    },
+    {
+      "id": "css-display-matching",
+      "category": "CSS",
+      "type": "개념 판단",
+      "format": "선긋기",
+      "points": 4,
+      "prompt": "각 display 선언과 기본 배치 결과를 선으로 연결하시오. 다른 CSS 선언은 없다고 가정한다.",
+      "left": [
+        "display: flex",
+        "display: grid",
+        "display: none"
+      ],
+      "right": [
+        "요소와 자손의 박스를 만들지 않는다.",
+        "한 축을 중심으로 자식 요소를 배치한다.",
+        "행과 열의 2차원 격자로 자식 요소를 배치한다."
+      ],
+      "answer": [
+        2,
+        3,
+        1
+      ],
+      "explanation": "flex는 한 차원(행 또는 열)의 배치 모델이고, grid는 행과 열을 함께 다루는 2차원 배치 모델입니다. none은 요소와 자손의 박스를 생성하지 않습니다.",
+      "sources": [
+        {
+          "title": "MDN — Basic concepts of flexbox",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts"
+        },
+        {
+          "title": "MDN — display",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"
         }
       ]
     }

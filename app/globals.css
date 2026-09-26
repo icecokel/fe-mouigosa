@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--canvas); color: var(--ink); }
 button { font: inherit; cursor: pointer; }
-button:focus-visible, a:focus-visible, summary:focus-visible, textarea:focus-visible, .score-scroll:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible, textarea:focus-visible, .score-scroll:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 .site-header {
@@ -91,6 +91,17 @@ button:focus-visible, a:focus-visible, summary:focus-visible, textarea:focus-vis
 .question-choice[aria-pressed="true"] { font-weight: 700; }
 .question-choice[aria-pressed="true"] .choice-symbol { text-decoration: underline; }
 .choice-symbol { width: 18px; flex: none; }
+.question-instruction, .matching-note { margin: 9px 0 5px 23px; color: var(--ink-muted); font: 12px/1.6 var(--font-label); }
+.short-answer { display: block; margin: 12px 0 0 23px; font: 13px/1.6 var(--font-label); }
+.short-answer input { display: block; width: min(100%, 280px); min-height: 44px; margin-top: 6px; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--font-code); }
+.matching-board { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 38px; margin: 10px 0 0 23px; }
+.matching-side { display: grid; align-content: start; gap: 8px; min-width: 0; }
+.matching-item { position: relative; z-index: 1; display: flex; align-items: center; gap: 5px; min-height: 56px; width: 100%; padding: 6px; border: 1px solid var(--rule-soft); border-radius: 0; background: var(--paper); color: var(--ink); text-align: left; font: 13px/1.4 var(--font-exam); overflow-wrap: anywhere; }
+.matching-item strong { align-self: flex-start; font-family: var(--font-label); }
+.matching-item:not(:disabled):hover, .matching-item[aria-pressed="true"] { background: var(--surface-subtle); border-color: var(--rule); }
+.matching-item:disabled { cursor: default; }
+.matching-lines { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.matching-lines line { stroke: var(--ink); stroke-width: 1.5; }
 .paper-footer { position: absolute; bottom: 23px; left: 48px; right: 48px; display: flex; justify-content: space-between; color: var(--ink-muted); font: 12px/1.5 var(--font-label); }
 
 .desktop-omr { position: sticky; top: 24px; max-height: calc(100dvh - 48px); overflow: auto; }
@@ -108,6 +119,9 @@ button:focus-visible, a:focus-visible, summary:focus-visible, textarea:focus-vis
 .omr-table-heading span:last-child { text-align: center; }
 .omr-row { display: grid; grid-template-columns: 28px repeat(5, 44px); gap: 2px; align-items: center; min-height: 44px; border-bottom: 1px solid var(--rule-soft); }
 .omr-row:last-child { border-bottom: 0; }
+.omr-row--direct { grid-template-columns: 28px minmax(0, 1fr); }
+.omr-jump { min-height: 44px; padding: 4px 8px; border: 0; background: transparent; color: var(--omr-green); text-align: left; font: 12px/1.4 var(--font-label); }
+.omr-jump:hover { background: var(--surface-subtle); }
 .omr-number { text-align: center; color: var(--omr-green); font-size: 14px; }
 .omr-choice { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; }
 .omr-choice:not(:disabled):hover { background: var(--surface-subtle); }
@@ -156,6 +170,9 @@ button:focus-visible, a:focus-visible, summary:focus-visible, textarea:focus-vis
 .mistake-list summary em { float: right; margin-left: 8px; color: var(--incorrect); font-size: 12px; font-style: normal; }
 .mistake-list summary .answer-correct { color: var(--omr-green); }
 .answer-options { list-style: none; padding: 0; margin: 16px 0; overflow-wrap: anywhere; font: 14px/1.8 var(--font-exam); }
+.answer-matching { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; font: 14px/1.7 var(--font-exam); }
+.answer-matching p { margin: 0 0 4px; font: 700 12px/1.5 var(--font-label); }
+.answer-matching ol { margin: 0; padding-left: 24px; }
 .mistake-list .answer-options li, .mistake-list .answer-sources li { border: 0; }
 .answer-heading { margin: 20px 0 8px; font: 700 13px/1.5 var(--font-label); }
 .answer-explanation { margin: 0; white-space: pre-line; overflow-wrap: anywhere; font: 15px/1.9 var(--font-exam); }

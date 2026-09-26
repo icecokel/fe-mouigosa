@@ -3,114 +3,102 @@
   "title": "fe-mouigosa 문항",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "id",
-    "type",
-    "points",
-    "prompt",
-    "options",
-    "answer",
-    "explanation",
-    "sources"
-  ],
+  "required": ["id", "category", "type", "format", "points", "prompt", "answer", "explanation", "sources"],
   "properties": {
     "id": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
-      "description": "문제은행 전체에서 유일한 문항 ID. 시험지 번호와 별개이며 등록 후 유지합니다."
+      "description": "문제은행 전체에서 유일한 문항 ID. 등록 후 유지합니다."
+    },
+    "category": {
+      "enum": ["JavaScript", "TypeScript", "React", "Browser", "CSS", "Web Performance", "Design Pattern"]
     },
     "type": {
-      "enum": [
-        "개념 판단",
-        "결과 예측",
-        "타입 분석",
-        "버그 찾기",
-        "렌더링 횟수 예측",
-        "브라우저 동작"
-      ]
+      "enum": ["개념 판단", "결과 예측", "타입 분석", "버그 찾기", "렌더링 횟수 예측", "브라우저 동작"]
     },
-    "points": {
-      "type": "integer",
-      "enum": [
-        2,
-        3,
-        4,
-        5
-      ]
+    "format": {
+      "enum": ["객관식 단일", "객관식 중복", "주관식 단답", "선긋기"]
     },
-    "prompt": {
-      "$ref": "#/definitions/text",
-      "description": "지문과 실행 환경·전제조건"
-    },
-    "code": {
-      "$ref": "#/definitions/text",
-      "description": "선택 사항. 줄바꿈은 JSON의 \\n으로 표기합니다."
-    },
+    "points": { "type": "integer", "enum": [2, 3, 4, 5] },
+    "prompt": { "$ref": "#/definitions/text", "description": "지문과 실행 환경·전제조건" },
+    "code": { "$ref": "#/definitions/text", "description": "선택 사항. 줄바꿈은 JSON의 \\n으로 표기합니다." },
     "options": {
-      "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/text"
-      },
-      "description": "①~⑤ 순서의 선택지. 원문에는 번호 기호를 넣지 않습니다."
+      "type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true,
+      "items": { "$ref": "#/definitions/text" },
+      "description": "객관식 ①~⑤ 선택지. 원문에는 번호 기호를 넣지 않습니다."
     },
-    "answer": {
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 5,
-      "description": "정답 선택지 번호 (1부터 시작)"
+    "left": {
+      "type": "array", "minItems": 3, "maxItems": 4, "uniqueItems": true,
+      "items": { "$ref": "#/definitions/text" },
+      "description": "선긋기 왼쪽 항목. 배열 순서대로 ㄱ, ㄴ, ㄷ, ㄹ을 표시합니다."
     },
-    "explanation": {
-      "$ref": "#/definitions/text",
-      "description": "정답이 되는 이유와 주요 오답의 차이. 시험 종료 후 해답지에 표시합니다."
+    "right": {
+      "type": "array", "minItems": 3, "maxItems": 4, "uniqueItems": true,
+      "items": { "$ref": "#/definitions/text" },
+      "description": "선긋기 오른쪽 항목. 배열 순서대로 A, B, C, D를 표시합니다."
     },
+    "answer": { "description": "형식별 정답. 객관식은 번호, 단답은 문자열, 선긋기는 왼쪽 순서에 대응하는 오른쪽 번호 배열입니다." },
+    "explanation": { "$ref": "#/definitions/text" },
     "sources": {
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
+      "type": "array", "minItems": 1, "uniqueItems": true,
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "title",
-          "url"
-        ],
+        "type": "object", "additionalProperties": false, "required": ["title", "url"],
         "properties": {
-          "title": {
-            "$ref": "#/definitions/text"
-          },
-          "url": {
-            "type": "string",
-            "pattern": "^https://[^\\s]+$"
-          }
+          "title": { "$ref": "#/definitions/text" },
+          "url": { "type": "string", "pattern": "^https://[^\\s]+$" }
         }
-      },
-      "description": "해설의 근거가 되는 공식 문서·표준·원저자 자료. 구체적인 절이나 API로 연결하는 HTTPS 링크."
-    }
-  },
-  "definitions": {
-    "text": {
-      "type": "string",
-      "pattern": "\\S"
-    }
-  },
-  "if": {
-    "properties": {
-      "type": {
-        "enum": [
-          "결과 예측",
-          "타입 분석",
-          "버그 찾기",
-          "렌더링 횟수 예측"
-        ]
       }
     }
   },
-  "then": {
-    "required": [
-      "code"
-    ]
-  }
+  "definitions": {
+    "text": { "type": "string", "pattern": "\\S" },
+    "choiceNumber": { "type": "integer", "minimum": 1, "maximum": 5 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "enum": ["결과 예측", "타입 분석", "버그 찾기", "렌더링 횟수 예측"] } } },
+      "then": { "required": ["code"] }
+    },
+    {
+      "if": { "properties": { "format": { "const": "객관식 단일" } } },
+      "then": {
+        "required": ["options"],
+        "properties": { "answer": { "$ref": "#/definitions/choiceNumber" } },
+        "not": { "anyOf": [{ "required": ["left"] }, { "required": ["right"] }] }
+      }
+    },
+    {
+      "if": { "properties": { "format": { "const": "객관식 중복" } } },
+      "then": {
+        "required": ["options"],
+        "properties": {
+          "answer": {
+            "type": "array", "minItems": 2, "maxItems": 5, "uniqueItems": true,
+            "items": { "$ref": "#/definitions/choiceNumber" }
+          }
+        },
+        "not": { "anyOf": [{ "required": ["left"] }, { "required": ["right"] }] }
+      }
+    },
+    {
+      "if": { "properties": { "format": { "const": "주관식 단답" } } },
+      "then": {
+        "properties": { "answer": { "type": "string", "pattern": "\\S", "maxLength": 80 } },
+        "not": { "anyOf": [{ "required": ["options"] }, { "required": ["left"] }, { "required": ["right"] }] }
+      }
+    },
+    {
+      "if": { "properties": { "format": { "const": "선긋기" } } },
+      "then": {
+        "required": ["left", "right"],
+        "properties": {
+          "answer": {
+            "type": "array", "minItems": 3, "maxItems": 4, "uniqueItems": true,
+            "items": { "type": "integer", "minimum": 1, "maximum": 4 }
+          }
+        },
+        "not": { "required": ["options"] }
+      }
+    }
+  ]
 }

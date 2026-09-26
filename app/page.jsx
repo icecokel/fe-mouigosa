@@ -4,45 +4,83 @@ import { useEffect, useRef, useState } from "react";
 import { formatTime, remainingSeconds } from "./countdown.mjs";
 import { questionBank } from "./questions.mjs";
 import { createExam } from "./exam.mjs";
-import { gradeExam, shareExamResult } from "./results.mjs";
+import { gradeExam, isAnswered, shareExamResult } from "./results.mjs";
+import MatchingInput from "./matching-input";
 
 const choices = ["①", "②", "③", "④", "⑤"];
+const leftLabels = ["ㄱ", "ㄴ", "ㄷ", "ㄹ"];
+const rightLabels = ["A", "B", "C", "D"];
 
-function Question({ question, answer, onAnswer, locked }) {
+function answerText(question, value) {
+  if (question.format === "객관식 단일") {
+    return Number.isInteger(value) ? choices[value - 1] + " " + question.options[value - 1] : "미응답";
+  }
+  if (question.format === "객관식 중복") {
+    return Array.isArray(value) && value.length
+      ? [...value].sort((a, b) => a - b).map((number) => choices[number - 1] + " " + question.options[number - 1]).join(" / ")
+      : "미응답";
+  }
+  if (question.format === "주관식 단답") return typeof value === "string" && value.trim() ? value.trim() : "미응답";
+  if (!Array.isArray(value) || !value.some(Number.isInteger)) return "미응답";
+  return question.left.map((_, index) => leftLabels[index] + "→" + (rightLabels[value[index] - 1] ?? "미연결")).join(" / ");
+}
+
+function Question({ question, answer, onAnswer, onChoose, locked }) {
   return (
-    <section className="question" aria-labelledby={`question-${question.id}`}>
+    <section className="question" aria-labelledby={"question-" + question.id}>
       <div className="question-top">
         <span className="question-number">{question.id}.</span>
-        <p className="question-prompt" id={`question-${question.id}`}>{question.prompt}</p>
+        <p className="question-prompt" id={"question-" + question.id} tabIndex={-1}>{question.prompt}</p>
         <span className="points">[{question.points}점]</span>
       </div>
       {question.code && (
         <pre className="question-code"><code>{question.code}</code></pre>
       )}
-      <ol className="choice-list" aria-label={`${question.id}번 선택지`}>
-        {question.options.map((option, index) => (
-          <li key={index}>
-            <button
-              type="button"
-              className="question-choice"
-              onClick={() => onAnswer(question.id, index + 1)}
-              disabled={locked}
-              aria-pressed={answer === index + 1}
-              aria-label={`${question.id}번 문항 ${index + 1}번 선택지: ${option}`}
-            >
-              <span className="choice-symbol" aria-hidden="true">{choices[index]}</span>
-              <span>{option}</span>
-            </button>
-          </li>
-        ))}
-      </ol>
+      {question.format === "객관식 중복" && <p className="question-instruction">옳은 답을 모두 고르시오.</p>}
+      {question.options && (
+        <ol className="choice-list" aria-label={question.id + "번 선택지"}>
+          {question.options.map((option, index) => (
+            <li key={index}>
+              <button
+                type="button"
+                className="question-choice"
+                onClick={() => onChoose(question, index + 1)}
+                disabled={locked}
+                aria-pressed={question.format === "객관식 중복" ? (answer ?? []).includes(index + 1) : answer === index + 1}
+                aria-label={question.id + "번 문항 " + (index + 1) + "번 선택지: " + option}
+              >
+                <span className="choice-symbol" aria-hidden="true">{choices[index]}</span>
+                <span>{option}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      )}
+      {question.format === "주관식 단답" && (
+        <label className="short-answer" htmlFor={"short-answer-" + question.id}>
+          단답형 답안
+          <input
+            id={"short-answer-" + question.id}
+            type="text"
+            value={answer ?? ""}
+            onChange={(event) => onAnswer(question.id, event.target.value)}
+            disabled={locked}
+            autoComplete="off"
+            spellCheck={false}
+            maxLength={80}
+          />
+        </label>
+      )}
+      {question.format === "선긋기" && (
+        <MatchingInput key={question.questionId} question={question} answer={answer} onAnswer={onAnswer} locked={locked} />
+      )}
     </section>
   );
 }
 
-function OMR({ questions, answers, onAnswer, onSubmit, labelId, timeLeft, locked }) {
+function OMR({ questions, answers, onChoose, onJump, onSubmit, labelId, timeLeft, locked }) {
   const numbers = questions.map((question) => question.id);
-  const answered = Object.keys(answers).length;
+  const answered = questions.filter((question) => isAnswered(question, answers[question.id])).length;
 
   return (
     <section className="omr" aria-labelledby={labelId}>
@@ -62,35 +100,51 @@ function OMR({ questions, answers, onAnswer, onSubmit, labelId, timeLeft, locked
         <span>답란</span>
       </div>
       <div className="omr-rows">
-        {numbers.map((number) => (
-          <div className="omr-row" key={number} role="group" aria-label={`${number}번 문항`}>
-            <span className="omr-number">{number}</span>
-            {choices.map((choice, index) => {
+        {questions.map((question) => (
+          <div className={"omr-row" + (question.options ? "" : " omr-row--direct")} key={question.id} role="group" aria-label={question.id + "번 문항"}>
+            <span className="omr-number">{question.id}</span>
+            {question.options ? choices.map((choice, index) => {
               const value = index + 1;
+              const selected = question.format === "객관식 중복"
+                ? (answers[question.id] ?? []).includes(value)
+                : answers[question.id] === value;
               return (
                 <button
                   type="button"
-                  className={`omr-choice${answers[number] === value ? " selected" : ""}`}
+                  className={"omr-choice" + (selected ? " selected" : "")}
                   key={value}
-                  onClick={() => onAnswer(number, value)}
+                  onClick={() => onChoose(question, value)}
                   disabled={locked}
-                  aria-label={`${number}번 문항 ${value}번 선택지`}
-                  aria-pressed={answers[number] === value}
+                  aria-label={question.id + "번 문항 " + value + "번 선택지"}
+                  aria-pressed={selected}
                 >
                   <span aria-hidden="true">{value}</span>
                 </button>
               );
-            })}
+            }) : (
+              <button type="button" className="omr-jump" onClick={() => onJump(question.id)}>
+                {question.format === "선긋기" ? "연결" : "단답"} · {isAnswered(question, answers[question.id]) ? "기입" : "미기입"} · 문제지로
+              </button>
+            )}
           </div>
         ))}
       </div>
-      <p className="omr-note">{locked ? "제출된 답안입니다." : "답란을 선택하면 검은색으로 표기됩니다."}</p>
+      <p className="omr-note">{locked ? "제출된 답안입니다." : "객관식은 답란에 표시하고, 단답·연결형은 문제지에서 작성합니다."}</p>
     </section>
   );
 }
 
-function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
+function Exam({ questions, answers, onAnswer, onChoose, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
   const pages = Array.from({ length: Math.ceil(questions.length / 4) }, (_, index) => questions.slice(index * 4, index * 4 + 4));
+  const answered = questions.filter((question) => isAnswered(question, answers[question.id])).length;
+  const jumpToQuestion = (number) => {
+    dialogRef.current?.close();
+    requestAnimationFrame(() => {
+      const prompt = document.getElementById("question-" + number);
+      prompt?.focus();
+      prompt?.scrollIntoView({ block: "start" });
+    });
+  };
   return (
     <div className="exam-layout">
       <main className="exam-pages" aria-label="프론트엔드 영역 문제지">
@@ -113,10 +167,10 @@ function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef
             )}
             <div className="exam-columns">
               <div className="question-column">
-                {page.slice(0, 2).map((question) => <Question key={question.id} question={question} answer={answers[question.id]} onAnswer={onAnswer} locked={locked} />)}
+                {page.slice(0, 2).map((question) => <Question key={question.id} question={question} answer={answers[question.id]} onAnswer={onAnswer} onChoose={onChoose} locked={locked} />)}
               </div>
               <div className="question-column">
-                {page.slice(2).map((question) => <Question key={question.id} question={question} answer={answers[question.id]} onAnswer={onAnswer} locked={locked} />)}
+                {page.slice(2).map((question) => <Question key={question.id} question={question} answer={answers[question.id]} onAnswer={onAnswer} onChoose={onChoose} locked={locked} />)}
               </div>
             </div>
             <footer className="paper-footer">
@@ -128,7 +182,7 @@ function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef
       </main>
 
       <aside className="desktop-omr" aria-label="답안지">
-        <OMR questions={questions} answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
       </aside>
 
       <button
@@ -138,7 +192,7 @@ function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef
         onClick={() => dialogRef.current?.showModal()}
       >
         <span>남은 시간 <strong className="drawer-time" role="timer">{timeLeft}</strong></span>
-        <span>OMR {Object.keys(answers).length} / {questions.length} · 열기</span>
+        <span>OMR {answered} / {questions.length} · 열기</span>
       </button>
       <dialog
         className="omr-dialog"
@@ -152,7 +206,7 @@ function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef
             닫기
           </button>
         </div>
-        <OMR questions={questions} answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} onChoose={onChoose} onJump={jumpToQuestion} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
       </dialog>
     </div>
   );
@@ -255,19 +309,25 @@ function Result({ questions, answers, onRetry }) {
                 <summary>
                   <strong>{question.id}번</strong>
                   <span>{question.prompt}</span>
-                  <em className={question.isCorrect ? "answer-correct" : ""}>{question.isCorrect ? "정답" : question.selected === null ? "미응답" : "오답"}</em>
+                  <em className={question.isCorrect ? "answer-correct" : ""}>{question.isCorrect ? "정답" : question.isAnswered ? "오답" : "미응답"}</em>
                 </summary>
                 <div className="mistake-detail">
-                  <p className="mistake-category">{question.category} · {question.type} · {question.points}점</p>
+                  <p className="mistake-category">{question.category} · {question.type} · {question.format} · {question.points}점</p>
                   {question.code && <pre className="question-code result-code"><code>{question.code}</code></pre>}
-                  <ol className="answer-options">
+                  {question.options && <ol className="answer-options">
                     {question.options.map((option, index) => <li key={index}>{choices[index]} {option}</li>)}
-                  </ol>
+                  </ol>}
+                  {question.format === "선긋기" && (
+                    <div className="answer-matching">
+                      <div><p>왼쪽 항목</p><ol>{question.left.map((item, index) => <li key={index}>{leftLabels[index]} {item}</li>)}</ol></div>
+                      <div><p>오른쪽 항목</p><ol>{question.right.map((item, index) => <li key={index}>{rightLabels[index]} {item}</li>)}</ol></div>
+                    </div>
+                  )}
                   <dl className="answer-compare">
                     <dt>제출 답안</dt>
-                    <dd>{question.selected === null ? "미응답" : `${choices[question.selected - 1]} ${question.options[question.selected - 1]}`}</dd>
+                    <dd>{answerText(question, question.selected)}</dd>
                     <dt>정답</dt>
-                    <dd>{choices[question.answer - 1]} {question.options[question.answer - 1]}</dd>
+                    <dd>{answerText(question, question.answer)}</dd>
                   </dl>
                   <h3 className="answer-heading">해설</h3>
                   <p className="answer-explanation">{question.explanation}</p>
@@ -335,6 +395,14 @@ export default function Home() {
     showView("exam");
   };
 
+  const setAnswer = (number, value) => setAnswers((current) => ({ ...current, [number]: value }));
+  const chooseAnswer = (question, value) => setAnswers((current) => {
+    if (question.format !== "객관식 중복") return { ...current, [question.id]: value };
+    const selected = current[question.id] ?? [];
+    const next = selected.includes(value) ? selected.filter((number) => number !== value) : [...selected, value];
+    return { ...current, [question.id]: next.sort((a, b) => a - b) };
+  });
+
   return (
     <>
       <header className="site-header">
@@ -362,12 +430,13 @@ export default function Home() {
             <li>시험 시간은 20분이며, 시작 버튼을 누르면 시간이 흐릅니다.</li>
             <li>문항은 매번 무작위로 출제되며 20문항 이상, 총 100점입니다.</li>
             <li>문항별 배점은 2~5점입니다. 각 문항의 배점을 확인하십시오.</li>
+            <li>단일·중복 선택, 단답, 선긋기 문항은 문제지의 안내에 따라 답하십시오.</li>
             <li>시험 종료 후 성적표를 확인할 수 있습니다.</li>
           </ol>
           <button type="button" className="exam-submit" onClick={retryExam}>모의고사 시작</button>
         </main>
       ) : view === "exam" ? (
-        <Exam questions={questions} answers={answers} onAnswer={(number, value) => setAnswers((current) => ({ ...current, [number]: value }))} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
+        <Exam questions={questions} answers={answers} onAnswer={setAnswer} onChoose={chooseAnswer} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
       ) : <Result questions={questions} answers={submittedAnswers} onRetry={retryExam} />}
     </>
   );

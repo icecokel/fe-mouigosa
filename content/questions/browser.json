@@ -3,6 +3,8 @@
   "questions": [
     {
       "id": "browser-event-propagation",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 4,
       "answer": 1,
@@ -25,6 +27,8 @@
     },
     {
       "id": "browser-fetch-404",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 2,
       "answer": 2,
@@ -46,6 +50,8 @@
     },
     {
       "id": "browser-web-storage",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 2,
       "answer": 3,
@@ -67,6 +73,8 @@
     },
     {
       "id": "browser-prevent-default",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 3,
       "prompt": "링크의 click 이벤트에서 preventDefault()를 호출했다. 취소 가능한 이벤트이며 passive 리스너가 아닐 때 옳은 설명은?",
@@ -88,6 +96,8 @@
     },
     {
       "id": "browser-defer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 4,
       "prompt": "외부 클래식 스크립트에 defer 속성을 지정했다. 일반적인 실행 시점은?",
@@ -109,6 +119,8 @@
     },
     {
       "id": "browser-url-origin",
+      "category": "Browser",
+      "format": "객관식 단일",
       "type": "브라우저 동작",
       "points": 3,
       "prompt": "두 URL이 같은 출처인지 판단할 때 비교하는 요소는?",
@@ -130,6 +142,8 @@
     },
     {
       "id": "browser-dom-query-one",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "querySelector가 여러 요소와 일치할 때 반환하는 것은?",
       "explanation": "querySelector는 단일 요소 또는 null을 반환한다.",
@@ -151,6 +165,8 @@
     },
     {
       "id": "browser-dom-query-none",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "querySelector로 일치하는 요소를 찾지 못하면?",
       "explanation": "일치하지 않으면 null을 반환한다.",
@@ -172,6 +188,8 @@
     },
     {
       "id": "browser-dom-query-all-static",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "querySelectorAll의 결과 NodeList는 일반적으로?",
       "explanation": "DOM이 바뀌어도 해당 목록이 자동 갱신되지는 않는다.",
@@ -193,6 +211,8 @@
     },
     {
       "id": "browser-dom-live-collection",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "getElementsByClassName 결과의 대표적 특징은?",
       "explanation": "반환된 HTMLCollection은 관련 DOM 변화를 반영한다.",
@@ -214,6 +234,8 @@
     },
     {
       "id": "browser-dom-create-element",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "새 div 요소를 메모리에 생성하는 메서드는?",
       "explanation": "createElement는 새 요소를 만들며 삽입은 별도다.",
@@ -235,6 +257,8 @@
     },
     {
       "id": "browser-dom-text-content",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "사용자 문자열을 HTML로 해석하지 않고 요소의 텍스트로 넣으려면?",
       "explanation": "textContent는 문자열을 텍스트로 취급한다.",
@@ -256,6 +280,8 @@
     },
     {
       "id": "browser-dom-class-toggle",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "classList.toggle(\"active\")를 force 인자 없이 호출하면?",
       "explanation": "toggle은 토큰의 존재 상태를 반전한다.",
@@ -277,6 +303,8 @@
     },
     {
       "id": "browser-dom-dataset",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "data-user-id=\"7\"을 dataset으로 읽는 표현은?",
       "explanation": "data 속성의 하이픈 이름은 camelCase로 매핑된다.",
@@ -298,6 +326,8 @@
     },
     {
       "id": "browser-dom-dataset-type",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "data-count=\"3\"을 dataset.count로 읽었을 때 기본 타입은?",
       "explanation": "dataset의 값은 문자열로 제공된다.",
@@ -319,6 +349,8 @@
     },
     {
       "id": "browser-dom-remove",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "element.remove()의 역할은?",
       "explanation": "remove는 DOM 연결을 해제한다.",
@@ -340,6 +372,8 @@
     },
     {
       "id": "browser-dom-append-move",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "이미 DOM에 있는 노드를 다른 부모에 append하면?",
       "explanation": "한 노드는 동시에 두 부모의 자식일 수 없다.",
@@ -361,6 +395,8 @@
     },
     {
       "id": "browser-dom-clone-events",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "cloneNode(true)로 복제했을 때 addEventListener로 등록한 리스너는?",
       "explanation": "DOM 복제와 addEventListener 등록은 별개다.",
@@ -382,6 +418,8 @@
     },
     {
       "id": "browser-event-target",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "버튼 내부 span을 클릭했을 때 event.target은 무엇을 가리키는가?",
       "explanation": "target은 실제 이벤트 대상이다.",
@@ -403,6 +441,8 @@
     },
     {
       "id": "browser-event-current-target",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "부모에 등록한 리스너 안에서 currentTarget은?",
       "explanation": "currentTarget은 현재 리스너 호출의 등록 대상이다.",
@@ -424,6 +464,8 @@
     },
     {
       "id": "browser-event-stop-propagation",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "stopPropagation()의 주된 역할은?",
       "explanation": "기본 동작 취소와 같은 요소 리스너 중단은 별도 기능이다.",
@@ -445,6 +487,8 @@
     },
     {
       "id": "browser-event-stop-immediate",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "현재 요소의 뒤따르는 리스너까지 중단하려면?",
       "explanation": "이 메서드는 같은 대상의 남은 리스너와 이후 전파를 모두 막는다.",
@@ -466,6 +510,8 @@
     },
     {
       "id": "browser-event-once",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "addEventListener의 once: true는?",
       "explanation": "once는 리스너 수명을 한 번의 실행으로 제한한다.",
@@ -487,6 +533,8 @@
     },
     {
       "id": "browser-event-remove-identity",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "removeEventListener로 리스너를 제거하려면 중요하게 맞춰야 할 것은?",
       "explanation": "새 익명 함수는 원래 등록한 함수와 다른 참조다.",
@@ -508,6 +556,8 @@
     },
     {
       "id": "browser-event-delegation",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "항목이 자주 추가되는 목록에서 이벤트 위임을 쓰는 이유는?",
       "explanation": "위임은 동적 자식마다 리스너를 다시 등록할 필요를 줄인다.",
@@ -529,6 +579,8 @@
     },
     {
       "id": "browser-event-input-change",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "텍스트 필드의 입력 변화마다 즉시 반응하기 적합한 이벤트는?",
       "explanation": "input은 사용자의 값 변경 때 발생한다.",
@@ -550,6 +602,8 @@
     },
     {
       "id": "browser-form-submit-button",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "form 내부 button에서 type을 생략하면 기본적으로?",
       "explanation": "form의 button은 기본 type이 submit이다.",
@@ -571,6 +625,8 @@
     },
     {
       "id": "browser-form-disabled-submission",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "disabled 처리된 폼 컨트롤의 일반적인 제출 동작은?",
       "explanation": "disabled 컨트롤은 성공한 폼 컨트롤에서 제외된다.",
@@ -592,6 +648,8 @@
     },
     {
       "id": "browser-form-label",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "label의 for 값은 어떤 값과 연결되는가?",
       "explanation": "명시적 레이블 연결은 for와 id를 사용한다.",
@@ -613,6 +671,8 @@
     },
     {
       "id": "browser-form-data",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "FormData 객체의 주요 용도는?",
       "explanation": "파일을 포함한 폼 필드도 담을 수 있다.",
@@ -634,6 +694,8 @@
     },
     {
       "id": "browser-url-search-params",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "URL의 쿼리 문자열을 조작하기 적합한 API는?",
       "explanation": "URLSearchParams는 쿼리 키와 값을 다룬다.",
@@ -655,6 +717,8 @@
     },
     {
       "id": "browser-url-relative",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "new URL(\"/a\", \"https://example.com/x\")의 href는?",
       "explanation": "루트 상대 경로는 기준 URL의 출처에 결합된다.",
@@ -676,6 +740,8 @@
     },
     {
       "id": "browser-url-hash",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "URL의 # 이후 fragment는 일반적인 HTTP 요청에서?",
       "explanation": "fragment는 주로 클라이언트 내 문서 위치를 가리킨다.",
@@ -697,6 +763,8 @@
     },
     {
       "id": "browser-history-pushstate",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "history.pushState의 일반적인 효과는?",
       "explanation": "같은 출처 URL 내 클라이언트 라우팅에 사용할 수 있다.",
@@ -718,6 +786,8 @@
     },
     {
       "id": "browser-history-replacestate",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "replaceState와 pushState의 차이는?",
       "explanation": "replaceState는 항목 수를 늘리지 않는다.",
@@ -739,6 +809,8 @@
     },
     {
       "id": "browser-history-popstate",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "사용자가 뒤로 가기로 상태 항목을 이동할 때 관찰하는 이벤트는?",
       "explanation": "히스토리 항목 전환을 popstate로 감지한다.",
@@ -760,6 +832,8 @@
     },
     {
       "id": "browser-location-assign",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "location.assign(url)을 호출하면 일반적으로?",
       "explanation": "assign은 새 문서로 탐색할 수 있는 위치 API다.",
@@ -781,6 +855,8 @@
     },
     {
       "id": "browser-fetch-json-promise",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "response.json()의 반환값은?",
       "explanation": "응답 본문 읽기와 파싱은 비동기로 처리된다.",
@@ -802,6 +878,8 @@
     },
     {
       "id": "browser-fetch-network-failure",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "fetch가 네트워크 오류로 실패했을 때 Promise는?",
       "explanation": "HTTP 오류 상태와 달리 네트워크 실패는 Promise 거부다.",
@@ -823,6 +901,8 @@
     },
     {
       "id": "browser-fetch-abort",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "진행 중인 fetch를 취소하도록 신호를 전달하는 객체는?",
       "explanation": "controller.signal을 요청에 전달하고 abort를 호출한다.",
@@ -844,6 +924,8 @@
     },
     {
       "id": "browser-response-body-once",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "같은 Response의 본문을 json()으로 이미 소비했다. 다시 읽어야 한다면 미리 필요한 작업은?",
       "explanation": "본문 스트림은 기본적으로 한 번 소비하며 미리 복제할 수 있다.",
@@ -865,6 +947,8 @@
     },
     {
       "id": "browser-headers-case",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "HTTP 헤더 이름의 대소문자에 대한 설명은?",
       "explanation": "헤더 필드 이름은 case-insensitive다.",
@@ -886,6 +970,8 @@
     },
     {
       "id": "browser-fetch-credentials-default",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "fetch의 credentials 기본값은?",
       "explanation": "기본적으로 같은 출처 요청에 자격 증명을 포함한다.",
@@ -907,6 +993,8 @@
     },
     {
       "id": "browser-fetch-formdata-boundary",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "fetch body에 FormData를 보낼 때 Content-Type을 수동으로 고정하면 생길 수 있는 문제는?",
       "explanation": "브라우저가 boundary를 포함한 헤더를 설정하도록 두는 편이 적절하다.",
@@ -928,6 +1016,8 @@
     },
     {
       "id": "browser-storage-string",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "localStorage.setItem(\"x\", 3) 후 getItem(\"x\")의 타입은?",
       "explanation": "Web Storage는 문자열 값을 저장한다.",
@@ -949,6 +1039,8 @@
     },
     {
       "id": "browser-storage-missing",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "localStorage.getItem으로 없는 키를 읽으면?",
       "explanation": "없는 키는 null로 반환한다.",
@@ -970,6 +1062,8 @@
     },
     {
       "id": "browser-storage-event-source",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "한 탭에서 localStorage를 변경했을 때 storage 이벤트는 일반적으로?",
       "explanation": "같은 저장 영역을 공유하는 다른 문서가 변경을 통지받는다.",
@@ -991,6 +1085,8 @@
     },
     {
       "id": "browser-cookie-http-only",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "HttpOnly 쿠키에 대해 옳은 설명은?",
       "explanation": "HttpOnly는 스크립트 접근을 제한하는 속성이다.",
@@ -1012,6 +1108,8 @@
     },
     {
       "id": "browser-cookie-secure",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "쿠키의 Secure 속성 목적은?",
       "explanation": "Secure는 전송 연결을 제한하며 HttpOnly와 역할이 다르다.",
@@ -1033,6 +1131,8 @@
     },
     {
       "id": "browser-cookie-samesite",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "SameSite 속성이 주로 제어하는 것은?",
       "explanation": "SameSite는 사이트 간 요청의 쿠키 전송 정책이다.",
@@ -1054,6 +1154,8 @@
     },
     {
       "id": "browser-cookie-path",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "쿠키 Path 속성에 대해 옳은 설명은?",
       "explanation": "Path는 전송 범위 설정이지 강한 접근 제어 수단이 아니다.",
@@ -1075,6 +1177,8 @@
     },
     {
       "id": "browser-cors-purpose",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "CORS가 브라우저에서 주로 제어하는 것은?",
       "explanation": "서버의 허용 헤더를 근거로 교차 출처 읽기를 제한한다.",
@@ -1096,6 +1200,8 @@
     },
     {
       "id": "browser-cors-preflight-method",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "CORS 사전 요청에 사용하는 HTTP 메서드는?",
       "explanation": "브라우저가 OPTIONS로 실제 요청의 허용 조건을 확인한다.",
@@ -1117,6 +1223,8 @@
     },
     {
       "id": "browser-cors-wildcard-credentials",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "자격 증명을 포함한 CORS 응답에서 Access-Control-Allow-Origin: *만 사용하면?",
       "explanation": "자격 증명 요청은 명시적 허용 출처 등 조건을 충족해야 한다.",
@@ -1138,6 +1246,8 @@
     },
     {
       "id": "browser-cors-no-cors",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "fetch의 mode: \"no-cors\"가 CORS 읽기 제한의 해결책이 아닌 이유는?",
       "explanation": "opaque 응답은 상태·본문 접근이 제한된다.",
@@ -1159,6 +1269,8 @@
     },
     {
       "id": "browser-csp-script-src",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "CSP의 script-src가 제어하는 주요 대상은?",
       "explanation": "CSP 지시자는 스크립트 실행 정책을 선언한다.",
@@ -1180,6 +1292,8 @@
     },
     {
       "id": "browser-sri-integrity",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "외부 스크립트의 integrity 속성이 검증하는 것은?",
       "explanation": "SRI는 리소스 내용의 무결성을 확인한다.",
@@ -1201,6 +1315,8 @@
     },
     {
       "id": "browser-postmessage-origin",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "다른 창의 postMessage를 수신할 때 우선 검증할 것은?",
       "explanation": "신뢰하는 발신 출처와 창인지 확인해야 한다.",
@@ -1222,6 +1338,8 @@
     },
     {
       "id": "browser-postmessage-target",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "민감한 메시지를 다른 창에 전송할 때 targetOrigin은?",
       "explanation": "정확한 출처를 지정해 의도치 않은 수신자 전달을 줄인다.",
@@ -1243,6 +1361,8 @@
     },
     {
       "id": "browser-iframe-sandbox",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "iframe의 sandbox 속성의 목적은?",
       "explanation": "sandbox는 스크립트·탐색 등 기능을 제한할 수 있다.",
@@ -1264,6 +1384,8 @@
     },
     {
       "id": "browser-mixed-content",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "HTTPS 페이지에서 HTTP 스크립트를 로드하는 상황의 문제는?",
       "explanation": "안전하지 않은 실행 리소스는 보안 페이지를 훼손할 수 있다.",
@@ -1285,6 +1407,8 @@
     },
     {
       "id": "browser-secure-context-api",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "Clipboard 등 일부 강력한 API 사용 시 필요한 조건으로 흔한 것은?",
       "explanation": "API별로 HTTPS 등 보안 조건과 사용자 권한을 요구할 수 있다.",
@@ -1306,6 +1430,8 @@
     },
     {
       "id": "browser-eventloop-microtasks",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "현재 작업이 끝나면 Promise 반응과 다음 타이머 작업 중 일반적으로 먼저 처리되는 것은?",
       "explanation": "마이크로태스크 체크포인트는 다음 작업 전에 큐를 처리한다.",
@@ -1327,6 +1453,8 @@
     },
     {
       "id": "browser-microtask-starvation",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "마이크로태스크에서 끊임없이 새 마이크로태스크를 추가하면?",
       "explanation": "마이크로태스크 큐를 비우지 못하면 다음 단계로 넘어가지 못한다.",
@@ -1348,6 +1476,8 @@
     },
     {
       "id": "browser-settimeout-minimum",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "setTimeout(fn, 0)이 뜻하는 것은?",
       "explanation": "실행 시점은 현재 작업과 이벤트 루프 상황에 영향을 받는다.",
@@ -1369,6 +1499,8 @@
     },
     {
       "id": "browser-raf-timing",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "requestAnimationFrame 콜백을 쓰는 주요 이유는?",
       "explanation": "rAF는 브라우저의 렌더링 주기에 맞춰 호출된다.",
@@ -1390,6 +1522,8 @@
     },
     {
       "id": "browser-raf-background",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "백그라운드 탭의 requestAnimationFrame에 대한 적절한 기대는?",
       "explanation": "브라우저는 비활성 탭의 작업을 절약한다.",
@@ -1411,6 +1545,8 @@
     },
     {
       "id": "browser-page-visibility",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "탭의 표시 상태를 감지하는 데 사용하는 조합은?",
       "explanation": "Page Visibility API는 문서가 표시되는 상태를 제공한다.",
@@ -1432,6 +1568,8 @@
     },
     {
       "id": "browser-domcontentloaded",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "DOMContentLoaded가 일반적으로 의미하는 것은?",
       "explanation": "모든 종속 리소스의 로드를 기다리는 load와 다르다.",
@@ -1453,6 +1591,8 @@
     },
     {
       "id": "browser-window-load",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "window의 load 이벤트는 DOMContentLoaded와 비교하면?",
       "explanation": "load는 문서와 종속 리소스 로드 완료에 관련된다.",
@@ -1474,6 +1614,8 @@
     },
     {
       "id": "browser-script-async-order",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "의존 관계가 있는 두 외부 클래식 스크립트에 async를 붙일 때 위험은?",
       "explanation": "async는 다운로드가 준비된 시점에 실행될 수 있다.",
@@ -1495,6 +1637,8 @@
     },
     {
       "id": "browser-module-default-defer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "일반적인 parser-inserted type=\"module\" 스크립트의 기본 실행 성질은?",
       "explanation": "모듈 스크립트는 파싱 완료 이후 실행되는 기본 동작을 가진다.",
@@ -1516,6 +1660,8 @@
     },
     {
       "id": "browser-mutation-observer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "DOM 노드·속성 변화를 관찰하는 API는?",
       "explanation": "MutationObserver는 DOM 변경 기록을 제공한다.",
@@ -1537,6 +1683,8 @@
     },
     {
       "id": "browser-resize-observer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "요소 자체의 크기 변화를 관찰하려면?",
       "explanation": "ResizeObserver는 대상 요소 박스 크기를 관찰한다.",
@@ -1558,6 +1706,8 @@
     },
     {
       "id": "browser-intersection-observer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "요소가 루트 영역과 교차하는 정도를 비동기로 관찰하려면?",
       "explanation": "교차 상태 변화로 무한 스크롤·지연 로딩 등을 구현한다.",
@@ -1579,6 +1729,8 @@
     },
     {
       "id": "browser-observer-disconnect",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "더 이상 필요 없는 Observer를 정리할 때 사용하는 메서드는?",
       "explanation": "Observer의 관찰을 중단해 불필요한 작업을 줄인다.",
@@ -1600,6 +1752,8 @@
     },
     {
       "id": "browser-worker-dom",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "일반 Dedicated Worker에서 직접 사용할 수 없는 것은?",
       "explanation": "Worker는 페이지 DOM에 직접 접근하지 못한다.",
@@ -1621,6 +1775,8 @@
     },
     {
       "id": "browser-worker-message",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "메인 스레드와 Worker 사이의 기본 통신 방식은?",
       "explanation": "메시지로 데이터를 교환하며 일반적으로 구조화 복제를 사용한다.",
@@ -1642,6 +1798,8 @@
     },
     {
       "id": "browser-transfer-arraybuffer",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "ArrayBuffer를 transfer list에 넣어 Worker로 전달하면 일반적으로 송신 측 버퍼는?",
       "explanation": "소유권 이전은 일반 복사와 다른 동작이다.",
@@ -1663,6 +1821,8 @@
     },
     {
       "id": "browser-structured-clone-function",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "structuredClone으로 일반 함수를 복제하려 하면?",
       "explanation": "함수는 구조화 복제 대상이 아니다.",
@@ -1684,6 +1844,8 @@
     },
     {
       "id": "browser-structured-clone-cycle",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "structuredClone은 순환 참조 객체를 어떻게 다룰 수 있는가?",
       "explanation": "구조화 복제는 순환 참조를 지원한다.",
@@ -1705,6 +1867,8 @@
     },
     {
       "id": "browser-indexeddb-purpose",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "큰 구조화 데이터를 비동기 트랜잭션으로 저장하려 할 때 적절한 API는?",
       "explanation": "IndexedDB는 클라이언트 측 구조화 데이터 저장소다.",
@@ -1726,6 +1890,8 @@
     },
     {
       "id": "browser-indexeddb-transaction",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "IndexedDB에서 관련 쓰기를 하나의 트랜잭션에 묶는 이유는?",
       "explanation": "트랜잭션은 관련 저장 작업의 원자성을 제공한다.",
@@ -1747,6 +1913,8 @@
     },
     {
       "id": "browser-cache-api",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "Cache API가 주로 저장하는 것은?",
       "explanation": "네트워크 요청·응답을 명시적으로 저장하고 조회할 수 있다.",
@@ -1768,6 +1936,8 @@
     },
     {
       "id": "browser-service-worker-scope",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서비스 워커의 scope가 정하는 것은?",
       "explanation": "서비스 워커 등록 범위가 제어 대상 클라이언트를 제한한다.",
@@ -1789,6 +1959,8 @@
     },
     {
       "id": "browser-service-worker-dom",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서비스 워커에서 document.querySelector로 페이지를 수정할 수 있는가?",
       "explanation": "서비스 워커도 DOM에 직접 접근하지 않는 워커 환경이다.",
@@ -1810,6 +1982,8 @@
     },
     {
       "id": "browser-service-worker-fetch",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서비스 워커가 요청에 캐시 응답을 제공하는 데 사용하는 이벤트는?",
       "explanation": "fetch 이벤트에서 respondWith로 응답을 제공할 수 있다.",
@@ -1831,6 +2005,8 @@
     },
     {
       "id": "browser-service-worker-waituntil",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서비스 워커 이벤트의 waitUntil(promise)을 쓰는 목적은?",
       "explanation": "설치·활성화 등의 비동기 처리가 완료되도록 수명을 관리한다.",
@@ -1852,6 +2028,8 @@
     },
     {
       "id": "browser-service-worker-update",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "새 서비스 워커가 설치됐는데 대기 상태인 일반적인 이유는?",
       "explanation": "기본 수명주기는 기존 클라이언트가 종료될 때까지 새 활성화를 기다릴 수 있다.",
@@ -1873,6 +2051,8 @@
     },
     {
       "id": "browser-broadcast-channel",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "같은 출처의 여러 탭 사이에서 메시지를 주고받는 API는?",
       "explanation": "이름이 같은 채널의 문맥들에 메시지를 전달한다.",
@@ -1894,6 +2074,8 @@
     },
     {
       "id": "browser-websocket-duplex",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "WebSocket의 대표적인 통신 성질은?",
       "explanation": "클라이언트와 서버가 연결 위에서 메시지를 주고받는다.",
@@ -1915,6 +2097,8 @@
     },
     {
       "id": "browser-eventsource-direction",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "EventSource의 서버 전송 이벤트가 기본 제공하는 방향은?",
       "explanation": "SSE는 서버의 이벤트 스트림을 수신하는 방식이다.",
@@ -1936,6 +2120,8 @@
     },
     {
       "id": "browser-beacon-use",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "페이지를 떠날 때 작은 분석 데이터를 보내는 용도로 설계된 API는?",
       "explanation": "beacon은 페이지 종료 상황의 비동기 전송에 적합하게 설계되었다.",
@@ -1957,6 +2143,8 @@
     },
     {
       "id": "browser-bfcache-pageshow",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "뒤로 가기 캐시에서 복원됐는지 확인할 수 있는 이벤트 속성은?",
       "explanation": "persisted는 지속된 페이지 상태의 복원을 구분하는 데 쓰인다.",
@@ -1978,6 +2166,8 @@
     },
     {
       "id": "browser-passive-preventdefault",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "passive: true로 등록한 리스너에서 preventDefault를 호출하면?",
       "explanation": "passive는 기본 동작을 취소하지 않겠다는 약속이다.",
@@ -1999,6 +2189,8 @@
     },
     {
       "id": "browser-shadow-retargeting",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "Shadow DOM 내부에서 시작된 이벤트가 외부에 전달될 때 target이 host로 보일 수 있는 이유는?",
       "explanation": "경계를 넘어 전달할 때 외부에 노출되는 대상을 조정한다.",
@@ -2020,6 +2212,8 @@
     },
     {
       "id": "browser-shadow-composed",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "커스텀 이벤트가 Shadow DOM 경계를 넘어 전달되도록 하는 관련 옵션은?",
       "explanation": "composed는 shadow 경계를 통과할 수 있는지를 정한다.",
@@ -2041,6 +2235,8 @@
     },
     {
       "id": "browser-dialog-showmodal",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "dialog.showModal()이 일반 show()와 다른 대표적 동작은?",
       "explanation": "모달 대화상자는 top layer에서 표시되며 바깥 콘텐츠를 비활성화한다.",
@@ -2062,6 +2258,8 @@
     },
     {
       "id": "browser-blob-object-url",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "URL.createObjectURL로 만든 임시 URL이 더 필요 없을 때 할 일은?",
       "explanation": "객체 URL에 연결된 자원을 해제해 불필요한 유지 비용을 줄인다.",
@@ -2083,6 +2281,8 @@
     },
     {
       "id": "browser-layout-read",
+      "category": "Browser",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "getBoundingClientRect()가 반환하는 좌표의 기본 기준은?",
       "explanation": "스크롤에 따라 뷰포트 상대 좌표가 변할 수 있다.",
@@ -2099,6 +2299,36 @@
         {
           "title": "web.dev — Avoid large, complex layouts and layout thrashing",
           "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-status-multiple",
+      "category": "Browser",
+      "type": "브라우저 동작",
+      "format": "객관식 중복",
+      "points": 3,
+      "prompt": "fetch()와 HTTP 응답 상태에 관한 설명 중 옳은 것을 모두 고르시오.",
+      "options": [
+        "HTTP 404 응답을 받으면 fetch()의 Promise는 반드시 거부된다.",
+        "HTTP 404 응답을 받아도 fetch()의 Promise가 Response로 이행될 수 있다.",
+        "Response.ok는 HTTP 상태가 200~299일 때 true다.",
+        "HTTP 404 응답에서 Response.ok는 true다.",
+        "fetch()는 모든 HTTP 오류 응답을 자동으로 재시도한다."
+      ],
+      "answer": [
+        2,
+        3
+      ],
+      "explanation": "fetch()는 HTTP 404 같은 오류 상태만으로 Promise를 거부하지 않습니다. 정상적으로 응답을 받았다면 Response로 이행할 수 있습니다. Response.ok는 상태가 200~299일 때만 true입니다. 나머지 설명은 이 조건과 다릅니다.",
+      "sources": [
+        {
+          "title": "MDN — Using the Fetch API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        },
+        {
+          "title": "MDN — Response.ok",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/ok"
         }
       ]
     }

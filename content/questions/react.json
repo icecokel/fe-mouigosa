@@ -3,6 +3,8 @@
   "questions": [
     {
       "id": "react-batched-state",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 3,
       "answer": 2,
@@ -25,6 +27,8 @@
     },
     {
       "id": "react-effect-render-count",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "렌더링 횟수 예측",
       "points": 5,
       "answer": 3,
@@ -47,6 +51,8 @@
     },
     {
       "id": "react-list-key",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "개념 판단",
       "points": 2,
       "answer": 4,
@@ -68,6 +74,8 @@
     },
     {
       "id": "react-stale-closure",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "버그 찾기",
       "points": 5,
       "answer": 2,
@@ -90,6 +98,8 @@
     },
     {
       "id": "react-functional-update",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "결과 예측",
       "points": 4,
       "prompt": "React 19 프로덕션 모드다. 초기 마운트 후 버튼을 한 번 누르면 표시되는 값은?",
@@ -112,6 +122,8 @@
     },
     {
       "id": "react-ref-render",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "렌더링 횟수 예측",
       "points": 4,
       "prompt": "React 19 프로덕션 모드이며 Strict Mode는 없다. 최초 마운트 후 버튼을 한 번 누를 때까지 컴포넌트 함수는 총 몇 번 실행되는가? 다른 업데이트는 없다.",
@@ -134,6 +146,8 @@
     },
     {
       "id": "react-effect-cleanup",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "개념 판단",
       "points": 3,
       "prompt": "React의 useEffect에서 반환한 정리 함수가 실행되는 시점으로 옳은 것은?",
@@ -155,6 +169,8 @@
     },
     {
       "id": "react-state-mutation",
+      "category": "React",
+      "format": "객관식 단일",
       "type": "버그 찾기",
       "points": 4,
       "prompt": "상태 배열에 항목을 추가했지만 화면이 갱신되지 않는다. 같은 참조를 다시 전달하는 다음 코드의 수정으로 적절한 것은?",
@@ -177,6 +193,8 @@
     },
     {
       "id": "react-component-name",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "JSX에서 사용자 정의 컴포넌트를 HTML 태그와 구분하는 기본 명명 규칙은?",
       "explanation": "대문자 JSX 이름은 컴포넌트 변수로 해석된다.",
@@ -198,6 +216,8 @@
     },
     {
       "id": "react-jsx-expression",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "JSX에서 JavaScript 표현식을 삽입하는 구문은?",
       "explanation": "JSX의 중괄호 안에 표현식을 넣는다.",
@@ -219,6 +239,8 @@
     },
     {
       "id": "react-jsx-classname",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "DOM 요소의 CSS 클래스를 JSX로 지정하는 일반적인 prop은?",
       "explanation": "React DOM은 className prop으로 class를 지정한다.",
@@ -240,6 +262,8 @@
     },
     {
       "id": "react-jsx-style-object",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "JSX의 style prop에 전달하는 기본 형태는?",
       "explanation": "style은 객체 형태의 인라인 스타일을 받는다.",
@@ -261,6 +285,8 @@
     },
     {
       "id": "react-jsx-event-handler",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "버튼 클릭 때 함수를 실행하려면 적절한 형태는?",
       "explanation": "함수 참조를 넘겨 이벤트 시점에 호출하도록 한다.",
@@ -282,6 +308,8 @@
     },
     {
       "id": "react-props-readonly",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "컴포넌트가 받은 props를 다룰 때 원칙은?",
       "explanation": "props는 외부에서 전달되는 불변 입력으로 다룬다.",
@@ -303,6 +331,8 @@
     },
     {
       "id": "react-children-prop",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "컴포넌트 태그 사이에 전달한 JSX는 일반적으로 어떤 prop으로 받는가?",
       "explanation": "중첩된 JSX는 children으로 전달된다.",
@@ -324,6 +354,8 @@
     },
     {
       "id": "react-fragment-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "Fragment를 사용하는 주된 이유는?",
       "explanation": "Fragment 자체는 DOM 요소를 생성하지 않는다.",
@@ -345,6 +377,8 @@
     },
     {
       "id": "react-fragment-key",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "목록의 Fragment에 key가 필요하다. 적절한 방법은?",
       "explanation": "짧은 Fragment 구문은 key 속성을 직접 받지 않는다.",
@@ -366,6 +400,8 @@
     },
     {
       "id": "react-state-setter",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "useState의 반환 배열 두 번째 값은?",
       "explanation": "상태 값과 setter를 쌍으로 반환한다.",
@@ -387,6 +423,8 @@
     },
     {
       "id": "react-state-snapshot",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "이벤트 핸들러에서 setState 직후 기존 state 변수를 읽으면?",
       "explanation": "setter는 다음 렌더를 요청하며 현재 지역 변수는 바꾸지 않는다.",
@@ -408,6 +446,8 @@
     },
     {
       "id": "react-state-object-update",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "객체 상태의 한 필드를 바꿀 때 기본 접근은?",
       "explanation": "새 참조로 변경을 표현하고 이전 스냅샷을 보존한다.",
@@ -429,6 +469,8 @@
     },
     {
       "id": "react-state-array-remove",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "배열 상태에서 특정 항목을 제거할 때 적합한 메서드는?",
       "explanation": "filter는 원본을 직접 변경하지 않는 새 배열을 만든다.",
@@ -450,6 +492,8 @@
     },
     {
       "id": "react-state-lazy-init",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "비용이 있는 초기 상태 계산을 useState에 전달하는 형태로 적절한 것은?",
       "explanation": "초기화 함수를 전달하면 렌더마다 인자 계산을 하지 않는다.",
@@ -471,6 +515,8 @@
     },
     {
       "id": "react-state-derived",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "props에서 바로 계산할 수 있는 값을 별도 state와 Effect로 복제할 때 문제는?",
       "explanation": "계산 가능한 값은 렌더 중 유도하는 편이 동기화 오류를 줄인다.",
@@ -492,6 +538,8 @@
     },
     {
       "id": "react-state-lift",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "형제 컴포넌트가 같은 선택 상태를 공유해야 한다. 기본 해결은?",
       "explanation": "공통 소유자가 단일 상태를 관리하고 props로 전달한다.",
@@ -513,6 +561,8 @@
     },
     {
       "id": "react-controlled-input",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "제어되는 텍스트 input의 기본 구성은?",
       "explanation": "상태 값과 변경 처리를 연결해 입력을 제어한다.",
@@ -534,6 +584,8 @@
     },
     {
       "id": "react-uncontrolled-default",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "비제어 input의 초기값을 지정하는 prop은?",
       "explanation": "defaultValue는 초기값을 제공하며 현재 값은 DOM이 관리한다.",
@@ -555,6 +607,8 @@
     },
     {
       "id": "react-checkbox-controlled",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "제어되는 체크박스의 선택 상태를 나타내는 prop은?",
       "explanation": "체크 여부는 checked로 제어한다.",
@@ -576,6 +630,8 @@
     },
     {
       "id": "react-input-label",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "React JSX에서 label과 input을 연결하는 label prop은?",
       "explanation": "htmlFor 값이 input의 id와 대응한다.",
@@ -597,6 +653,8 @@
     },
     {
       "id": "react-conditional-null",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "컴포넌트가 아무 UI도 그리지 않으려면 반환할 수 있는 것은?",
       "explanation": "null은 렌더할 콘텐츠가 없음을 나타낸다.",
@@ -618,6 +676,8 @@
     },
     {
       "id": "react-list-map",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "데이터 배열을 JSX 목록으로 변환할 때 흔히 쓰는 메서드는?",
       "explanation": "map은 각 원소를 JSX 원소로 변환한다.",
@@ -639,6 +699,8 @@
     },
     {
       "id": "react-key-not-prop",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "자식 컴포넌트에서 props.key로 목록 key를 읽으려 한다. 적절한 설명은?",
       "explanation": "key는 React가 관리하는 식별 값이며 일반 prop이 아니다.",
@@ -660,6 +722,8 @@
     },
     {
       "id": "react-key-sibling-scope",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "목록의 key가 유일해야 하는 범위는?",
       "explanation": "key의 식별 범위는 해당 형제 집합이다.",
@@ -681,6 +745,8 @@
     },
     {
       "id": "react-state-reset-key",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "같은 위치의 컴포넌트 key를 바꾸면 일반적으로 상태는?",
       "explanation": "key 변화는 상태 보존에 사용하는 정체성을 바꾼다.",
@@ -702,6 +768,8 @@
     },
     {
       "id": "react-component-nesting",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "부모 함수 내부에서 자식 컴포넌트 함수를 매번 정의하면 생길 수 있는 문제는?",
       "explanation": "컴포넌트 함수 참조가 매 렌더 바뀌기 때문이다.",
@@ -723,6 +791,8 @@
     },
     {
       "id": "react-hook-top-level",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "일반적인 useState·useEffect 호출 위치의 규칙은?",
       "explanation": "일관된 Hook 호출 순서를 유지해야 한다.",
@@ -744,6 +814,8 @@
     },
     {
       "id": "react-custom-hook-name",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "상태 로직을 재사용하는 커스텀 Hook의 명명 규칙은?",
       "explanation": "use 접두사는 Hook 규칙 적용과 식별에 사용된다.",
@@ -765,6 +837,8 @@
     },
     {
       "id": "react-custom-hook-state",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "같은 커스텀 Hook을 두 컴포넌트가 각각 호출하면 내부 useState는?",
       "explanation": "Hook은 로직을 재사용하며 상태 인스턴스를 자동 공유하지 않는다.",
@@ -786,6 +860,8 @@
     },
     {
       "id": "react-effect-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "useEffect의 대표적인 용도는?",
       "explanation": "네트워크 구독·외부 위젯 등 React 밖의 시스템과 연결한다.",
@@ -807,6 +883,8 @@
     },
     {
       "id": "react-effect-dependencies",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "Effect가 읽는 반응형 값은 의존성 배열에서 어떻게 다뤄야 하는가?",
       "explanation": "누락된 의존성은 오래된 값에 머무는 문제를 만들 수 있다.",
@@ -828,6 +906,8 @@
     },
     {
       "id": "react-effect-object-dependency",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "렌더마다 새 객체를 만들어 Effect 의존성에 넣으면?",
       "explanation": "React는 의존성 항목을 Object.is로 비교한다.",
@@ -849,6 +929,8 @@
     },
     {
       "id": "react-effect-cleanup-subscription",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "Effect에서 이벤트를 구독했다. 정리 함수에서 해야 할 것은?",
       "explanation": "정리는 구독 수명과 컴포넌트 수명을 맞춘다.",
@@ -870,6 +952,8 @@
     },
     {
       "id": "react-effect-async-function",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "useEffect 콜백 자체를 async로 두는 것이 적절하지 않은 이유는?",
       "explanation": "비동기 함수는 Effect 내부에 두고 정리 함수는 별도로 반환한다.",
@@ -891,6 +975,8 @@
     },
     {
       "id": "react-effect-race",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "검색어 변경 요청의 응답 순서가 뒤바뀐다. 대응으로 적절한 것은?",
       "explanation": "응답의 유효성을 요청 세대나 취소로 관리해야 한다.",
@@ -912,6 +998,8 @@
     },
     {
       "id": "react-layout-effect",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "브라우저가 그리기 전에 DOM 치수를 읽고 배치를 보정할 필요가 있다. 적합한 Hook은?",
       "explanation": "layout Effect는 화면이 그려지기 전 레이아웃 조정에 사용된다.",
@@ -933,6 +1021,8 @@
     },
     {
       "id": "react-layout-effect-cost",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "useLayoutEffect의 작업이 길어질 때 주의점은?",
       "explanation": "페인트 전에 동기적으로 처리되는 작업이기 때문이다.",
@@ -954,6 +1044,8 @@
     },
     {
       "id": "react-ref-dom",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "DOM 노드에 대한 참조를 저장할 때 적합한 Hook은?",
       "explanation": "ref.current로 커밋된 노드에 접근할 수 있다.",
@@ -975,6 +1067,8 @@
     },
     {
       "id": "react-ref-state-choice",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "화면에 표시하지 않는 타이머 ID를 보관하려 한다. 적합한 저장소는?",
       "explanation": "ref는 렌더 간 값을 보존하면서 변경만으로 재렌더하지 않는다.",
@@ -996,6 +1090,8 @@
     },
     {
       "id": "react-render-purity",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "렌더 함수에서 피해야 할 동작은?",
       "explanation": "렌더는 여러 번 실행되거나 버려질 수 있어 순수해야 한다.",
@@ -1017,6 +1113,8 @@
     },
     {
       "id": "react-event-vs-effect",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "사용자가 구매 버튼을 눌렀을 때만 결제 요청을 보내려 한다. 적절한 위치는?",
       "explanation": "특정 사용자 동작의 결과는 그 이벤트 흐름에서 처리한다.",
@@ -1038,6 +1136,8 @@
     },
     {
       "id": "react-context-provider",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "useContext가 읽는 값의 기본 출처는?",
       "explanation": "Context 값은 컴포넌트 트리의 가까운 제공자에서 결정된다.",
@@ -1059,6 +1159,8 @@
     },
     {
       "id": "react-context-default",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "Context 제공자가 없을 때 useContext가 사용하는 값은?",
       "explanation": "기본값은 대응 제공자가 없는 경우 사용한다.",
@@ -1080,6 +1182,8 @@
     },
     {
       "id": "react-context-memo-consumer",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "memo로 감싼 컴포넌트가 읽는 Context 값이 바뀌면?",
       "explanation": "memo의 props 비교가 Context 업데이트까지 막지는 않는다.",
@@ -1101,6 +1205,8 @@
     },
     {
       "id": "react-context-value-identity",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "Provider value에 매번 새 객체를 전달할 때 고려할 것은?",
       "explanation": "value의 동일성은 Context 전파에 영향을 준다.",
@@ -1122,6 +1228,8 @@
     },
     {
       "id": "react-reducer-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "여러 종류의 상태 전환을 한 함수로 정리하는 Hook은?",
       "explanation": "reducer는 현재 상태와 action으로 다음 상태를 계산한다.",
@@ -1143,6 +1251,8 @@
     },
     {
       "id": "react-reducer-purity",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "reducer 함수의 적절한 동작은?",
       "explanation": "reducer는 상태 전환을 순수하게 계산해야 한다.",
@@ -1164,6 +1274,8 @@
     },
     {
       "id": "react-reducer-action",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useReducer의 dispatch에 전달하는 값은?",
       "explanation": "action의 구조는 애플리케이션이 정한다.",
@@ -1185,6 +1297,8 @@
     },
     {
       "id": "react-memo-default",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "React.memo의 기본 props 비교는 어떤 방식에 가까운가?",
       "explanation": "중첩 객체 내부 변경은 참조 비교로 드러나야 한다.",
@@ -1206,6 +1320,8 @@
     },
     {
       "id": "react-memo-new-function",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "메모된 자식에 매번 새 화살표 함수를 prop으로 전달하면?",
       "explanation": "수동 메모화에서 참조 안정성은 중요하다.",
@@ -1227,6 +1343,8 @@
     },
     {
       "id": "react-usememo-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useMemo가 캐시하는 주 대상은?",
       "explanation": "의존성이 바뀌지 않으면 이전 계산 결과를 재사용할 수 있다.",
@@ -1248,6 +1366,8 @@
     },
     {
       "id": "react-usecallback-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useCallback이 반환하는 것은?",
       "explanation": "useCallback은 함수 정의를 캐시하는 용도다.",
@@ -1269,6 +1389,8 @@
     },
     {
       "id": "react-memo-correctness",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useMemo 캐시가 사라져도 코드가 올바르게 작동해야 하는 이유는?",
       "explanation": "캐시 유지에 프로그램의 정합성을 의존시키지 않는다.",
@@ -1290,6 +1412,8 @@
     },
     {
       "id": "react-memo-comparator-functions",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "memo의 사용자 비교 함수가 함수 prop 변화를 무시하면 위험한 이유는?",
       "explanation": "함수도 props이며 closure가 바뀔 수 있다.",
@@ -1311,6 +1435,8 @@
     },
     {
       "id": "react-memo-cost",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "아주 싼 계산을 모두 useMemo로 감쌀 때 고려할 것은?",
       "explanation": "실제 비용을 측정해 필요한 곳에 적용한다.",
@@ -1332,6 +1458,8 @@
     },
     {
       "id": "react-transition-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useTransition의 목적에 가까운 것은?",
       "explanation": "긴급한 상호작용을 우선할 수 있게 업데이트 우선순위를 표현한다.",
@@ -1353,6 +1481,8 @@
     },
     {
       "id": "react-transition-pending",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useTransition이 제공하는 isPending은?",
       "explanation": "전환 중임을 보여주는 UI에 활용한다.",
@@ -1374,6 +1504,8 @@
     },
     {
       "id": "react-transition-input",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "제어되는 텍스트 입력의 value 업데이트를 전환으로 지연시키면 안 되는 이유는?",
       "explanation": "입력 갱신과 무거운 후속 화면 갱신을 분리한다.",
@@ -1395,6 +1527,8 @@
     },
     {
       "id": "react-deferred-value",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useDeferredValue의 대표적 사용은?",
       "explanation": "값의 지연된 버전을 사용해 업데이트를 분리한다.",
@@ -1416,6 +1550,8 @@
     },
     {
       "id": "react-deferred-not-debounce",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useDeferredValue와 시간 기반 debounce의 차이는?",
       "explanation": "React의 렌더링 우선순위와 관련되며 타이머 지연과 다르다.",
@@ -1437,6 +1573,8 @@
     },
     {
       "id": "react-suspense-fallback",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "Suspense의 fallback은 언제 표시되는가?",
       "explanation": "Suspense를 통합한 비동기 렌더링 소스가 경계에 대기를 알린다.",
@@ -1458,6 +1596,8 @@
     },
     {
       "id": "react-suspense-effect-fetch",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "일반 useEffect 안의 fetch만으로 Suspense fallback이 자동 표시되지 않는 이유는?",
       "explanation": "Effect 기반 요청과 Suspense 데이터 통합은 다르다.",
@@ -1479,6 +1619,8 @@
     },
     {
       "id": "react-lazy-component",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "React.lazy가 일반적으로 기대하는 로딩 결과는?",
       "explanation": "동적 import 결과의 default 컴포넌트를 사용한다.",
@@ -1500,6 +1642,8 @@
     },
     {
       "id": "react-lazy-declaration",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "lazy 컴포넌트를 컴포넌트 함수 내부에서 매번 선언하지 않는 이유는?",
       "explanation": "lazy 선언도 안정적인 컴포넌트 타입으로 유지한다.",
@@ -1521,6 +1665,8 @@
     },
     {
       "id": "react-error-boundary",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "Error Boundary가 주로 처리하는 오류는?",
       "explanation": "이벤트 핸들러·임의 비동기 작업 오류와는 포착 범위가 다르다.",
@@ -1542,6 +1688,8 @@
     },
     {
       "id": "react-error-boundary-event",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "버튼 이벤트 핸들러 안에서 발생하는 오류의 기본 처리 방식으로 적절한 것은?",
       "explanation": "일반 이벤트 핸들러 오류는 Boundary가 자동 포착하는 대상이 아니다.",
@@ -1563,6 +1711,8 @@
     },
     {
       "id": "react-portal-dom",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "createPortal의 주된 효과는?",
       "explanation": "물리적 DOM 위치와 논리적 React 트리를 분리한다.",
@@ -1584,6 +1734,8 @@
     },
     {
       "id": "react-portal-events",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "Portal 내부 클릭 이벤트는 React 관점에서 어떻게 전파되는가?",
       "explanation": "Portal도 React 트리의 자식이라는 관계를 유지한다.",
@@ -1605,6 +1757,8 @@
     },
     {
       "id": "react-useid-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "useId의 적합한 용도는?",
       "explanation": "useId는 컴포넌트의 접근성 관계 ID에 사용한다.",
@@ -1626,6 +1780,8 @@
     },
     {
       "id": "react-useid-not-list-key",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useId를 목록 데이터의 key로 쓰기보다 데이터 ID를 쓰는 이유는?",
       "explanation": "목록 재정렬·삽입에도 항목 정체성을 보존해야 한다.",
@@ -1647,6 +1803,8 @@
     },
     {
       "id": "react-hydration-match",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서버 렌더링 HTML을 hydrate할 때 초기 클라이언트 렌더는?",
       "explanation": "초기 마크업 불일치는 hydration 오류를 만들 수 있다.",
@@ -1668,6 +1826,8 @@
     },
     {
       "id": "react-hydration-random",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "렌더 본문에서 Math.random을 바로 표시하면 SSR에서 문제가 될 수 있는 이유는?",
       "explanation": "환경별 비결정적 값은 초기 출력 불일치를 유발한다.",
@@ -1689,6 +1849,8 @@
     },
     {
       "id": "react-effect-server",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "서버 렌더링 중 useEffect 콜백은?",
       "explanation": "Effect는 클라이언트에서 커밋 후 동작한다.",
@@ -1710,6 +1872,8 @@
     },
     {
       "id": "react-browser-api-render",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "SSR 가능한 컴포넌트 렌더에서 window를 직접 읽을 때 문제는?",
       "explanation": "브라우저 전용 API는 실행 환경을 고려해야 한다.",
@@ -1731,6 +1895,8 @@
     },
     {
       "id": "react-client-boundary",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "React Server Components 환경에서 \"use client\"의 의미는?",
       "explanation": "클라이언트 기능을 사용하는 모듈 그래프의 경계를 나타낸다.",
@@ -1752,6 +1918,8 @@
     },
     {
       "id": "react-server-props-serialization",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "Server Component에서 Client Component로 props를 전달할 때 고려할 것은?",
       "explanation": "서버와 클라이언트 경계를 넘는 데이터에는 전달 가능한 값의 제약이 있다.",
@@ -1773,6 +1941,8 @@
     },
     {
       "id": "react-strict-mode-development",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "Strict Mode의 추가 검사에 대한 설명으로 옳은 것은?",
       "explanation": "개발 검사로 부수 효과나 누락된 정리를 찾는 데 도움을 준다.",
@@ -1794,6 +1964,8 @@
     },
     {
       "id": "react-strict-effect-cleanup",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "개발 Strict Mode의 Effect 재검사 때문에 구독이 두 개 남았다. 우선 수정할 것은?",
       "explanation": "추가 검사에서 드러난 구독 누수의 원인을 고친다.",
@@ -1815,6 +1987,8 @@
     },
     {
       "id": "react-external-store",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "React 밖의 구독 가능한 저장소와 렌더를 일관되게 연결하는 Hook은?",
       "explanation": "외부 저장소 구독과 스냅샷 읽기를 연결한다.",
@@ -1836,6 +2010,8 @@
     },
     {
       "id": "react-external-store-snapshot",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useSyncExternalStore의 getSnapshot이 상태 변화 없이 매번 새 객체를 반환하면?",
       "explanation": "저장소가 변하지 않으면 스냅샷 동일성도 안정적이어야 한다.",
@@ -1857,6 +2033,8 @@
     },
     {
       "id": "react-imperative-handle",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useImperativeHandle의 용도는?",
       "explanation": "전체 DOM 대신 필요한 메서드만 노출할 수 있다.",
@@ -1878,6 +2056,8 @@
     },
     {
       "id": "react-flushsync",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "flushSync를 과도하게 쓰면 주의할 문제는?",
       "explanation": "외부 시스템 통합 등 필요한 경우에 한정하는 편이 좋다.",
@@ -1899,6 +2079,8 @@
     },
     {
       "id": "react-profiler-purpose",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "React Profiler가 주로 도와주는 일은?",
       "explanation": "렌더링 성능의 병목을 파악하는 데 사용한다.",
@@ -1920,6 +2102,8 @@
     },
     {
       "id": "react-act-testing",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "테스트에서 act를 사용하는 목적은?",
       "explanation": "테스트가 사용자에게 보일 업데이트 후 상태를 검사하도록 돕는다.",
@@ -1941,6 +2125,8 @@
     },
     {
       "id": "react-optimistic-ui",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "낙관적 UI의 핵심 동작은?",
       "explanation": "응답성을 높이되 실패·충돌을 처리해야 한다.",
@@ -1962,6 +2148,8 @@
     },
     {
       "id": "react-use-action-state",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "React 19의 useActionState가 도와주는 것은?",
       "explanation": "Action 실행 결과와 진행 상태를 UI에 연결한다.",
@@ -1983,6 +2171,8 @@
     },
     {
       "id": "react-use-form-status",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useFormStatus를 사용하는 컴포넌트의 위치로 적절한 것은?",
       "explanation": "부모 form의 제출 상태를 읽는 Hook이다.",
@@ -2004,6 +2194,8 @@
     },
     {
       "id": "react-use-optimistic",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useOptimistic의 기본 목적은?",
       "explanation": "최종 상태와 구분되는 낙관적 표현을 관리한다.",
@@ -2025,6 +2217,8 @@
     },
     {
       "id": "react-keyed-form-reset",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "사용자 ID가 바뀔 때 편집 폼의 모든 내부 상태를 초기화하려 한다. 간단한 방법은?",
       "explanation": "의미 있는 key 변화로 해당 폼 상태를 새로 만든다.",
@@ -2046,6 +2240,8 @@
     },
     {
       "id": "react-callback-deps",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "useCallback에서 props 값을 캡처하면서 의존성 배열을 빈 배열로 두면?",
       "explanation": "반응형 의존성을 누락하면 함수가 오래된 값을 참조할 수 있다.",
@@ -2067,6 +2263,8 @@
     },
     {
       "id": "react-context-split",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "자주 바뀌는 값과 거의 안 바뀌는 값을 하나의 Context에 묶었을 때 개선 방향은?",
       "explanation": "필요 없는 Context 업데이트 전파를 줄일 수 있다.",
@@ -2088,6 +2286,8 @@
     },
     {
       "id": "react-concurrent-render-purity",
+      "category": "React",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "동시 렌더링에서 중단되거나 버려지는 렌더가 있을 수 있다. 따라서 필요한 성질은?",
       "explanation": "실제로 커밋되지 않는 렌더에서도 안전하도록 순수성을 지킨다.",

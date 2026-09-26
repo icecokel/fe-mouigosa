@@ -1,6 +1,8 @@
 {
   "id": "replace-with-topic-id",
+  "category": "JavaScript",
   "type": "결과 예측",
+  "format": "객관식 단일",
   "points": 2,
   "prompt": "실행 환경과 전제조건을 포함한 지문을 작성하세요.",
   "code": "// 문제에 제시할 코드\n// 여러 줄도 작성할 수 있습니다.",

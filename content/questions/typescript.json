@@ -3,6 +3,8 @@
   "questions": [
     {
       "id": "typescript-discriminated-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 4,
       "answer": 2,
@@ -25,6 +27,8 @@
     },
     {
       "id": "typescript-readonly-shallow",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 4,
       "answer": 2,
@@ -47,6 +51,8 @@
     },
     {
       "id": "typescript-unknown-narrowing",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 2,
       "answer": 2,
@@ -69,6 +75,8 @@
     },
     {
       "id": "typescript-keyof",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 3,
       "prompt": "다음 코드에서 Keys 타입은?",
@@ -91,6 +99,8 @@
     },
     {
       "id": "typescript-literal-const",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 4,
       "prompt": "다음 코드에서 Direction 타입은?",
@@ -113,6 +123,8 @@
     },
     {
       "id": "typescript-partial",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "type": "타입 분석",
       "points": 3,
       "prompt": "다음 타입에서 허용되는 값은?",
@@ -135,6 +147,8 @@
     },
     {
       "id": "typescript-string-array-element",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "배열 타입에 number로 접근하면 원소 타입을 얻는다.",
@@ -157,6 +171,8 @@
     },
     {
       "id": "typescript-tuple-first",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "튜플의 0번 위치는 string이다.",
@@ -179,6 +195,8 @@
     },
     {
       "id": "typescript-tuple-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "number 인덱스는 가능한 튜플 원소 타입의 합집합이다.",
@@ -201,6 +219,8 @@
     },
     {
       "id": "typescript-optional-field",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "선택적 속성을 읽으면 없을 가능성이 포함된다.",
@@ -223,6 +243,8 @@
     },
     {
       "id": "typescript-literal-let",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "재할당 가능한 let 문자열은 string으로 넓혀진다.",
@@ -245,6 +267,8 @@
     },
     {
       "id": "typescript-literal-const-number",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "const 원시값은 리터럴 타입으로 추론된다.",
@@ -267,6 +291,8 @@
     },
     {
       "id": "typescript-boolean-typeof",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "명시적으로 선언한 boolean 타입을 참조한다.",
@@ -289,6 +315,8 @@
     },
     {
       "id": "typescript-object-field",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "인덱스 접근 타입은 특정 속성의 타입을 추출한다.",
@@ -311,6 +339,8 @@
     },
     {
       "id": "typescript-record-key-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Record의 키 리터럴 합집합이 유지된다.",
@@ -333,6 +363,8 @@
     },
     {
       "id": "typescript-record-value",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Record의 모든 지정 키에는 값 타입 boolean이 적용된다.",
@@ -355,6 +387,8 @@
     },
     {
       "id": "typescript-pick-field",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Pick은 지정한 속성만 보존한다.",
@@ -377,6 +411,8 @@
     },
     {
       "id": "typescript-omit-field",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Omit은 지정한 속성을 제외한다.",
@@ -399,6 +435,8 @@
     },
     {
       "id": "typescript-partial-properties",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Partial은 각 속성을 선택적으로 바꾼다.",
@@ -421,6 +459,8 @@
     },
     {
       "id": "typescript-required-properties",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Required는 선택적 수정자를 제거한다.",
@@ -443,6 +483,8 @@
     },
     {
       "id": "typescript-readonly-properties",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Readonly는 객체 속성에 readonly 수정자를 적용한다.",
@@ -465,6 +507,8 @@
     },
     {
       "id": "typescript-function-return",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "ReturnType은 함수의 반환 타입을 추출한다.",
@@ -487,6 +531,8 @@
     },
     {
       "id": "typescript-function-parameters",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Parameters는 순서가 있는 매개변수 튜플이다.",
@@ -509,6 +555,8 @@
     },
     {
       "id": "typescript-function-return-void",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "선언된 반환 타입 void를 그대로 얻는다.",
@@ -531,6 +579,8 @@
     },
     {
       "id": "typescript-array-readonly-element",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "읽기 전용 여부와 관계없이 원소 타입은 number다.",
@@ -553,6 +603,8 @@
     },
     {
       "id": "typescript-promise-awaited",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Awaited는 Promise의 해결 값 타입을 풀어낸다.",
@@ -575,6 +627,8 @@
     },
     {
       "id": "typescript-nonnullable",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "NonNullable은 null과 undefined를 제거한다.",
@@ -597,6 +651,8 @@
     },
     {
       "id": "typescript-exclude-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "제외 대상에 할당 가능한 구성원을 제거한다.",
@@ -619,6 +675,8 @@
     },
     {
       "id": "typescript-extract-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "대상에 할당 가능한 구성원만 남긴다.",
@@ -641,6 +699,8 @@
     },
     {
       "id": "typescript-template-simple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 2,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "템플릿 리터럴이 유니언 각 원소에 적용된다.",
@@ -663,6 +723,8 @@
     },
     {
       "id": "typescript-uppercase-literal",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Uppercase는 문자열 리터럴의 대문자 타입을 만든다.",
@@ -685,6 +747,8 @@
     },
     {
       "id": "typescript-lowercase-literal",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Lowercase는 소문자 문자열 리터럴 타입을 만든다.",
@@ -707,6 +771,8 @@
     },
     {
       "id": "typescript-capitalize-literal",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Capitalize는 첫 문자만 대문자로 바꾼다.",
@@ -729,6 +795,8 @@
     },
     {
       "id": "typescript-uncapitalize-literal",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Uncapitalize는 첫 문자만 소문자로 바꾼다.",
@@ -751,6 +819,8 @@
     },
     {
       "id": "typescript-union-never",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "never는 유니언에서 추가 가능한 값을 제공하지 않는다.",
@@ -773,6 +843,8 @@
     },
     {
       "id": "typescript-intersection-never",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "문자열과 숫자를 동시에 만족하는 값은 없다.",
@@ -795,6 +867,8 @@
     },
     {
       "id": "typescript-union-unknown",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "unknown과의 합집합은 unknown이다.",
@@ -817,6 +891,8 @@
     },
     {
       "id": "typescript-intersection-unknown",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "unknown과의 교집합은 원래 타입을 유지한다.",
@@ -839,6 +915,8 @@
     },
     {
       "id": "typescript-keyof-union-common",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "유니언에서 안전하게 공통 접근 가능한 키는 x다.",
@@ -861,6 +939,8 @@
     },
     {
       "id": "typescript-keyof-intersection",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "교차 타입은 양쪽 객체의 속성을 함께 가진다.",
@@ -883,6 +963,8 @@
     },
     {
       "id": "typescript-index-signature-number",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "숫자 인덱스 시그니처의 키 타입은 number다.",
@@ -905,6 +987,8 @@
     },
     {
       "id": "typescript-index-signature-string",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "문자열 키 객체는 숫자 키 접근도 허용한다.",
@@ -927,6 +1011,8 @@
     },
     {
       "id": "typescript-const-object-widen",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "const 객체라도 변경 가능한 속성은 string으로 넓혀진다.",
@@ -949,6 +1035,8 @@
     },
     {
       "id": "typescript-const-assertion-object",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "as const는 속성의 리터럴 타입을 유지한다.",
@@ -971,6 +1059,8 @@
     },
     {
       "id": "typescript-const-assertion-tuple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "배열 리터럴의 const 단언은 읽기 전용 튜플을 만든다.",
@@ -993,6 +1083,8 @@
     },
     {
       "id": "typescript-optional-tuple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "선택적 튜플 원소는 없을 수 있다.",
@@ -1015,6 +1107,8 @@
     },
     {
       "id": "typescript-tuple-length",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "고정 길이 튜플의 length는 숫자 리터럴이다.",
@@ -1037,6 +1131,8 @@
     },
     {
       "id": "typescript-rest-tuple-element",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "첫 원소와 나머지 원소 타입을 합친다.",
@@ -1059,6 +1155,8 @@
     },
     {
       "id": "typescript-generic-identity",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "제네릭 인자 boolean이 T 자리에 들어간다.",
@@ -1081,6 +1179,8 @@
     },
     {
       "id": "typescript-generic-default",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "타입 인자 생략 시 기본값 string을 사용한다.",
@@ -1103,6 +1203,8 @@
     },
     {
       "id": "typescript-generic-key-constraint",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "keyof 제약으로 보장된 키의 속성 타입을 얻는다.",
@@ -1125,6 +1227,8 @@
     },
     {
       "id": "typescript-conditional-basic",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "number는 string에 할당할 수 없어 false 분기를 선택한다.",
@@ -1147,6 +1251,8 @@
     },
     {
       "id": "typescript-conditional-distribute",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 3,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "벌거벗은 타입 매개변수의 조건부 타입은 유니언에 분배된다.",
@@ -1169,6 +1275,8 @@
     },
     {
       "id": "typescript-conditional-no-distribute",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "튜플로 감싸면 유니언 전체가 string인지 검사한다.",
@@ -1191,6 +1299,8 @@
     },
     {
       "id": "typescript-infer-array-element",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "infer U가 배열의 원소 타입을 포착한다.",
@@ -1213,6 +1323,8 @@
     },
     {
       "id": "typescript-infer-promise",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Promise 내부 타입을 추론해 반환한다.",
@@ -1235,6 +1347,8 @@
     },
     {
       "id": "typescript-infer-return",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "infer R은 선언된 반환 리터럴 타입을 얻는다.",
@@ -1257,6 +1371,8 @@
     },
     {
       "id": "typescript-infer-first-tuple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "튜플 첫 원소를 H로 추론한다.",
@@ -1279,6 +1395,8 @@
     },
     {
       "id": "typescript-infer-empty-tuple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "빈 튜플은 필수 첫 원소 패턴과 일치하지 않는다.",
@@ -1301,6 +1419,8 @@
     },
     {
       "id": "typescript-mapped-boolean",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "매핑 타입은 각 키를 보존하고 값 타입을 바꾼다.",
@@ -1323,6 +1443,8 @@
     },
     {
       "id": "typescript-mapped-remove-readonly",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "-readonly는 읽기 전용 수정자를 제거한다.",
@@ -1345,6 +1467,8 @@
     },
     {
       "id": "typescript-mapped-remove-optional",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "-?는 선택적 수정자를 제거한다.",
@@ -1367,6 +1491,8 @@
     },
     {
       "id": "typescript-mapped-rename",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "as 절이 키 이름을 재매핑한다.",
@@ -1389,6 +1515,8 @@
     },
     {
       "id": "typescript-mapped-filter",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "키를 never로 매핑하면 해당 속성이 제거된다.",
@@ -1411,6 +1539,8 @@
     },
     {
       "id": "typescript-awaited-nested",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Awaited는 중첩 Promise를 재귀적으로 풀어낸다.",
@@ -1433,6 +1563,8 @@
     },
     {
       "id": "typescript-awaited-union",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "유니언 각 구성원의 await 결과를 합친다.",
@@ -1455,6 +1587,8 @@
     },
     {
       "id": "typescript-awaited-null",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "Awaited는 null을 그대로 보존한다.",
@@ -1477,6 +1611,8 @@
     },
     {
       "id": "typescript-returntype-generic",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "구체적인 제네릭 인자가 없으므로 unknown이다.",
@@ -1499,6 +1635,8 @@
     },
     {
       "id": "typescript-parameters-optional",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "선택적 매개변수는 튜플에서도 선택적으로 유지된다.",
@@ -1521,6 +1659,8 @@
     },
     {
       "id": "typescript-parameters-rest",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "rest 매개변수의 타입은 가변 길이 배열로 추출된다.",
@@ -1543,6 +1683,8 @@
     },
     {
       "id": "typescript-constructor-parameters",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "생성자 매개변수를 튜플로 추출한다.",
@@ -1565,6 +1707,8 @@
     },
     {
       "id": "typescript-instance-type",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "생성자 타입에서 인스턴스 타입을 얻는다.",
@@ -1587,6 +1731,8 @@
     },
     {
       "id": "typescript-this-parameter",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "명시적인 this 매개변수 타입을 추출한다.",
@@ -1609,6 +1755,8 @@
     },
     {
       "id": "typescript-omit-this-parameter",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "this 매개변수만 제거하고 나머지 시그니처는 유지한다.",
@@ -1631,6 +1779,8 @@
     },
     {
       "id": "typescript-exclude-null",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 4,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "null만 제외하므로 undefined는 남는다.",
@@ -1653,6 +1803,8 @@
     },
     {
       "id": "typescript-extract-discriminated",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "kind 조건에 할당 가능한 유니언 구성원만 추출한다.",
@@ -1675,6 +1827,8 @@
     },
     {
       "id": "typescript-template-cartesian",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "템플릿 리터럴의 유니언은 조합별로 전개된다.",
@@ -1697,6 +1851,8 @@
     },
     {
       "id": "typescript-template-infer-suffix",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "고정 접두사 뒤의 문자열을 R로 추론한다.",
@@ -1719,6 +1875,8 @@
     },
     {
       "id": "typescript-template-infer-delimiter",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "첫 구분자 앞부분을 추론한다.",
@@ -1741,6 +1899,8 @@
     },
     {
       "id": "typescript-tuple-tail",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "첫 원소를 제외한 나머지를 가변 튜플로 추론한다.",
@@ -1763,6 +1923,8 @@
     },
     {
       "id": "typescript-tuple-last",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "끝 위치에 infer를 두어 마지막 타입을 얻는다.",
@@ -1785,6 +1947,8 @@
     },
     {
       "id": "typescript-tuple-concat",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "가변 튜플 스프레드는 순서를 보존해 연결한다.",
@@ -1807,6 +1971,8 @@
     },
     {
       "id": "typescript-tuple-readonly-first",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "readonly 튜플 패턴이 입력과 일치한다.",
@@ -1829,6 +1995,8 @@
     },
     {
       "id": "typescript-conditional-never-distribution",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "분배 조건부 타입에서 never는 전개할 구성원이 없다.",
@@ -1851,6 +2019,8 @@
     },
     {
       "id": "typescript-conditional-never-wrapped",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "튜플로 감싸 분배를 막으면 never 여부를 직접 검사한다.",
@@ -1873,6 +2043,8 @@
     },
     {
       "id": "typescript-union-function-returns",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "함수 유니언의 반환 타입은 각 반환 타입의 유니언이다.",
@@ -1895,6 +2067,8 @@
     },
     {
       "id": "typescript-overload-return",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "오버로드 타입 추론은 마지막 시그니처를 사용한다.",
@@ -1917,6 +2091,8 @@
     },
     {
       "id": "typescript-satisfies-literal",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "satisfies가 검사를 수행하되 구체적인 리터럴 추론을 유지한다.",
@@ -1939,6 +2115,8 @@
     },
     {
       "id": "typescript-satisfies-tuple",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "문맥의 튜플 형태를 따라 추론되지만 const 단언은 아니다.",
@@ -1961,6 +2139,8 @@
     },
     {
       "id": "typescript-readonly-array-assignability",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "읽기 전용 배열을 변경 가능한 배열 타입으로 할당할 수 없다.",
@@ -1983,6 +2163,8 @@
     },
     {
       "id": "typescript-mutable-array-readonly",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "변경 가능한 배열을 읽기 전용으로 사용하는 것은 허용된다.",
@@ -2005,6 +2187,8 @@
     },
     {
       "id": "typescript-structural-extra-field",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "구조적 할당 관계에서는 필요한 속성을 포함하면 된다.",
@@ -2027,6 +2211,8 @@
     },
     {
       "id": "typescript-function-variance",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "더 넓은 입력을 처리하는 함수를 문자열만 전달할 자리에 둘 수 있다.",
@@ -2049,6 +2235,8 @@
     },
     {
       "id": "typescript-pick-union-keys",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "지정한 두 속성을 모두 선택한다.",
@@ -2071,6 +2259,8 @@
     },
     {
       "id": "typescript-recursive-flatten",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "배열 구조를 재귀적으로 풀어 최종 원소 타입을 얻는다.",
@@ -2093,6 +2283,8 @@
     },
     {
       "id": "typescript-union-to-array-wrapped",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "분배를 막아 전체 유니언을 하나의 배열 원소 타입으로 사용한다.",
@@ -2115,6 +2307,8 @@
     },
     {
       "id": "typescript-key-remap-upper",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "문자열 키에 Uppercase를 적용해 새 키를 만든다.",
@@ -2137,6 +2331,8 @@
     },
     {
       "id": "typescript-deep-indexed-access",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "객체 속성, 배열 원소, 원소 속성 순서로 접근한다.",
@@ -2159,6 +2355,8 @@
     },
     {
       "id": "typescript-union-discriminator-values",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "각 구성원의 같은 키에 대한 리터럴 타입을 합친다.",
@@ -2181,6 +2379,8 @@
     },
     {
       "id": "typescript-optional-key-required-read",
+      "category": "TypeScript",
+      "format": "객관식 단일",
       "points": 5,
       "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
       "explanation": "선택한 name의 선택적 수정자를 제거한 뒤 읽는다.",
