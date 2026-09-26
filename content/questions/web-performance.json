@@ -1,0 +1,2113 @@
+{
+  "category": "Web Performance",
+  "questions": [
+    {
+      "id": "performance-cls",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "Cumulative Layout Shift(CLS)를 낮추는 방법으로 가장 적절한 것은?",
+      "options": [
+        "모든 이미지의 파일 이름을 짧게 한다.",
+        "이미지와 광고 영역의 크기를 미리 확보한다.",
+        "모든 요청을 HTTP POST로 바꾼다.",
+        "화면에 보이는 이미지를 지연 로딩한다.",
+        "애니메이션 지속 시간을 늘린다."
+      ],
+      "sources": [
+        {
+          "title": "web.dev — optimize cls",
+          "url": "https://web.dev/articles/optimize-cls?hl=en"
+        }
+      ],
+      "explanation": "이미지·광고가 늦게 나타날 때 공간을 미리 확보하지 않으면 기존 콘텐츠가 밀립니다. width·height·aspect-ratio 또는 예약 영역으로 이동을 줄일 수 있습니다."
+    },
+    {
+      "id": "performance-lcp-lazy-loading",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 1,
+      "prompt": "첫 화면의 가장 큰 이미지가 LCP 요소다. 이 이미지에 loading=\"lazy\"를 적용하면 생길 수 있는 문제는?",
+      "options": [
+        "이미지 요청이 늦어져 LCP가 악화될 수 있다.",
+        "이미지 파일 크기가 자동으로 줄어든다.",
+        "CLS가 항상 0이 된다.",
+        "이미지가 브라우저 캐시에 저장되지 않는다.",
+        "JavaScript 실행이 모두 차단된다."
+      ],
+      "sources": [
+        {
+          "title": "web.dev — optimize lcp",
+          "url": "https://web.dev/articles/optimize-lcp?hl=en"
+        }
+      ],
+      "explanation": "LCP 이미지의 lazy 로딩은 브라우저가 요청을 시작하는 시점을 늦출 수 있습니다. 첫 화면의 주요 이미지는 조기에 발견·요청하도록 하고 화면 밖 이미지에 지연 로딩을 적용합니다."
+    },
+    {
+      "id": "performance-lcp",
+      "type": "개념 판단",
+      "points": 2,
+      "answer": 3,
+      "prompt": "Largest Contentful Paint(LCP)가 주로 나타내는 것은?",
+      "options": [
+        "첫 입력을 처리하는 데 걸린 시간",
+        "페이지의 모든 리소스가 내려받아진 시점",
+        "뷰포트에서 가장 큰 콘텐츠 요소가 그려진 시점",
+        "예상치 못한 화면 이동의 총량",
+        "서버가 첫 바이트를 보낸 시점"
+      ],
+      "sources": [
+        {
+          "title": "web.dev — lcp",
+          "url": "https://web.dev/articles/lcp?hl=en"
+        }
+      ],
+      "explanation": "LCP는 뷰포트 안에서 가장 큰 이미지 또는 텍스트 블록이 표시되는 시점을 측정하는 지표입니다. 모든 리소스의 로딩 완료나 첫 입력 지연, 레이아웃 이동량과는 구별됩니다."
+    },
+    {
+      "id": "performance-code-splitting",
+      "type": "개념 판단",
+      "points": 4,
+      "prompt": "초기 화면에서 사용하지 않는 큰 편집기를 나중에 열 때 로드하려 한다. 초기 JavaScript 전송량을 줄이는 방법은?",
+      "options": [
+        "전체 편집기를 항상 동기 import한다.",
+        "동적 import로 편집기 코드를 분리한다.",
+        "모든 파일을 Base64로 바꾼다.",
+        "소스맵만 삭제한다.",
+        "동일 스크립트를 두 번 요청한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — reduce javascript payloads with code splitting",
+          "url": "https://web.dev/articles/reduce-javascript-payloads-with-code-splitting?hl=en"
+        }
+      ],
+      "explanation": "동적 import는 번들러가 편집기를 별도 청크로 분리하고 필요할 때 로드할 수 있게 합니다. 초기 화면에 불필요한 코드를 전송·파싱·실행하는 비용을 줄이는 방식입니다."
+    },
+    {
+      "id": "performance-transform",
+      "type": "개념 판단",
+      "points": 3,
+      "prompt": "요소를 이동시키는 애니메이션에서 매 프레임 레이아웃 계산을 줄이려 할 때 일반적으로 적절한 속성은?",
+      "options": [
+        "width",
+        "height",
+        "margin-left",
+        "transform",
+        "padding"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — animations guide",
+          "url": "https://web.dev/articles/animations-guide?hl=en"
+        }
+      ],
+      "explanation": "transform은 일반적으로 레이아웃을 다시 계산하지 않고 합성 단계에서 처리할 수 있는 속성입니다. width·height·margin·padding 변경은 레이아웃에 영향을 줍니다. 합성 여부와 실제 성능은 브라우저에서 측정해야 합니다."
+    },
+    {
+      "id": "performance-image-size",
+      "type": "개념 판단",
+      "points": 4,
+      "prompt": "300px 너비로 표시되는 사진에 불필요하게 큰 원본 이미지를 전송하고 있다. 전송량을 줄이는 적절한 방법은?",
+      "options": [
+        "CSS width만 줄이고 원본 파일은 유지한다.",
+        "이미지 URL 뒤에 임의의 해시를 붙인다.",
+        "표시 크기와 픽셀 밀도에 맞는 이미지 후보를 srcset으로 제공한다.",
+        "이미지를 모두 JavaScript 문자열로 삽입한다.",
+        "이미지 요청을 POST로 바꾼다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — serve responsive images",
+          "url": "https://web.dev/articles/serve-responsive-images?hl=en"
+        }
+      ],
+      "explanation": "srcset과 적절한 sizes는 표시 크기와 기기의 픽셀 밀도에 맞는 이미지 후보를 선택하게 합니다. CSS 너비만 줄이면 내려받는 원본의 바이트 수는 줄지 않습니다."
+    },
+    {
+      "id": "web-performance-metric-fcp",
+      "points": 2,
+      "prompt": "FCP가 나타내는 시점에 가장 가까운 것은?",
+      "explanation": "FCP는 초기 콘텐츠 표시를 측정한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 요청이 끝난 시점",
+        "첫 텍스트·이미지 등의 콘텐츠가 그려진 시점",
+        "첫 클릭이 끝난 시점",
+        "마지막 레이아웃 변경 시점",
+        "서버 프로세스 시작 시점"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — fcp",
+          "url": "https://web.dev/articles/fcp?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-ttfb",
+      "points": 2,
+      "prompt": "TTFB가 주로 측정하는 구간은?",
+      "explanation": "서버 처리 외에도 연결·네트워크 시간이 포함될 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "첫 클릭부터 화면 갱신까지",
+        "이미지 디코딩 시간만",
+        "요청 시작부터 응답 첫 바이트를 받을 때까지",
+        "DOM 노드 생성 시간만",
+        "마지막 바이트 이후 시간"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — ttfb",
+          "url": "https://web.dev/articles/ttfb?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-inp",
+      "points": 2,
+      "prompt": "INP는 어떤 사용자 경험을 평가하는 지표인가?",
+      "explanation": "상호작용에서 다음 화면 갱신까지의 지연을 반영한다.",
+      "type": "개념 판단",
+      "options": [
+        "이미지 압축률",
+        "캐시 파일 개수",
+        "DNS 도메인 수",
+        "페이지 상호작용의 응답성",
+        "서버 저장 공간"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — inp",
+          "url": "https://web.dev/articles/inp?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-cls-unit",
+      "points": 2,
+      "prompt": "CLS의 값에 대한 설명으로 옳은 것은?",
+      "explanation": "레이아웃 이동의 영향과 거리를 반영한 점수다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 밀리초",
+        "항상 바이트",
+        "항상 픽셀 합",
+        "항상 fps",
+        "시간 단위가 없는 레이아웃 이동 점수"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — cls",
+          "url": "https://web.dev/articles/cls?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-load-event",
+      "points": 2,
+      "prompt": "window load가 빨라졌다는 것만으로 보장할 수 없는 것은?",
+      "explanation": "로드 완료 지표 하나로 실제 반응성을 전부 설명할 수 없다.",
+      "type": "개념 판단",
+      "options": [
+        "사용자 상호작용 응답성 개선",
+        "종속 리소스 완료 시점 변화",
+        "측정된 load 시간 감소",
+        "로드 이벤트 시각 차이",
+        "해당 측정의 완료 시점 단축"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Window: load event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-field",
+      "points": 2,
+      "prompt": "실제 사용자 환경에서 수집한 성능 데이터는?",
+      "explanation": "필드 데이터는 다양한 실제 환경을 반영한다.",
+      "type": "개념 판단",
+      "options": [
+        "합성 실험실 데이터만",
+        "필드 데이터",
+        "단위 테스트 결과만",
+        "소스 코드 줄 수",
+        "번들 파일명"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — vitals",
+          "url": "https://web.dev/articles/vitals?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-lab",
+      "points": 2,
+      "prompt": "조건을 통제한 성능 실험의 장점은?",
+      "explanation": "실험실 측정은 재현성과 진단에 유용하다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 실제 사용자를 완벽히 대표한다.",
+        "실제 네트워크 차이가 사라진다.",
+        "동일 조건에서 회귀 원인을 재현·비교하기 쉽다.",
+        "항상 운영보다 느리다.",
+        "단 한 번으로 모든 결론이 난다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — vitals",
+          "url": "https://web.dev/articles/vitals?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-percentile",
+      "points": 2,
+      "prompt": "응답 시간 평균만 볼 때 놓칠 수 있는 것은?",
+      "explanation": "상위 백분위는 느린 구간의 사용자 경험을 드러낸다.",
+      "type": "개념 판단",
+      "options": [
+        "전체 데이터 수가 반드시 0인지",
+        "HTML 파일명",
+        "쿠키 이름",
+        "일부 사용자의 매우 느린 경험",
+        "코드 들여쓰기"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — vitals",
+          "url": "https://web.dev/articles/vitals?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-metric-budget",
+      "points": 2,
+      "prompt": "성능 예산의 용도는?",
+      "explanation": "예산은 팀이 성능 제한과 변화를 관리하는 기준이다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 기능 개발 금지",
+        "서버 요금만 기록",
+        "랜덤 점수 생성",
+        "코드를 자동 압축",
+        "리소스 크기·지연 등에 허용 기준을 정해 회귀를 감지"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — performance budgets 101",
+          "url": "https://web.dev/articles/performance-budgets-101?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-network-compression",
+      "points": 2,
+      "prompt": "HTML·CSS·JS 텍스트 전송량을 줄이는 대표적인 HTTP 기능은?",
+      "explanation": "텍스트 리소스는 전송 압축으로 바이트를 줄일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "Brotli 또는 gzip 압축",
+        "쿠키 복제",
+        "DNS 이름 늘리기",
+        "POST로만 변경",
+        "이미지 확대"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — reduce network payloads using text compression",
+          "url": "https://web.dev/articles/reduce-network-payloads-using-text-compression?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-network-minify",
+      "points": 2,
+      "prompt": "JavaScript minify의 대표적 효과는?",
+      "explanation": "축소는 전송·파싱할 코드량을 줄이는 데 기여한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 알고리즘 복잡도 감소",
+        "불필요한 공백·표현 등을 줄여 파일 크기 감소",
+        "모든 네트워크 요청 제거",
+        "메모리 누수 자동 수정",
+        "이미지 해상도 변경"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — reduce network payloads using text compression",
+          "url": "https://web.dev/articles/reduce-network-payloads-using-text-compression?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-network-cdn",
+      "points": 2,
+      "prompt": "정적 리소스에 CDN을 사용하는 성능상 기대는?",
+      "explanation": "전달 경로와 캐시 적중을 개선할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "JavaScript 실행이 사라진다.",
+        "모든 이미지가 자동 무손실 압축된다.",
+        "사용자 가까운 캐시에서 전달해 지연을 줄일 수 있다.",
+        "레이아웃 계산이 없어진다.",
+        "요청이 항상 0개다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — content delivery networks",
+          "url": "https://web.dev/articles/content-delivery-networks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-fingerprint",
+      "points": 2,
+      "prompt": "파일 내용 해시를 URL에 넣는 주요 이점은?",
+      "explanation": "변경된 리소스를 새 URL로 배포해 무효화를 관리한다.",
+      "type": "개념 판단",
+      "options": [
+        "HTTP 요청을 영구 금지한다.",
+        "JSON 구조를 자동 검증한다.",
+        "DNS TTL을 무한대로 만든다.",
+        "내용 변경 때 URL을 바꾸며 긴 캐시를 안전하게 사용할 수 있다.",
+        "항상 이미지가 작아진다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-immutable",
+      "points": 2,
+      "prompt": "변경되지 않는 해시 자산에 immutable을 지정하는 의도는?",
+      "explanation": "URL이 바뀌면 새 콘텐츠라는 전략과 함께 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "파일을 절대로 삭제 못 하게 하려고",
+        "모든 사용자에게 같은 쿠키를 주려고",
+        "압축을 금지하려고",
+        "서버 인증을 제거하려고",
+        "신선한 기간 중 불필요한 재검증을 줄이기 위해"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-no-cache",
+      "points": 2,
+      "prompt": "Cache-Control: no-cache의 의미에 가까운 것은?",
+      "explanation": "no-store와 달리 no-cache는 재검증을 요구한다.",
+      "type": "개념 판단",
+      "options": [
+        "저장할 수 있지만 재사용 전에 재검증해야 한다.",
+        "저장 자체를 항상 금지한다.",
+        "항상 캐시를 무조건 사용한다.",
+        "쿠키를 모두 삭제한다.",
+        "요청을 취소한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-no-store",
+      "points": 2,
+      "prompt": "민감한 응답을 캐시에 저장하지 않도록 요청하는 지시자는?",
+      "explanation": "no-store는 응답 저장을 금지하는 정책이다.",
+      "type": "개념 판단",
+      "options": [
+        "max-age=31536000",
+        "no-store",
+        "immutable",
+        "public",
+        "stale-while-revalidate"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-etag",
+      "points": 2,
+      "prompt": "ETag의 주요 역할은?",
+      "explanation": "클라이언트가 If-None-Match로 기존 버전을 제시할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "쿠키 암호화",
+        "CSS 우선순위 지정",
+        "리소스 버전을 식별해 조건부 재검증에 사용",
+        "이미지 크기 지정",
+        "DNS 서버 선택"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-304",
+      "points": 2,
+      "prompt": "조건부 요청에서 304 응답의 성능상 의미는?",
+      "explanation": "재검증 왕복은 있어도 본문을 다시 받지 않아도 된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 네트워크가 0회다.",
+        "항상 새 본문 전체를 전송한다.",
+        "리소스가 삭제됐다.",
+        "기존 본문을 재사용해 전송량을 줄일 수 있다.",
+        "캐시가 반드시 오염됐다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-cache-vary",
+      "points": 2,
+      "prompt": "Vary: Accept-Encoding의 목적은?",
+      "explanation": "요청 헤더에 따라 달라지는 응답을 잘못 재사용하지 않게 한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 캐시 삭제",
+        "사용자 ID를 URL에 추가",
+        "모든 응답을 JSON으로 변경",
+        "응답 시간을 무작위화",
+        "압축 협상 헤더에 따라 캐시 응답을 구분"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-preconnect",
+      "points": 2,
+      "prompt": "preconnect가 준비하는 작업은?",
+      "explanation": "DNS·연결·TLS 등의 준비를 앞당길 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "해당 출처의 연결 수립 작업",
+        "이미지 전체 디코딩",
+        "DOM 전체 생성",
+        "JavaScript 실행",
+        "CSS 레이아웃 계산"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — preconnect and dns prefetch",
+          "url": "https://web.dev/articles/preconnect-and-dns-prefetch?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-dns-prefetch",
+      "points": 2,
+      "prompt": "dns-prefetch가 주로 앞당기는 것은?",
+      "explanation": "연결 전체가 아니라 DNS 조회를 미리 수행하는 힌트다.",
+      "type": "개념 판단",
+      "options": [
+        "전체 파일 다운로드",
+        "도메인 이름 조회",
+        "JavaScript 컴파일",
+        "이미지 페인트",
+        "쿠키 삭제"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — preconnect and dns prefetch",
+          "url": "https://web.dev/articles/preconnect-and-dns-prefetch?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-preload",
+      "points": 2,
+      "prompt": "현재 페이지에 곧 필요한 리소스의 발견을 앞당기는 힌트는?",
+      "explanation": "preload는 현재 탐색에서 필요한 리소스를 조기에 요청할 수 있게 한다.",
+      "type": "개념 판단",
+      "options": [
+        "prefetch만",
+        "nofollow",
+        "preload",
+        "canonical",
+        "alternate만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — preload critical assets",
+          "url": "https://web.dev/articles/preload-critical-assets?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-prefetch",
+      "points": 2,
+      "prompt": "미래 탐색에서 쓸 가능성이 있는 리소스를 미리 가져오는 용도로 적합한 것은?",
+      "explanation": "prefetch는 이후 사용을 기대하는 리소스에 쓰는 힌트다.",
+      "type": "개념 판단",
+      "options": [
+        "canonical",
+        "nofollow",
+        "stylesheet만",
+        "prefetch",
+        "noopener"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — link prefetch",
+          "url": "https://web.dev/articles/link-prefetch?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-as",
+      "points": 2,
+      "prompt": "preload의 as 속성을 올바르게 지정하는 이유는?",
+      "explanation": "as가 잘못되면 요청 재사용이나 정책 적용에 문제가 생길 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM 이름을 정하기 위해서",
+        "쿠키 길이를 줄여서",
+        "압축을 해제해서",
+        "항상 이미지로 변환해서",
+        "리소스 종류에 맞는 요청·정책·재사용에 영향을 주기 때문"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — preload critical assets",
+          "url": "https://web.dev/articles/preload-critical-assets?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-hint-overuse",
+      "points": 3,
+      "prompt": "모든 리소스를 높은 우선순위로 preload하면 왜 역효과가 날 수 있는가?",
+      "explanation": "우선순위 힌트는 실제 중요한 리소스에 제한해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "중요한 리소스와 네트워크 자원을 경쟁하기 때문",
+        "모든 파일이 삭제돼서",
+        "HTML이 JSON으로 바뀌어서",
+        "캐시가 항상 꺼져서",
+        "DOM이 줄어들어서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — preload critical assets",
+          "url": "https://web.dev/articles/preload-critical-assets?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-image-responsive-sizes",
+      "points": 3,
+      "prompt": "srcset의 너비 후보와 함께 sizes가 알려주는 것은?",
+      "explanation": "브라우저가 적절한 후보를 고르는 데 사용하는 표시 크기 정보다.",
+      "type": "개념 판단",
+      "options": [
+        "이미지 개수",
+        "레이아웃에서 이미지가 차지할 예상 표시 너비",
+        "압축 알고리즘 이름",
+        "파일 확장자",
+        "서버 캐시 TTL"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — serve responsive images",
+          "url": "https://web.dev/articles/serve-responsive-images?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-image-webp-avif",
+      "points": 3,
+      "prompt": "사진을 WebP·AVIF 같은 형식으로 제공할 때 확인할 것은?",
+      "explanation": "포맷 변환은 실제 인코딩 결과와 품질을 측정해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "확장자만 바꾸면 동일 효과인지",
+        "모든 사진이 무조건 무손실인지",
+        "화질·파일 크기·지원 환경의 균형",
+        "항상 CPU 비용이 0인지",
+        "항상 원본보다 커야 하는지"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — choose the right image format",
+          "url": "https://web.dev/articles/choose-the-right-image-format?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-image-lazy-belowfold",
+      "points": 3,
+      "prompt": "초기 화면 밖의 큰 이미지에 지연 로딩을 적용하는 목적은?",
+      "explanation": "당장 필요하지 않은 요청을 뒤로 미룬다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 이미지 품질을 낮추기 위해",
+        "레이아웃 크기를 없애기 위해",
+        "이미지를 영구 숨기기 위해",
+        "초기 다운로드 경쟁과 전송량을 줄이기 위해",
+        "모든 캐시를 지우기 위해"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — browser level image lazy loading",
+          "url": "https://web.dev/articles/browser-level-image-lazy-loading?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-image-dimensions",
+      "points": 3,
+      "prompt": "img에 width와 height를 명시하는 성능상 이점은?",
+      "explanation": "미리 공간을 확보하면 이미지 로드 후 레이아웃 이동을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "파일 바이트가 반드시 줄어든다.",
+        "DNS가 없어지는 효과",
+        "모든 요청을 생략",
+        "원본이 자동 AVIF로 바뀜",
+        "로드 전 비율에 맞는 공간을 예약해 이동을 줄일 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — optimize cls",
+          "url": "https://web.dev/articles/optimize-cls?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-image-decoding",
+      "points": 3,
+      "prompt": "큰 이미지의 파일 전송이 끝나도 표시 비용이 남는 이유는?",
+      "explanation": "전송량만으로 이미지 표시 비용을 모두 설명할 수 없다.",
+      "type": "개념 판단",
+      "options": [
+        "디코딩과 렌더링 작업이 필요할 수 있어서",
+        "쿠키가 무조건 만료돼서",
+        "DOM이 서버로 돌아가서",
+        "압축 파일이 항상 텍스트라서",
+        "HTTP가 항상 재요청해서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "<img> HTML image embed element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-font-subset",
+      "points": 3,
+      "prompt": "웹 폰트 서브셋을 만드는 목적은?",
+      "explanation": "지원 문자 범위를 고려해 불필요한 글리프를 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "글자색을 줄이기 위해",
+        "필요한 글리프만 포함해 파일 크기를 줄이기 위해",
+        "모든 문자를 없애기 위해",
+        "폰트를 이미지로 반드시 바꾸기 위해",
+        "DOM을 압축하기 위해"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — optimize webfont loading",
+          "url": "https://web.dev/articles/optimize-webfont-loading?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-font-woff2",
+      "points": 3,
+      "prompt": "현대 웹에서 압축 효율을 고려해 제공하는 대표적 웹 폰트 형식은?",
+      "explanation": "WOFF2는 웹 폰트 전송을 위한 압축 형식이다.",
+      "type": "개념 판단",
+      "options": [
+        "BMP",
+        "WAV",
+        "WOFF2",
+        "CSV",
+        "MP4"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — optimize webfont loading",
+          "url": "https://web.dev/articles/optimize-webfont-loading?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-font-preload-cors",
+      "points": 3,
+      "prompt": "같은 출처의 웹 폰트를 preload할 때도 crossorigin 설정을 검토하는 이유는?",
+      "explanation": "요청 모드 불일치는 중복 다운로드를 만들 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 다른 출처로 보내기 위해",
+        "서버 인증을 제거하기 위해",
+        "폰트의 글리프 수를 줄이기 위해",
+        "실제 폰트 요청 모드와 맞춰 재사용하기 위해",
+        "모든 캐시를 끄기 위해"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — optimize webfont loading",
+          "url": "https://web.dev/articles/optimize-webfont-loading?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-font-fallback-shift",
+      "points": 3,
+      "prompt": "웹 폰트 교체 때 텍스트 레이아웃이 이동한다. 개선 방향은?",
+      "explanation": "폰트 간 폭·높이 차이를 줄이면 교체 시 이동을 줄일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 글자를 숨긴다.",
+        "모든 width를 제거한다.",
+        "새로고침을 반복한다.",
+        "HTTP 메서드를 바꾼다.",
+        "대체 폰트 메트릭과 크기를 맞춘다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — optimize cls",
+          "url": "https://web.dev/articles/optimize-cls?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-tree-shaking",
+      "points": 3,
+      "prompt": "tree shaking의 목적은?",
+      "explanation": "정적 분석 가능한 모듈 구조가 제거를 돕는다.",
+      "type": "개념 판단",
+      "options": [
+        "사용하지 않는 모듈 export 등의 코드를 제거",
+        "모든 함수 실행",
+        "DOM 트리 정렬",
+        "CSS 색상 합성",
+        "서버 로그 삭제"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — reduce javascript payloads with tree shaking",
+          "url": "https://web.dev/articles/reduce-javascript-payloads-with-tree-shaking?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-side-effects",
+      "points": 3,
+      "prompt": "번들러의 sideEffects 설정을 잘못 false로 지정하면 위험한 이유는?",
+      "explanation": "부수 효과가 실제로 없는 모듈인지 확인해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 코드가 두 배가 된다.",
+        "필요한 초기화 코드나 스타일 import가 제거될 수 있다.",
+        "타입 검사가 무조건 꺼진다.",
+        "서버가 중단된다.",
+        "이미지가 반드시 커진다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — reduce javascript payloads with tree shaking",
+          "url": "https://web.dev/articles/reduce-javascript-payloads-with-tree-shaking?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-polyfill",
+      "points": 3,
+      "prompt": "지원 브라우저를 정확히 지정해 polyfill을 조절하는 이점은?",
+      "explanation": "대상 환경에 맞는 코드만 보내도록 구성할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "브라우저 버전을 자동 변경한다.",
+        "모든 기능이 영구 지원된다.",
+        "필요 없는 호환 코드 전송을 줄일 수 있다.",
+        "HTTP 요청이 0개가 된다.",
+        "접근성 검사가 사라진다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — serve modern code to modern browsers",
+          "url": "https://web.dev/articles/serve-modern-code-to-modern-browsers?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-third-party",
+      "points": 3,
+      "prompt": "서드파티 스크립트가 성능에 미치는 영향을 확인할 때 포함할 것은?",
+      "explanation": "제삼자 코드의 실행도 사용자 상호작용과 경쟁한다.",
+      "type": "개념 판단",
+      "options": [
+        "파일 이름 길이만",
+        "개발자 수만",
+        "도메인 글자 수만",
+        "전송량뿐 아니라 메인 스레드 실행 비용",
+        "저장소 별 수만"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — optimizing content efficiency loading third party javascript",
+          "url": "https://web.dev/articles/optimizing-content-efficiency-loading-third-party-javascript?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-defer-loading",
+      "points": 3,
+      "prompt": "초기 표시와 무관한 위젯 스크립트를 나중에 로드하는 목적은?",
+      "explanation": "초기에 필요하지 않은 작업을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "위젯 기능을 항상 삭제한다.",
+        "모든 상태를 초기화한다.",
+        "CSS를 무효화한다.",
+        "HTML 파싱을 더 막는다.",
+        "중요 경로의 네트워크·CPU 경쟁을 줄인다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "<script> HTML script element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-long-task",
+      "points": 3,
+      "prompt": "긴 메인 스레드 작업이 상호작용을 늦추는 이유는?",
+      "explanation": "메인 스레드 점유는 입력 처리와 화면 갱신을 지연한다.",
+      "type": "개념 판단",
+      "options": [
+        "이벤트 처리와 렌더링이 같은 실행 자원을 기다리기 때문",
+        "네트워크만 사용해서",
+        "모든 이벤트가 서버로 가서",
+        "CSS가 별도 브라우저를 열어서",
+        "쿠키가 무조건 잠겨서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-chunk-work",
+      "points": 3,
+      "prompt": "큰 계산을 여러 작은 작업으로 나누는 목적은?",
+      "explanation": "작업 분할은 긴 블로킹 구간을 줄일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "총 계산량을 반드시 0으로 만들기",
+        "작업 사이에 입력·렌더링이 진행될 기회를 제공",
+        "모든 타이머 제거",
+        "코드 타입을 바꾸기",
+        "서버 캐시 무효화"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-worker",
+      "points": 3,
+      "prompt": "UI와 독립적인 무거운 계산을 Worker로 옮길 때 기대하는 효과는?",
+      "explanation": "메시지 비용을 고려하되 계산 점유를 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "계산 비용 자체가 항상 사라짐",
+        "DOM 직접 조작이 더 자유로워짐",
+        "메인 스레드의 응답성 개선",
+        "통신 비용이 항상 0",
+        "네트워크 요청이 모두 없어짐"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — off main thread",
+          "url": "https://web.dev/articles/off-main-thread?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-js-worker-transfer",
+      "points": 3,
+      "prompt": "큰 ArrayBuffer를 Worker로 보낼 때 복사 비용을 줄이는 선택은?",
+      "explanation": "이전 가능한 데이터는 복사 대신 소유권을 옮길 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "JSON.stringify만 사용",
+        "문자열 두 번 복사",
+        "전역 DOM에 저장",
+        "transfer list로 소유권 이전",
+        "모든 바이트를 이벤트 하나씩 전송"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Transferable objects - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Transferable_objects"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-dom-size",
+      "points": 3,
+      "prompt": "매우 큰 DOM이 성능에 영향을 줄 수 있는 이유는?",
+      "explanation": "필요한 만큼의 DOM을 유지하는 것이 비용 관리에 도움이 된다.",
+      "type": "개념 판단",
+      "options": [
+        "네트워크 프로토콜이 바뀌어서",
+        "브라우저 버전이 내려가서",
+        "모든 이미지가 커져서",
+        "DNS가 영구 반복돼서",
+        "스타일 계산·레이아웃·메모리 비용이 커질 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — dom size and interactivity",
+          "url": "https://web.dev/articles/dom-size-and-interactivity?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-virtualization",
+      "points": 3,
+      "prompt": "수만 개 행에서 보이는 구간 중심으로만 DOM을 만드는 기법은?",
+      "explanation": "가상화는 렌더되는 항목 수를 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "가상화",
+        "gzip",
+        "preconnect",
+        "폰트 서브셋",
+        "CORS"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — virtualize long lists react window",
+          "url": "https://web.dev/articles/virtualize-long-lists-react-window?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-read-write",
+      "points": 3,
+      "prompt": "스타일 변경과 layout 속성 읽기를 반복 교차할 때 생길 수 있는 문제는?",
+      "explanation": "읽기 전에 변경을 반영하려고 레이아웃 계산이 강제될 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "캐시가 무조건 삭제된다.",
+        "강제 동기 레이아웃이 반복된다.",
+        "네트워크가 항상 느려진다.",
+        "이미지가 모두 재다운로드된다.",
+        "쿠키가 만료된다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — avoid large complex layouts and layout thrashing",
+          "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-batch-layout",
+      "points": 4,
+      "prompt": "레이아웃 thrashing을 줄이는 접근은?",
+      "explanation": "읽기·쓰기 순서를 정리해 반복 레이아웃을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "읽기·쓰기를 한 원소마다 계속 교차",
+        "매번 offsetWidth를 두 번 읽기",
+        "DOM 읽기와 쓰기를 가능한 한 묶어 처리",
+        "모든 스타일에 important 추가",
+        "항상 전체 DOM 복제"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — avoid large complex layouts and layout thrashing",
+          "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-compositor",
+      "points": 4,
+      "prompt": "애니메이션에서 레이아웃·페인트를 줄일 가능성이 높은 속성 조합은?",
+      "explanation": "합성 단계 중심으로 처리될 수 있지만 환경별 측정은 필요하다.",
+      "type": "개념 판단",
+      "options": [
+        "width와 height",
+        "margin과 padding",
+        "top과 left만",
+        "transform과 opacity",
+        "border-width와 font-size"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — animations guide",
+          "url": "https://web.dev/articles/animations-guide?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-layer-overuse",
+      "points": 4,
+      "prompt": "모든 요소를 강제로 별도 레이어로 만드는 전략의 위험은?",
+      "explanation": "레이어 승격도 비용이 있어 무조건 늘리는 것은 좋지 않다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 다운로드가 증가",
+        "모든 글자가 삭제됨",
+        "서버 실행만 느려짐",
+        "DOM이 자동 축소됨",
+        "GPU 메모리와 합성 관리 비용 증가"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — stick to compositor only properties and manage layer count",
+          "url": "https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-content-visibility",
+      "points": 4,
+      "prompt": "긴 페이지의 화면 밖 섹션에 content-visibility: auto를 쓰는 의도는?",
+      "explanation": "렌더링 비용을 줄이는 기능이며 네트워크 지연 로딩과는 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "불필요한 렌더링 작업 생략",
+        "HTML 다운로드 취소",
+        "DOM 영구 삭제",
+        "모든 이미지 요청 금지",
+        "이벤트 루프 중지"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — content visibility",
+          "url": "https://web.dev/articles/content-visibility?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-render-intrinsic-size",
+      "points": 4,
+      "prompt": "content-visibility와 contain-intrinsic-size를 함께 고려하는 이유는?",
+      "explanation": "대체 크기를 제공해 스크롤과 레이아웃 변화 영향을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 쿠키 크기를 줄이려고",
+        "건너뛴 콘텐츠의 예상 공간을 확보하기 위해",
+        "이미지를 암호화하려고",
+        "JavaScript를 합치려고",
+        "HTTP 상태를 바꾸려고"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — content visibility",
+          "url": "https://web.dev/articles/content-visibility?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-input-debounce",
+      "points": 4,
+      "prompt": "검색 API를 마지막 타이핑 뒤 일정 시간이 지나면 호출하려 한다. 적절한 기법은?",
+      "explanation": "연속 호출을 마지막 입력 이후로 모아 불필요한 요청을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "throttle만",
+        "preload",
+        "debounce",
+        "메모리 압축",
+        "HTTP redirect"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Debounce - Glossary | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Debounce"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-input-throttle",
+      "points": 4,
+      "prompt": "스크롤 처리 횟수를 일정 시간당 한 번 수준으로 제한하려 한다. 적절한 기법은?",
+      "explanation": "throttle은 반복 이벤트의 최대 처리 빈도를 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "무제한 재귀",
+        "매 이벤트 동기 fetch",
+        "모든 DOM 재생성",
+        "throttle",
+        "쿠키 polling"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Throttle - Glossary | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Throttle"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-input-passive",
+      "points": 4,
+      "prompt": "취소하지 않는 터치·휠 리스너를 passive로 선언하는 이점은?",
+      "explanation": "스크롤 차단 가능성이 없다는 힌트를 전달한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 이벤트를 제거한다.",
+        "모든 레이아웃을 없앤다.",
+        "정확히 60fps를 보장한다.",
+        "네트워크 응답을 앞당긴다.",
+        "브라우저가 취소 여부를 기다리지 않고 스크롤을 진행할 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "MDN — EventTarget.addEventListener: passive",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-input-listener-cleanup",
+      "points": 4,
+      "prompt": "화면 진입마다 이벤트 리스너가 누적될 때 성능상 문제는?",
+      "explanation": "화면 수명에 맞춰 리스너를 제거해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "같은 동작의 중복 처리와 메모리 유지",
+        "항상 파일 다운로드 감소",
+        "캐시 적중 증가",
+        "DOM이 자동 감소",
+        "상호작용이 반드시 빨라짐"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "EventTarget: removeEventListener() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-input-observer-instead",
+      "points": 4,
+      "prompt": "스크롤할 때마다 모든 이미지의 위치를 읽는 대신 검토할 API는?",
+      "explanation": "가시 영역 교차를 비동기로 관찰해 반복적인 위치 측정을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "JSON.parse",
+        "IntersectionObserver",
+        "URLSearchParams",
+        "history.replaceState",
+        "document.write"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Intersection Observer API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-memory-detached-dom",
+      "points": 4,
+      "prompt": "삭제한 DOM 노드를 전역 배열에서 계속 참조할 때 생길 수 있는 문제는?",
+      "explanation": "도달 가능한 참조가 남으면 노드와 관련 객체가 유지될 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 즉시 해제된다.",
+        "HTML이 서버로 전송된다.",
+        "가비지 컬렉션되지 않고 메모리가 유지된다.",
+        "이미지 픽셀이 사라진다.",
+        "쿠키가 자동 생성된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Discover detached DOM tree memory leaks",
+          "url": "https://developer.chrome.com/docs/devtools/memory-problems#discover_detached_dom_tree_memory_leaks_with_heap_snapshots"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-memory-interval",
+      "points": 4,
+      "prompt": "컴포넌트 종료 후에도 interval을 해제하지 않으면?",
+      "explanation": "타이머 수명과 화면 수명을 일치시켜야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "브라우저가 언제나 즉시 해제한다.",
+        "요청이 전부 캐시된다.",
+        "화면이 반드시 60fps가 된다.",
+        "불필요한 작업과 참조 유지가 계속될 수 있다.",
+        "DOM이 자동 재생성된다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "MDN — clearInterval",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-memory-object-url",
+      "points": 4,
+      "prompt": "미리보기용 Blob URL을 반복 생성하고 해제하지 않으면?",
+      "explanation": "더 필요 없어진 객체 URL은 revokeObjectURL로 정리한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 파일이 자동 축소된다.",
+        "기존 URL이 모두 자동 해제된다.",
+        "DNS 캐시가 커진다.",
+        "CORS가 사라진다.",
+        "관련 데이터가 불필요하게 유지될 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "URL: revokeObjectURL() static method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-memory-unbounded-cache",
+      "points": 4,
+      "prompt": "캐시 항목을 제한 없이 계속 저장하는 설계의 위험은?",
+      "explanation": "크기 제한·만료·퇴출 정책을 사용 목적에 맞게 고려한다.",
+      "type": "개념 판단",
+      "options": [
+        "메모리 사용량이 지속적으로 증가할 수 있다.",
+        "모든 연산이 O(1)로 보장된다.",
+        "캐시가 자동 영구 디스크화된다.",
+        "정답이 자동 검증된다.",
+        "네트워크가 완전히 없어진다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "MDN — Memory management",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Memory_management"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-performance-now",
+      "points": 4,
+      "prompt": "짧은 코드 구간 경과 시간을 측정할 때 적합한 API는?",
+      "explanation": "단조 증가하는 고해상도 시간 기준을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "Math.random()",
+        "performance.now()",
+        "location.href",
+        "document.title",
+        "navigator.language"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Performance: now() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Performance/now"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-user-timing",
+      "points": 4,
+      "prompt": "앱의 특정 흐름 시작·종료를 표시하는 API 조합은?",
+      "explanation": "User Timing API로 사용자 정의 구간을 측정한다.",
+      "type": "개념 판단",
+      "options": [
+        "alert와 prompt",
+        "pushState와 back",
+        "performance.mark와 performance.measure",
+        "setItem과 getItem",
+        "focus와 blur"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Performance: measure() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Performance/measure"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-resource-timing",
+      "points": 4,
+      "prompt": "각 리소스 요청의 타이밍 정보를 분석할 때 사용하는 것은?",
+      "explanation": "리소스 요청별 시각과 전송 관련 정보를 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "MutationObserver만",
+        "classList",
+        "localStorage.length",
+        "Resource Timing",
+        "CSS specificity"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "PerformanceResourceTiming - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-navigation-timing",
+      "points": 4,
+      "prompt": "초기 문서 탐색의 단계별 시간을 분석하는 API 계열은?",
+      "explanation": "문서 탐색과 로드 타이밍을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "Clipboard API",
+        "Geolocation API",
+        "Fullscreen API",
+        "Gamepad API",
+        "Navigation Timing"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "PerformanceNavigationTiming - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-observer",
+      "points": 4,
+      "prompt": "PerformanceEntry가 추가될 때 관찰하는 API는?",
+      "explanation": "성능 엔트리를 비동기 콜백으로 수집한다.",
+      "type": "개념 판단",
+      "options": [
+        "PerformanceObserver",
+        "ResizeObserver",
+        "MutationObserver",
+        "FileReader",
+        "DOMParser"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "PerformanceObserver - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-cold-warm",
+      "points": 4,
+      "prompt": "첫 방문과 재방문을 나누어 측정해야 하는 이유는?",
+      "explanation": "cold와 warm cache의 비용은 다를 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "HTML 문법이 달라져서",
+        "캐시 상태가 네트워크와 실행 경험에 영향을 주기 때문",
+        "모든 브라우저가 바뀌어서",
+        "상태 코드가 항상 같아서",
+        "DOM이 항상 없어서"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — lab and field data differences",
+          "url": "https://web.dev/articles/lab-and-field-data-differences?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-device",
+      "points": 4,
+      "prompt": "고성능 개발 장비 결과만으로 판단할 때 놓칠 수 있는 것은?",
+      "explanation": "실제 사용자 기기의 처리 여건을 반영해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "파일의 이름",
+        "소스 저장소 URL",
+        "느린 CPU·네트워크 사용자 환경",
+        "코드 주석 수",
+        "패키지 이름 길이"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — lab and field data differences",
+          "url": "https://web.dev/articles/lab-and-field-data-differences?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-repeat",
+      "points": 4,
+      "prompt": "성능 변경 전후를 한 번씩만 재서 판단하기보다 필요한 것은?",
+      "explanation": "일시적 변동과 실제 개선을 구분해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 가장 빠른 한 번만 선택",
+        "다른 네트워크로 교차 측정만",
+        "한쪽 캐시만 비우기",
+        "같은 조건의 반복 측정과 분포 확인",
+        "최댓값을 숨기기"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — lab and field data differences",
+          "url": "https://web.dev/articles/lab-and-field-data-differences?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-profile-first",
+      "points": 4,
+      "prompt": "화면이 느리다는 보고를 받았다. 최적화 전 우선할 일은?",
+      "explanation": "측정 근거가 있어야 비용이 큰 경로를 정확히 개선할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 코드를 useMemo로 감싸기",
+        "모든 이미지를 삭제",
+        "모든 라이브러리를 교체",
+        "CSS 파일 이름 변경",
+        "사용자 흐름을 재현하고 병목을 측정"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Analyze runtime performance",
+          "url": "https://developer.chrome.com/docs/devtools/performance"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-waterfall",
+      "points": 5,
+      "prompt": "네트워크 waterfall에서 뒤늦게 시작하는 핵심 이미지 요청을 발견했다. 우선 확인할 것은?",
+      "explanation": "CSS·스크립트 의존 등 발견 지연 원인을 찾는다.",
+      "type": "개념 판단",
+      "options": [
+        "리소스 발견이 늦어지는 의존 경로",
+        "버튼 글자색",
+        "메모장 설정",
+        "로컬 폴더 이름",
+        "브라우저 즐겨찾기"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Network waterfall",
+          "url": "https://developer.chrome.com/docs/devtools/network/reference#waterfall"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-server-timing",
+      "points": 5,
+      "prompt": "서버 내부 처리 구간을 클라이언트 측 성능 분석에 노출하는 헤더는?",
+      "explanation": "서버 처리 측정값을 응답 메타데이터로 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "Content-Disposition",
+        "Server-Timing",
+        "Accept-Language",
+        "X-Frame-Options",
+        "Referrer-Policy"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Server-Timing header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Server-Timing"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-measure-cross-origin-timing",
+      "points": 5,
+      "prompt": "교차 출처 리소스의 상세 타이밍 공개를 허용하는 헤더는?",
+      "explanation": "Resource Timing 세부 정보 공개 정책을 설정한다.",
+      "type": "개념 판단",
+      "options": [
+        "Access-Control-Allow-Methods만",
+        "Content-Language",
+        "Timing-Allow-Origin",
+        "Location",
+        "Cache-Control만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Timing-Allow-Origin header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-fast-network-slow-ui",
+      "points": 5,
+      "prompt": "네트워크 요청은 빠르지만 클릭 반응이 늦다. 우선 조사할 영역은?",
+      "explanation": "다운로드 이후 실행 비용이 병목일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "DNS 이름 길이만",
+        "파일 확장자만",
+        "쿠키의 정렬 순서",
+        "메인 스레드의 긴 작업과 렌더 비용",
+        "CDN 로고"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-small-bundle-slow",
+      "points": 5,
+      "prompt": "번들 크기를 줄였는데 화면이 여전히 느리다. 적절한 해석은?",
+      "explanation": "성능은 전송량 하나로 결정되지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "측정이 반드시 틀렸다.",
+        "번들 크기는 아무 의미가 없다.",
+        "항상 이미지 문제다.",
+        "브라우저가 모든 JS를 무시한다.",
+        "실행·레이아웃·서버 등 다른 병목이 있을 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-request-waterfall",
+      "points": 5,
+      "prompt": "서로 독립인 API를 순서대로 await해서 지연이 누적된다. 개선 방향은?",
+      "explanation": "독립 작업은 병렬 수행으로 전체 대기 시간을 줄일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "독립 요청을 병렬로 시작한다.",
+        "항상 요청 사이 타이머 추가",
+        "모든 요청을 동기 XMLHttpRequest로 바꾸기",
+        "요청 순서를 무작위로만 바꾸기",
+        "JSON 키 이름 늘리기"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Network dependency tree",
+          "url": "https://developer.chrome.com/docs/performance/insights/network-dependency-tree"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-dependency-request",
+      "points": 5,
+      "prompt": "두 번째 요청이 첫 번째 응답 ID를 필요로 한다. 적절한 설명은?",
+      "explanation": "병렬화는 데이터 의존성을 고려해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "Promise.all만 감싸면 의존성이 사라진다.",
+        "실제 의존성이 있어 무조건 병렬화할 수 없다.",
+        "항상 요청 하나를 삭제한다.",
+        "임의 ID를 보내면 된다.",
+        "캐시만 쓰면 항상 최신이다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Network dependency tree",
+          "url": "https://developer.chrome.com/docs/performance/insights/network-dependency-tree"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-pagination",
+      "points": 5,
+      "prompt": "큰 목록 전체 데이터를 항상 내려받는 비용을 줄이려 한다. 적절한 방안은?",
+      "explanation": "전송량과 처리량을 사용 범위에 맞게 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "매번 전체 데이터 복제",
+        "파일 이름만 줄이기",
+        "필요한 범위만 페이지나 커서 단위로 요청",
+        "항상 응답을 두 번 파싱",
+        "타임아웃만 늘리기"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — virtualize long lists react window",
+          "url": "https://web.dev/articles/virtualize-long-lists-react-window?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-search-request-abort",
+      "points": 5,
+      "prompt": "사용자가 연속 검색해 이전 결과가 더 이상 필요 없다. 적절한 대응은?",
+      "explanation": "필요 없는 작업과 응답 순서 문제를 함께 관리한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 결과를 무조건 표시",
+        "항상 모든 요청을 재시도",
+        "브라우저를 새로 열기",
+        "이전 요청 취소와 오래된 응답 무시를 검토",
+        "같은 요청을 한 번 더 보내기"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "AbortController - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-prefetch-mobile",
+      "points": 5,
+      "prompt": "모바일 데이터 사용자를 위해 과도한 미래 페이지 prefetch를 조절하는 이유는?",
+      "explanation": "예측 로딩의 이득과 불필요한 비용을 균형 있게 판단한다.",
+      "type": "개념 판단",
+      "options": [
+        "HTML 문법이 달라져서",
+        "모바일은 캐시가 전혀 없어서",
+        "모든 이미지가 무조건 두 배라서",
+        "DNS가 금지돼서",
+        "실제로 방문하지 않을 콘텐츠가 데이터·전력을 낭비할 수 있어서"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — link prefetch",
+          "url": "https://web.dev/articles/link-prefetch?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-ssr-tradeoff",
+      "points": 5,
+      "prompt": "SSR이 항상 인터랙션까지 빠르게 만든다고 단정할 수 없는 이유는?",
+      "explanation": "초기 표시와 상호작용 준비는 다른 비용 구간이다.",
+      "type": "개념 판단",
+      "options": [
+        "HTML 표시 이후 hydration과 JS 실행 비용이 남을 수 있다.",
+        "서버는 HTML을 못 만들어서",
+        "SSR은 CSS를 금지해서",
+        "모든 요청이 두 배라고 정해져서",
+        "항상 캐시를 못 써서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — rendering on the web",
+          "url": "https://web.dev/articles/rendering-on-the-web?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-static-export",
+      "points": 5,
+      "prompt": "내용이 빌드 시 결정되는 페이지를 정적 생성할 때 기대 이점은?",
+      "explanation": "사전 생성은 서버 렌더 비용과 전달 전략에 영향을 준다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 클라이언트 JS가 자동 0바이트",
+        "요청마다 HTML 생성 비용을 줄이고 캐시하기 쉽다.",
+        "모든 데이터가 항상 최신",
+        "사용자별 서버 상태가 자동 생성",
+        "인증이 자동 해결"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — rendering on the web",
+          "url": "https://web.dev/articles/rendering-on-the-web?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-hydration-size",
+      "points": 5,
+      "prompt": "상호작용이 없는 큰 영역까지 클라이언트 번들에 포함할 때 비용은?",
+      "explanation": "상호작용 경계를 줄이는 설계를 검토할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "서버 응답이 반드시 사라진다.",
+        "CSS만 느려진다.",
+        "전송·파싱·hydration 작업이 불필요하게 커질 수 있다.",
+        "모든 이미지가 바뀐다.",
+        "브라우저 저장소가 자동 삭제된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — rendering on the web",
+          "url": "https://web.dev/articles/rendering-on-the-web?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-duplicate-library",
+      "points": 5,
+      "prompt": "서로 다른 버전의 같은 라이브러리가 번들에 중복 포함됐다. 우선할 일은?",
+      "explanation": "분석 도구로 실제 중복과 제거 가능성을 확인한다.",
+      "type": "개념 판단",
+      "options": [
+        "파일명만 같게 바꾸기",
+        "주석만 제거",
+        "모든 요청 메서드 변경",
+        "의존성 경로를 확인해 호환 가능한 중복을 줄인다.",
+        "이미지 크기 확대"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Chrome DevTools — Duplicated JavaScript",
+          "url": "https://developer.chrome.com/docs/performance/insights/duplicated-javascript"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-large-json",
+      "points": 5,
+      "prompt": "큰 JSON을 받아 동기 파싱한 직후 입력이 멈춘다. 조사할 것은?",
+      "explanation": "응답 바이트 이후 CPU 처리도 사용자 경험에 영향을 준다.",
+      "type": "개념 판단",
+      "options": [
+        "CSS 클래스 순서만",
+        "HTTP 포트 번호만",
+        "쿠키 만료일만",
+        "모니터 밝기",
+        "파싱과 후속 데이터 변환의 메인 스레드 비용"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-retry-storm",
+      "points": 5,
+      "prompt": "실패한 요청을 즉시 무제한 재시도하는 전략의 문제는?",
+      "explanation": "재시도는 제한·지연·백오프 등을 고려해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "클라이언트·서버 부하를 더 키울 수 있다.",
+        "항상 캐시가 잘 된다.",
+        "항상 응답 시간이 줄어든다.",
+        "오류가 반드시 사라진다.",
+        "연결 수가 0이 된다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Exponential Backoff And Jitter | AWS Architecture Blog",
+          "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-skeleton-cls",
+      "points": 5,
+      "prompt": "스켈레톤과 최종 콘텐츠 크기가 크게 다르면 생길 수 있는 문제는?",
+      "explanation": "로딩 UI도 최종 레이아웃과 공간을 맞추는 것이 중요하다.",
+      "type": "개념 판단",
+      "options": [
+        "DNS가 두 번 조회되는 보장",
+        "전환 시 레이아웃 이동",
+        "쿠키 손상",
+        "HTTP 캐시 무조건 삭제",
+        "브라우저 언어 변경"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "web.dev — optimize cls",
+          "url": "https://web.dev/articles/optimize-cls?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-ad-space",
+      "points": 5,
+      "prompt": "광고가 로드된 뒤 본문을 아래로 밀고 있다. 개선 방법은?",
+      "explanation": "예상 공간 확보로 비의도적 이동을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 본문 margin 제거",
+        "광고 요청을 무조건 동기로 실행",
+        "광고 영역 공간을 미리 예약한다.",
+        "이미지 이름만 변경",
+        "모든 글자를 absolute로 변경"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — optimize cls",
+          "url": "https://web.dev/articles/optimize-cls?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-bfcache",
+      "points": 5,
+      "prompt": "뒤로 가기 경험을 개선하려면 검토할 브라우저 기능은?",
+      "explanation": "페이지 상태 복원을 활용하면 재탐색 비용을 줄일 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 unload에서 동기 요청",
+        "모든 캐시를 매번 삭제",
+        "모든 링크를 새 창으로 열기",
+        "뒤로·앞으로 가기 캐시의 활용 가능성",
+        "항상 전체 앱 재설치"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — bfcache",
+          "url": "https://web.dev/articles/bfcache?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-scroll-jank",
+      "points": 5,
+      "prompt": "스크롤 리스너에서 매번 전체 목록의 스타일을 계산한다. 개선 방향은?",
+      "explanation": "고빈도 이벤트의 작업량을 제한해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "이벤트를 더 많이 등록",
+        "매번 강제 reflow 추가",
+        "스크롤마다 전체 페이지 새로고침",
+        "항상 동기 네트워크 요청",
+        "처리 범위를 줄이고 관찰 API·작업 배치를 검토"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — avoid large complex layouts and layout thrashing",
+          "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-mobile-energy",
+      "points": 5,
+      "prompt": "화면에 보이지 않는 애니메이션을 계속 실행하면 비용은?",
+      "explanation": "비가시 작업도 실행 자원을 소비할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "CPU·GPU·배터리 낭비가 생길 수 있다.",
+        "화면 밖이면 비용이 항상 0이다.",
+        "항상 다운로드가 줄어든다.",
+        "서버만 영향을 받는다.",
+        "캐시가 자동 증가한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "web.dev — optimize long tasks",
+          "url": "https://web.dev/articles/optimize-long-tasks?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-cache-correctness",
+      "points": 5,
+      "prompt": "성능을 위해 사용자별 응답을 공용 캐시에 무분별하게 저장하면 위험은?",
+      "explanation": "캐시 키와 공개 범위는 데이터의 성격과 맞아야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 정확성이 좋아진다.",
+        "다른 사용자에게 잘못된 데이터가 제공될 수 있다.",
+        "쿠키가 자동 암호화된다.",
+        "모든 인증을 대체한다.",
+        "캐시가 자동 사용자 구분한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "HTTP caching - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-optimization-regression",
+      "points": 5,
+      "prompt": "성능 최적화 후 확인해야 할 것은?",
+      "explanation": "성능 개선이 올바른 동작과 사용성을 해치지 않아야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "파일 줄 수 감소만",
+        "커밋 개수만",
+        "성능 수치와 함께 기능·접근성 회귀",
+        "패키지 이름만",
+        "개발자 선호만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "web.dev — lab and field data differences",
+          "url": "https://web.dev/articles/lab-and-field-data-differences?hl=en"
+        },
+        {
+          "title": "Playwright — Test user-visible behavior",
+          "url": "https://playwright.dev/docs/best-practices#test-user-visible-behavior"
+        },
+        {
+          "title": "Playwright — Accessibility testing",
+          "url": "https://playwright.dev/docs/accessibility-testing"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-total-blocking-time",
+      "points": 5,
+      "prompt": "실험실 TBT를 줄였다고 실제 사용자 INP 개선을 확정할 수 없는 이유는?",
+      "explanation": "실험실 병목 개선과 실제 상호작용 지표를 함께 확인한다.",
+      "type": "개념 판단",
+      "options": [
+        "TBT가 항상 바이트 단위여서",
+        "INP가 서버 저장량이어서",
+        "둘 다 의미가 없어서",
+        "관련은 있지만 측정 대상·환경이 다른 지표이기 때문",
+        "두 값이 항상 동일해서"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "web.dev — tbt",
+          "url": "https://web.dev/articles/tbt?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-case-lcp-discovery",
+      "points": 5,
+      "prompt": "LCP 이미지가 CSS background로 뒤늦게 발견된다. 검토할 개선은?",
+      "explanation": "실제 병목이 리소스 발견 지연이면 조기 발견이 도움이 된다.",
+      "type": "개념 판단",
+      "options": [
+        "이미지를 항상 lazy로 만든다.",
+        "이미지 크기를 두 배로 늘린다.",
+        "CSS를 JS 실행 뒤에만 생성한다.",
+        "모든 힌트를 제거한다.",
+        "중요 이미지의 발견 경로를 앞당긴다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — optimize lcp",
+          "url": "https://web.dev/articles/optimize-lcp?hl=en"
+        }
+      ]
+    }
+  ]
+}

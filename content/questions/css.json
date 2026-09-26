@@ -1,0 +1,2109 @@
+{
+  "category": "CSS",
+  "questions": [
+    {
+      "id": "css-border-box",
+      "type": "결과 예측",
+      "points": 2,
+      "answer": 3,
+      "prompt": "다음 요소의 CSS 레이아웃상 바깥 너비는? margin은 0이며 다른 스타일은 적용되지 않는다.",
+      "code": ".box {\n  box-sizing: border-box;\n  width: 200px;\n  padding: 20px;\n  border: 5px solid;\n}",
+      "options": [
+        "170px",
+        "190px",
+        "200px",
+        "240px",
+        "250px"
+      ],
+      "sources": [
+        {
+          "title": "box-sizing CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"
+        }
+      ],
+      "explanation": "border-box에서는 지정한 width가 콘텐츠, padding, border를 포함합니다. 따라서 200px에 padding과 border를 다시 더하지 않습니다. margin이 0이므로 바깥 너비도 200px입니다."
+    },
+    {
+      "id": "css-specificity",
+      "type": "결과 예측",
+      "points": 4,
+      "answer": 1,
+      "prompt": "다음 마크업의 label 글자색은? 두 선언은 같은 출처·레이어에서 적용된다.",
+      "code": "#app .label { color: red; }\n.page .label { color: blue; }\n\n<div id=\"app\" class=\"page\">\n  <span class=\"label\">text</span>\n</div>",
+      "options": [
+        "red",
+        "blue",
+        "검정색",
+        "두 색이 혼합된다.",
+        "선언 순서에 따라 무조건 blue가 된다."
+      ],
+      "sources": [
+        {
+          "title": "Specificity - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity"
+        }
+      ],
+      "explanation": "#app .label은 ID 1개와 클래스 1개로 1-1-0이고, .page .label은 클래스 2개로 0-2-0입니다. 같은 출처·레이어의 일반 선언에서는 ID 열이 높은 첫 선언이 우선해 red가 됩니다."
+    },
+    {
+      "id": "css-sticky",
+      "type": "개념 판단",
+      "points": 3,
+      "answer": 2,
+      "prompt": "position: sticky가 적용된 요소의 일반적인 동작으로 옳은 것은? top 값이 지정되어 있고 스크롤 가능한 컨테이너 안에 있다.",
+      "options": [
+        "항상 뷰포트 왼쪽 위에 고정된다.",
+        "임계점 전에는 일반 흐름에 있다가 컨테이너 범위 안에서 붙는다.",
+        "부모의 높이에 관계없이 문서 끝까지 따라간다.",
+        "레이아웃 흐름에서 완전히 제거된다.",
+        "스크롤과 관계없이 화면 가운데에 놓인다."
+      ],
+      "sources": [
+        {
+          "title": "position CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+        }
+      ],
+      "explanation": "sticky는 일반 흐름에 공간을 유지하다 스크롤 임계값에 도달하면 가장 가까운 스크롤 조상과 자신의 containing block 범위에서 위치가 제한됩니다. fixed처럼 문서 전체에서 무조건 뷰포트에 붙는 동작이 아닙니다."
+    },
+    {
+      "id": "css-flex-direction",
+      "type": "결과 예측",
+      "points": 3,
+      "prompt": "기본 가로 쓰기 방향에서 다음 컨테이너의 주축 방향은?",
+      "code": ".container {\n  display: flex;\n  flex-direction: column;\n}",
+      "options": [
+        "왼쪽에서 오른쪽",
+        "오른쪽에서 왼쪽",
+        "위에서 아래",
+        "아래에서 위",
+        "주축이 없다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "flex-direction CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction"
+        }
+      ],
+      "explanation": "column은 주축을 블록 축으로 설정합니다. 지문의 기본 가로 쓰기 방향에서는 블록 축이 위에서 아래로 흐릅니다."
+    },
+    {
+      "id": "css-display-none",
+      "type": "개념 판단",
+      "points": 3,
+      "prompt": "display: none과 visibility: hidden의 레이아웃 차이로 옳은 것은?",
+      "options": [
+        "둘 다 항상 공간을 유지한다.",
+        "display: none은 공간을 차지하지 않고 visibility: hidden은 공간을 유지한다.",
+        "visibility: hidden만 공간을 없앤다.",
+        "둘 다 DOM 요소를 삭제한다.",
+        "차이가 없다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ],
+      "explanation": "display: none은 요소의 박스를 생성하지 않아 레이아웃 공간이 없습니다. visibility: hidden은 박스를 유지한 채 보이지 않게 하므로 공간을 차지합니다. 어느 쪽도 DOM 노드를 삭제하지 않습니다."
+    },
+    {
+      "id": "css-custom-property",
+      "type": "결과 예측",
+      "points": 4,
+      "prompt": "--accent가 어디에도 정의되어 있지 않다. 다음 요소의 글자색은?",
+      "code": ".label { color: var(--accent, red); }",
+      "options": [
+        "blue",
+        "transparent",
+        "red",
+        "항상 검정색",
+        "무작위 색상"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using CSS custom properties (variables) - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties"
+        }
+      ],
+      "explanation": "var의 두 번째 인수는 사용자 지정 속성이 정의되지 않았거나 유효하지 않을 때의 대체 값입니다. --accent가 없으므로 red를 사용합니다."
+    },
+    {
+      "id": "css-selector-class",
+      "points": 2,
+      "prompt": "class=\"notice\"인 요소를 선택하는 선택자는?",
+      "explanation": "클래스 선택자는 점으로 시작한다.",
+      "type": "개념 판단",
+      "options": [
+        "#notice",
+        ".notice",
+        "notice",
+        "@notice",
+        "$notice"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Class selectors - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-child",
+      "points": 2,
+      "prompt": "직접 자식인 li만 선택하려면?",
+      "explanation": "> 결합자는 직접 자식 관계다.",
+      "type": "개념 판단",
+      "options": [
+        "ul li",
+        "ul + li",
+        "ul > li",
+        "ul ~ li",
+        "ul::li"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Child combinator - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-adjacent",
+      "points": 2,
+      "prompt": "h2 바로 뒤의 형제 p 하나를 선택하려면?",
+      "explanation": "+는 바로 다음 형제만 선택한다.",
+      "type": "개념 판단",
+      "options": [
+        "h2 > p",
+        "h2 p",
+        "h2 ~ p",
+        "h2 + p",
+        "p + h2"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Next-sibling combinator - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-attribute",
+      "points": 2,
+      "prompt": "disabled 속성을 가진 input을 선택하려면?",
+      "explanation": "대괄호는 속성 존재 조건이다.",
+      "type": "개념 판단",
+      "options": [
+        "input.disabled",
+        "input#disabled",
+        "input::disabled",
+        "disabled > input",
+        "input[disabled]"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Attribute selectors - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-hover",
+      "points": 2,
+      "prompt": "포인터가 올라간 요소에 적용하는 의사 클래스는?",
+      "explanation": "hover는 포인터가 요소를 가리키는 상태다.",
+      "type": "개념 판단",
+      "options": [
+        ":hover",
+        ":focus",
+        ":checked",
+        ":disabled",
+        ":root"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": ":hover CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-checked",
+      "points": 2,
+      "prompt": "체크된 체크박스를 선택하는 의사 클래스는?",
+      "explanation": "checked는 라디오·체크박스 등의 선택 상태다.",
+      "type": "개념 판단",
+      "options": [
+        ":active",
+        ":checked",
+        ":selected",
+        ":enabled",
+        ":valid"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": ":checked CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:checked"
+        }
+      ]
+    },
+    {
+      "id": "css-selector-root",
+      "points": 2,
+      "prompt": "HTML 문서의 루트 요소를 선택하는 의사 클래스는?",
+      "explanation": "HTML 문서에서 :root는 html 요소에 해당한다.",
+      "type": "개념 판단",
+      "options": [
+        ":first-child",
+        ":scope > *",
+        ":root",
+        ":host",
+        ":empty"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": ":root CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:root"
+        }
+      ]
+    },
+    {
+      "id": "css-pseudo-before",
+      "points": 2,
+      "prompt": "요소 앞에 생성 콘텐츠를 삽입하는 의사 요소는?",
+      "explanation": "::before와 content로 생성 콘텐츠를 넣을 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "::first-child",
+        ":hover",
+        "::marker-end",
+        "::before",
+        ":root"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "::before CSS pseudo-element - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/::before"
+        }
+      ]
+    },
+    {
+      "id": "css-inherit-color",
+      "points": 2,
+      "prompt": "일반적으로 자식에게 기본 상속되는 속성은?",
+      "explanation": "글자색은 상속되지만 나머지 제시 속성은 기본 상속되지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "margin",
+        "padding",
+        "border-width",
+        "width",
+        "color"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "inherit CSS keyword - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/inherit"
+        }
+      ]
+    },
+    {
+      "id": "css-margin-padding",
+      "points": 2,
+      "prompt": "테두리와 콘텐츠 사이의 안쪽 여백을 정하는 속성은?",
+      "explanation": "padding은 콘텐츠와 border 사이 공간이다.",
+      "type": "개념 판단",
+      "options": [
+        "padding",
+        "margin",
+        "outline",
+        "gap",
+        "inset"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "margin CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/margin"
+        }
+      ]
+    },
+    {
+      "id": "css-outline-layout",
+      "points": 2,
+      "prompt": "포커스 표시를 outline으로 그렸을 때 일반적인 특성은?",
+      "explanation": "outline은 border와 달리 공간을 차지하지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 너비를 늘린다.",
+        "요소의 레이아웃 크기를 늘리지 않는다.",
+        "항상 padding을 늘린다.",
+        "DOM 노드를 추가한다.",
+        "줄 높이를 두 배로 만든다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "outline CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/outline"
+        }
+      ]
+    },
+    {
+      "id": "css-block-flow",
+      "points": 2,
+      "prompt": "일반 흐름의 블록 요소는 보통 어떻게 배치되는가?",
+      "explanation": "블록 레벨 박스는 일반 흐름에서 세로로 쌓인다.",
+      "type": "개념 판단",
+      "options": [
+        "무조건 같은 줄에 놓인다.",
+        "항상 화면에 고정된다.",
+        "앞뒤로 줄이 나뉘어 쌓인다.",
+        "문서 흐름에서 빠진다.",
+        "텍스트처럼만 배치된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ]
+    },
+    {
+      "id": "css-inline-width",
+      "points": 2,
+      "prompt": "일반적인 비대체 인라인 span에 width만 지정했을 때 옳은 것은?",
+      "explanation": "비대체 인라인 박스에는 width가 일반 블록과 같이 적용되지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 부모 전체 너비가 된다.",
+        "자동으로 flex가 된다.",
+        "DOM에서 사라진다.",
+        "블록처럼 지정 너비가 적용되지 않는다.",
+        "절대 위치로 바뀐다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ]
+    },
+    {
+      "id": "css-inline-block",
+      "points": 2,
+      "prompt": "한 줄에 놓이면서 width와 height를 적용하려면 적절한 display 값은?",
+      "explanation": "inline-block은 인라인 배치와 블록 크기 지정을 함께 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "inline",
+        "none",
+        "contents",
+        "table-column",
+        "inline-block"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ]
+    },
+    {
+      "id": "css-overflow-scroll",
+      "points": 2,
+      "prompt": "콘텐츠가 넘칠 때 필요에 따라 스크롤바를 제공하는 값은?",
+      "explanation": "auto는 넘침 여부에 따라 스크롤을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "overflow: auto",
+        "overflow: visible",
+        "overflow: clip",
+        "display: contents",
+        "visibility: hidden"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "overflow CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"
+        }
+      ]
+    },
+    {
+      "id": "css-visibility-collapse-space",
+      "points": 2,
+      "prompt": "opacity: 0이 적용된 일반 버튼에 대한 설명으로 옳은 것은?",
+      "explanation": "불투명도만 바꾸며 상호작용을 자동 해제하지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM에서 삭제된다.",
+        "투명해져도 레이아웃 공간과 이벤트 대상 성질은 남는다.",
+        "공간이 사라진다.",
+        "항상 키보드 포커스가 제거된다.",
+        "display가 none으로 바뀐다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "visibility CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/visibility"
+        }
+      ]
+    },
+    {
+      "id": "css-position-relative",
+      "points": 2,
+      "prompt": "position: relative의 offset을 적용하면 원래 자리의 공간은?",
+      "explanation": "relative는 흐름상 공간을 유지한 채 시각적 위치를 이동한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 없어진다.",
+        "부모에게 합쳐진다.",
+        "일반 흐름에 유지된다.",
+        "뷰포트 높이가 된다.",
+        "자식만큼 두 배가 된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "position CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+        }
+      ]
+    },
+    {
+      "id": "css-absolute-containing-block",
+      "points": 2,
+      "prompt": "transform 등 별도 조건이 없을 때 absolute 요소의 기준이 되는 조상은?",
+      "explanation": "positioned 조상이 absolute의 containing block을 형성한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 body",
+        "항상 바로 앞 형제",
+        "항상 마지막 자식",
+        "가장 가까운 position이 static이 아닌 조상",
+        "항상 문서 최하단"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "position CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+        }
+      ]
+    },
+    {
+      "id": "css-fixed-position",
+      "points": 2,
+      "prompt": "변형 등 containing block을 바꾸는 조상이 없을 때 fixed의 기준은?",
+      "explanation": "기본적으로 fixed는 뷰포트에 대해 배치된다.",
+      "type": "개념 판단",
+      "options": [
+        "직전 형제",
+        "문서 마지막 줄",
+        "가장 가까운 텍스트",
+        "자기 자식",
+        "뷰포트"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "position CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-enable",
+      "points": 2,
+      "prompt": "자식들을 flex item으로 배치하는 부모의 선언은?",
+      "explanation": "display가 flex formatting context를 만든다.",
+      "type": "개념 판단",
+      "options": [
+        "display: flex",
+        "position: flex",
+        "float: flex",
+        "layout: flex",
+        "align: flex"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-enable",
+      "points": 2,
+      "prompt": "2차원 행·열 레이아웃을 정의하는 display 값은?",
+      "explanation": "grid는 행과 열 트랙을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "inline",
+        "grid",
+        "contents",
+        "none",
+        "flow-root"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "display CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+        }
+      ]
+    },
+    {
+      "id": "css-gap-role",
+      "points": 2,
+      "prompt": "flex 또는 grid 컨테이너의 gap은 무엇을 지정하는가?",
+      "explanation": "gap은 컨테이너 내부 항목 간 간격이다.",
+      "type": "개념 판단",
+      "options": [
+        "컨테이너 바깥 여백",
+        "모든 자식의 테두리 두께",
+        "항목·트랙 사이 간격",
+        "텍스트 자간만",
+        "뷰포트 너비"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "gap CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/gap"
+        }
+      ]
+    },
+    {
+      "id": "css-background-cover",
+      "points": 2,
+      "prompt": "이미지를 비율 유지하며 배경 영역 전체를 덮게 하는 값은?",
+      "explanation": "cover는 잘림을 허용해 빈 영역 없이 덮는다.",
+      "type": "개념 판단",
+      "options": [
+        "background-size: contain",
+        "background-repeat: repeat",
+        "background-size: auto auto",
+        "background-size: cover",
+        "background-clip: text"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "background-size CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/background-size"
+        }
+      ]
+    },
+    {
+      "id": "css-object-fit-contain",
+      "points": 2,
+      "prompt": "고정 크기 img 박스 안에서 이미지 전체를 비율 유지해 보이려면?",
+      "explanation": "contain은 전체가 들어오게 하므로 빈 영역이 생길 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "object-fit: cover",
+        "object-fit: fill",
+        "object-position: left",
+        "overflow: auto",
+        "object-fit: contain"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "object-fit CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit"
+        }
+      ]
+    },
+    {
+      "id": "css-font-rem",
+      "points": 3,
+      "prompt": "1rem의 기준은?",
+      "explanation": "rem은 루트 폰트 크기에 상대적인 길이다.",
+      "type": "개념 판단",
+      "options": [
+        "루트 요소의 font-size",
+        "현재 요소 너비",
+        "부모 padding",
+        "브라우저 장치 픽셀 하나",
+        "현재 줄 길이"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "<length> CSS type - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/length"
+        }
+      ]
+    },
+    {
+      "id": "css-font-em",
+      "points": 3,
+      "prompt": "font-size: 2em을 계산할 때 기준은?",
+      "explanation": "font-size의 em은 상속된 폰트 크기에 상대적이다.",
+      "type": "개념 판단",
+      "options": [
+        "뷰포트 높이",
+        "상속받은 폰트 크기",
+        "자기 border 너비",
+        "문서 전체 높이",
+        "항상 16px"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "<length> CSS type - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/length"
+        }
+      ]
+    },
+    {
+      "id": "css-percent-width",
+      "points": 3,
+      "prompt": "일반 블록에서 width: 50%의 보통 기준은?",
+      "explanation": "퍼센트 너비는 containing block 너비를 기준으로 계산한다.",
+      "type": "개념 판단",
+      "options": [
+        "자기 높이",
+        "루트 font-size",
+        "containing block의 너비",
+        "형제 개수",
+        "화면 대각선"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "MDN — width",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/width"
+        }
+      ]
+    },
+    {
+      "id": "css-viewport-vw",
+      "points": 3,
+      "prompt": "100vw의 의미는?",
+      "explanation": "vw는 뷰포트 너비 단위다.",
+      "type": "개념 판단",
+      "options": [
+        "부모 너비의 100배",
+        "루트 글자 100개",
+        "현재 요소 높이",
+        "뷰포트 너비에 대응하는 길이",
+        "문서 전체 스크롤 높이"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "<length> CSS type - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/length"
+        }
+      ]
+    },
+    {
+      "id": "css-line-height-unitless",
+      "points": 3,
+      "prompt": "단위 없는 line-height: 1.5를 상속받은 자식의 줄 높이는?",
+      "explanation": "숫자를 상속하므로 자식의 글자 크기에 맞춰 계산된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 부모의 계산된 px 값이다.",
+        "항상 1.5px이다.",
+        "항상 15px이다.",
+        "상속이 금지된다.",
+        "자신의 font-size에 1.5를 곱한다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "line-height CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"
+        }
+      ]
+    },
+    {
+      "id": "css-box-sizing-content",
+      "points": 3,
+      "prompt": "content-box에서 width: 100px, padding: 10px, border: 2px solid일 때 바깥 너비는? margin은 0이다.",
+      "explanation": "좌우 padding 20과 border 4를 콘텐츠 너비에 더한다.",
+      "type": "개념 판단",
+      "options": [
+        "124px",
+        "100px",
+        "112px",
+        "120px",
+        "104px"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "box-sizing CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"
+        }
+      ]
+    },
+    {
+      "id": "css-margin-shorthand",
+      "points": 3,
+      "prompt": "margin: 1px 2px 3px 4px에서 왼쪽 여백은?",
+      "explanation": "네 값은 위·오른쪽·아래·왼쪽 순서다.",
+      "type": "개념 판단",
+      "options": [
+        "1px",
+        "4px",
+        "2px",
+        "3px",
+        "0px"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "margin CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/margin"
+        }
+      ]
+    },
+    {
+      "id": "css-padding-two-values",
+      "points": 3,
+      "prompt": "padding: 8px 16px에서 아래쪽 padding은?",
+      "explanation": "두 값이면 첫 값은 위아래, 둘째는 좌우다.",
+      "type": "개념 판단",
+      "options": [
+        "16px",
+        "24px",
+        "8px",
+        "0px",
+        "32px"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "padding CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-main-align",
+      "points": 3,
+      "prompt": "기본 row flex에서 주축 정렬을 제어하는 속성은?",
+      "explanation": "justify-content는 주축의 여유 공간 배치를 제어한다.",
+      "type": "개념 판단",
+      "options": [
+        "align-items",
+        "vertical-align",
+        "text-indent",
+        "justify-content",
+        "object-fit"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "justify-content CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-cross-align",
+      "points": 3,
+      "prompt": "기본 row flex에서 항목의 교차축 정렬을 제어하는 속성은?",
+      "explanation": "align-items는 교차축에서 각 항목을 정렬한다.",
+      "type": "개념 판단",
+      "options": [
+        "justify-content",
+        "text-align",
+        "float",
+        "font-variant",
+        "align-items"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "align-items CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-wrap",
+      "points": 3,
+      "prompt": "컨테이너 너비가 부족하면 flex 항목을 다음 줄로 넘기려면?",
+      "explanation": "wrap을 지정해야 여러 flex 줄이 만들어진다.",
+      "type": "개념 판단",
+      "options": [
+        "flex-wrap: wrap",
+        "flex-wrap: nowrap",
+        "overflow: visible",
+        "white-space: nowrap",
+        "display: inline"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "flex-wrap CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-grow-share",
+      "points": 3,
+      "prompt": "동일한 basis를 가진 두 flex 항목의 grow가 1과 3이다. 여유 공간 80px은 어떻게 분배되는가?",
+      "explanation": "양의 여유 공간은 grow 비율 1:3으로 배분된다.",
+      "type": "개념 판단",
+      "options": [
+        "40px과 40px",
+        "20px과 60px",
+        "10px과 70px",
+        "80px과 0px",
+        "0px과 80px"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "flex-grow CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-shrink-disable",
+      "points": 3,
+      "prompt": "flex 항목이 가용 공간 부족으로 줄어들지 않게 하려면?",
+      "explanation": "shrink 계수 0은 해당 항목의 축소를 막는다.",
+      "type": "개념 판단",
+      "options": [
+        "flex-grow: 0",
+        "order: 0",
+        "flex-shrink: 0",
+        "align-self: auto",
+        "flex-wrap: wrap"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "flex-shrink CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-basis",
+      "points": 3,
+      "prompt": "flex-basis의 역할은?",
+      "explanation": "basis는 주축 크기 계산의 출발점이다.",
+      "type": "개념 판단",
+      "options": [
+        "항목 순서",
+        "교차축의 줄 개수",
+        "텍스트 기준선",
+        "여유 공간 분배 전 주축의 기준 크기",
+        "쌓임 순서"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "flex-basis CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-order-a11y",
+      "points": 3,
+      "prompt": "order로 화면 배치 순서를 바꿨다. 반드시 함께 확인할 것은?",
+      "explanation": "시각적 재배치는 DOM 순서를 자동 변경하지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "DNS TTL",
+        "HTTP 버전",
+        "이미지 파일 확장자",
+        "서버 시간대",
+        "DOM 순서에 따른 읽기·키보드 이동 흐름"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "order CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/order"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-fr",
+      "points": 3,
+      "prompt": "grid-template-columns: 1fr 2fr에서 fr은 무엇인가?",
+      "explanation": "fr은 트랙에 가용 공간의 몫을 배분한다.",
+      "type": "개념 판단",
+      "options": [
+        "가용 공간을 비율로 나누는 단위",
+        "고정 픽셀 단위",
+        "폰트 파일 크기",
+        "회전 각도",
+        "이미지 해상도"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "grid-template-columns CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-repeat",
+      "points": 3,
+      "prompt": "같은 너비의 열 3개를 정의하는 선언은?",
+      "explanation": "repeat가 같은 트랙 정의를 세 번 반복한다.",
+      "type": "개념 판단",
+      "options": [
+        "grid-template-columns: 3fr",
+        "grid-template-columns: repeat(3, 1fr)",
+        "grid-column: 3",
+        "grid-template-rows: 3",
+        "column-gap: 3px"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "grid-template-columns CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-span",
+      "points": 3,
+      "prompt": "grid-column: span 2는 무엇을 뜻하는가?",
+      "explanation": "span 뒤 숫자는 차지할 트랙 수다.",
+      "type": "개념 판단",
+      "options": [
+        "두 번째 열만 선택한다.",
+        "열 간격을 2px로 한다.",
+        "열 트랙 두 개를 차지한다.",
+        "열을 두 번 복제한다.",
+        "항목을 2도 회전한다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "MDN — grid-column",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-minmax",
+      "points": 3,
+      "prompt": "minmax(100px, 1fr)의 역할은?",
+      "explanation": "minmax는 트랙의 최소·최대 크기 함수를 정의한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 100px 고정",
+        "항상 1px 고정",
+        "100개의 열 생성",
+        "최소 100px에서 가용 공간에 따라 늘어나는 트랙",
+        "트랙 제거"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "grid-template-columns CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-auto-fit",
+      "points": 3,
+      "prompt": "auto-fit과 minmax로 반응형 열을 만들 때 auto-fit의 특성은?",
+      "explanation": "auto-fit은 배치 후 비어 있는 반복 트랙을 축소한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 빈 열을 유지한다.",
+        "행 높이를 0으로 고정한다.",
+        "자식 DOM을 삭제한다.",
+        "너비를 항상 100px로 한다.",
+        "빈 반복 트랙을 접을 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "grid-template-columns CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns"
+        }
+      ]
+    },
+    {
+      "id": "css-media-min-width",
+      "points": 3,
+      "prompt": "@media (min-width: 800px)는 언제 적용되는가?",
+      "explanation": "min-width는 포함 경계의 최소 너비 조건이다.",
+      "type": "개념 판단",
+      "options": [
+        "뷰포트 너비가 800px 이상일 때",
+        "항상 800px 미만",
+        "요소 높이가 800px일 때",
+        "문서 글자 수가 800일 때",
+        "화면 해상도가 800dpi일 때"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "width CSS media feature - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width"
+        }
+      ]
+    },
+    {
+      "id": "css-media-reduced-motion",
+      "points": 3,
+      "prompt": "사용자가 동작 감소를 요청했는지 확인하는 기능은?",
+      "explanation": "운영체제 등의 동작 감소 선호를 반영한다.",
+      "type": "개념 판단",
+      "options": [
+        "prefers-color-scheme",
+        "prefers-reduced-motion",
+        "pointer",
+        "hover",
+        "orientation"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "prefers-reduced-motion CSS media feature - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+        }
+      ]
+    },
+    {
+      "id": "css-media-dark",
+      "points": 4,
+      "prompt": "사용자의 어두운 색상 테마 선호를 감지하는 조건은?",
+      "explanation": "prefers-color-scheme으로 밝고 어두운 테마 선호를 검사한다.",
+      "type": "개념 판단",
+      "options": [
+        "color-mode: night",
+        "theme: black",
+        "prefers-color-scheme: dark",
+        "prefers-contrast: dark",
+        "display-mode: dark"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "prefers-color-scheme CSS media feature - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"
+        }
+      ]
+    },
+    {
+      "id": "css-container-query",
+      "points": 4,
+      "prompt": "부모 영역 크기에 따라 카드 스타일을 바꾸려 한다. 적합한 기능은?",
+      "explanation": "컨테이너 쿼리는 지정된 컨테이너의 크기 등을 기준으로 조건을 건다.",
+      "type": "개념 판단",
+      "options": [
+        "뷰포트 기준 vw만 사용",
+        "@keyframes",
+        "@font-face",
+        "컨테이너 쿼리",
+        ":visited"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "CSS container queries - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries"
+        }
+      ]
+    },
+    {
+      "id": "css-specificity-id",
+      "points": 4,
+      "prompt": "같은 출처·레이어·중요도에서 #app과 .app이 같은 요소에 충돌한다. 우선하는 것은?",
+      "explanation": "ID 선택자의 명시도가 클래스보다 높다.",
+      "type": "개념 판단",
+      "options": [
+        ".app",
+        "항상 먼저 선언한 것",
+        "항상 짧은 것",
+        "항상 알파벳순 마지막",
+        "#app"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Specificity - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity"
+        }
+      ]
+    },
+    {
+      "id": "css-specificity-where",
+      "points": 4,
+      "prompt": ":where(#app .item)의 명시도는?",
+      "explanation": ":where와 인수의 명시도는 0이다.",
+      "type": "개념 판단",
+      "options": [
+        "0-0-0",
+        "1-1-0",
+        "1-0-0",
+        "0-1-0",
+        "0-0-1"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Specificity - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity"
+        }
+      ]
+    },
+    {
+      "id": "css-specificity-is",
+      "points": 4,
+      "prompt": ":is(.item, #main)의 명시도는?",
+      "explanation": ":is는 인수 목록 중 가장 높은 명시도를 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "0-1-0",
+        "1-0-0",
+        "1-1-0",
+        "0-0-0",
+        "0-0-1"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Specificity - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity"
+        }
+      ]
+    },
+    {
+      "id": "css-cascade-source-order",
+      "points": 4,
+      "prompt": "출처·중요도·레이어·명시도·스코프 근접도가 같은 선언이 충돌하면?",
+      "explanation": "이전 조건이 같으면 소스 순서가 승패를 정한다.",
+      "type": "개념 판단",
+      "options": [
+        "앞 선언만 유지한다.",
+        "무작위로 고른다.",
+        "뒤에 선언한 것이 우선한다.",
+        "더 짧은 값이 이긴다.",
+        "둘 다 무효가 된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Introduction to the CSS cascade - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Cascade"
+        }
+      ]
+    },
+    {
+      "id": "css-important-scope",
+      "points": 4,
+      "prompt": "!important가 붙었다는 사실만으로 보장할 수 없는 것은?",
+      "explanation": "출처와 레이어 등 캐스케이드 규칙이 여전히 적용된다.",
+      "type": "개념 판단",
+      "options": [
+        "같은 출처의 일반 선언보다 높은 중요도",
+        "선언 하나에 적용됨",
+        "속성 값 뒤에 작성함",
+        "어떤 출처의 어떤 선언보다 항상 우선함",
+        "선택자 자체의 명시도는 바꾸지 않음"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Introduction to the CSS cascade - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Cascade"
+        }
+      ]
+    },
+    {
+      "id": "css-layer-normal",
+      "points": 4,
+      "prompt": "작성자 일반 선언끼리 비교한다. 레이어 밖 선언과 레이어 안 선언 중 기본적으로 우선하는 것은?",
+      "explanation": "레이어 없는 일반 스타일은 레이어 안 일반 스타일보다 우선한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 첫 레이어",
+        "항상 마지막으로 만든 클래스",
+        "명시도가 낮은 선언",
+        "항상 레이어 안 선언",
+        "레이어 밖 일반 선언"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "@layer CSS at-rule - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
+        }
+      ]
+    },
+    {
+      "id": "css-layer-important",
+      "points": 4,
+      "prompt": "같은 작성자 출처의 여러 레이어에서 !important 선언이 충돌할 때 레이어 순서는?",
+      "explanation": "중요 선언의 레이어 우선순위는 일반 선언과 반대다.",
+      "type": "개념 판단",
+      "options": [
+        "먼저 선언된 레이어의 중요 선언이 우선한다.",
+        "나중 레이어만 우선한다.",
+        "레이어 순서를 무시한다.",
+        "항상 무작위다.",
+        "모든 선언을 삭제한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "@layer CSS at-rule - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
+        }
+      ]
+    },
+    {
+      "id": "css-inherit-keyword",
+      "points": 4,
+      "prompt": "margin: inherit은 무엇을 뜻하는가?",
+      "explanation": "inherit은 비상속 속성에도 명시적 상속을 요청한다.",
+      "type": "개념 판단",
+      "options": [
+        "브라우저 초기값을 사용한다.",
+        "부모의 계산된 margin 값을 상속한다.",
+        "이전 형제 margin을 복사한다.",
+        "항상 0이다.",
+        "선언을 무조건 무시한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "inherit CSS keyword - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/inherit"
+        }
+      ]
+    },
+    {
+      "id": "css-initial-keyword",
+      "points": 4,
+      "prompt": "color: initial은 무엇을 뜻하는가?",
+      "explanation": "initial은 상속값이 아니라 속성의 초기값이다.",
+      "type": "개념 판단",
+      "options": [
+        "부모 값을 무조건 사용한다.",
+        "이전 선언을 복원한다.",
+        "명세의 초기값을 사용한다.",
+        "첫 형제 색을 사용한다.",
+        "항상 투명색이다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "initial CSS keyword - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/initial"
+        }
+      ]
+    },
+    {
+      "id": "css-unset-keyword",
+      "points": 4,
+      "prompt": "상속되는 속성에 unset을 적용하면?",
+      "explanation": "unset은 상속 속성에는 inherit, 그 외에는 initial로 동작한다.",
+      "type": "개념 판단",
+      "options": [
+        "initial처럼만 동작한다.",
+        "속성을 DOM에서 삭제한다.",
+        "항상 0을 적용한다.",
+        "inherit처럼 동작한다.",
+        "항상 transparent다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "unset CSS keyword - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/unset"
+        }
+      ]
+    },
+    {
+      "id": "css-custom-property-scope",
+      "points": 4,
+      "prompt": "부모에 선언한 일반 --accent 변수를 자식에서 읽을 수 있는 기본 이유는?",
+      "explanation": "등록으로 상속 동작을 바꾸지 않은 custom property는 상속된다.",
+      "type": "개념 판단",
+      "options": [
+        "변수가 항상 전역 저장된다.",
+        "부모 DOM이 복제된다.",
+        "브라우저가 쿠키로 저장한다.",
+        "모든 속성이 항상 상속된다.",
+        "일반 사용자 정의 속성은 기본 상속된다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Using CSS custom properties (variables) - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties"
+        }
+      ]
+    },
+    {
+      "id": "css-var-invalid-fallback",
+      "points": 4,
+      "prompt": "--size: red가 존재할 때 width: var(--size, 10px)의 fallback은?",
+      "explanation": "var fallback은 대상 속성의 문법에 맞는지까지 대신 검사하지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "red가 존재하므로 10px로 대체되지 않는다.",
+        "무조건 10px다.",
+        "무조건 red px다.",
+        "무조건 0px다.",
+        "항상 부모 너비 두 배다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Using CSS custom properties (variables) - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties"
+        }
+      ]
+    },
+    {
+      "id": "css-calc-units",
+      "points": 4,
+      "prompt": "뷰포트 너비에서 32px를 뺀 길이를 표현하려면?",
+      "explanation": "calc는 서로 다른 호환 길이 단위를 계산할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "100vw - 32px",
+        "calc(100vw - 32px)",
+        "calc(100vw / 32px)",
+        "min(100vw, 32px)",
+        "max(100vw, 32px)"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "calc() CSS function - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/calc"
+        }
+      ]
+    },
+    {
+      "id": "css-clamp-size",
+      "points": 4,
+      "prompt": "clamp(16px, 2vw, 24px)가 제한하는 범위는?",
+      "explanation": "중앙 선호값을 최소·최대 사이로 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 2px",
+        "항상 24px",
+        "최소 16px, 최대 24px",
+        "최소 24px, 최대 16px",
+        "제한 없음"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "clamp() CSS function - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/clamp"
+        }
+      ]
+    },
+    {
+      "id": "css-min-function",
+      "points": 4,
+      "prompt": "min(50%, 300px)의 의미는?",
+      "explanation": "min은 계산한 후보 중 가장 작은 값을 선택한다.",
+      "type": "개념 판단",
+      "options": [
+        "큰 길이를 사용한다.",
+        "항상 300px이다.",
+        "값을 더한다.",
+        "두 계산값 중 작은 길이를 사용한다.",
+        "값을 곱한다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "min() CSS function - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/min"
+        }
+      ]
+    },
+    {
+      "id": "css-margin-collapse",
+      "points": 4,
+      "prompt": "일반 블록의 인접한 양수 수직 margin이 상쇄된다. 20px과 30px의 결과는?",
+      "explanation": "양수 여백끼리 상쇄되면 더 큰 쪽을 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "50px",
+        "20px",
+        "10px",
+        "0px",
+        "30px"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Mastering margin collapsing - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing"
+        }
+      ]
+    },
+    {
+      "id": "css-bfc-flow-root",
+      "points": 4,
+      "prompt": "float를 포함한 부모가 독립적인 블록 서식 맥락을 만들게 하는 값은?",
+      "explanation": "flow-root는 새 BFC를 만들어 내부 float를 포함한다.",
+      "type": "개념 판단",
+      "options": [
+        "display: flow-root",
+        "display: contents",
+        "position: static",
+        "visibility: visible",
+        "color: inherit"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Block formatting context - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_formatting_context"
+        }
+      ]
+    },
+    {
+      "id": "css-flex-minwidth",
+      "points": 4,
+      "prompt": "긴 한 단어 때문에 flex 자식이 줄어들지 않는다. 필요한 경우 적용할 수정은?",
+      "explanation": "자동 최소 크기를 0으로 낮춰 축소를 허용한다.",
+      "type": "개념 판단",
+      "options": [
+        "z-index: 9999",
+        "min-width: 0",
+        "position: fixed",
+        "color: transparent",
+        "order: -1"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "min-width CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"
+        }
+      ]
+    },
+    {
+      "id": "css-grid-minmax-zero",
+      "points": 4,
+      "prompt": "긴 콘텐츠로 1fr 열이 넘칠 때 minmax(0, 1fr)을 쓰는 이유는?",
+      "explanation": "최소값 0을 지정해 콘텐츠 기반 최소 크기보다 줄어들 수 있게 한다.",
+      "type": "개념 판단",
+      "options": [
+        "열 개수를 0으로 만든다.",
+        "모든 글자를 삭제한다.",
+        "트랙 최소 크기가 콘텐츠 최소 너비에 묶이지 않게 한다.",
+        "여백을 1px로 고정한다.",
+        "항목 순서를 바꾼다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "grid-template-columns CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns"
+        }
+      ]
+    },
+    {
+      "id": "css-sticky-overflow-ancestor",
+      "points": 4,
+      "prompt": "sticky가 예상과 다른 조상에 붙을 때 우선 확인할 것은?",
+      "explanation": "스크롤 메커니즘을 만드는 조상이 sticky 기준에 영향을 준다.",
+      "type": "개념 판단",
+      "options": [
+        "자식 글자색",
+        "이미지 파일 이름",
+        "DNS 주소",
+        "조상들의 overflow와 스크롤 컨테이너",
+        "버튼 type"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "position CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+        }
+      ]
+    },
+    {
+      "id": "css-stacking-context-opacity",
+      "points": 4,
+      "prompt": "opacity가 1보다 작은 요소의 대표적인 쌓임 효과는?",
+      "explanation": "부분 투명 요소는 독립적인 쌓임 맥락을 형성한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 DOM 마지막으로 이동한다.",
+        "모든 z-index를 삭제한다.",
+        "항상 부모 뒤로 간다.",
+        "레이아웃 공간을 제거한다.",
+        "새 stacking context를 만든다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Stacking context - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context"
+        }
+      ]
+    },
+    {
+      "id": "css-stacking-context-child",
+      "points": 5,
+      "prompt": "낮은 쌓임 맥락 안의 자식에 매우 큰 z-index를 줬다. 옳은 설명은?",
+      "explanation": "자식 z-index는 자신의 맥락 내부에서 비교된다.",
+      "type": "개념 판단",
+      "options": [
+        "부모 쌓임 맥락 밖의 우선순위를 임의로 넘지 못한다.",
+        "항상 페이지 최상단이다.",
+        "부모의 z-index가 자동 증가한다.",
+        "DOM 순서가 바뀐다.",
+        "다른 맥락이 삭제된다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Stacking context - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context"
+        }
+      ]
+    },
+    {
+      "id": "css-transform-fixed-block",
+      "points": 5,
+      "prompt": "transform: translateX(0)이 적용된 조상 안의 fixed 요소가 뷰포트 대신 조상을 기준으로 놓일 수 있는 이유는?",
+      "explanation": "none이 아닌 transform은 fixed 자손의 기준 블록에 영향을 준다.",
+      "type": "개념 판단",
+      "options": [
+        "fixed가 relative로 바뀌어서",
+        "transform이 fixed의 containing block을 만들 수 있다.",
+        "transform이 DOM을 삭제해서",
+        "브라우저가 width를 무시해서",
+        "스크롤 자체가 금지돼서"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "transform CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+        }
+      ]
+    },
+    {
+      "id": "css-transform-layout",
+      "points": 5,
+      "prompt": "transform: translateX(20px)을 적용한 일반 요소의 형제 배치는?",
+      "explanation": "transform은 일반 레이아웃 계산 후 시각적 변환을 적용한다.",
+      "type": "개념 판단",
+      "options": [
+        "반드시 20px씩 밀린다.",
+        "모든 형제가 삭제된다.",
+        "원래 레이아웃 위치를 기준으로 유지된다.",
+        "부모 너비가 반드시 늘어난다.",
+        "항상 줄바꿈된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "transform CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+        }
+      ]
+    },
+    {
+      "id": "css-transition-trigger",
+      "points": 5,
+      "prompt": "transition으로 부드럽게 바뀌기 위해 일반적으로 필요한 것은?",
+      "explanation": "transition은 이전 값과 새 값 사이를 보간한다.",
+      "type": "개념 판단",
+      "options": [
+        "같은 값의 반복 선언만",
+        "항상 JavaScript setInterval",
+        "항상 새 DOM 요소",
+        "대상 속성의 값 변화",
+        "항상 SVG"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Using CSS transitions - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions"
+        }
+      ]
+    },
+    {
+      "id": "css-animation-keyframes",
+      "points": 5,
+      "prompt": "여러 단계의 CSS 애니메이션 값을 정의하는 규칙은?",
+      "explanation": "keyframes는 시간 구간별 속성 상태를 정의한다.",
+      "type": "개념 판단",
+      "options": [
+        "@media",
+        "@supports",
+        "@import",
+        "@namespace",
+        "@keyframes"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "@keyframes CSS at-rule - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes"
+        }
+      ]
+    },
+    {
+      "id": "css-animation-fill-mode",
+      "points": 5,
+      "prompt": "애니메이션 종료 후 마지막 키프레임 스타일을 유지하는 값은?",
+      "explanation": "forwards는 종료 후 마지막 진행 상태를 유지한다.",
+      "type": "개념 판단",
+      "options": [
+        "animation-fill-mode: forwards",
+        "animation-fill-mode: none",
+        "animation-direction: reverse",
+        "animation-delay: 0s",
+        "animation-name: none"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "animation-fill-mode CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode"
+        }
+      ]
+    },
+    {
+      "id": "css-animation-alternate",
+      "points": 5,
+      "prompt": "animation-direction: alternate가 여러 반복에서 만드는 효과는?",
+      "explanation": "alternate는 각 반복의 재생 방향을 번갈아 바꾼다.",
+      "type": "개념 판단",
+      "options": [
+        "반복 횟수를 항상 1로 한다.",
+        "정방향과 역방향을 번갈아 재생한다.",
+        "애니메이션을 취소한다.",
+        "속도를 두 배로 한다.",
+        "시작 지연만 바꾼다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "animation-direction CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction"
+        }
+      ]
+    },
+    {
+      "id": "css-will-change-cost",
+      "points": 5,
+      "prompt": "모든 요소에 will-change: transform을 상시 지정하는 접근의 문제는?",
+      "explanation": "최적화 힌트의 과도한 사용은 오히려 자원을 낭비할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 이벤트가 사라진다.",
+        "HTTP 캐시가 비활성화된다.",
+        "레이어·메모리 비용이 커질 수 있다.",
+        "폰트가 반드시 바뀐다.",
+        "DOM이 모두 복제된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "will-change CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/will-change"
+        }
+      ]
+    },
+    {
+      "id": "css-supports-feature",
+      "points": 5,
+      "prompt": "CSS 선언 지원 여부에 따라 스타일을 적용하는 at-rule은?",
+      "explanation": "supports는 기능 쿼리를 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "@page",
+        "@keyframes",
+        "@font-face",
+        "@supports",
+        "@namespace"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "@supports CSS at-rule - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@supports"
+        }
+      ]
+    },
+    {
+      "id": "css-font-face",
+      "points": 5,
+      "prompt": "웹 폰트 파일과 font-family를 연결하는 규칙은?",
+      "explanation": "font-face는 사용할 폰트 리소스와 특성을 정의한다.",
+      "type": "개념 판단",
+      "options": [
+        "@font-palette-values만",
+        "@media",
+        "@keyframes",
+        "@supports",
+        "@font-face"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "@font-face CSS at-rule - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"
+        }
+      ]
+    },
+    {
+      "id": "css-font-display-swap",
+      "points": 5,
+      "prompt": "font-display: swap의 목적에 가까운 것은?",
+      "explanation": "swap은 짧은 차단 구간 후 대체 폰트를 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "대체 폰트로 먼저 보여 주고 웹 폰트가 준비되면 교체한다.",
+        "폰트 요청을 영구 금지한다.",
+        "이미지만 교체한다.",
+        "글자를 항상 숨긴다.",
+        "글자 크기를 항상 고정한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "font-display CSS at-rule descriptor - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"
+        }
+      ]
+    },
+    {
+      "id": "css-logical-inline-start",
+      "points": 5,
+      "prompt": "LTR·RTL에 맞춰 인라인 시작 쪽 여백을 지정하는 속성은?",
+      "explanation": "논리 속성은 쓰기 방향에 맞춰 물리 방향에 대응한다.",
+      "type": "개념 판단",
+      "options": [
+        "margin-top",
+        "margin-inline-start",
+        "margin-bottom",
+        "margin-physical-start",
+        "text-indent-end"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "margin-inline-start CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-start"
+        }
+      ]
+    },
+    {
+      "id": "css-writing-mode-vertical",
+      "points": 5,
+      "prompt": "세로 쓰기에서 logical block-size는 무엇을 따른다?",
+      "explanation": "논리 크기는 writing-mode의 축에 따라 물리 크기로 매핑된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 물리적 height만",
+        "항상 font-size만",
+        "블록 진행 축의 크기",
+        "항상 줄 개수",
+        "항상 뷰포트 대각선"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "writing-mode CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"
+        }
+      ]
+    },
+    {
+      "id": "css-aspect-ratio",
+      "points": 5,
+      "prompt": "width: 200px, height: auto인 일반 박스에 aspect-ratio: 2 / 1을 지정했다. 다른 크기 제약이 없을 때 기대 높이는?",
+      "explanation": "너비:높이 비율 2:1을 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "200px",
+        "400px",
+        "50px",
+        "100px",
+        "2px"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "aspect-ratio CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio"
+        }
+      ]
+    },
+    {
+      "id": "css-text-ellipsis",
+      "points": 5,
+      "prompt": "한 줄 말줄임표가 동작하도록 일반적으로 함께 필요한 설정은?",
+      "explanation": "text-overflow만으로 넘침과 줄바꿈 조건이 자동 설정되지는 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "z-index와 opacity",
+        "float와 clear",
+        "animation과 transform",
+        "font-style과 color",
+        "넘침 제한과 줄바꿈 제한"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "text-overflow CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow"
+        }
+      ]
+    },
+    {
+      "id": "css-white-space-pre-wrap",
+      "points": 5,
+      "prompt": "공백·개행을 보존하면서 필요하면 줄을 감싸는 값은?",
+      "explanation": "pre-wrap은 보존과 자동 줄바꿈을 함께 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "white-space: pre-wrap",
+        "white-space: normal",
+        "white-space: nowrap",
+        "white-space: pre",
+        "text-transform: none"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "white-space CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"
+        }
+      ]
+    },
+    {
+      "id": "css-overflow-wrap-anywhere",
+      "points": 5,
+      "prompt": "매우 긴 URL을 임의 위치에서도 줄바꿈하도록 허용하려면?",
+      "explanation": "anywhere는 넘침 방지를 위해 임의의 줄바꿈 기회를 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "white-space: nowrap",
+        "overflow-wrap: anywhere",
+        "word-spacing: 0",
+        "text-indent: 1em",
+        "line-height: 1"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "overflow-wrap CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap"
+        }
+      ]
+    },
+    {
+      "id": "css-nth-child-even",
+      "points": 5,
+      "prompt": ":nth-child(2n)은 어떤 형제 위치를 선택하는가?",
+      "explanation": "형제 위치는 1부터 세므로 2n은 짝수 위치다.",
+      "type": "개념 판단",
+      "options": [
+        "1, 3, 5번째",
+        "첫 요소만",
+        "2, 4, 6번째 등 짝수 위치",
+        "마지막 요소만",
+        "0번째만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": ":nth-child() CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child"
+        }
+      ]
+    },
+    {
+      "id": "css-nth-of-type",
+      "points": 5,
+      "prompt": ":nth-of-type(2)는 무엇을 기준으로 세는가?",
+      "explanation": "형제 중 같은 요소 타입의 위치를 계산한다.",
+      "type": "개념 판단",
+      "options": [
+        "같은 class만",
+        "모든 자손 전체",
+        "이벤트 순서",
+        "같은 태그 종류의 형제들",
+        "같은 id만"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": ":nth-of-type() CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type"
+        }
+      ]
+    },
+    {
+      "id": "css-has-parent",
+      "points": 5,
+      "prompt": "자식 img가 있는 figure를 선택하는 식은?",
+      "explanation": ":has는 상대 선택자와 일치하는 관계가 있는 요소를 선택한다.",
+      "type": "개념 판단",
+      "options": [
+        "figure > :has(img)",
+        "img:has(figure)",
+        "figure::img",
+        "figure:not(img)",
+        "figure:has(> img)"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": ":has() CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:has"
+        }
+      ]
+    },
+    {
+      "id": "css-focus-visible",
+      "points": 5,
+      "prompt": "키보드 탐색 등 포커스 표시가 필요한 상황에 스타일을 주는 의사 클래스는?",
+      "explanation": "브라우저 판단에 따라 포커스 표시가 필요한 경우를 선택한다.",
+      "type": "개념 판단",
+      "options": [
+        ":focus-visible",
+        ":hover",
+        ":visited",
+        ":first-child",
+        ":empty"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": ":focus-visible CSS pseudo-class - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible"
+        }
+      ]
+    },
+    {
+      "id": "css-pointer-events-none",
+      "points": 5,
+      "prompt": "pointer-events: none을 적용한 요소에 대해 주의할 점은?",
+      "explanation": "포인터 타깃 동작과 키보드 포커스는 별개다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM에서 항상 삭제된다.",
+        "키보드 포커스까지 자동으로 제거하지는 않는다.",
+        "레이아웃 공간이 없어지지 않으면 오류다.",
+        "모든 자식이 항상 숨겨진다.",
+        "텍스트 선택이 반드시 금지된다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "pointer-events CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events"
+        }
+      ]
+    },
+    {
+      "id": "css-isolation-isolate",
+      "points": 5,
+      "prompt": "isolation: isolate가 제공하는 대표적 효과는?",
+      "explanation": "isolation은 쌓임과 혼합 동작의 격리 경계를 만든다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM 격리 iframe 생성",
+        "별도 JavaScript 스레드 생성",
+        "새 stacking context 생성",
+        "네트워크 요청 차단",
+        "부모 스타일 전부 초기화"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "isolation CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/isolation"
+        }
+      ]
+    },
+    {
+      "id": "css-contain-layout",
+      "points": 5,
+      "prompt": "contain: layout의 의도는?",
+      "explanation": "layout containment는 레이아웃 계산 경계를 만든다.",
+      "type": "개념 판단",
+      "options": [
+        "자식 DOM을 삭제한다.",
+        "스타일시트를 압축한다.",
+        "이미지 해상도를 낮춘다.",
+        "요소 내부 레이아웃 영향의 범위를 제한한다.",
+        "모든 속성을 상속한다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "contain CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/contain"
+        }
+      ]
+    },
+    {
+      "id": "css-content-visibility",
+      "points": 5,
+      "prompt": "content-visibility: auto의 주된 목적은?",
+      "explanation": "브라우저가 필요 없는 렌더링을 생략할 수 있는 힌트다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM을 서버로 이동한다.",
+        "모든 네트워크를 차단한다.",
+        "항상 display: none이 된다.",
+        "항상 접근성 트리에서 제거한다.",
+        "화면 밖 콘텐츠의 렌더링 작업을 건너뛸 수 있게 한다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "content-visibility CSS property - CSS | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility"
+        }
+      ]
+    }
+  ]
+}

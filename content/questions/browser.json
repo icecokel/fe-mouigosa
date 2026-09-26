@@ -1,0 +1,2106 @@
+{
+  "category": "Browser",
+  "questions": [
+    {
+      "id": "browser-event-propagation",
+      "type": "브라우저 동작",
+      "points": 4,
+      "answer": 1,
+      "prompt": "outer가 inner의 부모 요소일 때 다음 코드의 log 배열에 담기는 순서로 옳은 것은?",
+      "code": "outer.addEventListener(\"click\",\n  () => log.push(\"A\"), true);\ninner.addEventListener(\"click\",\n  () => log.push(\"B\"));\nouter.addEventListener(\"click\",\n  () => log.push(\"C\"));\ninner.click();",
+      "options": [
+        "A → B → C",
+        "B → A → C",
+        "B → C → A",
+        "C → B → A",
+        "A → C → B"
+      ],
+      "sources": [
+        {
+          "title": "Event bubbling - Learn web development | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling"
+        }
+      ],
+      "explanation": "이벤트는 부모의 캡처 단계(A), 대상 요소의 리스너(B), 부모의 버블 단계(C) 순으로 전달됩니다. 세 번째 인수 true는 캡처 단계 리스너를 등록합니다."
+    },
+    {
+      "id": "browser-fetch-404",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 2,
+      "prompt": "서버가 HTTP 404 응답을 정상적으로 보냈다. fetch()의 기본 동작으로 옳은 것은?",
+      "options": [
+        "Promise가 자동으로 거부된다.",
+        "Response로 이행되며 ok는 false다.",
+        "빈 문자열로 이행된다.",
+        "요청이 자동으로 한 번 재시도된다.",
+        "브라우저가 항상 네트워크 오류로 취급한다."
+      ],
+      "sources": [
+        {
+          "title": "Using the Fetch API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        }
+      ],
+      "explanation": "fetch는 HTTP 오류 상태만으로 Promise를 거부하지 않습니다. 404 응답도 Response로 이행되며, 200~299 범위를 벗어나므로 response.ok는 false입니다. 네트워크 오류 등은 별도로 거부됩니다."
+    },
+    {
+      "id": "browser-web-storage",
+      "type": "브라우저 동작",
+      "points": 2,
+      "answer": 3,
+      "prompt": "같은 출처의 두 탭에서 localStorage와 sessionStorage를 사용할 때 옳은 설명은?",
+      "options": [
+        "localStorage는 탭마다 항상 분리된다.",
+        "sessionStorage는 모든 출처가 공유한다.",
+        "localStorage는 같은 출처의 탭이 공유할 수 있다.",
+        "두 저장소는 모두 서버에 자동 전송된다.",
+        "두 저장소는 페이지를 새로고침하면 항상 비워진다."
+      ],
+      "sources": [
+        {
+          "title": "Using the Web Storage API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API"
+        }
+      ],
+      "explanation": "localStorage는 출처 단위로 저장소를 공유하며 세션을 넘어 유지됩니다. sessionStorage는 출처와 최상위 탐색 컨텍스트(탭)별로 분리됩니다. 두 저장소의 값이 쿠키처럼 요청에 자동 첨부되지는 않습니다."
+    },
+    {
+      "id": "browser-prevent-default",
+      "type": "브라우저 동작",
+      "points": 3,
+      "prompt": "링크의 click 이벤트에서 preventDefault()를 호출했다. 취소 가능한 이벤트이며 passive 리스너가 아닐 때 옳은 설명은?",
+      "options": [
+        "다른 모든 리스너의 실행도 즉시 중단된다.",
+        "이벤트 전파가 항상 중단된다.",
+        "링크 이동이라는 기본 동작을 취소한다.",
+        "링크 요소가 DOM에서 삭제된다.",
+        "HTTP 요청이 항상 재시도된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Event: preventDefault() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"
+        }
+      ],
+      "explanation": "preventDefault는 취소 가능한 이벤트의 기본 동작인 링크 이동을 막습니다. 전파나 다른 리스너 실행을 중단하는 stopPropagation·stopImmediatePropagation과는 별개입니다."
+    },
+    {
+      "id": "browser-defer",
+      "type": "브라우저 동작",
+      "points": 4,
+      "prompt": "외부 클래식 스크립트에 defer 속성을 지정했다. 일반적인 실행 시점은?",
+      "options": [
+        "HTML 파싱이 끝난 뒤, DOMContentLoaded 전에 실행된다.",
+        "HTML 파싱을 즉시 중단하고 실행된다.",
+        "사용자가 클릭할 때만 실행된다.",
+        "load 이벤트 후에만 실행된다.",
+        "항상 다른 출처의 iframe 안에서 실행된다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "<script> HTML script element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+        }
+      ],
+      "explanation": "defer가 있는 외부 클래식 스크립트는 파싱과 병행해 내려받고 HTML 파싱이 끝난 뒤 문서 순서대로 실행됩니다. DOMContentLoaded는 이 실행을 기다립니다."
+    },
+    {
+      "id": "browser-url-origin",
+      "type": "브라우저 동작",
+      "points": 3,
+      "prompt": "두 URL이 같은 출처인지 판단할 때 비교하는 요소는?",
+      "options": [
+        "경로와 쿼리",
+        "프로토콜·호스트·포트",
+        "파일명과 확장자",
+        "해시와 쿠키",
+        "HTTP 메서드와 본문"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Same-origin policy - Security | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy"
+        }
+      ],
+      "explanation": "출처는 URL의 스킴(프로토콜), 호스트, 포트의 조합입니다. 경로·쿼리·해시는 출처 비교에 포함되지 않습니다."
+    },
+    {
+      "id": "browser-dom-query-one",
+      "points": 2,
+      "prompt": "querySelector가 여러 요소와 일치할 때 반환하는 것은?",
+      "explanation": "querySelector는 단일 요소 또는 null을 반환한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 요소 배열",
+        "첫 번째 일치 요소",
+        "마지막 요소",
+        "항상 null",
+        "HTML 문자열"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Document: querySelector() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-query-none",
+      "points": 2,
+      "prompt": "querySelector로 일치하는 요소를 찾지 못하면?",
+      "explanation": "일치하지 않으면 null을 반환한다.",
+      "type": "개념 판단",
+      "options": [
+        "undefined",
+        "빈 배열",
+        "null",
+        "false",
+        "빈 문자열"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Document: querySelector() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-query-all-static",
+      "points": 2,
+      "prompt": "querySelectorAll의 결과 NodeList는 일반적으로?",
+      "explanation": "DOM이 바뀌어도 해당 목록이 자동 갱신되지는 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 실시간 갱신 목록",
+        "항상 Array 인스턴스",
+        "JSON 문자열",
+        "호출 당시의 정적인 목록",
+        "Event 객체"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Document: querySelectorAll() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-live-collection",
+      "points": 2,
+      "prompt": "getElementsByClassName 결과의 대표적 특징은?",
+      "explanation": "반환된 HTMLCollection은 관련 DOM 변화를 반영한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 불변 배열",
+        "문자열 하나",
+        "Promise",
+        "클래스 선언",
+        "DOM 변화에 따라 갱신되는 live 컬렉션"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "HTMLCollection - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-create-element",
+      "points": 2,
+      "prompt": "새 div 요소를 메모리에 생성하는 메서드는?",
+      "explanation": "createElement는 새 요소를 만들며 삽입은 별도다.",
+      "type": "개념 판단",
+      "options": [
+        "document.createElement(\"div\")",
+        "document.querySelector(\"div\")",
+        "document.getElementById(\"div\")",
+        "document.createTextNode(\"div\")",
+        "document.writeElement(\"div\")"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Document: createElement() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-text-content",
+      "points": 2,
+      "prompt": "사용자 문자열을 HTML로 해석하지 않고 요소의 텍스트로 넣으려면?",
+      "explanation": "textContent는 문자열을 텍스트로 취급한다.",
+      "type": "개념 판단",
+      "options": [
+        "innerHTML에 그대로 대입",
+        "textContent에 대입",
+        "eval로 실행",
+        "document.write로 출력",
+        "script.src에 대입"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Node: textContent property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-class-toggle",
+      "points": 2,
+      "prompt": "classList.toggle(\"active\")를 force 인자 없이 호출하면?",
+      "explanation": "toggle은 토큰의 존재 상태를 반전한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 추가한다.",
+        "항상 제거한다.",
+        "클래스가 있으면 제거하고 없으면 추가한다.",
+        "DOM을 삭제한다.",
+        "항상 아무것도 하지 않는다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "DOMTokenList: toggle() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-dataset",
+      "points": 2,
+      "prompt": "data-user-id=\"7\"을 dataset으로 읽는 표현은?",
+      "explanation": "data 속성의 하이픈 이름은 camelCase로 매핑된다.",
+      "type": "개념 판단",
+      "options": [
+        "element.dataset[\"user-id\"]",
+        "element.dataset.dataUserId",
+        "element.dataset.user_id",
+        "element.dataset.userId",
+        "element.data.userId"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "HTMLElement: dataset property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-dataset-type",
+      "points": 2,
+      "prompt": "data-count=\"3\"을 dataset.count로 읽었을 때 기본 타입은?",
+      "explanation": "dataset의 값은 문자열로 제공된다.",
+      "type": "개념 판단",
+      "options": [
+        "number",
+        "bigint",
+        "boolean",
+        "object",
+        "string"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "HTMLElement: dataset property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-remove",
+      "points": 2,
+      "prompt": "element.remove()의 역할은?",
+      "explanation": "remove는 DOM 연결을 해제한다.",
+      "type": "개념 판단",
+      "options": [
+        "부모로부터 해당 요소를 제거한다.",
+        "요소의 CSS만 초기화한다.",
+        "모든 문서를 닫는다.",
+        "요소를 복제한다.",
+        "페이지를 새로고침한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Element: remove() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/remove"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-append-move",
+      "points": 2,
+      "prompt": "이미 DOM에 있는 노드를 다른 부모에 append하면?",
+      "explanation": "한 노드는 동시에 두 부모의 자식일 수 없다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 복제한다.",
+        "복제하지 않고 새 부모로 이동한다.",
+        "원래 부모에만 남는다.",
+        "문서를 두 개 만든다.",
+        "문자열로 변환한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Node: appendChild() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
+        }
+      ]
+    },
+    {
+      "id": "browser-dom-clone-events",
+      "points": 2,
+      "prompt": "cloneNode(true)로 복제했을 때 addEventListener로 등록한 리스너는?",
+      "explanation": "DOM 복제와 addEventListener 등록은 별개다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 복제된다.",
+        "모든 문서로 전파된다.",
+        "자동 복제되지 않는다.",
+        "원본에서 삭제된다.",
+        "문자열 속성으로 바뀐다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Node: cloneNode() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-target",
+      "points": 2,
+      "prompt": "버튼 내부 span을 클릭했을 때 event.target은 무엇을 가리키는가?",
+      "explanation": "target은 실제 이벤트 대상이다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 document",
+        "항상 리스너 등록 버튼",
+        "항상 window",
+        "실제로 이벤트가 시작된 대상",
+        "항상 부모 form"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Event: target property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/target"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-current-target",
+      "points": 2,
+      "prompt": "부모에 등록한 리스너 안에서 currentTarget은?",
+      "explanation": "currentTarget은 현재 리스너 호출의 등록 대상이다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 클릭한 최하위 요소",
+        "이전 이벤트 대상",
+        "다음 형제",
+        "항상 window",
+        "현재 리스너가 붙은 요소"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Event: currentTarget property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-stop-propagation",
+      "points": 2,
+      "prompt": "stopPropagation()의 주된 역할은?",
+      "explanation": "기본 동작 취소와 같은 요소 리스너 중단은 별도 기능이다.",
+      "type": "개념 판단",
+      "options": [
+        "이후 전파 경로로 이벤트가 이동하는 것을 막는다.",
+        "기본 동작을 항상 취소한다.",
+        "현재 요소 모든 리스너를 반드시 막는다.",
+        "페이지를 닫는다.",
+        "DOM을 삭제한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Event: stopPropagation() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-stop-immediate",
+      "points": 2,
+      "prompt": "현재 요소의 뒤따르는 리스너까지 중단하려면?",
+      "explanation": "이 메서드는 같은 대상의 남은 리스너와 이후 전파를 모두 막는다.",
+      "type": "개념 판단",
+      "options": [
+        "preventDefault()",
+        "stopImmediatePropagation()",
+        "stopTimeout()",
+        "remove()",
+        "stopPropagation()만 사용"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Event: stopImmediatePropagation() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/stopImmediatePropagation"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-once",
+      "points": 2,
+      "prompt": "addEventListener의 once: true는?",
+      "explanation": "once는 리스너 수명을 한 번의 실행으로 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "매 초 호출한다.",
+        "캡처 단계만 허용한다.",
+        "한 번 호출된 후 리스너를 자동 제거한다.",
+        "모든 클릭을 막는다.",
+        "기본 동작만 취소한다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "EventTarget: addEventListener() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-remove-identity",
+      "points": 2,
+      "prompt": "removeEventListener로 리스너를 제거하려면 중요하게 맞춰야 할 것은?",
+      "explanation": "새 익명 함수는 원래 등록한 함수와 다른 참조다.",
+      "type": "개념 판단",
+      "options": [
+        "함수 이름 문자열만",
+        "등록 시각만",
+        "DOM id만",
+        "이벤트 타입·동일 함수 참조·capture 값",
+        "반환값만"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "EventTarget: removeEventListener() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-delegation",
+      "points": 2,
+      "prompt": "항목이 자주 추가되는 목록에서 이벤트 위임을 쓰는 이유는?",
+      "explanation": "위임은 동적 자식마다 리스너를 다시 등록할 필요를 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "이벤트를 네트워크로 보내서",
+        "DOM 개수가 0이 돼서",
+        "버블링이 사라져서",
+        "모든 이벤트가 캡처만 돼서",
+        "상위 리스너에서 자식의 버블링 이벤트를 처리할 수 있어서"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Event bubbling - Learn web development | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling"
+        }
+      ]
+    },
+    {
+      "id": "browser-event-input-change",
+      "points": 2,
+      "prompt": "텍스트 필드의 입력 변화마다 즉시 반응하기 적합한 이벤트는?",
+      "explanation": "input은 사용자의 값 변경 때 발생한다.",
+      "type": "개념 판단",
+      "options": [
+        "input",
+        "load",
+        "DOMContentLoaded",
+        "beforeprint",
+        "resize"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Element: input event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-form-submit-button",
+      "points": 2,
+      "prompt": "form 내부 button에서 type을 생략하면 기본적으로?",
+      "explanation": "form의 button은 기본 type이 submit이다.",
+      "type": "개념 판단",
+      "options": [
+        "button 타입이다.",
+        "submit 버튼이다.",
+        "reset 타입이다.",
+        "disabled 상태다.",
+        "링크다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "<button> HTML button element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"
+        }
+      ]
+    },
+    {
+      "id": "browser-form-disabled-submission",
+      "points": 2,
+      "prompt": "disabled 처리된 폼 컨트롤의 일반적인 제출 동작은?",
+      "explanation": "disabled 컨트롤은 성공한 폼 컨트롤에서 제외된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 빈 문자열로 포함된다.",
+        "항상 true로 포함된다.",
+        "폼 데이터에 포함되지 않는다.",
+        "이름이 두 번 포함된다.",
+        "반드시 오류를 발생시킨다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "disabled HTML attribute - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled"
+        }
+      ]
+    },
+    {
+      "id": "browser-form-label",
+      "points": 2,
+      "prompt": "label의 for 값은 어떤 값과 연결되는가?",
+      "explanation": "명시적 레이블 연결은 for와 id를 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "폼 컨트롤의 name",
+        "폼의 action",
+        "버튼의 type",
+        "폼 컨트롤의 id",
+        "입력의 value"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "<label> HTML label element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label"
+        }
+      ]
+    },
+    {
+      "id": "browser-form-data",
+      "points": 3,
+      "prompt": "FormData 객체의 주요 용도는?",
+      "explanation": "파일을 포함한 폼 필드도 담을 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM 스타일 계산",
+        "캔버스 픽셀 압축",
+        "쿠키 암호화",
+        "이벤트 버블링 중단",
+        "키·값 형태의 폼 데이터를 전송 가능한 형태로 구성"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "FormData - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/FormData"
+        }
+      ]
+    },
+    {
+      "id": "browser-url-search-params",
+      "points": 3,
+      "prompt": "URL의 쿼리 문자열을 조작하기 적합한 API는?",
+      "explanation": "URLSearchParams는 쿼리 키와 값을 다룬다.",
+      "type": "개념 판단",
+      "options": [
+        "URLSearchParams",
+        "DOMTokenList",
+        "MutationObserver",
+        "FileReader",
+        "ResizeObserver"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "URLSearchParams - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
+        }
+      ]
+    },
+    {
+      "id": "browser-url-relative",
+      "points": 3,
+      "prompt": "new URL(\"/a\", \"https://example.com/x\")의 href는?",
+      "explanation": "루트 상대 경로는 기준 URL의 출처에 결합된다.",
+      "type": "개념 판단",
+      "options": [
+        "https://example.com/x/a",
+        "https://example.com/a",
+        "https://a/",
+        "/a",
+        "https://example.com/x"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "URL: URL() constructor - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL/URL"
+        }
+      ]
+    },
+    {
+      "id": "browser-url-hash",
+      "points": 3,
+      "prompt": "URL의 # 이후 fragment는 일반적인 HTTP 요청에서?",
+      "explanation": "fragment는 주로 클라이언트 내 문서 위치를 가리킨다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 쿠키로 전송된다.",
+        "항상 POST 본문이다.",
+        "서버로 보내는 요청 대상에 포함되지 않는다.",
+        "항상 DNS에 전송된다.",
+        "항상 헤더로 변환된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "URL: hash property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL/hash"
+        }
+      ]
+    },
+    {
+      "id": "browser-history-pushstate",
+      "points": 3,
+      "prompt": "history.pushState의 일반적인 효과는?",
+      "explanation": "같은 출처 URL 내 클라이언트 라우팅에 사용할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 서버로 POST한다.",
+        "현재 쿠키를 삭제한다.",
+        "다른 출처로 자유롭게 이동한다.",
+        "새 히스토리 항목을 만들며 문서 전체를 다시 로드하지 않는다.",
+        "모든 탭을 닫는다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "History: pushState() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/History/pushState"
+        }
+      ]
+    },
+    {
+      "id": "browser-history-replacestate",
+      "points": 3,
+      "prompt": "replaceState와 pushState의 차이는?",
+      "explanation": "replaceState는 항목 수를 늘리지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 뒤로 두 번 간다.",
+        "새 창만 만든다.",
+        "URL을 바꿀 수 없다.",
+        "항상 페이지를 다시 로드한다.",
+        "현재 히스토리 항목을 교체한다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "History: replaceState() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState"
+        }
+      ]
+    },
+    {
+      "id": "browser-history-popstate",
+      "points": 3,
+      "prompt": "사용자가 뒤로 가기로 상태 항목을 이동할 때 관찰하는 이벤트는?",
+      "explanation": "히스토리 항목 전환을 popstate로 감지한다.",
+      "type": "개념 판단",
+      "options": [
+        "popstate",
+        "pushstate",
+        "readystatechange만",
+        "DOMContentLoaded만",
+        "submit"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Window: popstate event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/popstate_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-location-assign",
+      "points": 3,
+      "prompt": "location.assign(url)을 호출하면 일반적으로?",
+      "explanation": "assign은 새 문서로 탐색할 수 있는 위치 API다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM 텍스트만 교체한다.",
+        "지정 URL로 문서 탐색을 수행한다.",
+        "히스토리에 어떤 변화도 없다.",
+        "요청을 무조건 취소한다.",
+        "쿠키를 모두 지운다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Location: assign() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Location/assign"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-json-promise",
+      "points": 3,
+      "prompt": "response.json()의 반환값은?",
+      "explanation": "응답 본문 읽기와 파싱은 비동기로 처리된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 즉시 객체",
+        "항상 문자열",
+        "JSON 파싱 결과로 이행하는 Promise",
+        "Response 자체",
+        "XMLDocument"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Response: json() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/json"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-network-failure",
+      "points": 3,
+      "prompt": "fetch가 네트워크 오류로 실패했을 때 Promise는?",
+      "explanation": "HTTP 오류 상태와 달리 네트워크 실패는 Promise 거부다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 status 200으로 이행한다.",
+        "빈 Response로만 이행한다.",
+        "항상 무한 대기한다.",
+        "거부된다.",
+        "자동으로 10번 재시도한다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Using the Fetch API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-abort",
+      "points": 3,
+      "prompt": "진행 중인 fetch를 취소하도록 신호를 전달하는 객체는?",
+      "explanation": "controller.signal을 요청에 전달하고 abort를 호출한다.",
+      "type": "개념 판단",
+      "options": [
+        "MutationObserver",
+        "DOMParser",
+        "URLSearchParams",
+        "IntersectionObserver",
+        "AbortController"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "AbortController - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+        }
+      ]
+    },
+    {
+      "id": "browser-response-body-once",
+      "points": 3,
+      "prompt": "같은 Response의 본문을 json()으로 이미 소비했다. 다시 읽어야 한다면 미리 필요한 작업은?",
+      "explanation": "본문 스트림은 기본적으로 한 번 소비하며 미리 복제할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "소비 전에 response.clone()으로 복제",
+        "json()을 무조건 다시 호출",
+        "ok를 true로 변경",
+        "status를 200으로 변경",
+        "헤더를 삭제"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Response: json() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/json"
+        }
+      ]
+    },
+    {
+      "id": "browser-headers-case",
+      "points": 3,
+      "prompt": "HTTP 헤더 이름의 대소문자에 대한 설명은?",
+      "explanation": "헤더 필드 이름은 case-insensitive다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 대문자만 허용한다.",
+        "대소문자를 구분하지 않는다.",
+        "항상 소문자만 허용한다.",
+        "대소문자마다 다른 의미다.",
+        "숫자만 허용한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Headers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Headers"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-credentials-default",
+      "points": 3,
+      "prompt": "fetch의 credentials 기본값은?",
+      "explanation": "기본적으로 같은 출처 요청에 자격 증명을 포함한다.",
+      "type": "개념 판단",
+      "options": [
+        "include",
+        "omit",
+        "same-origin",
+        "anonymous",
+        "always"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using the Fetch API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        }
+      ]
+    },
+    {
+      "id": "browser-fetch-formdata-boundary",
+      "points": 3,
+      "prompt": "fetch body에 FormData를 보낼 때 Content-Type을 수동으로 고정하면 생길 수 있는 문제는?",
+      "explanation": "브라우저가 boundary를 포함한 헤더를 설정하도록 두는 편이 적절하다.",
+      "type": "개념 판단",
+      "options": [
+        "JSON으로 자동 변환된다.",
+        "모든 파일이 암호화된다.",
+        "항상 GET이 된다.",
+        "브라우저가 정할 multipart boundary와 불일치할 수 있다.",
+        "CORS가 무조건 해제된다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Using the Fetch API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        }
+      ]
+    },
+    {
+      "id": "browser-storage-string",
+      "points": 3,
+      "prompt": "localStorage.setItem(\"x\", 3) 후 getItem(\"x\")의 타입은?",
+      "explanation": "Web Storage는 문자열 값을 저장한다.",
+      "type": "개념 판단",
+      "options": [
+        "number",
+        "boolean",
+        "object",
+        "bigint",
+        "string"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Using the Web Storage API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API"
+        }
+      ]
+    },
+    {
+      "id": "browser-storage-missing",
+      "points": 3,
+      "prompt": "localStorage.getItem으로 없는 키를 읽으면?",
+      "explanation": "없는 키는 null로 반환한다.",
+      "type": "개념 판단",
+      "options": [
+        "null",
+        "undefined",
+        "false",
+        "0",
+        "빈 객체"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Using the Web Storage API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API"
+        }
+      ]
+    },
+    {
+      "id": "browser-storage-event-source",
+      "points": 3,
+      "prompt": "한 탭에서 localStorage를 변경했을 때 storage 이벤트는 일반적으로?",
+      "explanation": "같은 저장 영역을 공유하는 다른 문서가 변경을 통지받는다.",
+      "type": "개념 판단",
+      "options": [
+        "변경한 탭에서만 발생한다.",
+        "변경을 수행한 탭이 아닌 같은 저장 영역의 다른 문서에서 발생한다.",
+        "모든 출처의 탭에 발생한다.",
+        "서버에서 발생한다.",
+        "항상 발생하지 않는다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Window: storage event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-cookie-http-only",
+      "points": 3,
+      "prompt": "HttpOnly 쿠키에 대해 옳은 설명은?",
+      "explanation": "HttpOnly는 스크립트 접근을 제한하는 속성이다.",
+      "type": "개념 판단",
+      "options": [
+        "어떤 요청에도 전송되지 않는다.",
+        "항상 localStorage에 복제된다.",
+        "JavaScript로 읽을 수 없지만 조건에 맞는 요청에는 전송될 수 있다.",
+        "HTTPS가 필요 없어지는 기능이다.",
+        "서버에서도 읽지 못한다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Set-Cookie header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie"
+        }
+      ]
+    },
+    {
+      "id": "browser-cookie-secure",
+      "points": 3,
+      "prompt": "쿠키의 Secure 속성 목적은?",
+      "explanation": "Secure는 전송 연결을 제한하며 HttpOnly와 역할이 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "쿠키 내용을 자동 암호화해서 JS에 제공",
+        "만료일 제거",
+        "모든 출처와 공유",
+        "보안 연결에서 전송하도록 제한",
+        "파일 저장 금지"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Set-Cookie header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie"
+        }
+      ]
+    },
+    {
+      "id": "browser-cookie-samesite",
+      "points": 3,
+      "prompt": "SameSite 속성이 주로 제어하는 것은?",
+      "explanation": "SameSite는 사이트 간 요청의 쿠키 전송 정책이다.",
+      "type": "개념 판단",
+      "options": [
+        "쿠키 문자열 길이",
+        "DNS 조회 순서",
+        "화면 테마",
+        "JSON 직렬화 방식",
+        "교차 사이트 요청에 쿠키를 보낼 조건"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Set-Cookie header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie"
+        }
+      ]
+    },
+    {
+      "id": "browser-cookie-path",
+      "points": 3,
+      "prompt": "쿠키 Path 속성에 대해 옳은 설명은?",
+      "explanation": "Path는 전송 범위 설정이지 강한 접근 제어 수단이 아니다.",
+      "type": "개념 판단",
+      "options": [
+        "전송할 URL 경로 범위를 지정하며 보안 격리 경계로 의존하면 안 된다.",
+        "다른 경로 스크립트의 모든 접근을 절대 차단한다.",
+        "DNS 출처를 바꾼다.",
+        "파일을 생성한다.",
+        "쿠키 내용을 암호화한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Set-Cookie header - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie"
+        }
+      ]
+    },
+    {
+      "id": "browser-cors-purpose",
+      "points": 3,
+      "prompt": "CORS가 브라우저에서 주로 제어하는 것은?",
+      "explanation": "서버의 허용 헤더를 근거로 교차 출처 읽기를 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "서버 인증 전체",
+        "다른 출처 응답을 스크립트가 읽을 수 있는지",
+        "DNS 암호화",
+        "모든 CSRF 방지",
+        "쿠키 삭제"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Cross-Origin Resource Sharing (CORS) - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ]
+    },
+    {
+      "id": "browser-cors-preflight-method",
+      "points": 4,
+      "prompt": "CORS 사전 요청에 사용하는 HTTP 메서드는?",
+      "explanation": "브라우저가 OPTIONS로 실제 요청의 허용 조건을 확인한다.",
+      "type": "개념 판단",
+      "options": [
+        "TRACE",
+        "PATCH",
+        "OPTIONS",
+        "CONNECT",
+        "HEAD만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Cross-Origin Resource Sharing (CORS) - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ]
+    },
+    {
+      "id": "browser-cors-wildcard-credentials",
+      "points": 4,
+      "prompt": "자격 증명을 포함한 CORS 응답에서 Access-Control-Allow-Origin: *만 사용하면?",
+      "explanation": "자격 증명 요청은 명시적 허용 출처 등 조건을 충족해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 인증이 허용된다.",
+        "응답이 자동 익명화된다.",
+        "쿠키가 서버에서 삭제된다.",
+        "자격 증명 응답 읽기를 허용할 수 없다.",
+        "항상 preflight가 생략된다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Cross-Origin Resource Sharing (CORS) - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ]
+    },
+    {
+      "id": "browser-cors-no-cors",
+      "points": 4,
+      "prompt": "fetch의 mode: \"no-cors\"가 CORS 읽기 제한의 해결책이 아닌 이유는?",
+      "explanation": "opaque 응답은 상태·본문 접근이 제한된다.",
+      "type": "개념 판단",
+      "options": [
+        "요청이 항상 JSON이어서",
+        "모든 요청이 금지돼서",
+        "자동으로 같은 출처가 돼서",
+        "서버 코드를 바꿔서",
+        "교차 출처 응답이 불투명해 본문을 읽을 수 없기 때문"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Cross-Origin Resource Sharing (CORS) - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
+        }
+      ]
+    },
+    {
+      "id": "browser-csp-script-src",
+      "points": 4,
+      "prompt": "CSP의 script-src가 제어하는 주요 대상은?",
+      "explanation": "CSP 지시자는 스크립트 실행 정책을 선언한다.",
+      "type": "개념 판단",
+      "options": [
+        "허용되는 스크립트 로드·실행 출처와 조건",
+        "이미지 픽셀 수",
+        "스크롤 속도",
+        "DOM 노드 개수",
+        "CSS 명시도"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Content-Security-Policy: script-src directive - HTTP | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src"
+        }
+      ]
+    },
+    {
+      "id": "browser-sri-integrity",
+      "points": 4,
+      "prompt": "외부 스크립트의 integrity 속성이 검증하는 것은?",
+      "explanation": "SRI는 리소스 내용의 무결성을 확인한다.",
+      "type": "개념 판단",
+      "options": [
+        "사용자 비밀번호",
+        "받은 리소스가 기대한 해시와 일치하는지",
+        "도메인 소유자 이름",
+        "페이지 색상",
+        "함수 반환 타입"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Subresource Integrity - Security | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+        }
+      ]
+    },
+    {
+      "id": "browser-postmessage-origin",
+      "points": 4,
+      "prompt": "다른 창의 postMessage를 수신할 때 우선 검증할 것은?",
+      "explanation": "신뢰하는 발신 출처와 창인지 확인해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "메시지 길이만",
+        "브라우저 창 크기",
+        "event.origin과 필요한 경우 event.source",
+        "탭 제목만",
+        "현재 스크롤 위치"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Window: postMessage() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ]
+    },
+    {
+      "id": "browser-postmessage-target",
+      "points": 4,
+      "prompt": "민감한 메시지를 다른 창에 전송할 때 targetOrigin은?",
+      "explanation": "정확한 출처를 지정해 의도치 않은 수신자 전달을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 *로 고정한다.",
+        "항상 현재 경로만 넣는다.",
+        "항상 빈 배열로 둔다.",
+        "예상하는 정확한 출처로 제한한다.",
+        "아무 숫자나 넣는다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Window: postMessage() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"
+        }
+      ]
+    },
+    {
+      "id": "browser-iframe-sandbox",
+      "points": 4,
+      "prompt": "iframe의 sandbox 속성의 목적은?",
+      "explanation": "sandbox는 스크립트·탐색 등 기능을 제한할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "iframe 크기 자동 최적화",
+        "모든 CORS를 해제",
+        "항상 같은 출처로 변환",
+        "네트워크 압축",
+        "내부 문서에 기능 제한을 적용"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "<iframe> HTML inline frame element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe"
+        }
+      ]
+    },
+    {
+      "id": "browser-mixed-content",
+      "points": 4,
+      "prompt": "HTTPS 페이지에서 HTTP 스크립트를 로드하는 상황의 문제는?",
+      "explanation": "안전하지 않은 실행 리소스는 보안 페이지를 훼손할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "안전하지 않은 혼합 콘텐츠로 차단될 수 있다.",
+        "항상 자동으로 안전해진다.",
+        "동일 출처 검사가 사라진다.",
+        "쿠키가 반드시 암호화된다.",
+        "스크립트가 CSS로 바뀐다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Mixed content - Security | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content"
+        }
+      ]
+    },
+    {
+      "id": "browser-secure-context-api",
+      "points": 4,
+      "prompt": "Clipboard 등 일부 강력한 API 사용 시 필요한 조건으로 흔한 것은?",
+      "explanation": "API별로 HTTPS 등 보안 조건과 사용자 권한을 요구할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 HTTP만 사용",
+        "보안 컨텍스트와 권한·사용자 활성화 조건",
+        "모든 쿠키 삭제",
+        "파일명 .txt",
+        "서버 메모리 1GB"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Secure contexts - Security | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts"
+        }
+      ]
+    },
+    {
+      "id": "browser-eventloop-microtasks",
+      "points": 4,
+      "prompt": "현재 작업이 끝나면 Promise 반응과 다음 타이머 작업 중 일반적으로 먼저 처리되는 것은?",
+      "explanation": "마이크로태스크 체크포인트는 다음 작업 전에 큐를 처리한다.",
+      "type": "개념 판단",
+      "options": [
+        "다음 타이머 작업",
+        "DNS 재조회",
+        "마이크로태스크에 예약된 Promise 반응",
+        "항상 렌더링 완료",
+        "항상 사용자 클릭"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using microtasks in JavaScript with queueMicrotask() - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide"
+        }
+      ]
+    },
+    {
+      "id": "browser-microtask-starvation",
+      "points": 4,
+      "prompt": "마이크로태스크에서 끊임없이 새 마이크로태스크를 추가하면?",
+      "explanation": "마이크로태스크 큐를 비우지 못하면 다음 단계로 넘어가지 못한다.",
+      "type": "개념 판단",
+      "options": [
+        "자동으로 별도 워커로 이동한다.",
+        "모든 콜백이 삭제된다.",
+        "항상 1초마다 양보한다.",
+        "렌더링과 다음 작업이 지연될 수 있다.",
+        "타이머가 더 빨리 실행된다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Using microtasks in JavaScript with queueMicrotask() - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide"
+        }
+      ]
+    },
+    {
+      "id": "browser-settimeout-minimum",
+      "points": 4,
+      "prompt": "setTimeout(fn, 0)이 뜻하는 것은?",
+      "explanation": "실행 시점은 현재 작업과 이벤트 루프 상황에 영향을 받는다.",
+      "type": "개념 판단",
+      "options": [
+        "현재 호출 스택 중간에 즉시 실행",
+        "정확히 0ms 후 완료",
+        "브라우저 렌더링 차단 해제 보장",
+        "새 스레드에서 실행",
+        "즉시 실행 보장이 아니라 이후 작업으로 예약"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Window: setTimeout() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout"
+        }
+      ]
+    },
+    {
+      "id": "browser-raf-timing",
+      "points": 4,
+      "prompt": "requestAnimationFrame 콜백을 쓰는 주요 이유는?",
+      "explanation": "rAF는 브라우저의 렌더링 주기에 맞춰 호출된다.",
+      "type": "개념 판단",
+      "options": [
+        "다음 화면 갱신 시점에 맞춰 시각적 변경을 예약",
+        "백그라운드에서 정확한 1ms 주기 보장",
+        "네트워크 순서 고정",
+        "별도 DOM 복제",
+        "항상 서버에서 실행"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Window: requestAnimationFrame() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+        }
+      ]
+    },
+    {
+      "id": "browser-raf-background",
+      "points": 4,
+      "prompt": "백그라운드 탭의 requestAnimationFrame에 대한 적절한 기대는?",
+      "explanation": "브라우저는 비활성 탭의 작업을 절약한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 60fps를 보장한다.",
+        "일시 중단되거나 호출 빈도가 제한될 수 있다.",
+        "항상 120fps다.",
+        "타이머보다 무조건 빠르다.",
+        "창을 자동 활성화한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Window: requestAnimationFrame() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+        }
+      ]
+    },
+    {
+      "id": "browser-page-visibility",
+      "points": 4,
+      "prompt": "탭의 표시 상태를 감지하는 데 사용하는 조합은?",
+      "explanation": "Page Visibility API는 문서가 표시되는 상태를 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "resize와 window.innerWidth",
+        "click과 event.target",
+        "visibilitychange와 document.visibilityState",
+        "submit과 FormData",
+        "scroll과 scrollTop"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Page Visibility API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
+        }
+      ]
+    },
+    {
+      "id": "browser-domcontentloaded",
+      "points": 4,
+      "prompt": "DOMContentLoaded가 일반적으로 의미하는 것은?",
+      "explanation": "모든 종속 리소스의 로드를 기다리는 load와 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 이미지 로드 완료 보장",
+        "모든 미래 fetch 완료",
+        "모든 폰트 적용 완료 보장",
+        "HTML 파싱과 지연 스크립트 처리가 끝난 시점",
+        "사용자가 첫 클릭한 시점"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Document: DOMContentLoaded event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-window-load",
+      "points": 4,
+      "prompt": "window의 load 이벤트는 DOMContentLoaded와 비교하면?",
+      "explanation": "load는 문서와 종속 리소스 로드 완료에 관련된다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 먼저 발생한다.",
+        "HTML 파싱 전에 발생한다.",
+        "클릭할 때마다 발생한다.",
+        "오직 워커에서 발생한다.",
+        "이미지 등 종속 리소스 로드도 기다린다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Window: load event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-script-async-order",
+      "points": 4,
+      "prompt": "의존 관계가 있는 두 외부 클래식 스크립트에 async를 붙일 때 위험은?",
+      "explanation": "async는 다운로드가 준비된 시점에 실행될 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "문서의 선언 순서대로 실행됨을 보장하지 않는다.",
+        "항상 순서가 반대다.",
+        "다운로드가 금지된다.",
+        "항상 DOM 파싱 후만 실행한다.",
+        "서버에서 합쳐진다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "<script> HTML script element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+        }
+      ]
+    },
+    {
+      "id": "browser-module-default-defer",
+      "points": 4,
+      "prompt": "일반적인 parser-inserted type=\"module\" 스크립트의 기본 실행 성질은?",
+      "explanation": "모듈 스크립트는 파싱 완료 이후 실행되는 기본 동작을 가진다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 파싱을 즉시 중단한다.",
+        "기본적으로 지연 실행 성질을 가진다.",
+        "반드시 inline만 가능하다.",
+        "전역 var만 허용한다.",
+        "항상 async 속성과 같다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "<script> HTML script element - HTML | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+        }
+      ]
+    },
+    {
+      "id": "browser-mutation-observer",
+      "points": 4,
+      "prompt": "DOM 노드·속성 변화를 관찰하는 API는?",
+      "explanation": "MutationObserver는 DOM 변경 기록을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "ResizeObserver",
+        "IntersectionObserver",
+        "MutationObserver",
+        "PerformanceObserver",
+        "AbortController"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "MutationObserver - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"
+        }
+      ]
+    },
+    {
+      "id": "browser-resize-observer",
+      "points": 4,
+      "prompt": "요소 자체의 크기 변화를 관찰하려면?",
+      "explanation": "ResizeObserver는 대상 요소 박스 크기를 관찰한다.",
+      "type": "개념 판단",
+      "options": [
+        "MutationObserver만",
+        "window scroll만",
+        "History API",
+        "ResizeObserver",
+        "URLSearchParams"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "ResizeObserver - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver"
+        }
+      ]
+    },
+    {
+      "id": "browser-intersection-observer",
+      "points": 4,
+      "prompt": "요소가 루트 영역과 교차하는 정도를 비동기로 관찰하려면?",
+      "explanation": "교차 상태 변화로 무한 스크롤·지연 로딩 등을 구현한다.",
+      "type": "개념 판단",
+      "options": [
+        "MutationObserver",
+        "FileReader",
+        "DOMParser",
+        "BroadcastChannel",
+        "IntersectionObserver"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Intersection Observer API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+        }
+      ]
+    },
+    {
+      "id": "browser-observer-disconnect",
+      "points": 5,
+      "prompt": "더 이상 필요 없는 Observer를 정리할 때 사용하는 메서드는?",
+      "explanation": "Observer의 관찰을 중단해 불필요한 작업을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "disconnect()",
+        "preventDefault()",
+        "abortAllEvents()",
+        "removeWindow()",
+        "closeDocument()"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "MutationObserver - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"
+        }
+      ]
+    },
+    {
+      "id": "browser-worker-dom",
+      "points": 5,
+      "prompt": "일반 Dedicated Worker에서 직접 사용할 수 없는 것은?",
+      "explanation": "Worker는 페이지 DOM에 직접 접근하지 못한다.",
+      "type": "개념 판단",
+      "options": [
+        "메시지 수신",
+        "페이지의 document DOM 조작",
+        "일부 네트워크 API",
+        "JavaScript 계산",
+        "postMessage"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Using Web Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-worker-message",
+      "points": 5,
+      "prompt": "메인 스레드와 Worker 사이의 기본 통신 방식은?",
+      "explanation": "메시지로 데이터를 교환하며 일반적으로 구조화 복제를 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "공유 document 변수",
+        "동일 call stack",
+        "postMessage와 message 이벤트",
+        "CSS selector 호출",
+        "쿠키 변경만"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using Web Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-transfer-arraybuffer",
+      "points": 5,
+      "prompt": "ArrayBuffer를 transfer list에 넣어 Worker로 전달하면 일반적으로 송신 측 버퍼는?",
+      "explanation": "소유권 이전은 일반 복사와 다른 동작이다.",
+      "type": "개념 판단",
+      "options": [
+        "내용이 두 배가 된다.",
+        "항상 공유 메모리가 된다.",
+        "문자열이 된다.",
+        "분리되어 더 이상 기존 데이터에 접근할 수 없다.",
+        "DOM 노드가 된다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Transferable objects - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Transferable_objects"
+        }
+      ]
+    },
+    {
+      "id": "browser-structured-clone-function",
+      "points": 5,
+      "prompt": "structuredClone으로 일반 함수를 복제하려 하면?",
+      "explanation": "함수는 구조화 복제 대상이 아니다.",
+      "type": "개념 판단",
+      "options": [
+        "함수 코드가 자동 실행된다.",
+        "항상 같은 함수를 반환한다.",
+        "문자열로 변환한다.",
+        "undefined만 반환한다.",
+        "DataCloneError가 발생한다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "The structured clone algorithm - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm"
+        }
+      ]
+    },
+    {
+      "id": "browser-structured-clone-cycle",
+      "points": 5,
+      "prompt": "structuredClone은 순환 참조 객체를 어떻게 다룰 수 있는가?",
+      "explanation": "구조화 복제는 순환 참조를 지원한다.",
+      "type": "개념 판단",
+      "options": [
+        "순환 관계를 보존해 복제할 수 있다.",
+        "항상 JSON 문자열로 바꾼다.",
+        "항상 TypeError다.",
+        "순환 속성을 무조건 삭제한다.",
+        "원본만 반환한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "The structured clone algorithm - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm"
+        }
+      ]
+    },
+    {
+      "id": "browser-indexeddb-purpose",
+      "points": 5,
+      "prompt": "큰 구조화 데이터를 비동기 트랜잭션으로 저장하려 할 때 적절한 API는?",
+      "explanation": "IndexedDB는 클라이언트 측 구조화 데이터 저장소다.",
+      "type": "개념 판단",
+      "options": [
+        "document.cookie",
+        "IndexedDB",
+        "location.hash",
+        "window.name만",
+        "CSSOM"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Using IndexedDB - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB"
+        }
+      ]
+    },
+    {
+      "id": "browser-indexeddb-transaction",
+      "points": 5,
+      "prompt": "IndexedDB에서 관련 쓰기를 하나의 트랜잭션에 묶는 이유는?",
+      "explanation": "트랜잭션은 관련 저장 작업의 원자성을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 네트워크를 사용해서",
+        "JSON만 저장해서",
+        "작업을 함께 완료하거나 취소할 수 있어서",
+        "DOM 정렬을 위해서",
+        "쿠키를 만들기 위해서"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using IndexedDB - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB"
+        }
+      ]
+    },
+    {
+      "id": "browser-cache-api",
+      "points": 5,
+      "prompt": "Cache API가 주로 저장하는 것은?",
+      "explanation": "네트워크 요청·응답을 명시적으로 저장하고 조회할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "DOM 노드만",
+        "React 상태만",
+        "쿠키 암호만",
+        "Request와 Response 쌍",
+        "CSS 선택자만"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Cache - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+        }
+      ]
+    },
+    {
+      "id": "browser-service-worker-scope",
+      "points": 5,
+      "prompt": "서비스 워커의 scope가 정하는 것은?",
+      "explanation": "서비스 워커 등록 범위가 제어 대상 클라이언트를 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "워커의 변수 블록 범위",
+        "CPU 코어 개수",
+        "쿠키 길이",
+        "이미지 색상 수",
+        "제어할 수 있는 페이지 URL 범위"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Using Service Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-service-worker-dom",
+      "points": 5,
+      "prompt": "서비스 워커에서 document.querySelector로 페이지를 수정할 수 있는가?",
+      "explanation": "서비스 워커도 DOM에 직접 접근하지 않는 워커 환경이다.",
+      "type": "개념 판단",
+      "options": [
+        "직접 접근할 수 없다.",
+        "항상 가능하다.",
+        "install에서만 가능하다.",
+        "fetch에서만 가능하다.",
+        "HTTPS면 항상 가능하다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Using Service Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-service-worker-fetch",
+      "points": 5,
+      "prompt": "서비스 워커가 요청에 캐시 응답을 제공하는 데 사용하는 이벤트는?",
+      "explanation": "fetch 이벤트에서 respondWith로 응답을 제공할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "DOMContentLoaded",
+        "fetch",
+        "click",
+        "resize",
+        "input"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Using Service Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-service-worker-waituntil",
+      "points": 5,
+      "prompt": "서비스 워커 이벤트의 waitUntil(promise)을 쓰는 목적은?",
+      "explanation": "설치·활성화 등의 비동기 처리가 완료되도록 수명을 관리한다.",
+      "type": "개념 판단",
+      "options": [
+        "메인 DOM을 멈춤",
+        "동기 네트워크로 변경",
+        "비동기 작업이 끝날 때까지 이벤트 수명을 연장",
+        "쿠키 만료를 영구화",
+        "모든 탭 닫기"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using Service Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-service-worker-update",
+      "points": 5,
+      "prompt": "새 서비스 워커가 설치됐는데 대기 상태인 일반적인 이유는?",
+      "explanation": "기본 수명주기는 기존 클라이언트가 종료될 때까지 새 활성화를 기다릴 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "코드에 반드시 문법 오류가 있어서",
+        "HTTPS를 사용해서",
+        "캐시가 반드시 비어 있어서",
+        "기존 워커가 제어하는 클라이언트가 남아 있어서",
+        "HTML에 img가 있어서"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Using Service Workers - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers"
+        }
+      ]
+    },
+    {
+      "id": "browser-broadcast-channel",
+      "points": 5,
+      "prompt": "같은 출처의 여러 탭 사이에서 메시지를 주고받는 API는?",
+      "explanation": "이름이 같은 채널의 문맥들에 메시지를 전달한다.",
+      "type": "개념 판단",
+      "options": [
+        "ResizeObserver",
+        "DOMParser",
+        "URLSearchParams",
+        "FileReader",
+        "BroadcastChannel"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Broadcast Channel API - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
+        }
+      ]
+    },
+    {
+      "id": "browser-websocket-duplex",
+      "points": 5,
+      "prompt": "WebSocket의 대표적인 통신 성질은?",
+      "explanation": "클라이언트와 서버가 연결 위에서 메시지를 주고받는다.",
+      "type": "개념 판단",
+      "options": [
+        "연결을 유지하는 양방향 통신",
+        "서버에서 클라이언트로만 가능",
+        "항상 요청마다 새 문서 로드",
+        "오직 파일 다운로드",
+        "UDP 브로드캐스트만"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "WebSocket - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket"
+        }
+      ]
+    },
+    {
+      "id": "browser-eventsource-direction",
+      "points": 5,
+      "prompt": "EventSource의 서버 전송 이벤트가 기본 제공하는 방향은?",
+      "explanation": "SSE는 서버의 이벤트 스트림을 수신하는 방식이다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 양방향 동등 채널",
+        "서버에서 클라이언트로 전달",
+        "클라이언트끼리 직접 연결",
+        "브라우저에서 DNS 서버로만",
+        "오직 로컬 파일 간"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "EventSource - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventSource"
+        }
+      ]
+    },
+    {
+      "id": "browser-beacon-use",
+      "points": 5,
+      "prompt": "페이지를 떠날 때 작은 분석 데이터를 보내는 용도로 설계된 API는?",
+      "explanation": "beacon은 페이지 종료 상황의 비동기 전송에 적합하게 설계되었다.",
+      "type": "개념 판단",
+      "options": [
+        "document.write",
+        "window.alert",
+        "navigator.sendBeacon",
+        "requestAnimationFrame",
+        "history.back"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Navigator: sendBeacon() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon"
+        }
+      ]
+    },
+    {
+      "id": "browser-bfcache-pageshow",
+      "points": 5,
+      "prompt": "뒤로 가기 캐시에서 복원됐는지 확인할 수 있는 이벤트 속성은?",
+      "explanation": "persisted는 지속된 페이지 상태의 복원을 구분하는 데 쓰인다.",
+      "type": "개념 판단",
+      "options": [
+        "click 이벤트의 button",
+        "resize 이벤트의 width",
+        "input 이벤트의 data만",
+        "pageshow 이벤트의 persisted",
+        "load 이벤트의 status"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Window: pageshow event - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event"
+        }
+      ]
+    },
+    {
+      "id": "browser-passive-preventdefault",
+      "points": 5,
+      "prompt": "passive: true로 등록한 리스너에서 preventDefault를 호출하면?",
+      "explanation": "passive는 기본 동작을 취소하지 않겠다는 약속이다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 스크롤이 항상 멈춘다.",
+        "이벤트가 무조건 삭제된다.",
+        "함수가 항상 두 번 실행된다.",
+        "서버 요청이 취소된다.",
+        "기본 동작을 취소할 수 없다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Event: preventDefault() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"
+        }
+      ]
+    },
+    {
+      "id": "browser-shadow-retargeting",
+      "points": 5,
+      "prompt": "Shadow DOM 내부에서 시작된 이벤트가 외부에 전달될 때 target이 host로 보일 수 있는 이유는?",
+      "explanation": "경계를 넘어 전달할 때 외부에 노출되는 대상을 조정한다.",
+      "type": "개념 판단",
+      "options": [
+        "캡슐화를 위한 이벤트 retargeting",
+        "DOM이 복제되어서",
+        "쿠키가 바뀌어서",
+        "HTTP 리다이렉트 때문에",
+        "자식이 모두 삭제되어서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "DOM Standard — Retargeting",
+          "url": "https://dom.spec.whatwg.org/#retarget"
+        }
+      ]
+    },
+    {
+      "id": "browser-shadow-composed",
+      "points": 5,
+      "prompt": "커스텀 이벤트가 Shadow DOM 경계를 넘어 전달되도록 하는 관련 옵션은?",
+      "explanation": "composed는 shadow 경계를 통과할 수 있는지를 정한다.",
+      "type": "개념 판단",
+      "options": [
+        "passive: true",
+        "composed: true",
+        "once: true",
+        "cancelable: false만",
+        "detail: null만"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Event: composed property - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Event/composed"
+        }
+      ]
+    },
+    {
+      "id": "browser-dialog-showmodal",
+      "points": 5,
+      "prompt": "dialog.showModal()이 일반 show()와 다른 대표적 동작은?",
+      "explanation": "모달 대화상자는 top layer에서 표시되며 바깥 콘텐츠를 비활성화한다.",
+      "type": "개념 판단",
+      "options": [
+        "새 브라우저 탭을 연다.",
+        "항상 페이지를 새로고침한다.",
+        "모달로 열고 바깥 문서의 상호작용을 제한한다.",
+        "모든 스타일을 없앤다.",
+        "iframe을 생성한다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "HTMLDialogElement: showModal() method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal"
+        }
+      ]
+    },
+    {
+      "id": "browser-blob-object-url",
+      "points": 5,
+      "prompt": "URL.createObjectURL로 만든 임시 URL이 더 필요 없을 때 할 일은?",
+      "explanation": "객체 URL에 연결된 자원을 해제해 불필요한 유지 비용을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "쿠키를 모두 지운다.",
+        "window.close를 호출한다.",
+        "항상 fetch DELETE를 보낸다.",
+        "URL.revokeObjectURL로 해제한다.",
+        "localStorage.clear만 호출한다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "URL: revokeObjectURL() static method - Web APIs | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL"
+        }
+      ]
+    },
+    {
+      "id": "browser-layout-read",
+      "points": 5,
+      "prompt": "getBoundingClientRect()가 반환하는 좌표의 기본 기준은?",
+      "explanation": "스크롤에 따라 뷰포트 상대 좌표가 변할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 문서 최상단",
+        "부모 padding만",
+        "화면 물리 픽셀만",
+        "서버 좌표",
+        "뷰포트"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "web.dev — Avoid large, complex layouts and layout thrashing",
+          "url": "https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing?hl=en"
+        }
+      ]
+    }
+  ]
+}

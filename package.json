@@ -8,11 +8,20 @@
     "start": "next start",
     "check:questions": "node scripts/check-questions.mjs",
     "check:countdown": "node scripts/check-countdown.mjs",
-    "check:results": "node scripts/check-results.mjs"
+    "check:results": "node scripts/check-results.mjs",
+    "predev": "npm run check:questions",
+    "prebuild": "npm run check:questions",
+    "check:question-schema": "node scripts/check-question-schema.mjs",
+    "precheck:results": "npm run check:questions",
+    "check": "npm run check:questions && npm run check:question-schema && node scripts/check-exam.mjs && node scripts/check-results.mjs && npm run check:countdown",
+    "check:exam": "npm run check:questions && node scripts/check-exam.mjs"
   },
   "dependencies": {
     "next": "16.3.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0"
   }
 }

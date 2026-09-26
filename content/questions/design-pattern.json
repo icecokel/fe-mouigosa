@@ -1,0 +1,2133 @@
+{
+  "category": "Design Pattern",
+  "questions": [
+    {
+      "id": "design-pattern-singleton-purpose",
+      "points": 2,
+      "prompt": "한 실행 문맥에서 인스턴스 하나를 공유하도록 생성·접근을 관리하는 패턴은?",
+      "explanation": "Singleton은 인스턴스 수와 공유 접근을 제한한다.",
+      "type": "개념 판단",
+      "options": [
+        "Singleton",
+        "Adapter",
+        "Strategy",
+        "Visitor",
+        "Iterator"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Singleton",
+          "url": "https://refactoring.guru/design-patterns/singleton"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-factory-purpose",
+      "points": 2,
+      "prompt": "호출자가 구체 클래스 생성 방식을 몰라도 객체를 얻도록 생성 로직을 감추는 방식은?",
+      "explanation": "Factory는 생성 책임을 호출부에서 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Observer",
+        "Factory",
+        "Memento",
+        "Decorator",
+        "Iterator"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Factory Method",
+          "url": "https://refactoring.guru/design-patterns/factory-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-abstract-factory-purpose",
+      "points": 2,
+      "prompt": "같은 제품군의 버튼·입력창을 서로 맞는 조합으로 생성하려 한다. 적절한 패턴은?",
+      "explanation": "관련 객체들의 일관된 제품군을 생성한다.",
+      "type": "개념 판단",
+      "options": [
+        "Command",
+        "State",
+        "Abstract Factory",
+        "Proxy",
+        "Iterator"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Abstract Factory",
+          "url": "https://refactoring.guru/design-patterns/abstract-factory"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-builder-purpose",
+      "points": 2,
+      "prompt": "선택 옵션이 많은 복잡한 객체를 단계적으로 구성하려 한다. 적절한 패턴은?",
+      "explanation": "Builder는 구성 단계를 나누어 복잡한 생성 과정을 표현한다.",
+      "type": "개념 판단",
+      "options": [
+        "Observer",
+        "Adapter",
+        "Flyweight",
+        "Builder",
+        "Visitor"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Builder",
+          "url": "https://refactoring.guru/design-patterns/builder"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-prototype-purpose",
+      "points": 2,
+      "prompt": "미리 구성된 객체를 복제해 새 객체를 만드는 패턴은?",
+      "explanation": "Prototype은 기존 객체를 바탕으로 새 인스턴스를 만든다.",
+      "type": "개념 판단",
+      "options": [
+        "Mediator",
+        "Strategy",
+        "Command",
+        "Facade",
+        "Prototype"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Prototype",
+          "url": "https://refactoring.guru/design-patterns/prototype"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-adapter-purpose",
+      "points": 2,
+      "prompt": "기존 라이브러리의 인터페이스를 앱이 기대하는 인터페이스로 변환하는 패턴은?",
+      "explanation": "Adapter는 호환되지 않는 인터페이스 사이를 연결한다.",
+      "type": "개념 판단",
+      "options": [
+        "Adapter",
+        "Observer",
+        "Singleton",
+        "Memento",
+        "State"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Adapter",
+          "url": "https://refactoring.guru/design-patterns/adapter"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-facade-purpose",
+      "points": 2,
+      "prompt": "여러 하위 시스템 호출을 단순한 상위 API로 묶으려 한다. 적절한 패턴은?",
+      "explanation": "Facade는 복잡한 서브시스템에 단순한 진입점을 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "Iterator",
+        "Facade",
+        "Prototype",
+        "Strategy",
+        "Flyweight"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Facade",
+          "url": "https://refactoring.guru/design-patterns/facade"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-decorator-purpose",
+      "points": 2,
+      "prompt": "원래 인터페이스를 유지하며 객체를 감싸 기능을 추가하는 패턴은?",
+      "explanation": "Decorator는 래핑과 합성으로 기능을 확장한다.",
+      "type": "개념 판단",
+      "options": [
+        "Memento",
+        "State",
+        "Decorator",
+        "Abstract Factory",
+        "Iterator"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Decorator",
+          "url": "https://refactoring.guru/design-patterns/decorator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-proxy-purpose",
+      "points": 2,
+      "prompt": "실제 객체에 대한 접근·지연 초기화·캐시 등을 대신 제어하는 패턴은?",
+      "explanation": "Proxy는 대리 객체를 통해 실제 대상 접근을 관리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Builder",
+        "Visitor",
+        "Observer",
+        "Proxy",
+        "Prototype"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Proxy",
+          "url": "https://refactoring.guru/design-patterns/proxy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-composite-purpose",
+      "points": 2,
+      "prompt": "단일 항목과 항목 집합을 같은 인터페이스로 처리하는 트리 구조 패턴은?",
+      "explanation": "Composite는 부분과 전체를 일관되게 다룬다.",
+      "type": "개념 판단",
+      "options": [
+        "Strategy",
+        "Singleton",
+        "Adapter",
+        "Command",
+        "Composite"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Composite",
+          "url": "https://refactoring.guru/design-patterns/composite"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-flyweight-purpose",
+      "points": 2,
+      "prompt": "대량의 비슷한 객체에서 공유 가능한 불변 데이터를 재사용해 메모리를 줄이는 패턴은?",
+      "explanation": "Flyweight는 공통 내부 상태를 공유한다.",
+      "type": "개념 판단",
+      "options": [
+        "Flyweight",
+        "Mediator",
+        "State",
+        "Memento",
+        "Builder"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Flyweight",
+          "url": "https://refactoring.guru/design-patterns/flyweight"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-bridge-purpose",
+      "points": 2,
+      "prompt": "추상 기능과 구현 계층이 독립적으로 확장되도록 분리하는 패턴은?",
+      "explanation": "Bridge는 추상화와 구현의 두 변화 축을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Observer",
+        "Bridge",
+        "Command",
+        "Singleton",
+        "Iterator"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Bridge",
+          "url": "https://refactoring.guru/design-patterns/bridge"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-strategy-purpose",
+      "points": 2,
+      "prompt": "여러 알고리즘을 공통 계약 뒤에서 교체하려 한다. 적절한 패턴은?",
+      "explanation": "Strategy는 행동 알고리즘을 분리해 선택·교체한다.",
+      "type": "개념 판단",
+      "options": [
+        "Composite",
+        "Prototype",
+        "Strategy",
+        "Memento",
+        "Facade"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-observer-purpose",
+      "points": 2,
+      "prompt": "한 객체의 변화에 구독한 여러 객체가 통지받는 패턴은?",
+      "explanation": "Observer는 일대다 변경 통지를 제공한다.",
+      "type": "개념 판단",
+      "options": [
+        "Builder",
+        "Adapter",
+        "Flyweight",
+        "Observer",
+        "Prototype"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Observer",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-pubsub-purpose",
+      "points": 2,
+      "prompt": "발행자와 수신자가 서로를 직접 몰라도 주제별 메시지를 주고받게 하는 구조는?",
+      "explanation": "중간 메시지 채널이 발행자와 구독자를 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Builder",
+        "Prototype",
+        "Template Method",
+        "Composite",
+        "Publish–Subscribe"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Publisher-Subscriber Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mediator-purpose",
+      "points": 2,
+      "prompt": "여러 객체의 복잡한 상호작용을 중앙 조정자에 모으는 패턴은?",
+      "explanation": "Mediator는 참여자끼리의 직접 결합을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "Mediator",
+        "Flyweight",
+        "Iterator",
+        "Prototype",
+        "Decorator"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Mediator",
+          "url": "https://refactoring.guru/design-patterns/mediator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-command-purpose",
+      "points": 2,
+      "prompt": "작업 요청을 객체로 만들어 실행·대기열·기록을 다루는 패턴은?",
+      "explanation": "Command는 요청 자체를 데이터와 행동으로 캡슐화한다.",
+      "type": "개념 판단",
+      "options": [
+        "Factory",
+        "Command",
+        "Bridge",
+        "Flyweight",
+        "Observer"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Command",
+          "url": "https://refactoring.guru/design-patterns/command"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-state-purpose",
+      "points": 2,
+      "prompt": "현재 상태에 따라 객체의 행동이 바뀌는 로직을 상태 객체로 분리하는 패턴은?",
+      "explanation": "State는 상태별 행동과 전환을 구조화한다.",
+      "type": "개념 판단",
+      "options": [
+        "Adapter",
+        "Builder",
+        "State",
+        "Prototype",
+        "Flyweight"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "State",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-chain-purpose",
+      "points": 2,
+      "prompt": "요청을 여러 처리자에게 차례로 전달하고 처리 여부를 맡기는 패턴은?",
+      "explanation": "책임 연쇄는 처리 순서와 위임을 표현한다.",
+      "type": "개념 판단",
+      "options": [
+        "Abstract Factory",
+        "Memento",
+        "Prototype",
+        "Chain of Responsibility",
+        "Composite"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Chain of Responsibility",
+          "url": "https://refactoring.guru/design-patterns/chain-of-responsibility"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-template-method-purpose",
+      "points": 2,
+      "prompt": "전체 알고리즘의 골격을 고정하고 일부 단계를 하위 구현에 맡기는 패턴은?",
+      "explanation": "템플릿 메서드는 공통 절차와 변동 단계를 나눈다.",
+      "type": "개념 판단",
+      "options": [
+        "Proxy",
+        "Observer",
+        "Flyweight",
+        "Adapter",
+        "Template Method"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Template Method",
+          "url": "https://refactoring.guru/design-patterns/template-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-iterator-purpose",
+      "points": 2,
+      "prompt": "컬렉션 내부 표현을 노출하지 않고 원소를 순회하는 패턴은?",
+      "explanation": "Iterator는 순회 접근 방식과 내부 저장 구조를 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Iterator",
+        "Builder",
+        "Facade",
+        "Singleton",
+        "Decorator"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Iterator",
+          "url": "https://refactoring.guru/design-patterns/iterator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-memento-purpose",
+      "points": 2,
+      "prompt": "객체 내부 상태의 스냅샷을 보관해 복원하는 패턴은?",
+      "explanation": "Memento는 캡슐화를 고려한 상태 저장·복원을 다룬다.",
+      "type": "개념 판단",
+      "options": [
+        "Adapter",
+        "Memento",
+        "Strategy",
+        "Bridge",
+        "Observer"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Memento",
+          "url": "https://refactoring.guru/design-patterns/memento"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-visitor-purpose",
+      "points": 2,
+      "prompt": "안정적인 객체 구조에 여러 연산을 외부 방문자로 추가하는 패턴은?",
+      "explanation": "Visitor는 구조와 그 위의 연산을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Singleton",
+        "Builder",
+        "Visitor",
+        "Proxy",
+        "Mediator"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Visitor",
+          "url": "https://refactoring.guru/design-patterns/visitor"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-module-purpose",
+      "points": 2,
+      "prompt": "구현 세부를 숨기고 명시적인 공개 API만 내보내는 구성 방식은?",
+      "explanation": "모듈 경계는 내부 구현과 외부 계약을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Memento",
+        "Flyweight",
+        "Command",
+        "Module",
+        "Bridge"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "JavaScript modules - JavaScript | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-di-purpose",
+      "points": 2,
+      "prompt": "컴포넌트가 내부에서 의존 객체를 만들지 않고 밖에서 전달받는 방식은?",
+      "explanation": "의존성 주입은 생성·선택과 사용 책임을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Singleton만",
+        "상태 직접 변경",
+        "전역 변수 강제 사용",
+        "DOM 이벤트 위임",
+        "Dependency Injection"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Inversion of Control Containers and the Dependency Injection pattern",
+          "url": "https://martinfowler.com/articles/injection.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-singleton-test",
+      "points": 3,
+      "prompt": "전역 Singleton 서비스가 테스트를 서로 간섭하게 만드는 대표 원인은?",
+      "explanation": "공유 상태의 수명과 초기화가 테스트 격리에 영향을 준다.",
+      "type": "개념 판단",
+      "options": [
+        "가변 상태가 테스트 사이에 공유된다.",
+        "항상 클래스가 두 개라서",
+        "생성자가 없어서",
+        "문자열만 저장해서",
+        "함수가 너무 짧아서"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Singleton",
+          "url": "https://refactoring.guru/design-patterns/singleton"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-singleton-ssr",
+      "points": 3,
+      "prompt": "SSR 서버의 전역 Singleton에 사용자별 세션 데이터를 넣을 때 위험은?",
+      "explanation": "프로세스 공유 인스턴스와 요청별 상태의 수명은 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 브라우저별로 자동 분리된다.",
+        "요청 사이에 사용자 데이터가 섞일 수 있다.",
+        "매 요청 프로세스가 반드시 새로 생긴다.",
+        "데이터가 자동 암호화된다.",
+        "서버에서는 객체가 불변이다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Singleton",
+          "url": "https://refactoring.guru/design-patterns/singleton"
+        },
+        {
+          "title": "Redux — Per-request safe store creation",
+          "url": "https://redux.js.org/usage/nextjs"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-factory-dependency",
+      "points": 3,
+      "prompt": "Factory를 사용하는 호출부가 알 필요가 줄어드는 것은?",
+      "explanation": "호출부는 공통 인터페이스를 통해 생성 결과를 사용한다.",
+      "type": "개념 판단",
+      "options": [
+        "자신이 사용할 공통 계약",
+        "입력 데이터의 의미",
+        "구체 구현의 생성 절차",
+        "반환 객체의 사용법",
+        "오류 처리 정책 전체"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Factory Method",
+          "url": "https://refactoring.guru/design-patterns/factory-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-factory-overuse",
+      "points": 3,
+      "prompt": "구현체가 하나이고 생성이 한 줄인 코드에 복잡한 Factory 계층을 도입할 때 고려할 것은?",
+      "explanation": "실제 변화 지점이 있을 때 추상화가 가치를 가진다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 클래스가 많을수록 빠르다.",
+        "항상 테스트가 필요 없다.",
+        "반드시 모든 함수가 Factory여야 한다.",
+        "추상화 비용이 실제 이득보다 클 수 있다.",
+        "객체 생성이 불가능해진다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Factory Method",
+          "url": "https://refactoring.guru/design-patterns/factory-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-abstract-factory-family",
+      "points": 3,
+      "prompt": "다크 테마 버튼과 다크 테마 입력창을 함께 만들 때 Abstract Factory의 이점은?",
+      "explanation": "관련 제품을 같은 팩토리에서 생성하도록 묶는다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 테마를 자동 삭제",
+        "DOM을 서버로 전송",
+        "항상 상속 깊이 감소 보장",
+        "CSS를 완전히 없앰",
+        "제품군의 일관성을 생성 단계에서 유지"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Abstract Factory",
+          "url": "https://refactoring.guru/design-patterns/abstract-factory"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-builder-validation",
+      "points": 3,
+      "prompt": "Builder가 중간 단계의 불완전한 상태를 가질 때 최종 build에서 할 일은?",
+      "explanation": "완성 객체의 불변 조건을 생성 완료 지점에서 보장한다.",
+      "type": "개념 판단",
+      "options": [
+        "필수 조건을 검증하고 완성된 객체만 반환",
+        "무조건 현재 상태를 공유",
+        "검증을 영구 생략",
+        "항상 null 반환",
+        "모든 옵션 무시"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Builder",
+          "url": "https://refactoring.guru/design-patterns/builder"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-builder-reuse",
+      "points": 3,
+      "prompt": "같은 Builder를 여러 객체 생성에 재사용할 때 주의할 것은?",
+      "explanation": "가변 빌더 상태와 생성 결과의 소유권을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 이전 결과를 직접 변경",
+        "이전 구성 값이 다음 결과에 새지 않도록 초기화·복사",
+        "모든 결과를 같은 객체로 반환",
+        "캐시를 무조건 전역화",
+        "build를 삭제"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Builder",
+          "url": "https://refactoring.guru/design-patterns/builder"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-prototype-shallow",
+      "points": 3,
+      "prompt": "중첩 객체를 가진 Prototype을 얕게 복제했을 때 위험은?",
+      "explanation": "복제 깊이와 공유 가능한 상태를 명확히 해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 모든 참조가 분리된다.",
+        "프로토타입 체인이 사라지면 메모리가 0이다.",
+        "중첩 참조를 공유해 복제본 수정이 원본에 영향을 줄 수 있다.",
+        "값이 자동 JSON이 된다.",
+        "원본이 무조건 삭제된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Prototype",
+          "url": "https://refactoring.guru/design-patterns/prototype"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-prototype-runtime",
+      "points": 3,
+      "prompt": "직렬화로 객체를 복제할 때 메서드·특수 타입을 고려해야 하는 이유는?",
+      "explanation": "JSON 직렬화 같은 방식은 함수와 다양한 특수 값에 제약이 있다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 방식이 완벽히 동일해서",
+        "모든 값이 문자열이어서",
+        "메서드는 원래 존재하지 않아서",
+        "복제 방식마다 보존 가능한 값과 정체성이 다르기 때문",
+        "항상 네트워크를 써서"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Prototype",
+          "url": "https://refactoring.guru/design-patterns/prototype"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-adapter-boundary",
+      "points": 3,
+      "prompt": "외부 API 필드명이 자주 바뀔 때 변환 로직을 모으기 좋은 위치는?",
+      "explanation": "경계에서 변환하면 외부 변화가 내부 전체로 번지는 것을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 화면의 템플릿 내부",
+        "무관한 전역 CSS",
+        "각 버튼 이벤트에 복제",
+        "테스트 코드에만 숨김",
+        "외부 API와 내부 모델 사이 Adapter 경계"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Adapter",
+          "url": "https://refactoring.guru/design-patterns/adapter"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-adapter-error",
+      "points": 3,
+      "prompt": "Adapter가 외부 오류를 내부 오류로 바꿀 때 지켜야 할 것은?",
+      "explanation": "인터페이스를 변환해도 중요한 실패 의미를 잃으면 안 된다.",
+      "type": "개념 판단",
+      "options": [
+        "호출자가 판단할 의미와 필요한 원인 정보를 보존",
+        "모든 실패를 성공으로 변환",
+        "항상 빈 객체 반환",
+        "모든 로그 삭제",
+        "오류 종류를 무조건 랜덤화"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Adapter",
+          "url": "https://refactoring.guru/design-patterns/adapter"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-facade-scope",
+      "points": 3,
+      "prompt": "Facade가 모든 도메인 로직을 한 클래스에 모으기 시작했다. 위험은?",
+      "explanation": "단순 진입점을 제공하는 것과 모든 책임을 소유하는 것은 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 성능이 좋아진다.",
+        "과도한 책임이 집중되어 변경과 테스트가 어려워진다.",
+        "모듈 경계가 자동 강화된다.",
+        "중복이 반드시 0이 된다.",
+        "하위 시스템이 사라진다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Facade",
+          "url": "https://refactoring.guru/design-patterns/facade"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-facade-vs-adapter",
+      "points": 3,
+      "prompt": "Facade와 Adapter의 주요 의도 차이는?",
+      "explanation": "겉모양이 비슷해도 해결하려는 문제가 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "둘 다 반드시 상속만 사용한다.",
+        "Adapter는 상태 복원 전용이다.",
+        "Facade는 사용을 단순화하고 Adapter는 인터페이스 호환을 맞춘다.",
+        "Facade는 객체 복제만 한다.",
+        "두 패턴은 항상 같은 목적이다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Facade",
+          "url": "https://refactoring.guru/design-patterns/facade"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-decorator-order",
+      "points": 3,
+      "prompt": "압축·암호화 Decorator를 중첩할 때 순서가 중요한 이유는?",
+      "explanation": "기능 합성은 일반적으로 교환 법칙을 만족하지 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 Decorator는 순서와 무관하다.",
+        "항상 컴파일러가 최적 순서를 보장한다.",
+        "함수 이름만 바뀐다.",
+        "각 래퍼가 다음 래퍼에 전달하는 데이터가 달라진다.",
+        "모든 오류가 사라진다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Decorator",
+          "url": "https://refactoring.guru/design-patterns/decorator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-decorator-contract",
+      "points": 3,
+      "prompt": "Decorator가 유지해야 하는 중요한 조건은?",
+      "explanation": "기능을 더해도 대체 가능한 계약을 지켜야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 구체 클래스 이름",
+        "항상 객체 주소",
+        "항상 모든 내부 필드 공개",
+        "항상 전역 상태 사용",
+        "호출자가 기대하는 공통 인터페이스와 계약"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Decorator",
+          "url": "https://refactoring.guru/design-patterns/decorator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-proxy-vs-decorator",
+      "points": 3,
+      "prompt": "접근 권한을 확인한 뒤 실제 저장소 호출을 대신하는 래퍼의 주된 의도는?",
+      "explanation": "접근을 중개·제어하는 역할에 초점이 있다.",
+      "type": "개념 판단",
+      "options": [
+        "Proxy로 접근 제어",
+        "Memento로 복원",
+        "Builder로 구성",
+        "Iterator로 순회",
+        "Prototype으로 복제"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Proxy",
+          "url": "https://refactoring.guru/design-patterns/proxy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-proxy-cache-key",
+      "points": 3,
+      "prompt": "캐시 Proxy가 사용자별 응답을 잘못 공유하지 않으려면?",
+      "explanation": "대리 캐시도 원래 동작과 격리 계약을 보존해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 URL만 쓰면 충분",
+        "결과에 영향을 주는 사용자·입력 조건을 캐시 키에 반영",
+        "모든 응답을 무기한 공유",
+        "권한 검사를 삭제",
+        "항상 첫 응답을 반환"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Proxy",
+          "url": "https://refactoring.guru/design-patterns/proxy"
+        },
+        {
+          "title": "MDN — HTTP caching: private caches and Vary",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-composite-cycle",
+      "points": 3,
+      "prompt": "Composite 구조를 재귀 순회할 때 실수로 순환 참조를 허용하면?",
+      "explanation": "트리의 비순환 조건을 검증하거나 방문 관리가 필요하다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 트리가 더 빨라진다.",
+        "모든 자식이 자동 제거된다.",
+        "무한 순회나 중복 처리가 발생할 수 있다.",
+        "항상 깊이가 1이다.",
+        "순회 순서가 고정된다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Composite",
+          "url": "https://refactoring.guru/design-patterns/composite"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-composite-leaf",
+      "points": 3,
+      "prompt": "Composite에서 Leaf의 역할은?",
+      "explanation": "Leaf와 Composite를 같은 인터페이스로 다룬다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 전체 트리 관리자",
+        "모든 객체의 생성자",
+        "네트워크 프록시",
+        "자식 없이 공통 연산을 수행하는 말단 객체",
+        "이전 상태 보관함"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Composite",
+          "url": "https://refactoring.guru/design-patterns/composite"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-flyweight-extrinsic",
+      "points": 3,
+      "prompt": "Flyweight에서 객체마다 달라 공유하면 안 되는 상태는 보통?",
+      "explanation": "공유 내부 상태와 개별 외부 상태를 나눈다.",
+      "type": "개념 판단",
+      "options": [
+        "공유 객체에 무조건 덮어쓰기",
+        "항상 삭제",
+        "모든 객체가 함께 수정",
+        "암호 문자열로만 보관",
+        "외부 상태로 분리해 연산 때 전달"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Flyweight",
+          "url": "https://refactoring.guru/design-patterns/flyweight"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-flyweight-mutation",
+      "points": 3,
+      "prompt": "공유 Flyweight의 공통 상태를 한 사용자가 변경하면?",
+      "explanation": "공유 데이터는 불변으로 관리하는 것이 안전하다.",
+      "type": "개념 판단",
+      "options": [
+        "다른 사용자의 관찰 결과에도 영향을 줄 수 있다.",
+        "항상 자기 복사본만 바뀐다.",
+        "객체가 자동 분리된다.",
+        "변경이 무조건 무시된다.",
+        "메모리가 반드시 줄어든다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Flyweight",
+          "url": "https://refactoring.guru/design-patterns/flyweight"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-bridge-two-axes",
+      "points": 3,
+      "prompt": "여러 알림 채널과 여러 메시지 형식을 독립 확장하려 한다. Bridge를 쓰는 이유는?",
+      "explanation": "합성으로 추상 기능과 전달 구현을 연결한다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 알림을 같은 문자열로 강제",
+        "두 변화 축의 조합마다 클래스를 만들지 않기 위해",
+        "항상 네트워크를 제거",
+        "메시지를 영구 저장",
+        "이벤트를 무조건 전역화"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Bridge",
+          "url": "https://refactoring.guru/design-patterns/bridge"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-strategy-function",
+      "points": 3,
+      "prompt": "JavaScript에서 Strategy를 구현할 때 반드시 필요한 것은?",
+      "explanation": "함수를 전달하는 것만으로도 Strategy를 표현할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "반드시 추상 클래스",
+        "반드시 전역 Singleton",
+        "교체 가능한 행동이 따르는 공통 호출 계약",
+        "반드시 상속 3단계",
+        "반드시 Decorator"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-strategy-state",
+      "points": 3,
+      "prompt": "Strategy와 State의 구분에서 주로 다른 것은?",
+      "explanation": "구현 형태가 비슷해도 변화의 원인과 책임이 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "JavaScript 문법의 대소문자",
+        "반드시 파일 확장자",
+        "항상 객체 수",
+        "알고리즘 선택 의도와 내부 상태에 따른 행동 변화 의도",
+        "항상 반환값 타입"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-strategy-validation",
+      "points": 3,
+      "prompt": "할인 Strategy를 교체할 수 있게 했다. 모든 전략에 공통으로 검사할 것은?",
+      "explanation": "교체 가능한 구현은 같은 입력·출력 불변 조건을 만족해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "함수 이름 길이",
+        "파일 정렬 순서",
+        "작성 날짜만",
+        "주석 개수",
+        "금액 범위 등 동일한 비즈니스 계약"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-observer-unsubscribe",
+      "points": 4,
+      "prompt": "화면마다 Observer를 구독할 때 함께 설계할 것은?",
+      "explanation": "구독이 남으면 중복 통지와 메모리 유지가 생길 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "구독 해제와 수명 관리",
+        "항상 전역 영구 구독",
+        "항상 같은 콜백 중복 등록",
+        "실패를 모두 무시",
+        "DOM 변경과 무관한 파일명"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Observer",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-observer-reentrancy",
+      "points": 4,
+      "prompt": "Observer 통지 중 구독자가 다시 상태를 바꾸면 고려할 문제는?",
+      "explanation": "통지 중 추가 변경이 생길 때의 정책을 명확히 해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "HTTP 포트 번호",
+        "재진입과 중첩 통지의 순서",
+        "CSS 단위",
+        "파일 인코딩만",
+        "패키지 이름"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Observer",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        },
+        {
+          "title": "Redux — Store.subscribe: nested dispatch and subscription snapshots",
+          "url": "https://redux.js.org/api/store#subscribelistener"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-observer-errors",
+      "points": 4,
+      "prompt": "한 구독자 콜백이 예외를 던졌다. 다른 구독자 통지는 어떻게 설계해야 하는가?",
+      "explanation": "실패 전파 정책은 이벤트 시스템 계약의 일부다.",
+      "type": "개념 판단",
+      "options": [
+        "오류는 절대 일어나지 않는다고 가정한다.",
+        "항상 모든 상태 삭제",
+        "중단·격리 정책을 명시하고 일관되게 처리한다.",
+        "자동으로 정답 추론",
+        "구독자 순서를 숨기기만 한다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Observer",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        },
+        {
+          "title": "MDN — EventTarget.dispatchEvent: exceptions",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent#exceptions"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-pubsub-debugging",
+      "points": 4,
+      "prompt": "전역 이벤트 버스를 무분별하게 사용하면 디버깅이 어려운 이유는?",
+      "explanation": "느슨한 결합이 곧 추적 가능성을 보장하지는 않는다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 동기 코드가 없어져서",
+        "모든 이벤트가 저장돼서",
+        "함수 이름이 같아서",
+        "발행·구독 관계와 실행 흐름이 코드상 숨겨질 수 있다.",
+        "JSON을 못 써서"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Publisher-Subscriber Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-pubsub-payload",
+      "points": 4,
+      "prompt": "팀 간 이벤트 버스에서 payload 구조를 변경할 때 필요한 것은?",
+      "explanation": "발행자와 수신자의 독립성에도 메시지 계약은 필요하다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 수신자 전체 무시",
+        "항상 이름만 재사용",
+        "모든 값을 any로 숨기기",
+        "랜덤 주제명 사용",
+        "이벤트 계약과 호환성 관리"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Publisher-Subscriber Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-pubsub-retention",
+      "points": 4,
+      "prompt": "새 구독자가 과거 이벤트를 자동으로 받는지에 대한 설명은?",
+      "explanation": "실시간 메시지 전달과 상태 보관·이벤트 재생은 별개다.",
+      "type": "개념 판단",
+      "options": [
+        "재생·보관 기능을 별도로 설계하지 않으면 보장되지 않는다.",
+        "모든 Pub/Sub는 반드시 영구 저장한다.",
+        "모든 이벤트는 항상 최신 상태다.",
+        "구독 즉시 전체 DB가 전달된다.",
+        "과거 이벤트는 반드시 재생된다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Publisher-Subscriber Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mediator-size",
+      "points": 4,
+      "prompt": "Mediator에 모든 업무 규칙을 몰아넣었을 때 위험은?",
+      "explanation": "조정 책임과 개별 도메인 책임을 구분해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 결합도가 0이다.",
+        "중앙 객체가 과도하게 커져 새 결합점이 된다.",
+        "변경이 무조건 한 줄이다.",
+        "테스트가 필요 없어짐",
+        "데이터가 자동 불변"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Mediator",
+          "url": "https://refactoring.guru/design-patterns/mediator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mediator-form",
+      "points": 4,
+      "prompt": "여러 입력 필드의 상호 의존 규칙을 조정하는 폼 컨트롤러는 어떤 역할에 가까운가?",
+      "explanation": "필드들이 서로를 직접 조작하기보다 조정자를 거친다.",
+      "type": "개념 판단",
+      "options": [
+        "Flyweight",
+        "Prototype",
+        "Mediator",
+        "Iterator",
+        "Memento"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Mediator",
+          "url": "https://refactoring.guru/design-patterns/mediator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-command-undo",
+      "points": 4,
+      "prompt": "되돌릴 수 있는 Command가 보통 필요로 하는 정보는?",
+      "explanation": "실행을 취소하려면 원래 상태나 반대 연산을 재구성할 수 있어야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "화면 색상만",
+        "파일 이름만",
+        "실행 시간만",
+        "실행 전 상태 또는 역연산에 필요한 정보",
+        "항상 전역 쿠키"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Command",
+          "url": "https://refactoring.guru/design-patterns/command"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-command-redo",
+      "points": 4,
+      "prompt": "Undo 뒤 새 편집을 수행한 경우 일반적인 편집기의 redo 기록 정책은?",
+      "explanation": "선형 히스토리는 새 작업 이후 기존 미래 분기를 버리는 경우가 많다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 모든 분기를 한꺼번에 실행한다.",
+        "undo 기록도 전부 삭제한다.",
+        "새 작업을 무시한다.",
+        "모든 기록을 무작위 섞는다.",
+        "이전 분기의 redo 기록을 비운다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Command",
+          "url": "https://refactoring.guru/design-patterns/command"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-command-idempotency",
+      "points": 4,
+      "prompt": "네트워크 Command를 재시도할 수 있다면 검토할 성질은?",
+      "explanation": "재시도가 업무 효과를 두 번 발생시키지 않도록 설계해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "중복 실행의 영향과 멱등성",
+        "함수 이름 길이",
+        "클래스 개수만",
+        "화면 너비",
+        "주석 언어"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Command",
+          "url": "https://refactoring.guru/design-patterns/command"
+        },
+        {
+          "title": "AWS — Making retries safe with idempotent APIs",
+          "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-command-serialization",
+      "points": 4,
+      "prompt": "Command를 디스크에 저장해 나중에 실행하려면 적절한 구조는?",
+      "explanation": "실행 환경의 참조보다 재구성 가능한 명령 데이터를 저장한다.",
+      "type": "개념 판단",
+      "options": [
+        "임의 함수 closure만 저장",
+        "명령 종류와 직렬화 가능한 입력 데이터를 저장",
+        "DOM 노드 참조만 저장",
+        "현재 call stack 전체 저장",
+        "Window 객체 저장"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Command",
+          "url": "https://refactoring.guru/design-patterns/command"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-state-invalid-transition",
+      "points": 4,
+      "prompt": "결제 상태 머신에서 허용되지 않은 상태 전환 요청이 오면?",
+      "explanation": "상태 머신은 가능한 전환을 제한해 불변 조건을 보호한다.",
+      "type": "개념 판단",
+      "options": [
+        "아무 상태로나 바꾼다.",
+        "항상 성공 상태로 이동한다.",
+        "명시적인 전환 규칙에 따라 거부·처리한다.",
+        "현재 상태를 숨긴다.",
+        "랜덤 상태를 고른다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "State",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-state-boolean-explosion",
+      "points": 4,
+      "prompt": "isLoading·isSuccess·isError가 동시에 true가 되는 문제를 줄이는 모델은?",
+      "explanation": "서로 배타적인 상태를 합타입이나 상태 머신으로 표현한다.",
+      "type": "개념 판단",
+      "options": [
+        "독립 boolean을 더 추가",
+        "모든 값을 항상 true",
+        "DOM 문자열을 상태로 사용",
+        "명시적인 단일 상태와 전환 규칙",
+        "전역 변수 복제"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "State",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-state-async-stale",
+      "points": 4,
+      "prompt": "로딩 상태에서 시작한 오래된 요청이 새 요청 완료 후 돌아왔다. 상태 전환에서 필요한 것은?",
+      "explanation": "시간상 오래된 결과가 현재 상태를 덮어쓰지 않게 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 마지막 도착을 성공으로 처리",
+        "모든 상태를 초기화",
+        "전환 규칙 삭제",
+        "요청을 영구 금지",
+        "요청 정체성·세대를 확인해 유효한 완료만 반영"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "State",
+          "url": "https://refactoring.guru/design-patterns/state"
+        },
+        {
+          "title": "React — Fetching data with Effects: race conditions",
+          "url": "https://react.dev/reference/react/useEffect#fetching-data-with-effects"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-chain-short-circuit",
+      "points": 4,
+      "prompt": "권한 검사 처리자가 요청을 거부했다. 다음 처리자의 실행 정책은?",
+      "explanation": "책임 연쇄는 처리자가 다음 단계 전달 여부를 결정할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "체인의 계약에 따라 즉시 중단할 수 있다.",
+        "모든 연쇄는 반드시 끝까지 실행된다.",
+        "반드시 역순으로 실행된다.",
+        "처리자가 자동 삭제된다.",
+        "항상 요청을 복제한다."
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Chain of Responsibility",
+          "url": "https://refactoring.guru/design-patterns/chain-of-responsibility"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-middleware-next-once",
+      "points": 4,
+      "prompt": "next 기반 미들웨어에서 next를 실수로 두 번 호출하면?",
+      "explanation": "체인의 실행 계약에서 next 호출 횟수를 관리해야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 두 호출이 자동 합쳐진다.",
+        "후속 처리 중복이나 제어 흐름 오류가 생길 수 있다.",
+        "항상 아무 영향 없다.",
+        "메모리가 반드시 줄어든다.",
+        "요청이 자동 취소된다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Using middleware · Express.js",
+          "url": "https://expressjs.com/en/guide/using-middleware.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-middleware-order",
+      "points": 4,
+      "prompt": "인증 미들웨어와 민감한 데이터 응답 미들웨어의 순서가 중요한 이유는?",
+      "explanation": "연쇄 순서는 실제 보안·업무 의미를 가진다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 순서가 같아서",
+        "함수 이름 정렬이 중요해서",
+        "응답 전에 인증 조건을 검증해야 하기 때문",
+        "CSS가 적용되기 때문에",
+        "배열 길이만 중요해서"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Using middleware · Express.js",
+          "url": "https://expressjs.com/en/guide/using-middleware.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-template-vs-strategy",
+      "points": 4,
+      "prompt": "Template Method와 Strategy의 전형적인 차이는?",
+      "explanation": "골격 내 단계 확장과 별도 알고리즘 객체 주입을 구분한다.",
+      "type": "개념 판단",
+      "options": [
+        "둘 다 반드시 전역 변수 사용",
+        "둘 다 데이터 복제만 수행",
+        "Strategy는 순회만 수행",
+        "상속 기반 단계 재정의와 합성 기반 행동 교체",
+        "Template Method는 UI 전용"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Template Method",
+          "url": "https://refactoring.guru/design-patterns/template-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-template-hook",
+      "points": 4,
+      "prompt": "Template Method 안의 선택적 확장 지점인 hook의 용도는?",
+      "explanation": "hook은 알고리즘 골격의 통제된 확장 지점이다.",
+      "type": "개념 판단",
+      "options": [
+        "반드시 모든 메서드를 제거",
+        "항상 비동기 요청",
+        "모든 상태를 공유",
+        "객체 주소를 변경",
+        "기본 절차를 유지하면서 일부 지점의 동작을 바꾼다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Template Method",
+          "url": "https://refactoring.guru/design-patterns/template-method"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-iterator-mutation",
+      "points": 4,
+      "prompt": "컬렉션 순회 중 원본을 변경할 때 필요한 설계는?",
+      "explanation": "스냅샷·실시간·변경 감지 등 순회 정책은 구현에 따라 다르다.",
+      "type": "개념 판단",
+      "options": [
+        "변경 허용 여부와 순회 결과의 계약을 명시",
+        "모든 언어에서 결과가 동일하다고 가정",
+        "항상 마지막 값만 반환",
+        "순회자를 무조건 전역화",
+        "모든 변경을 숨김"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Iterator",
+          "url": "https://refactoring.guru/design-patterns/iterator"
+        },
+        {
+          "title": "MDN — Iteration protocols: concurrent modifications",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#concurrent_modifications_when_iterating"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-iterator-lazy",
+      "points": 4,
+      "prompt": "지연 Iterator의 장점은?",
+      "explanation": "전체 결과를 미리 만들지 않아도 되는 흐름을 표현한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 모든 값을 미리 복제한다.",
+        "필요한 원소를 요구할 때 계산할 수 있다.",
+        "메모리를 반드시 무한 사용한다.",
+        "반복문을 사용할 수 없다.",
+        "항상 배열만 반환한다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Iterator",
+          "url": "https://refactoring.guru/design-patterns/iterator"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-memento-encapsulation",
+      "points": 4,
+      "prompt": "Memento를 보관하는 객체가 내부 필드를 임의 수정하지 않도록 하는 이유는?",
+      "explanation": "스냅샷의 의미를 원래 객체의 책임 안에 둔다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 더 많은 메모리를 쓰려고",
+        "JSON을 금지하려고",
+        "원래 객체의 캡슐화와 복원 일관성을 지키기 위해",
+        "화면을 숨기려고",
+        "함수를 줄이려고"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Memento",
+          "url": "https://refactoring.guru/design-patterns/memento"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-memento-memory",
+      "points": 4,
+      "prompt": "대형 문서의 모든 편집마다 전체 스냅샷을 저장하면?",
+      "explanation": "스냅샷 전략은 복원 속도와 저장 비용의 균형이다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 비용이 0이다.",
+        "문서 크기와 무관하다.",
+        "항상 가장 빠르고 작다.",
+        "메모리 비용이 커져 차이 저장·공유 구조 등을 검토할 수 있다.",
+        "undo가 불가능하다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Memento",
+          "url": "https://refactoring.guru/design-patterns/memento"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-visitor-tradeoff",
+      "points": 4,
+      "prompt": "Visitor를 쓰는 구조에 새 노드 종류를 추가할 때 흔한 비용은?",
+      "explanation": "Visitor는 새 연산 추가와 새 요소 타입 추가 사이에 절충이 있다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 기존 Visitor가 무조건 자동 지원",
+        "모든 노드가 삭제됨",
+        "타입 검사가 필요 없어짐",
+        "연산 추가가 항상 불가능",
+        "여러 Visitor가 새 노드를 처리하도록 수정될 수 있다."
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Visitor",
+          "url": "https://refactoring.guru/design-patterns/visitor"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-visitor-ast",
+      "points": 5,
+      "prompt": "안정적인 AST 노드 구조에 출력·검증·분석 연산을 각각 추가하려 한다. 적합한 패턴은?",
+      "explanation": "같은 구조를 방문하는 서로 다른 연산을 분리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Visitor",
+        "Singleton",
+        "Proxy",
+        "Builder",
+        "Flyweight"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Visitor",
+          "url": "https://refactoring.guru/design-patterns/visitor"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-module-private",
+      "points": 5,
+      "prompt": "클로저 기반 모듈에서 외부에 반환하지 않은 변수를 감추는 원리는?",
+      "explanation": "공개 함수만 내부 상태를 접근하도록 구성할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "변수 이름 길이",
+        "렉시컬 스코프를 통한 접근 제한",
+        "CSS 클래스",
+        "HTML 속성",
+        "HTTP 캐시"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "JavaScript modules - JavaScript | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-module-cycle",
+      "points": 5,
+      "prompt": "서로를 import하는 모듈이 늘어날 때 검토할 구조적 문제는?",
+      "explanation": "순환 의존은 초기화와 변경 영향을 이해하기 어렵게 만들 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 네트워크 오류",
+        "항상 동일 함수 중복",
+        "책임 경계와 초기화 순서의 결합",
+        "무조건 문법 오류",
+        "항상 메모리 부족"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "JavaScript modules - JavaScript | MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-di-test-double",
+      "points": 5,
+      "prompt": "시계나 네트워크 클라이언트를 주입할 때 테스트상 이점은?",
+      "explanation": "시간·외부 시스템을 분리해 재현 가능한 테스트를 만든다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 실제 통합 검사가 불필요하다.",
+        "자동으로 정답을 만든다.",
+        "버그가 절대 생기지 않는다.",
+        "통제 가능한 대역으로 경계 동작을 검증할 수 있다.",
+        "전역 상태가 항상 늘어난다."
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Inversion of Control Containers and the Dependency Injection pattern",
+          "url": "https://martinfowler.com/articles/injection.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-di-vs-locator",
+      "points": 5,
+      "prompt": "의존성 주입과 전역 Service Locator의 중요한 차이는?",
+      "explanation": "직접 전달되는 의존성은 숨은 전역 조회보다 명시적이다.",
+      "type": "개념 판단",
+      "options": [
+        "반드시 사용 언어",
+        "항상 클래스 개수",
+        "항상 네트워크 유무",
+        "반드시 성능 차이",
+        "의존성이 호출 계약에 드러나는지 여부"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Inversion of Control Containers and the Dependency Injection pattern",
+          "url": "https://martinfowler.com/articles/injection.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-composition-root",
+      "points": 5,
+      "prompt": "앱의 구체 의존 객체를 조립하는 위치를 모으는 이유는?",
+      "explanation": "구성의 변경을 조립 지점에서 관리할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "사용 로직과 구현 선택·생성 책임을 분리",
+        "모든 함수를 전역화",
+        "모든 모듈을 Singleton화",
+        "항상 테스트 제거",
+        "UI 코드를 데이터베이스로 이동"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Inversion of Control Containers and the Dependency Injection pattern",
+          "url": "https://martinfowler.com/articles/injection.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-repository-purpose",
+      "points": 5,
+      "prompt": "데이터 접근 세부를 도메인에서 분리하는 Repository의 역할은?",
+      "explanation": "저장 기술의 세부가 업무 로직에 퍼지는 것을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 UI 렌더 담당",
+        "도메인에 맞는 저장·조회 계약 제공",
+        "CSS 선택자 생성",
+        "이벤트 전파 변경",
+        "객체 복제만 수행"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Repository",
+          "url": "https://martinfowler.com/eaaCatalog/repository.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-repository-leak",
+      "points": 5,
+      "prompt": "Repository 반환값이 특정 DB 드라이버 객체에 강하게 묶이면?",
+      "explanation": "경계가 추상화하려는 세부를 반환 계약에서도 고려한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 교체가 쉬워진다.",
+        "모든 도메인 규칙이 사라진다.",
+        "추상화 밖으로 저장 기술 의존이 샐 수 있다.",
+        "성능이 반드시 향상된다.",
+        "테스트가 필요 없다."
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Repository",
+          "url": "https://martinfowler.com/eaaCatalog/repository.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mvc-responsibility",
+      "points": 5,
+      "prompt": "MVC에서 데이터와 도메인 규칙을 주로 맡는 부분은?",
+      "explanation": "Model은 화면 표현과 분리된 데이터·업무 의미를 가진다.",
+      "type": "개념 판단",
+      "options": [
+        "View",
+        "CSS",
+        "템플릿 문자열",
+        "Model",
+        "DOM 이벤트 자체"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "GUI Architectures",
+          "url": "https://martinfowler.com/eaaDev/uiArchs.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mvc-view",
+      "points": 5,
+      "prompt": "MVC에서 View의 주된 관심사는?",
+      "explanation": "View는 모델 정보를 사용자 인터페이스로 표현한다.",
+      "type": "개념 판단",
+      "options": [
+        "데이터베이스 연결 풀",
+        "모든 결제 규칙",
+        "모든 캐시 정책",
+        "네트워크 라우팅",
+        "사용자에게 보여 줄 표현"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "GUI Architectures",
+          "url": "https://martinfowler.com/eaaDev/uiArchs.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-mvvm-viewmodel",
+      "points": 5,
+      "prompt": "MVVM에서 ViewModel의 대표적인 역할은?",
+      "explanation": "표현 논리를 View에서 분리해 다룬다.",
+      "type": "개념 판단",
+      "options": [
+        "View가 사용할 상태와 행동을 표현 모델로 제공",
+        "반드시 DOM 직접 수정만",
+        "SQL 저장만",
+        "모든 템플릿 문자열 생성만",
+        "객체 복제만"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Model-View-ViewModel - .NET | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-unidirectional-flow",
+      "points": 5,
+      "prompt": "단방향 데이터 흐름의 기대 이점은?",
+      "explanation": "변경 경로를 제한해 순환 의존과 임의 변경을 줄인다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 이벤트가 사라진다.",
+        "상태 변경과 화면 갱신 경로를 추적하기 쉽다.",
+        "모든 상태가 자동 영구 저장된다.",
+        "모든 코드가 비동기다.",
+        "UI가 상태를 읽을 수 없다."
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Three Principles | Redux",
+          "url": "https://redux.js.org/understanding/thinking-in-redux/three-principles"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-reducer-pattern",
+      "points": 5,
+      "prompt": "현재 상태와 action으로 다음 상태를 계산하는 reducer의 적절한 성질은?",
+      "explanation": "전환과 부수 효과를 분리하면 재현·검증하기 쉽다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 네트워크 요청 수행",
+        "항상 DOM 직접 수정",
+        "동일 입력에 동일 결과를 주는 순수 전환",
+        "매번 전역 난수 상태 변경",
+        "기존 상태를 무조건 파괴"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Three Principles | Redux",
+          "url": "https://redux.js.org/understanding/thinking-in-redux/three-principles"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-event-sourcing",
+      "points": 5,
+      "prompt": "현재 상태만 저장하는 대신 일어난 도메인 이벤트를 순서대로 기록하는 방식은?",
+      "explanation": "이벤트 기록을 바탕으로 상태를 재구성할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "Flyweight",
+        "Adapter",
+        "Decorator",
+        "Event Sourcing",
+        "Prototype"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Event Sourcing Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-event-replay",
+      "points": 5,
+      "prompt": "이벤트 재생으로 상태를 복원할 때 과거 결제 API까지 다시 호출하면 안 되는 이유는?",
+      "explanation": "재생이 실제 업무 효과를 중복 발생시키지 않도록 설계한다.",
+      "type": "개념 판단",
+      "options": [
+        "이벤트는 문자열만 있어서",
+        "모든 API가 캐시돼서",
+        "재생은 항상 무작위여서",
+        "시간 정보가 항상 없어서",
+        "상태 재구성과 외부 부수 효과 실행을 분리해야 해서"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Event Sourcing Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-cqrs-purpose",
+      "points": 5,
+      "prompt": "CQRS의 핵심 분리는?",
+      "explanation": "읽기와 쓰기의 요구가 다를 때 분리해 설계한다.",
+      "type": "개념 판단",
+      "options": [
+        "상태를 바꾸는 명령과 읽기 질의의 모델·책임 분리",
+        "CSS와 HTML 파일만 분리",
+        "오직 클래스와 함수 분리",
+        "모든 API를 GET으로 통일",
+        "저장소를 반드시 하나로 강제"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "CQRS Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-cqrs-cost",
+      "points": 5,
+      "prompt": "단순 CRUD 화면에 복잡한 CQRS 구조를 도입하기 전 고려할 것은?",
+      "explanation": "패턴은 복잡도를 정당화할 요구가 있을 때 적용한다.",
+      "type": "개념 판단",
+      "options": [
+        "항상 사용하면 코드가 줄어드는지 가정",
+        "운영·동기화 복잡성이 실제 요구에 비해 큰지",
+        "모든 데이터가 자동 동기화되는지 가정",
+        "무조건 이벤트 버스 필요",
+        "항상 DB 두 개가 정답"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "CQRS Pattern - Azure Architecture Center | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-hexagonal-port",
+      "points": 5,
+      "prompt": "포트와 어댑터 구조에서 포트의 역할은?",
+      "explanation": "포트는 외부 기술과 독립적인 인터페이스다.",
+      "type": "개념 판단",
+      "options": [
+        "TCP 포트 번호만",
+        "DOM 요소 id",
+        "내부 정책이 외부와 상호작용하는 계약",
+        "파일 확장자",
+        "전역 싱글턴 주소"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "hexagonal-architecture",
+          "url": "https://alistair.cockburn.us/hexagonal-architecture"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-hexagonal-adapter",
+      "points": 5,
+      "prompt": "포트와 어댑터 구조에서 HTTP 클라이언트 구현을 교체할 때 주로 바꾸는 것은?",
+      "explanation": "포트 계약을 유지하면 구체 통신 구현의 변화를 격리할 수 있다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 도메인 규칙",
+        "모든 UI 상태 이름",
+        "모든 이벤트 내용",
+        "포트 계약을 구현하는 Adapter",
+        "모든 테스트 기대값"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "hexagonal-architecture",
+          "url": "https://alistair.cockburn.us/hexagonal-architecture"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-dependency-inversion",
+      "points": 5,
+      "prompt": "고수준 정책이 저수준 구현 클래스에 직접 의존하지 않게 하려는 원칙은?",
+      "explanation": "추상 계약을 통해 의존 방향을 관리한다.",
+      "type": "개념 판단",
+      "options": [
+        "Prototype",
+        "Iterator",
+        "Memento",
+        "Flyweight",
+        "Dependency Inversion"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Microsoft — Dependency inversion",
+          "url": "https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles#dependency-inversion"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-open-closed",
+      "points": 5,
+      "prompt": "새 규칙을 추가할 때 기존 핵심 로직을 반복 수정하지 않도록 확장 지점을 두는 원칙은?",
+      "explanation": "확장에는 열고 기존 코드 변경은 제한하는 설계 목표다.",
+      "type": "개념 판단",
+      "options": [
+        "Open–Closed",
+        "Singleton",
+        "Snapshot",
+        "Polling",
+        "DOM Recycling"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "Robert C. Martin — The Open Closed Principle",
+          "url": "https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-liskov-contract",
+      "points": 5,
+      "prompt": "대체 구현이 기존 호출자의 정상 입력을 새롭게 거부하면 검토할 원칙은?",
+      "explanation": "대체 가능한 구현은 호출자가 기대한 계약을 훼손하지 않아야 한다.",
+      "type": "개념 판단",
+      "options": [
+        "Prototype 복제",
+        "Liskov Substitution",
+        "Iterator 순회",
+        "Flyweight 공유",
+        "Memento 복원"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "Barbara Liskov, Jeannette Wing — A Behavioral Notion of Subtyping",
+          "url": "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-interface-segregation",
+      "points": 5,
+      "prompt": "작은 화면이 거대한 서비스 API의 대부분을 쓰지 않는다. 개선 방향은?",
+      "explanation": "필요 없는 기능에 대한 의존을 줄이는 인터페이스 분리다.",
+      "type": "개념 판단",
+      "options": [
+        "모든 메서드를 강제로 호출",
+        "항상 전역 객체 직접 참조",
+        "소비자가 필요한 작은 계약으로 분리",
+        "미사용 메서드를 문서에서만 숨김",
+        "서비스를 DOM 속성에 저장"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "Microsoft — Interface segregation principle",
+          "url": "https://learn.microsoft.com/en-us/archive/msdn-magazine/2014/may/csharp-best-practices-dangers-of-violating-solid-principles-in-csharp"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-single-responsibility",
+      "points": 5,
+      "prompt": "한 모듈이 UI 표현 변경과 결제 정책 변경 때문에 자주 함께 수정된다. 검토할 원칙은?",
+      "explanation": "서로 다른 변경 이유를 가진 책임을 구분한다.",
+      "type": "개념 판단",
+      "options": [
+        "Flyweight",
+        "Prototype",
+        "Iterator",
+        "Single Responsibility",
+        "Memento"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "Robert C. Martin — The Single Responsibility Principle",
+          "url": "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html"
+        }
+      ]
+    },
+    {
+      "id": "design-pattern-pattern-selection",
+      "points": 5,
+      "prompt": "새 기능에 패턴을 적용할 때 가장 먼저 확인할 것은?",
+      "explanation": "문제에 맞는 최소 구조를 선택하며 패턴 자체가 목적이 되지 않게 한다.",
+      "type": "개념 판단",
+      "options": [
+        "패턴 이름의 유행",
+        "클래스 수를 최대화할 방법",
+        "상속 깊이를 늘릴 방법",
+        "설계도 크기",
+        "실제 반복 문제와 변화 지점"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "Design Patterns",
+          "url": "https://refactoring.guru/design-patterns"
+        }
+      ]
+    }
+  ]
+}

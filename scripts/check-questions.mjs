@@ -1,21 +1,35 @@
-import assert from "node:assert/strict";
-import { questions } from "../app/questions.mjs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { compileQuestions } from "./question-data.mjs";
+import { createExam } from "../app/exam.mjs";
+import schema from "../content/category.schema.json" with { type: "json" };
 
-const categories = new Set(["JavaScript", "TypeScript", "React", "Browser", "CSS", "Web Performance"]);
-const types = new Set(["개념 판단", "결과 예측", "타입 분석", "버그 찾기", "렌더링 횟수 예측", "브라우저 동작"]);
-
-assert.equal(questions.length, 20);
-assert.deepEqual(questions.map(({ id }) => id), Array.from({ length: 20 }, (_, index) => index + 1));
-assert.deepEqual(new Set(questions.map(({ category }) => category)), categories);
-assert.deepEqual(new Set(questions.map(({ type }) => type)), types);
-assert.deepEqual(new Set(questions.map(({ points }) => points)), new Set([2, 3, 4, 5]));
-
-for (const question of questions) {
-  assert.ok(question.prompt.trim(), `${question.id}번 지문 누락`);
-  assert.ok([2, 3, 4, 5].includes(question.points), `${question.id}번 배점 오류`);
-  assert.ok(Number.isInteger(question.answer) && question.answer >= 1 && question.answer <= 5, `${question.id}번 정답 오류`);
-  assert.equal(question.options.length, 5, `${question.id}번 선택지 개수 오류`);
-  assert.equal(new Set(question.options).size, 5, `${question.id}번 선택지 중복`);
+const root = new URL("../", import.meta.url);
+function readJson(path) {
+  try {
+    return JSON.parse(readFileSync(new URL(path, root), "utf8"));
+  } catch (error) {
+    throw new Error(`${path}: ${error.message}`);
+  }
 }
 
-console.log("20개 문항의 번호·카테고리·유형·배점·정답·5개 선택지를 확인했습니다.");
+try {
+  const entries = readdirSync(new URL("content/questions/", root)).sort()
+    .filter((filename) => filename.endsWith(".json"))
+    .map((filename) => ({ filename, data: readJson(`content/questions/${filename}`) }));
+  const questions = compileQuestions(entries);
+  for (const category of schema.properties.category.enum) {
+    if (!questions.some((question) => question.category === category)) throw new Error(`${category} 문제은행이 누락됐습니다.`);
+  }
+  const exam = createExam(questions); // 모든 영역을 포함하는 100점 조합을 빌드 전에 확인한다.
+  console.table(entries.map(({ data }) => ({
+    category: data.category,
+    count: data.questions.length,
+    ...Object.fromEntries([2, 3, 4, 5].map(points => [`${points}점`, data.questions.filter(q => q.points === points).length])),
+    sampleExamPoints: exam.filter(q => q.category === data.category).reduce((sum, q) => sum + q.points, 0),
+  })));
+  writeFileSync(new URL("app/questions.generated.json", root), JSON.stringify(questions, null, 2) + "\n");
+  console.log(`카테고리 ${entries.length}개 · 문제은행 ${questions.length}문항 검증 완료 · 20문항 이상·100점 출제 가능`);
+} catch (error) {
+  console.error(error.message);
+  process.exitCode = 1;
+}

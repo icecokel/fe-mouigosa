@@ -1,0 +1,16 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/content/questions/*.json"
+      ],
+      "url": "./content/category.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/content/question.template.json"
+      ],
+      "url": "./content/question.schema.json"
+    }
+  ]
+}

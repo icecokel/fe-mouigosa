@@ -1,0 +1,2205 @@
+{
+  "category": "TypeScript",
+  "questions": [
+    {
+      "id": "typescript-discriminated-union",
+      "type": "타입 분석",
+      "points": 4,
+      "answer": 2,
+      "prompt": "다음 코드에서 if (result.ok) 블록 안의 result.data 타입은?",
+      "code": "type Result =\n  | { ok: true; data: string }\n  | { ok: false; error: Error };\n\nfunction read(result: Result) {\n  if (result.ok) return result.data;\n  return result.error.message;\n}",
+      "options": [
+        "unknown",
+        "string",
+        "string | Error",
+        "Error",
+        "never"
+      ],
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Narrowing",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+        }
+      ],
+      "explanation": "ok는 true와 false 리터럴로 이루어진 판별자입니다. if(result.ok) 분기에서는 { ok: true; data: string } 구성원으로 좁혀지므로 data는 string입니다."
+    },
+    {
+      "id": "typescript-readonly-shallow",
+      "type": "타입 분석",
+      "points": 4,
+      "answer": 2,
+      "prompt": "다음 선언 이후 TypeScript 타입 검사에서 허용되는 코드는?",
+      "code": "type Box = Readonly<{ nested: { count: number } }>;\nconst box: Box = { nested: { count: 1 } };",
+      "options": [
+        "box.nested = { count: 2 };",
+        "box.nested.count = 2;",
+        "box.missing = 2;",
+        "delete box.nested;",
+        "box.nested.push(2);"
+      ],
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ],
+      "explanation": "Readonly는 최상위 속성 nested의 재할당을 막습니다. nested 내부의 count까지 재귀적으로 readonly로 바꾸지는 않으므로 box.nested.count = 2는 허용됩니다."
+    },
+    {
+      "id": "typescript-unknown-narrowing",
+      "type": "타입 분석",
+      "points": 2,
+      "answer": 2,
+      "prompt": "다음 함수의 if 블록 안에서 value의 타입으로 옳은 것은?",
+      "code": "function print(value: unknown) {\n  if (typeof value === \"string\") {\n    return value.toUpperCase();\n  }\n}",
+      "options": [
+        "unknown",
+        "string",
+        "String 객체",
+        "string | undefined",
+        "never"
+      ],
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Narrowing",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+        }
+      ],
+      "explanation": "typeof value === \"string\"은 타입 가드입니다. 조건이 참인 블록에서는 unknown이 원시 string으로 좁혀져 toUpperCase를 호출할 수 있습니다."
+    },
+    {
+      "id": "typescript-keyof",
+      "type": "타입 분석",
+      "points": 3,
+      "prompt": "다음 코드에서 Keys 타입은?",
+      "code": "type User = { name: string; age: number };\ntype Keys = keyof User;",
+      "options": [
+        "string | number",
+        "User",
+        "\"name\" | \"age\"",
+        "\"string\" | \"number\"",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Keyof Type Operator",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        }
+      ],
+      "explanation": "keyof는 객체 타입의 속성 이름을 유니온으로 만듭니다. User의 키는 name과 age이므로 \"name\" | \"age\"입니다."
+    },
+    {
+      "id": "typescript-literal-const",
+      "type": "타입 분석",
+      "points": 4,
+      "prompt": "다음 코드에서 Direction 타입은?",
+      "code": "const directions = [\"left\", \"right\"] as const;\ntype Direction = typeof directions[number];",
+      "options": [
+        "string",
+        "number",
+        "readonly string[]",
+        "\"left\" | \"right\"",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 3.4",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html"
+        }
+      ],
+      "explanation": "as const가 배열을 readonly [\"left\", \"right\"] 튜플로 추론하게 합니다. 여기에 [number]로 인덱스 접근하면 원소 타입의 유니온인 \"left\" | \"right\"가 됩니다."
+    },
+    {
+      "id": "typescript-partial",
+      "type": "타입 분석",
+      "points": 3,
+      "prompt": "다음 타입에서 허용되는 값은?",
+      "code": "type Draft = Partial<{ name: string; age: number }>;",
+      "options": [
+        "{ name: 1 }",
+        "{ age: \"20\" }",
+        "{ name: false }",
+        "{ age: [] }",
+        "{}"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ],
+      "explanation": "Partial은 모든 속성을 선택적으로 바꿉니다. 빈 객체 {}는 허용되지만 속성을 제공한다면 name은 string, age는 number여야 합니다."
+    },
+    {
+      "id": "typescript-string-array-element",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "배열 타입에 number로 접근하면 원소 타입을 얻는다.",
+      "code": "type Result = string[][number];",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "string",
+        "string[]",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-first",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "튜플의 0번 위치는 string이다.",
+      "code": "type Result = [string, number][0];",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "boolean",
+        "string",
+        "string | number",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-union",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "number 인덱스는 가능한 튜플 원소 타입의 합집합이다.",
+      "code": "type Result = [string, number][number];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "number",
+        "unknown",
+        "string | number",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-optional-field",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "선택적 속성을 읽으면 없을 가능성이 포함된다.",
+      "code": "type Item = { name?: string };\ntype Result = Item[\"name\"];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "undefined",
+        "null",
+        "never",
+        "string | undefined"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Everyday Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-literal-let",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "재할당 가능한 let 문자열은 string으로 넓혀진다.",
+      "code": "let value = \"open\";\ntype Result = typeof value;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "\"open\"",
+        "unknown",
+        "never",
+        "boolean"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Everyday Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-literal-const-number",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "const 원시값은 리터럴 타입으로 추론된다.",
+      "code": "const value = 42;\ntype Result = typeof value;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "42",
+        "string",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Everyday Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-boolean-typeof",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "명시적으로 선언한 boolean 타입을 참조한다.",
+      "code": "let value: boolean;\ntype Result = typeof value;",
+      "type": "타입 분석",
+      "options": [
+        "true",
+        "false",
+        "boolean",
+        "string",
+        "number"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Everyday Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-object-field",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "인덱스 접근 타입은 특정 속성의 타입을 추출한다.",
+      "code": "type User = { age: number; name: string };\ntype Result = User[\"age\"];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "User",
+        "unknown",
+        "number",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-record-key-union",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Record의 키 리터럴 합집합이 유지된다.",
+      "code": "type Result = keyof Record<\"a\" | \"b\", number>;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "number",
+        "\"a\"",
+        "never",
+        "\"a\" | \"b\""
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-record-value",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Record의 모든 지정 키에는 값 타입 boolean이 적용된다.",
+      "code": "type Result = Record<\"x\" | \"y\", boolean>[\"x\"];",
+      "type": "타입 분석",
+      "options": [
+        "boolean",
+        "string",
+        "number",
+        "unknown",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-pick-field",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Pick은 지정한 속성만 보존한다.",
+      "code": "type Result = Pick<{ x: number; y: string }, \"x\">;",
+      "type": "타입 분석",
+      "options": [
+        "{ y: string }",
+        "{ x: number }",
+        "number",
+        "{ x?: number }",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-omit-field",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Omit은 지정한 속성을 제외한다.",
+      "code": "type Result = Omit<{ x: number; y: string }, \"x\">;",
+      "type": "타입 분석",
+      "options": [
+        "{ x: number }",
+        "string",
+        "{ y: string }",
+        "{ x: number; y: string }",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-partial-properties",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Partial은 각 속성을 선택적으로 바꾼다.",
+      "code": "type Result = Partial<{ x: number; y: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ x: number; y: string }",
+        "{ x: number }",
+        "unknown",
+        "{ x?: number; y?: string }",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-required-properties",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Required는 선택적 수정자를 제거한다.",
+      "code": "type Result = Required<{ x?: number; y?: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ x?: number; y?: string }",
+        "{ x: number }",
+        "unknown",
+        "never",
+        "{ x: number; y: string }"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-readonly-properties",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Readonly는 객체 속성에 readonly 수정자를 적용한다.",
+      "code": "type Result = Readonly<{ x: number }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ readonly x: number }",
+        "{ x: string }",
+        "readonly number[]",
+        "number",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-function-return",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "ReturnType은 함수의 반환 타입을 추출한다.",
+      "code": "type Result = ReturnType<() => number>;",
+      "type": "타입 분석",
+      "options": [
+        "() => number",
+        "number",
+        "void",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-function-parameters",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Parameters는 순서가 있는 매개변수 튜플이다.",
+      "code": "type Result = Parameters<(name: string, age: number) => void>;",
+      "type": "타입 분석",
+      "options": [
+        "string | number",
+        "void",
+        "[name: string, age: number]",
+        "string[]",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-function-return-void",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "선언된 반환 타입 void를 그대로 얻는다.",
+      "code": "type Result = ReturnType<() => void>;",
+      "type": "타입 분석",
+      "options": [
+        "undefined",
+        "null",
+        "never",
+        "void",
+        "unknown"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-array-readonly-element",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "읽기 전용 여부와 관계없이 원소 타입은 number다.",
+      "code": "type Result = ReadonlyArray<number>[number];",
+      "type": "타입 분석",
+      "options": [
+        "readonly number[]",
+        "string",
+        "unknown",
+        "never",
+        "number"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-promise-awaited",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Awaited는 Promise의 해결 값 타입을 풀어낸다.",
+      "code": "type Result = Awaited<Promise<string>>;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "Promise<string>",
+        "unknown",
+        "never",
+        "void"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-nonnullable",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "NonNullable은 null과 undefined를 제거한다.",
+      "code": "type Result = NonNullable<string | null | undefined>;",
+      "type": "타입 분석",
+      "options": [
+        "null",
+        "string",
+        "undefined",
+        "string | null",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-exclude-union",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "제외 대상에 할당 가능한 구성원을 제거한다.",
+      "code": "type Result = Exclude<\"a\" | \"b\" | \"c\", \"b\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"b\"",
+        "\"a\"",
+        "\"a\" | \"c\"",
+        "\"c\"",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-extract-union",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "대상에 할당 가능한 구성원만 남긴다.",
+      "code": "type Result = Extract<string | number | boolean, string | boolean>;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "string",
+        "boolean",
+        "string | boolean",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-template-simple",
+      "points": 2,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "템플릿 리터럴이 유니언 각 원소에 적용된다.",
+      "code": "type Result = `on${\"Click\" | \"Focus\"}`;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "\"Click\" | \"Focus\"",
+        "\"on\"",
+        "never",
+        "\"onClick\" | \"onFocus\""
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-uppercase-literal",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Uppercase는 문자열 리터럴의 대문자 타입을 만든다.",
+      "code": "type Result = Uppercase<\"hello\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"HELLO\"",
+        "\"hello\"",
+        "\"Hello\"",
+        "string",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-lowercase-literal",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Lowercase는 소문자 문자열 리터럴 타입을 만든다.",
+      "code": "type Result = Lowercase<\"HELLO\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"HELLO\"",
+        "\"hello\"",
+        "\"Hello\"",
+        "string",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-capitalize-literal",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Capitalize는 첫 문자만 대문자로 바꾼다.",
+      "code": "type Result = Capitalize<\"helloWorld\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"HELLOWORLD\"",
+        "\"helloworld\"",
+        "\"HelloWorld\"",
+        "string",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-uncapitalize-literal",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Uncapitalize는 첫 문자만 소문자로 바꾼다.",
+      "code": "type Result = Uncapitalize<\"HelloWorld\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"helloworld\"",
+        "\"HELLOWORLD\"",
+        "string",
+        "\"helloWorld\"",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-union-never",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "never는 유니언에서 추가 가능한 값을 제공하지 않는다.",
+      "code": "type Result = string | never;",
+      "type": "타입 분석",
+      "options": [
+        "never",
+        "unknown",
+        "any",
+        "string[]",
+        "string"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript 3.0 — unknown, union and intersection types",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type"
+        }
+      ]
+    },
+    {
+      "id": "typescript-intersection-never",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "문자열과 숫자를 동시에 만족하는 값은 없다.",
+      "code": "type Result = string & number;",
+      "type": "타입 분석",
+      "options": [
+        "never",
+        "string",
+        "number",
+        "unknown",
+        "any"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript 3.0 — unknown, union and intersection types",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type"
+        }
+      ]
+    },
+    {
+      "id": "typescript-union-unknown",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "unknown과의 합집합은 unknown이다.",
+      "code": "type Result = string | unknown;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "unknown",
+        "never",
+        "any",
+        "object"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript 3.0 — unknown, union and intersection types",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type"
+        }
+      ]
+    },
+    {
+      "id": "typescript-intersection-unknown",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "unknown과의 교집합은 원래 타입을 유지한다.",
+      "code": "type Result = string & unknown;",
+      "type": "타입 분석",
+      "options": [
+        "unknown",
+        "never",
+        "string",
+        "any",
+        "object"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript 3.0 — unknown, union and intersection types",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type"
+        }
+      ]
+    },
+    {
+      "id": "typescript-keyof-union-common",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "유니언에서 안전하게 공통 접근 가능한 키는 x다.",
+      "code": "type Result = keyof ({ x: number; a: string } | { x: number; b: boolean });",
+      "type": "타입 분석",
+      "options": [
+        "\"a\" | \"b\"",
+        "\"x\" | \"a\" | \"b\"",
+        "string",
+        "\"x\"",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Keyof Type Operator",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-keyof-intersection",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "교차 타입은 양쪽 객체의 속성을 함께 가진다.",
+      "code": "type Result = keyof ({ a: string } & { b: number });",
+      "type": "타입 분석",
+      "options": [
+        "\"a\"",
+        "\"b\"",
+        "string",
+        "never",
+        "\"a\" | \"b\""
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Keyof Type Operator",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-index-signature-number",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "숫자 인덱스 시그니처의 키 타입은 number다.",
+      "code": "type Result = keyof { [index: number]: string };",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "string",
+        "string | number",
+        "symbol",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Keyof Type Operator",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-index-signature-string",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "문자열 키 객체는 숫자 키 접근도 허용한다.",
+      "code": "type Result = keyof { [key: string]: boolean };",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "string | number",
+        "number",
+        "symbol",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Keyof Type Operator",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-const-object-widen",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "const 객체라도 변경 가능한 속성은 string으로 넓혀진다.",
+      "code": "const value = { state: \"idle\" };\ntype Result = typeof value.state;",
+      "type": "타입 분석",
+      "options": [
+        "\"idle\"",
+        "unknown",
+        "string",
+        "never",
+        "boolean"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Everyday Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-const-assertion-object",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "as const는 속성의 리터럴 타입을 유지한다.",
+      "code": "const value = { state: \"idle\" } as const;\ntype Result = typeof value.state;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "unknown",
+        "never",
+        "\"idle\"",
+        "boolean"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 3.4",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-const-assertion-tuple",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "배열 리터럴의 const 단언은 읽기 전용 튜플을 만든다.",
+      "code": "const value = [1, \"a\"] as const;\ntype Result = typeof value;",
+      "type": "타입 분석",
+      "options": [
+        "[number, string]",
+        "(number | string)[]",
+        "readonly number[]",
+        "never",
+        "readonly [1, \"a\"]"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 3.4",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-optional-tuple",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "선택적 튜플 원소는 없을 수 있다.",
+      "code": "type Result = [string, number?][1];",
+      "type": "타입 분석",
+      "options": [
+        "number | undefined",
+        "number",
+        "undefined",
+        "null",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-length",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "고정 길이 튜플의 length는 숫자 리터럴이다.",
+      "code": "type Result = [string, number, boolean][\"length\"];",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "3",
+        "2",
+        "string",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-rest-tuple-element",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "첫 원소와 나머지 원소 타입을 합친다.",
+      "code": "type Result = [string, ...number[]][number];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "number",
+        "string | number",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-generic-identity",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "제네릭 인자 boolean이 T 자리에 들어간다.",
+      "code": "type Box<T> = { value: T };\ntype Result = Box<boolean>[\"value\"];",
+      "type": "타입 분석",
+      "options": [
+        "T",
+        "unknown",
+        "never",
+        "boolean",
+        "{ value: boolean }"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Generics",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-generic-default",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "타입 인자 생략 시 기본값 string을 사용한다.",
+      "code": "type Box<T = string> = { value: T };\ntype Result = Box[\"value\"];",
+      "type": "타입 분석",
+      "options": [
+        "unknown",
+        "number",
+        "never",
+        "any",
+        "string"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Generics",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-generic-key-constraint",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "keyof 제약으로 보장된 키의 속성 타입을 얻는다.",
+      "code": "type Field<T, K extends keyof T> = T[K];\ntype Result = Field<{ id: number }, \"id\">;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "\"id\"",
+        "string",
+        "unknown",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Generics",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-conditional-basic",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "number는 string에 할당할 수 없어 false 분기를 선택한다.",
+      "code": "type IsString<T> = T extends string ? true : false;\ntype Result = IsString<number>;",
+      "type": "타입 분석",
+      "options": [
+        "true",
+        "false",
+        "boolean",
+        "never",
+        "unknown"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-conditional-distribute",
+      "points": 3,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "벌거벗은 타입 매개변수의 조건부 타입은 유니언에 분배된다.",
+      "code": "type Wrap<T> = T extends string ? T[] : never;\ntype Result = Wrap<\"a\" | \"b\">;",
+      "type": "타입 분석",
+      "options": [
+        "(\"a\" | \"b\")[]",
+        "string",
+        "\"a\"[] | \"b\"[]",
+        "never",
+        "unknown"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-conditional-no-distribute",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "튜플로 감싸면 유니언 전체가 string인지 검사한다.",
+      "code": "type Wrap<T> = [T] extends [string] ? T[] : never;\ntype Result = Wrap<\"a\" | 1>;",
+      "type": "타입 분석",
+      "options": [
+        "\"a\"[]",
+        "1[]",
+        "(\"a\" | 1)[]",
+        "never",
+        "unknown"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-infer-array-element",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "infer U가 배열의 원소 타입을 포착한다.",
+      "code": "type ElementOf<T> = T extends (infer U)[] ? U : never;\ntype Result = ElementOf<boolean[]>;",
+      "type": "타입 분석",
+      "options": [
+        "boolean[]",
+        "unknown",
+        "never",
+        "any",
+        "boolean"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-infer-promise",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Promise 내부 타입을 추론해 반환한다.",
+      "code": "type Unwrap<T> = T extends Promise<infer U> ? U : T;\ntype Result = Unwrap<Promise<number>>;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "Promise<number>",
+        "unknown",
+        "never",
+        "void"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-infer-return",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "infer R은 선언된 반환 리터럴 타입을 얻는다.",
+      "code": "type GetReturn<T> = T extends (...args: any[]) => infer R ? R : never;\ntype Result = GetReturn<() => \"ok\">;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "\"ok\"",
+        "void",
+        "never",
+        "unknown"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-infer-first-tuple",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "튜플 첫 원소를 H로 추론한다.",
+      "code": "type First<T> = T extends [infer H, ...unknown[]] ? H : never;\ntype Result = First<[42, \"x\"]>;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "\"x\"",
+        "42",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-infer-empty-tuple",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "빈 튜플은 필수 첫 원소 패턴과 일치하지 않는다.",
+      "code": "type First<T> = T extends [infer H, ...unknown[]] ? H : never;\ntype Result = First<[]>;",
+      "type": "타입 분석",
+      "options": [
+        "undefined",
+        "unknown",
+        "any",
+        "never",
+        "void"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mapped-boolean",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "매핑 타입은 각 키를 보존하고 값 타입을 바꾼다.",
+      "code": "type Flags<T> = { [K in keyof T]: boolean };\ntype Result = Flags<{ read: number; write: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ read: number; write: string }",
+        "boolean",
+        "unknown",
+        "never",
+        "{ read: boolean; write: boolean }"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mapped-remove-readonly",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "-readonly는 읽기 전용 수정자를 제거한다.",
+      "code": "type Mutable<T> = { -readonly [K in keyof T]: T[K] };\ntype Result = Mutable<{ readonly x: number }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ x: number }",
+        "{ x: string }",
+        "number",
+        "readonly number[]",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mapped-remove-optional",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "-?는 선택적 수정자를 제거한다.",
+      "code": "type Definite<T> = { [K in keyof T]-?: T[K] };\ntype Result = Definite<{ x?: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ x?: string }",
+        "{ x: string }",
+        "{ x: undefined }",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mapped-rename",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "as 절이 키 이름을 재매핑한다.",
+      "code": "type Prefix<T> = { [K in keyof T as `get_${K & string}`]: T[K] };\ntype Result = Prefix<{ name: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ name: string }",
+        "{ get_name: number }",
+        "{ get_name: string }",
+        "string",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mapped-filter",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "키를 never로 매핑하면 해당 속성이 제거된다.",
+      "code": "type WithoutId<T> = { [K in keyof T as Exclude<K, \"id\">]: T[K] };\ntype Result = WithoutId<{ id: number; name: string }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ id: number }",
+        "{ id: number; name: string }",
+        "unknown",
+        "{ name: string }",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-awaited-nested",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Awaited는 중첩 Promise를 재귀적으로 풀어낸다.",
+      "code": "type Result = Awaited<Promise<Promise<number>>>;",
+      "type": "타입 분석",
+      "options": [
+        "Promise<number>",
+        "Promise<Promise<number>>",
+        "unknown",
+        "never",
+        "number"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-awaited-union",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "유니언 각 구성원의 await 결과를 합친다.",
+      "code": "type Result = Awaited<string | Promise<number>>;",
+      "type": "타입 분석",
+      "options": [
+        "string | number",
+        "Promise<string | number>",
+        "number",
+        "string",
+        "unknown"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-awaited-null",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "Awaited는 null을 그대로 보존한다.",
+      "code": "type Result = Awaited<null | Promise<string>>;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "null | string",
+        "null",
+        "never",
+        "unknown"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-returntype-generic",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "구체적인 제네릭 인자가 없으므로 unknown이다.",
+      "code": "type Result = ReturnType<<T>() => T>;",
+      "type": "타입 분석",
+      "options": [
+        "any",
+        "never",
+        "unknown",
+        "void",
+        "T"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-parameters-optional",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "선택적 매개변수는 튜플에서도 선택적으로 유지된다.",
+      "code": "type Result = Parameters<(x?: string) => void>;",
+      "type": "타입 분석",
+      "options": [
+        "[string]",
+        "string | undefined",
+        "void",
+        "[x?: string]",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-parameters-rest",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "rest 매개변수의 타입은 가변 길이 배열로 추출된다.",
+      "code": "type Result = Parameters<(...values: number[]) => void>;",
+      "type": "타입 분석",
+      "options": [
+        "[number]",
+        "number",
+        "void",
+        "never",
+        "number[]"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-constructor-parameters",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "생성자 매개변수를 튜플로 추출한다.",
+      "code": "class User { constructor(name: string, age: number) {} }\ntype Result = ConstructorParameters<typeof User>;",
+      "type": "타입 분석",
+      "options": [
+        "[name: string, age: number]",
+        "User",
+        "string | number",
+        "void",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-instance-type",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "생성자 타입에서 인스턴스 타입을 얻는다.",
+      "code": "class User { name = \"\"; }\ntype Result = InstanceType<typeof User>;",
+      "type": "타입 분석",
+      "options": [
+        "typeof User",
+        "User",
+        "string",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-this-parameter",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "명시적인 this 매개변수 타입을 추출한다.",
+      "code": "function read(this: { x: number }) { return this.x; }\ntype Result = ThisParameterType<typeof read>;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "typeof read",
+        "{ x: number }",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-omit-this-parameter",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "this 매개변수만 제거하고 나머지 시그니처는 유지한다.",
+      "code": "type Fn = (this: { x: number }, n: number) => string;\ntype Result = OmitThisParameter<Fn>;",
+      "type": "타입 분석",
+      "options": [
+        "() => string",
+        "(n: string) => number",
+        "string",
+        "(n: number) => string",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-exclude-null",
+      "points": 4,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "null만 제외하므로 undefined는 남는다.",
+      "code": "type Result = Exclude<string | null | undefined, null>;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "null",
+        "undefined",
+        "never",
+        "string | undefined"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-extract-discriminated",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "kind 조건에 할당 가능한 유니언 구성원만 추출한다.",
+      "code": "type Shape = { kind: \"circle\"; r: number } | { kind: \"square\"; s: number };\ntype Result = Extract<Shape, { kind: \"circle\" }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ kind: \"circle\"; r: number }",
+        "Shape",
+        "{ kind: \"square\"; s: number }",
+        "number",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-template-cartesian",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "템플릿 리터럴의 유니언은 조합별로 전개된다.",
+      "code": "type Result = `${\"a\" | \"b\"}-${1 | 2}`;",
+      "type": "타입 분석",
+      "options": [
+        "\"a-1\" | \"b-2\"",
+        "\"a-1\" | \"a-2\" | \"b-1\" | \"b-2\"",
+        "string",
+        "\"a\" | \"b\"",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-template-infer-suffix",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "고정 접두사 뒤의 문자열을 R로 추론한다.",
+      "code": "type Suffix<T> = T extends `on${infer R}` ? R : never;\ntype Result = Suffix<\"onClick\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"on\"",
+        "\"onClick\"",
+        "\"Click\"",
+        "string",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-template-infer-delimiter",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "첫 구분자 앞부분을 추론한다.",
+      "code": "type Head<T> = T extends `${infer H}:${string}` ? H : never;\ntype Result = Head<\"user:name\">;",
+      "type": "타입 분석",
+      "options": [
+        "\"name\"",
+        "\"user:name\"",
+        "string",
+        "\"user\"",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-tail",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "첫 원소를 제외한 나머지를 가변 튜플로 추론한다.",
+      "code": "type Tail<T extends unknown[]> = T extends [unknown, ...infer R] ? R : [];\ntype Result = Tail<[1, 2, 3]>;",
+      "type": "타입 분석",
+      "options": [
+        "[1, 2]",
+        "[1, 2, 3]",
+        "number[]",
+        "never",
+        "[2, 3]"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-last",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "끝 위치에 infer를 두어 마지막 타입을 얻는다.",
+      "code": "type Last<T extends unknown[]> = T extends [...unknown[], infer L] ? L : never;\ntype Result = Last<[\"a\", 2, true]>;",
+      "type": "타입 분석",
+      "options": [
+        "true",
+        "boolean",
+        "2",
+        "\"a\"",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-concat",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "가변 튜플 스프레드는 순서를 보존해 연결한다.",
+      "code": "type Concat<A extends unknown[], B extends unknown[]> = [...A, ...B];\ntype Result = Concat<[1, 2], [\"x\"]>;",
+      "type": "타입 분석",
+      "options": [
+        "[1, 2]",
+        "[1, 2, \"x\"]",
+        "[\"x\"]",
+        "(number | string)[]",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 4.0",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-tuple-readonly-first",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "readonly 튜플 패턴이 입력과 일치한다.",
+      "code": "type First<T> = T extends readonly [infer H, ...unknown[]] ? H : never;\ntype Result = First<readonly [\"x\", 2]>;",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "2",
+        "\"x\"",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-conditional-never-distribution",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "분배 조건부 타입에서 never는 전개할 구성원이 없다.",
+      "code": "type Test<T> = T extends string ? 1 : 2;\ntype Result = Test<never>;",
+      "type": "타입 분석",
+      "options": [
+        "1",
+        "2",
+        "1 | 2",
+        "never",
+        "unknown"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-conditional-never-wrapped",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "튜플로 감싸 분배를 막으면 never 여부를 직접 검사한다.",
+      "code": "type Test<T> = [T] extends [never] ? 1 : 2;\ntype Result = Test<never>;",
+      "type": "타입 분석",
+      "options": [
+        "never",
+        "2",
+        "1 | 2",
+        "unknown",
+        "1"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-union-function-returns",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "함수 유니언의 반환 타입은 각 반환 타입의 유니언이다.",
+      "code": "type Result = ReturnType<(() => number) | (() => string)>;",
+      "type": "타입 분석",
+      "options": [
+        "number | string",
+        "number",
+        "string",
+        "never",
+        "unknown"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-overload-return",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "오버로드 타입 추론은 마지막 시그니처를 사용한다.",
+      "code": "declare function read(x: string): number;\ndeclare function read(x: number): string;\ntype Result = ReturnType<typeof read>;",
+      "type": "타입 분석",
+      "options": [
+        "number",
+        "string",
+        "number | string",
+        "unknown",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-satisfies-literal",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "satisfies가 검사를 수행하되 구체적인 리터럴 추론을 유지한다.",
+      "code": "const item = { kind: \"a\" } satisfies { kind: \"a\" | \"b\" };\ntype Result = typeof item.kind;",
+      "type": "타입 분석",
+      "options": [
+        "\"a\" | \"b\"",
+        "string",
+        "\"a\"",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 4.9",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-satisfies-tuple",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "문맥의 튜플 형태를 따라 추론되지만 const 단언은 아니다.",
+      "code": "const pair = [1, \"x\"] satisfies [number, string];\ntype Result = typeof pair;",
+      "type": "타입 분석",
+      "options": [
+        "(number | string)[]",
+        "readonly [1, \"x\"]",
+        "[1, \"x\"]",
+        "[number, string]",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - TypeScript 4.9",
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-readonly-array-assignability",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "읽기 전용 배열을 변경 가능한 배열 타입으로 할당할 수 없다.",
+      "code": "type Result = readonly string[] extends string[] ? true : false;",
+      "type": "타입 분석",
+      "options": [
+        "true",
+        "boolean",
+        "never",
+        "unknown",
+        "false"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-mutable-array-readonly",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "변경 가능한 배열을 읽기 전용으로 사용하는 것은 허용된다.",
+      "code": "type Result = string[] extends readonly string[] ? true : false;",
+      "type": "타입 분석",
+      "options": [
+        "true",
+        "false",
+        "boolean",
+        "never",
+        "unknown"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Object Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-structural-extra-field",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "구조적 할당 관계에서는 필요한 속성을 포함하면 된다.",
+      "code": "type Result = { x: number; y: number } extends { x: number } ? true : false;",
+      "type": "타입 분석",
+      "options": [
+        "false",
+        "true",
+        "boolean",
+        "never",
+        "unknown"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Type Compatibility",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-function-variance",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "더 넓은 입력을 처리하는 함수를 문자열만 전달할 자리에 둘 수 있다.",
+      "code": "type A = (value: string | number) => void;\ntype B = (value: string) => void;\ntype Result = A extends B ? true : false;",
+      "type": "타입 분석",
+      "options": [
+        "false",
+        "boolean",
+        "true",
+        "never",
+        "unknown"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Type Compatibility",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-pick-union-keys",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "지정한 두 속성을 모두 선택한다.",
+      "code": "type Result = Pick<{ a: string; b: number; c: boolean }, \"a\" | \"c\">;",
+      "type": "타입 분석",
+      "options": [
+        "{ b: number }",
+        "{ a: string }",
+        "unknown",
+        "{ a: string; c: boolean }",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Utility Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-recursive-flatten",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "배열 구조를 재귀적으로 풀어 최종 원소 타입을 얻는다.",
+      "code": "type Flat<T> = T extends (infer U)[] ? Flat<U> : T;\ntype Result = Flat<number[][][]>;",
+      "type": "타입 분석",
+      "options": [
+        "number[]",
+        "number[][]",
+        "unknown",
+        "never",
+        "number"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-union-to-array-wrapped",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "분배를 막아 전체 유니언을 하나의 배열 원소 타입으로 사용한다.",
+      "code": "type ToArray<T> = [T] extends [unknown] ? T[] : never;\ntype Result = ToArray<string | number>;",
+      "type": "타입 분석",
+      "options": [
+        "(string | number)[]",
+        "string[] | number[]",
+        "string | number",
+        "unknown",
+        "never"
+      ],
+      "answer": 1,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Conditional Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-key-remap-upper",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "문자열 키에 Uppercase를 적용해 새 키를 만든다.",
+      "code": "type UpperKeys<T> = { [K in keyof T as Uppercase<K & string>]: T[K] };\ntype Result = UpperKeys<{ foo: number }>;",
+      "type": "타입 분석",
+      "options": [
+        "{ foo: number }",
+        "{ FOO: number }",
+        "{ Foo: number }",
+        "number",
+        "never"
+      ],
+      "answer": 2,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Template Literal Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-deep-indexed-access",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "객체 속성, 배열 원소, 원소 속성 순서로 접근한다.",
+      "code": "type Data = { users: { id: number; name: string }[] };\ntype Result = Data[\"users\"][number][\"id\"];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "number[]",
+        "number",
+        "unknown",
+        "never"
+      ],
+      "answer": 3,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-union-discriminator-values",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "각 구성원의 같은 키에 대한 리터럴 타입을 합친다.",
+      "code": "type Event = { type: \"add\"; n: number } | { type: \"remove\"; id: string };\ntype Result = Event[\"type\"];",
+      "type": "타입 분석",
+      "options": [
+        "string",
+        "number",
+        "\"add\"",
+        "\"add\" | \"remove\"",
+        "never"
+      ],
+      "answer": 4,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Indexed Access Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        }
+      ]
+    },
+    {
+      "id": "typescript-optional-key-required-read",
+      "points": 5,
+      "prompt": "TypeScript 5.9, strict: true에서 다음 코드의 Result 타입으로 옳은 것은?",
+      "explanation": "선택한 name의 선택적 수정자를 제거한 뒤 읽는다.",
+      "code": "type Result = Required<Pick<{ name?: string; age: number }, \"name\">>[\"name\"];",
+      "type": "타입 분석",
+      "options": [
+        "string | undefined",
+        "undefined",
+        "number",
+        "never",
+        "string"
+      ],
+      "answer": 5,
+      "sources": [
+        {
+          "title": "TypeScript: Documentation - Mapped Types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        }
+      ]
+    }
+  ]
+}

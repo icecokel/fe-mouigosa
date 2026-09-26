@@ -2,12 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { formatTime, remainingSeconds } from "./countdown.mjs";
-import { questions } from "./questions.mjs";
-import { gradeExam } from "./results.mjs";
+import { questionBank } from "./questions.mjs";
+import { createExam } from "./exam.mjs";
+import { gradeExam, shareExamResult } from "./results.mjs";
 
-const numbers = questions.map((question) => question.id);
 const choices = ["①", "②", "③", "④", "⑤"];
-const pages = Array.from({ length: Math.ceil(questions.length / 4) }, (_, index) => questions.slice(index * 4, index * 4 + 4));
 
 function Question({ question, answer, onAnswer, locked }) {
   return (
@@ -41,7 +40,8 @@ function Question({ question, answer, onAnswer, locked }) {
   );
 }
 
-function OMR({ answers, onAnswer, onSubmit, labelId, timeLeft, locked }) {
+function OMR({ questions, answers, onAnswer, onSubmit, labelId, timeLeft, locked }) {
+  const numbers = questions.map((question) => question.id);
   const answered = Object.keys(answers).length;
 
   return (
@@ -89,7 +89,8 @@ function OMR({ answers, onAnswer, onSubmit, labelId, timeLeft, locked }) {
   );
 }
 
-function Exam({ answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
+function Exam({ questions, answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft, locked }) {
+  const pages = Array.from({ length: Math.ceil(questions.length / 4) }, (_, index) => questions.slice(index * 4, index * 4 + 4));
   return (
     <div className="exam-layout">
       <main className="exam-pages" aria-label="프론트엔드 영역 문제지">
@@ -127,7 +128,7 @@ function Exam({ answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft,
       </main>
 
       <aside className="desktop-omr" aria-label="답안지">
-        <OMR answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="desktop-omr-title" timeLeft={timeLeft} locked={locked} />
       </aside>
 
       <button
@@ -137,7 +138,7 @@ function Exam({ answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft,
         onClick={() => dialogRef.current?.showModal()}
       >
         <span>남은 시간 <strong className="drawer-time" role="timer">{timeLeft}</strong></span>
-        <span>OMR {Object.keys(answers).length} / {numbers.length} · 열기</span>
+        <span>OMR {Object.keys(answers).length} / {questions.length} · 열기</span>
       </button>
       <dialog
         className="omr-dialog"
@@ -151,14 +152,27 @@ function Exam({ answers, onAnswer, onSubmit, dialogRef, openButtonRef, timeLeft,
             닫기
           </button>
         </div>
-        <OMR answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
+        <OMR questions={questions} answers={answers} onAnswer={onAnswer} onSubmit={onSubmit} labelId="mobile-omr-title" timeLeft={timeLeft} locked={locked} />
       </dialog>
     </div>
   );
 }
 
-function Result({ answers, onRetry }) {
-  const report = gradeExam(answers);
+function Result({ questions, answers, onRetry }) {
+  const report = gradeExam(answers, questions);
+  const [shareStatus, setShareStatus] = useState({});
+  const [sharing, setSharing] = useState(false);
+
+  async function shareResult() {
+    if (sharing) return;
+    setSharing(true);
+    setShareStatus({});
+    try {
+      setShareStatus(await shareExamResult(report));
+    } finally {
+      setSharing(false);
+    }
+  }
 
   return (
     <main className="paper result-paper" aria-label="성적통지표">
@@ -169,16 +183,24 @@ function Result({ answers, onRetry }) {
       </header>
       <div className="result-body">
         <p className="result-overview">
-          <span>총점 <strong>{report.score} / {report.maxScore}점</strong></span>
+          <span className="total-score">총점 <strong>{report.score}</strong> / {report.maxScore}점</span>
           <span>정답 <strong>{report.correctCount} / {questions.length}문항</strong></span>
           <span>미응답 <strong>{report.unansweredCount}문항</strong></span>
         </p>
+        <div className="result-actions">
+          <button type="button" className="retry-button" onClick={shareResult} disabled={sharing}>{sharing ? "공유 중…" : "결과 공유하기"}</button>
+          <a className="retry-button" href="https://github.com/icecokel/fe-mouigosa" target="_blank" rel="noopener noreferrer">☆ GitHub Star <span className="sr-only">(새 탭)</span></a>
+        </div>
+        <p className="result-note">점수 요약과 응시 링크를 공유합니다. 프로젝트가 마음에 들면 GitHub에서 Star를 눌러 주세요.</p>
+        <p className="result-note" role="status">{shareStatus.message}</p>
+        {shareStatus.text && <textarea className="share-copy" aria-label="공유할 점수 요약과 응시 링크" readOnly value={shareStatus.text} onFocus={(event) => event.target.select()} rows={4} />}
 
         <div className="section-rule">
           <span>Ⅰ</span>
           <h2>영역별 성적</h2>
         </div>
-        <div className="score-scroll" role="region" aria-label="영역별 성적표" tabIndex={0}>
+        <p className="result-note table-scroll-hint" id="score-scroll-hint">좌우로 이동해 영역별 성적을 확인하세요.</p>
+        <div className="score-scroll" role="region" aria-label="영역별 성적표" aria-describedby="score-scroll-hint" tabIndex={0}>
           <table className="score-table">
             <thead>
               <tr>
@@ -213,7 +235,7 @@ function Result({ answers, onRetry }) {
         {report.weakAreas.length ? (
           <ul className="weak-list">
             {report.weakAreas.map((area) => (
-              <li key={area.category}><strong>{area.category}</strong><span>정답 {area.correct} / 응답 {area.attempted}</span></li>
+              <li key={area.category}><strong>{area.category}</strong><span>정답률 {Math.round(area.correct / area.attempted * 100)}% · 오답 {area.attempted - area.correct}문항</span></li>
             ))}
           </ul>
         ) : (
@@ -223,34 +245,41 @@ function Result({ answers, onRetry }) {
 
         <div className="section-rule">
           <span>Ⅲ</span>
-          <h2>오답·미응답 문항</h2>
-          <span className="section-count">{report.mistakes.length}문항</span>
+          <h2>정답 및 해설</h2>
+          <span className="section-count">전체 {report.answerSheet.length}문항</span>
         </div>
-        {report.mistakes.length ? (
-          <ol className="mistake-list">
-            {report.mistakes.map((question) => (
-              <li key={question.id}>
-                <details>
-                  <summary>
-                    <strong>{question.id}번</strong>
-                    <span>{question.prompt}</span>
-                    <em>{question.selected === null ? "미응답" : "오답"}</em>
-                  </summary>
-                  <div className="mistake-detail">
-                    <p className="mistake-category">{question.category}</p>
-                    {question.code && <pre className="question-code result-code"><code>{question.code}</code></pre>}
-                    <dl className="answer-compare">
-                      <dt>제출 답안</dt>
-                      <dd>{question.selected === null ? "미응답" : `${choices[question.selected - 1]} ${question.options[question.selected - 1]}`}</dd>
-                      <dt>정답</dt>
-                      <dd>{choices[question.answer - 1]} {question.options[question.answer - 1]}</dd>
-                    </dl>
-                  </div>
-                </details>
-              </li>
-            ))}
-          </ol>
-        ) : <p className="empty-result">모든 문항을 맞혔습니다.</p>}
+        <ol className="mistake-list">
+          {report.answerSheet.map((question) => (
+            <li key={question.id}>
+              <details>
+                <summary>
+                  <strong>{question.id}번</strong>
+                  <span>{question.prompt}</span>
+                  <em className={question.isCorrect ? "answer-correct" : ""}>{question.isCorrect ? "정답" : question.selected === null ? "미응답" : "오답"}</em>
+                </summary>
+                <div className="mistake-detail">
+                  <p className="mistake-category">{question.category} · {question.type} · {question.points}점</p>
+                  {question.code && <pre className="question-code result-code"><code>{question.code}</code></pre>}
+                  <ol className="answer-options">
+                    {question.options.map((option, index) => <li key={index}>{choices[index]} {option}</li>)}
+                  </ol>
+                  <dl className="answer-compare">
+                    <dt>제출 답안</dt>
+                    <dd>{question.selected === null ? "미응답" : `${choices[question.selected - 1]} ${question.options[question.selected - 1]}`}</dd>
+                    <dt>정답</dt>
+                    <dd>{choices[question.answer - 1]} {question.options[question.answer - 1]}</dd>
+                  </dl>
+                  <h3 className="answer-heading">해설</h3>
+                  <p className="answer-explanation">{question.explanation}</p>
+                  <h3 className="answer-heading">정답 근거</h3>
+                  <ul className="answer-sources">
+                    {question.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}<span className="sr-only"> (새 탭)</span></a></li>)}
+                  </ul>
+                </div>
+              </details>
+            </li>
+          ))}
+        </ol>
       </div>
       <footer className="result-footer">
         <span>fe-mouigosa · 목업 성적통지표</span>
@@ -261,6 +290,8 @@ function Result({ answers, onRetry }) {
 }
 
 export default function Home() {
+  const [questions, setQuestions] = useState([]);
+  const [examError, setExamError] = useState("");
   const [view, setView] = useState("exam");
   const [answers, setAnswers] = useState({});
   const [submittedAnswers, setSubmittedAnswers] = useState(null);
@@ -269,7 +300,7 @@ export default function Home() {
   const openButtonRef = useRef(null);
 
   useEffect(() => {
-    if (submittedAnswers) return;
+    if (!questions.length || submittedAnswers) return;
     const deadline = Date.now() + 20 * 60 * 1000;
     const interval = setInterval(() => {
       const seconds = remainingSeconds(deadline, Date.now());
@@ -277,7 +308,7 @@ export default function Home() {
       if (seconds === 0) clearInterval(interval);
     }, 1000);
     return () => clearInterval(interval);
-  }, [submittedAnswers]);
+  }, [questions, submittedAnswers]);
 
   const showView = (nextView) => {
     dialogRef.current?.close();
@@ -291,6 +322,13 @@ export default function Home() {
   };
 
   const retryExam = () => {
+    try {
+      setQuestions(createExam(questionBank));
+      setExamError("");
+    } catch (error) {
+      setExamError(error.message);
+      return;
+    }
     setAnswers({});
     setSecondsLeft(20 * 60);
     setSubmittedAnswers(null);
@@ -303,18 +341,34 @@ export default function Home() {
         <div className="site-header-inner">
           <span className="site-name">fe-mouigosa</span>
           <nav aria-label="화면 시안">
-            <button type="button" aria-current={view === "exam" ? "page" : undefined} onClick={() => showView("exam")}>문제지</button>
+            <button type="button" aria-current={view === "exam" ? "page" : undefined} onClick={() => showView("exam")} disabled={!questions.length}>문제지</button>
             <button type="button" aria-current={view === "result" ? "page" : undefined} onClick={() => showView("result")} disabled={!submittedAnswers}>성적표</button>
           </nav>
         </div>
       </header>
       <div className="preview-caption">
         <span>화면 시안</span>
-        <span>{submittedAnswers ? "제출 완료 · 문제지와 성적표를 확인할 수 있습니다." : "20개 예시 문항 · OMR에서 시험을 종료하면 성적표가 열립니다."}</span>
+        <span>{submittedAnswers ? "제출 완료 · 문제지와 성적표를 확인할 수 있습니다." : questions.length ? `${questions.length}문항 · 100점 만점 · 제한 시간 20분` : "매 응시 무작위 출제 · 20문항 이상 · 100점 만점"}</span>
       </div>
-      {view === "exam" ? (
-        <Exam answers={answers} onAnswer={(number, value) => setAnswers((current) => ({ ...current, [number]: value }))} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
-      ) : <Result answers={submittedAnswers} onRetry={retryExam} />}
+      {examError && <p role="alert" className="exam-error">{examError}</p>}
+      {!questions.length ? (
+        <main className="paper exam-start" aria-label="응시 안내">
+          <header className="exam-header">
+            <p className="exam-year">2026학년도 프론트엔드 개발자 모의평가</p>
+            <div className="exam-title-row"><span className="period">제 1교시</span><h1>프론트엔드 영역</h1></div>
+          </header>
+          <h2>수험생 유의사항</h2>
+          <ol>
+            <li>시험 시간은 20분이며, 시작 버튼을 누르면 시간이 흐릅니다.</li>
+            <li>문항은 매번 무작위로 출제되며 20문항 이상, 총 100점입니다.</li>
+            <li>문항별 배점은 2~5점입니다. 각 문항의 배점을 확인하십시오.</li>
+            <li>시험 종료 후 성적표를 확인할 수 있습니다.</li>
+          </ol>
+          <button type="button" className="exam-submit" onClick={retryExam}>모의고사 시작</button>
+        </main>
+      ) : view === "exam" ? (
+        <Exam questions={questions} answers={answers} onAnswer={(number, value) => setAnswers((current) => ({ ...current, [number]: value }))} onSubmit={finishExam} dialogRef={dialogRef} openButtonRef={openButtonRef} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
+      ) : <Result questions={questions} answers={submittedAnswers} onRetry={retryExam} />}
     </>
   );
 }
