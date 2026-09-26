@@ -1,21 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { formatTime, remainingSeconds } from "./countdown.mjs";
-import { questionBank } from "./questions.mjs";
-import { createExam } from "./exam.mjs";
-import { EXAM_DURATION_MS, EXAM_SESSION_KEY, restoreExamSession } from "./exam-session.mjs";
-import { createExamIdentity } from "./candidate.mjs";
+import { useRef, useState } from "react";
+import { formatTime } from "./countdown.mjs";
 import { gradeExam, isAnswered, shareExamResult } from "./results.mjs";
+import { useExamSession } from "./use-exam-session.mjs";
 import MatchingInput from "./matching-input";
 
 const choices = ["①", "②", "③", "④", "⑤"];
 const leftLabels = ["ㄱ", "ㄴ", "ㄷ", "ㄹ"];
 const rightLabels = ["A", "B", "C", "D"];
-
-function saveExamSession(session) {
-  try { localStorage.setItem(EXAM_SESSION_KEY, JSON.stringify(session)); } catch { /* 저장소를 사용할 수 없어도 시험은 진행한다. */ }
-}
 
 function CandidateRecord({ candidate }) {
   return (
@@ -283,129 +276,21 @@ function Result({ questions, answers, candidate, onRetry }) {
 }
 
 export default function Home() {
-  const [questions, setQuestions] = useState([]);
-  const [candidate, setCandidate] = useState(null);
-  const [identity, setIdentity] = useState(null);
-  const [examError, setExamError] = useState("");
-  const [view, setView] = useState("exam");
-  const [answers, setAnswers] = useState({});
-  const [submittedAnswers, setSubmittedAnswers] = useState(null);
-  const [secondsLeft, setSecondsLeft] = useState(20 * 60);
-  const [deadline, setDeadline] = useState(null);
+  const {
+    session, candidate, identity, examError, view, secondsLeft,
+    showView, startExam, finishExam, retryExam, recordAnswer, chooseAnswer, clearExamError,
+  } = useExamSession();
+  const questions = session?.questions ?? [];
+  const answers = session?.answers ?? {};
   const nameInputRef = useRef(null);
 
-  useEffect(() => {
-    setIdentity(createExamIdentity());
-    try {
-      const saved = JSON.parse(localStorage.getItem(EXAM_SESSION_KEY) ?? "null");
-      const session = restoreExamSession(saved);
-      if (!session) return;
-      setQuestions(session.questions);
-      setCandidate(session.candidate);
-      setAnswers(session.answers);
-      setDeadline(session.deadline);
-      setSecondsLeft(remainingSeconds(session.deadline, Date.now()));
-      if (session.submitted) {
-        setSubmittedAnswers({ ...session.answers });
-        setView("result");
-        if (!saved.submitted) saveExamSession(session);
-      }
-    } catch { /* 저장된 시험이 손상되었으면 시작 화면을 표시한다. */ }
-  }, []);
-
-  useEffect(() => {
-    if (!questions.length || !candidate || !deadline || submittedAnswers) return;
-    saveExamSession({ questions, candidate, answers, deadline, submitted: false });
-  }, [questions, candidate, answers, deadline, submittedAnswers]);
-
-  useEffect(() => {
-    if (!questions.length || !candidate || !deadline || submittedAnswers) return;
-    let ended = false;
-    const tick = () => {
-      if (ended) return;
-      const seconds = remainingSeconds(deadline, Date.now());
-      setSecondsLeft(seconds);
-      if (seconds === 0) {
-        ended = true;
-        saveExamSession({ questions, candidate, answers, deadline, submitted: true });
-        setSubmittedAnswers({ ...answers });
-        setView("result");
-        window.scrollTo(0, 0);
-      }
-    };
-    tick();
-    if (ended) return;
-    const interval = setInterval(() => {
-      tick();
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [questions, candidate, answers, deadline, submittedAnswers]);
-
-  const showView = (nextView) => {
-    setView(nextView);
-    window.scrollTo(0, 0);
-  };
-
-  const finishExam = () => {
-    const finalAnswers = { ...answers };
-    saveExamSession({ questions, candidate, answers: finalAnswers, deadline, submitted: true });
-    setSubmittedAnswers(finalAnswers);
-    showView("result");
-  };
-
-  const startExam = (event) => {
+  const handleStartExam = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const name = String(data.get("candidateName") ?? "").trim();
-    if (!name) {
-      setExamError("성명을 입력해 주세요.");
-      nameInputRef.current?.focus();
-      return;
-    }
-    let nextQuestions;
-    try {
-      nextQuestions = createExam(questionBank);
-    } catch (error) {
-      setExamError(error.message);
-      return;
-    }
-    const issued = createExamIdentity();
-    const nextCandidate = {
-      name,
-      affiliation: String(data.get("affiliation") ?? "").trim(),
-      ...(identity?.date === issued.date ? identity : issued),
-    };
-    const nextDeadline = Date.now() + EXAM_DURATION_MS;
-    saveExamSession({ questions: nextQuestions, candidate: nextCandidate, answers: {}, deadline: nextDeadline, submitted: false });
-    setQuestions(nextQuestions);
-    setCandidate(nextCandidate);
-    setAnswers({});
-    setSecondsLeft(20 * 60);
-    setDeadline(nextDeadline);
-    setSubmittedAnswers(null);
-    setExamError("");
-    showView("exam");
+    startExam({ name, affiliation: String(data.get("affiliation") ?? "") });
+    if (!name) nameInputRef.current?.focus();
   };
-
-  const retryExam = () => {
-    try { localStorage.removeItem(EXAM_SESSION_KEY); } catch { /* 저장소를 사용할 수 없어도 새 시험을 시작할 수 있다. */ }
-    setQuestions([]);
-    setAnswers({});
-    setSubmittedAnswers(null);
-    setSecondsLeft(20 * 60);
-    setDeadline(null);
-    setIdentity(createExamIdentity());
-    setExamError("");
-    showView("exam");
-  };
-
-  const setAnswer = (number, value) => setAnswers((current) => ({ ...current, [number]: value }));
-  const chooseAnswer = (question, value) => setAnswers((current) => {
-    if (question.format !== "객관식 중복") return { ...current, [question.id]: value };
-    const selected = current[question.id] ?? [];
-    const next = selected.includes(value) ? selected.filter((number) => number !== value) : [...selected, value];
-    return { ...current, [question.id]: next.sort((a, b) => a - b) };
-  });
 
   return (
     <>
@@ -414,13 +299,13 @@ export default function Home() {
           <span className="site-name">fe-mouigosa</span>
           <nav aria-label="화면 시안">
             <button type="button" aria-current={view === "exam" ? "page" : undefined} onClick={() => showView("exam")} disabled={!questions.length}>문제지</button>
-            <button type="button" aria-current={view === "result" ? "page" : undefined} onClick={() => showView("result")} disabled={!submittedAnswers}>성적표</button>
+            <button type="button" aria-current={view === "result" ? "page" : undefined} onClick={() => showView("result")} disabled={!session?.submitted}>성적표</button>
           </nav>
         </div>
       </header>
       <div className="preview-caption">
         <span>화면 시안</span>
-        <span>{submittedAnswers ? "제출 완료 · 문제지와 성적표를 확인할 수 있습니다." : questions.length ? `${questions.length}문항 · 100점 만점 · 제한 시간 20분` : "매 응시 무작위 출제 · 20문항 이상 · 100점 만점"}</span>
+        <span>{session?.submitted ? "제출 완료 · 문제지와 성적표를 확인할 수 있습니다." : questions.length ? `${questions.length}문항 · 100점 만점 · 제한 시간 20분` : "매 응시 무작위 출제 · 20문항 이상 · 100점 만점"}</span>
       </div>
       {examError && <p role="alert" className="exam-error">{examError}</p>}
       {!questions.length ? (
@@ -429,13 +314,13 @@ export default function Home() {
             <p className="exam-year">2026학년도 프론트엔드 개발자 모의평가</p>
             <div className="exam-title-row"><span className="period">제 1교시</span><h1>프론트엔드 영역</h1></div>
           </header>
-          <form onSubmit={startExam}>
+          <form onSubmit={handleStartExam}>
             <section className="candidate-entry" aria-labelledby="candidate-title">
               <h2 id="candidate-title">수험자 정보 기재</h2>
               <div className="candidate-grid">
                 <label className="candidate-cell">
                   <span>성명</span>
-                  <input ref={nameInputRef} name="candidateName" type="text" required maxLength={30} autoComplete="name" defaultValue={candidate?.name ?? ""} placeholder="성명 또는 닉네임" onChange={() => setExamError("")} />
+                  <input ref={nameInputRef} name="candidateName" type="text" required maxLength={30} autoComplete="name" defaultValue={candidate?.name ?? ""} placeholder="성명 또는 닉네임" onChange={clearExamError} />
                 </label>
                 <div className="candidate-cell"><span>수험번호</span><output>{identity?.number ?? "자동 발급 중"}</output></div>
                 <label className="candidate-cell">
@@ -459,8 +344,8 @@ export default function Home() {
           </form>
         </main>
       ) : view === "exam" ? (
-        <Exam questions={questions} answers={answers} candidate={candidate} onAnswer={setAnswer} onChoose={chooseAnswer} onSubmit={finishExam} timeLeft={formatTime(secondsLeft)} locked={Boolean(submittedAnswers)} />
-      ) : <Result questions={questions} answers={submittedAnswers} candidate={candidate} onRetry={retryExam} />}
+        <Exam questions={questions} answers={answers} candidate={candidate} onAnswer={recordAnswer} onChoose={chooseAnswer} onSubmit={finishExam} timeLeft={formatTime(secondsLeft)} locked={session.submitted} />
+      ) : <Result questions={questions} answers={answers} candidate={candidate} onRetry={retryExam} />}
     </>
   );
 }
