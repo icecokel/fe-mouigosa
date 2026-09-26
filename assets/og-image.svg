@@ -36,20 +36,20 @@
   </g>
 
   <g font-family="Nanum Myeongjo, serif" font-size="20" fill="#111111">
-    <circle cx="144" cy="489" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
-    <text x="144" y="496" text-anchor="middle" font-family="Apple SD Gothic Neo, sans-serif" font-size="14" font-weight="700">1</text>
+    <circle cx="144" cy="489" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="144" y="489" text-anchor="middle" dominant-baseline="central" font-size="17">1</text>
     <text x="165" y="496">[1, 2, 3]</text>
     <circle cx="351" cy="489" r="12" fill="#111111"/>
-    <text x="351" y="496" text-anchor="middle" font-family="Apple SD Gothic Neo, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">2</text>
+    <text x="351" y="489" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="700" fill="#FFFFFF">2</text>
     <text x="372" y="496" font-weight="700">[2, 4, 6]</text>
-    <circle cx="144" cy="523" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
-    <text x="144" y="530" text-anchor="middle" font-family="Apple SD Gothic Neo, sans-serif" font-size="14" font-weight="700">3</text>
+    <circle cx="144" cy="523" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="144" y="523" text-anchor="middle" dominant-baseline="central" font-size="17">3</text>
     <text x="165" y="530">[2, 3, 4]</text>
-    <circle cx="351" cy="523" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
-    <text x="351" y="530" text-anchor="middle" font-family="Apple SD Gothic Neo, sans-serif" font-size="14" font-weight="700">4</text>
+    <circle cx="351" cy="523" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="351" y="523" text-anchor="middle" dominant-baseline="central" font-size="17">4</text>
     <text x="372" y="530">undefined</text>
-    <circle cx="144" cy="553" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
-    <text x="144" y="560" text-anchor="middle" font-family="Apple SD Gothic Neo, sans-serif" font-size="14" font-weight="700">5</text>
+    <circle cx="144" cy="553" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="144" y="553" text-anchor="middle" dominant-baseline="central" font-size="17">5</text>
     <text x="165" y="560">TypeError</text>
   </g>
 
@@ -59,11 +59,21 @@
     <text x="1070" y="360" font-family="Apple SD Gothic Neo, sans-serif" font-size="16" fill="#595954">[3점]</text>
   </g>
   <g font-family="Nanum Myeongjo, serif" font-size="19" fill="#111111">
-    <text x="647" y="405">①</text><text x="679" y="405">DOM → 스타일 → 레이아웃 → 페인트</text>
-    <text x="647" y="439">②</text><text x="679" y="439">스타일 → DOM → 페인트 → 레이아웃</text>
-    <text x="647" y="473">③</text><text x="679" y="473">페인트 → 레이아웃 → DOM → 스타일</text>
-    <text x="647" y="507">④</text><text x="679" y="507">레이아웃 → 페인트 → 스타일 → DOM</text>
-    <text x="647" y="541">⑤</text><text x="679" y="541">DOM → 페인트 → 레이아웃 → 스타일</text>
+    <circle cx="657" cy="399" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="657" y="399" text-anchor="middle" dominant-baseline="central" font-size="17">1</text>
+    <text x="679" y="405">DOM → 스타일 → 레이아웃 → 페인트</text>
+    <circle cx="657" cy="433" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="657" y="433" text-anchor="middle" dominant-baseline="central" font-size="17">2</text>
+    <text x="679" y="439">스타일 → DOM → 페인트 → 레이아웃</text>
+    <circle cx="657" cy="467" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="657" y="467" text-anchor="middle" dominant-baseline="central" font-size="17">3</text>
+    <text x="679" y="473">페인트 → 레이아웃 → DOM → 스타일</text>
+    <circle cx="657" cy="501" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="657" y="501" text-anchor="middle" dominant-baseline="central" font-size="17">4</text>
+    <text x="679" y="507">레이아웃 → 페인트 → 스타일 → DOM</text>
+    <circle cx="657" cy="535" r="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.25"/>
+    <text x="657" y="535" text-anchor="middle" dominant-baseline="central" font-size="17">5</text>
+    <text x="679" y="541">DOM → 페인트 → 레이아웃 → 스타일</text>
   </g>
 
   <line x1="94" y1="576" x2="1106" y2="576" stroke="#D8D8D2" stroke-width="1"/>
