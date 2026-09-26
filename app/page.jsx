@@ -213,7 +213,7 @@ function Result({ questions, answers, candidate, onRetry }) {
             </tbody>
           </table>
         </div>
-        <p className="result-note">백분위와 등급은 비교 집단 및 산정 기준이 없어 미산출입니다. 점수는 예시 문항의 정답과 배점으로 계산했습니다.</p>
+        <p className="result-note">백분위는 제출된 응시 기록을 비교 단위로 삼으며, 재응시도 별도 기록으로 셉니다. 현재는 비교 기록과 산정 기준이 없어 백분위·등급을 표시하지 않습니다. 점수는 예시 문항의 정답과 배점으로 계산했습니다.</p>
 
         <div className="section-rule">
           <span>Ⅱ</span>
