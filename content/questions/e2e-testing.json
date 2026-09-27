@@ -7,7 +7,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "이름이 “결제”인 버튼을 역할과 접근 가능한 이름으로 찾는 locator는?",
+      "prompt": "역할이 버튼이고 접근 가능한 이름이 “결제”인 요소를 찾는 API는?",
       "options": [
         "getByTestId",
         "getByAltText",
@@ -16,7 +16,7 @@
         "getByLabel"
       ],
       "answer": 4,
-      "explanation": "getByRole은 역할과 접근 가능한 이름을 함께 지정해 사용자 관점에서 요소를 찾습니다.",
+      "explanation": "getByRole은 Playwright의 요소 찾기(locator) API로, 역할과 접근 가능한 이름을 기준으로 요소를 찾습니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -30,7 +30,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "“이메일” label과 연결된 입력창을 찾는 locator는?",
+      "prompt": "“이메일” 레이블과 연결된 입력창을 찾는 API는?",
       "options": [
         "getByRole",
         "getByLabel",
@@ -39,7 +39,7 @@
         "getByPlaceholder"
       ],
       "answer": 2,
-      "explanation": "getByLabel은 form control과 연결된 label 텍스트로 입력창을 찾습니다.",
+      "explanation": "getByLabel은 입력창과 연결된 레이블(label) 문구를 기준으로 찾습니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -53,7 +53,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "차트 내부에 data-testid=\"plot\"이 있다. 이를 기준으로 찾는 locator는?",
+      "prompt": "data-testid=\"plot\"인 차트 요소를 기준으로 찾는 API는?",
       "options": [
         "getByAltText",
         "getByPlaceholder",
@@ -62,7 +62,7 @@
         "getByTestId"
       ],
       "answer": 5,
-      "explanation": "getByTestId는 data-testid 같은 명시적 테스트 계약을 사용합니다.",
+      "explanation": "getByTestId는 data-testid처럼 테스트에서 정한 식별자를 사용합니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -76,7 +76,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "대체 텍스트가 “회사 로고”인 이미지를 찾는 locator는?",
+      "prompt": "대체 텍스트가 “회사 로고”인 이미지를 찾는 API는?",
       "options": [
         "getByLabel",
         "getByTestId",
@@ -85,7 +85,7 @@
         "getByRole"
       ],
       "answer": 3,
-      "explanation": "getByAltText는 이미지의 alt 텍스트를 기준으로 찾습니다.",
+      "explanation": "getByAltText는 이미지의 대체 텍스트(alt)를 기준으로 찾습니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -99,7 +99,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "label 없는 입력창의 placeholder “검색어”로 찾는 locator는?",
+      "prompt": "레이블이 없는 입력창을 placeholder “검색어”로 찾는 API는?",
       "options": [
         "getByPlaceholder",
         "getByRole",
@@ -108,7 +108,7 @@
         "getByAltText"
       ],
       "answer": 1,
-      "explanation": "getByPlaceholder는 placeholder를 기준으로 찾습니다. 실제 UI에는 label도 제공하는 편이 좋습니다.",
+      "explanation": "getByPlaceholder는 placeholder(자리 표시자)를 기준으로 찾습니다. 실제 UI에는 레이블도 제공하는 편이 좋습니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -223,7 +223,7 @@
         "toBeChecked"
       ],
       "answer": 1,
-      "explanation": "toHaveCount는 locator가 가리키는 요소 수를 재시도하며 확인합니다.",
+      "explanation": "toHaveCount는 일치하는 요소 수가 기대한 값이 될 때까지 다시 확인합니다.",
       "sources": [
         {
           "title": "Playwright — Assertions",
@@ -237,7 +237,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "사용자처럼 제출 버튼을 누르는 locator 메서드는?",
+      "prompt": "사용자처럼 제출 버튼을 누르는 Playwright 메서드는?",
       "options": [
         "check()",
         "selectOption()",
@@ -591,7 +591,7 @@
         "Page"
       ],
       "answer": 4,
-      "explanation": "BrowserContext는 독립된 세션 저장소를 가진 브라우저 실행 문맥입니다.",
+      "explanation": "브라우저 컨텍스트(BrowserContext)는 쿠키와 localStorage 등을 분리해 사용하는 브라우저 세션입니다.",
       "sources": [
         {
           "title": "Playwright — Browser contexts",
@@ -1180,7 +1180,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "상품 카드 목록에서 “연필”을 포함한 카드 내부의 구매 버튼을 찾는다. 카드 locator를 좁힐 방법은?",
+      "prompt": "상품 카드 목록에서 “연필”이 포함된 카드를 찾은 뒤, 그 안의 구매 버튼을 찾는 방법은?",
       "options": [
         "getByRole의 name 옵션",
         "locator.filter({ hasText })",
@@ -1203,7 +1203,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "고정된 순서가 명세인 첫 번째 항목만 골라야 한다. locator 집합에서 사용할 API는?",
+      "prompt": "고정된 순서가 명세일 때 요소 찾기(locator) 결과에서 첫 번째 항목을 고르는 API는?",
       "options": [
         "getByTestId",
         "frameLocator",
@@ -1249,7 +1249,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "결제 폼이 iframe 안에 들어 있다. 내부 입력창을 찾기 위해 먼저 사용할 locator는?",
+      "prompt": "결제 폼이 iframe 안에 있다. 그 안의 입력창을 찾는 요소 찾기(locator) API는?",
       "options": [
         "frameLocator",
         "getByRole의 name 옵션",
@@ -1277,11 +1277,11 @@
         "expect.poll",
         "expect.toPass",
         "waitForTimeout",
-        "자동 재시도 locator assertion",
+        "자동 재시도 요소 상태 검사",
         "즉시 실행하는 일반 expect"
       ],
       "answer": 4,
-      "explanation": "toHaveText 같은 locator assertion은 상태가 될 때까지 재시도합니다.",
+      "explanation": "toHaveText는 텍스트가 기대한 상태가 될 때까지 다시 확인합니다.",
       "sources": [
         {
           "title": "Playwright — Assertions",
@@ -1297,7 +1297,7 @@
       "points": 4,
       "prompt": "이미 계산이 끝난 동기식 순수 숫자 두 개를 비교한다. 적절한 방식은?",
       "options": [
-        "자동 재시도 locator assertion",
+        "자동 재시도 요소 상태 검사",
         "즉시 실행하는 일반 expect",
         "expect.poll",
         "expect.toPass",
@@ -1322,7 +1322,7 @@
       "options": [
         "expect.toPass",
         "waitForTimeout",
-        "자동 재시도 locator assertion",
+        "자동 재시도 요소 상태 검사",
         "즉시 실행하는 일반 expect",
         "expect.poll"
       ],
@@ -1347,7 +1347,7 @@
         "expect.poll",
         "expect.toPass",
         "waitForTimeout",
-        "자동 재시도 locator assertion"
+        "자동 재시도 요소 상태 검사"
       ],
       "answer": 3,
       "explanation": "expect.toPass는 블록 전체를 재시도할 수 있습니다.",
@@ -1367,7 +1367,7 @@
       "prompt": "불가피하게 일정 시간을 기다려야 하지만 상태를 검사하지 않는다. 해당 API는?",
       "options": [
         "waitForTimeout",
-        "자동 재시도 locator assertion",
+        "자동 재시도 요소 상태 검사",
         "즉시 실행하는 일반 expect",
         "expect.poll",
         "expect.toPass"
@@ -1391,7 +1391,7 @@
       "options": [
         "maxDiffPixels",
         "mask 옵션",
-        "요소 locator 스크린샷",
+        "요소별 스크린샷",
         "toHaveScreenshot()",
         "기준 이미지 업데이트"
       ],
@@ -1416,7 +1416,7 @@
         "기준 이미지 업데이트",
         "maxDiffPixels",
         "mask 옵션",
-        "요소 locator 스크린샷"
+        "요소별 스크린샷"
       ],
       "answer": 2,
       "explanation": "기준 이미지 업데이트는 이후 비교의 기준을 새 결과로 바꿉니다.",
@@ -1436,7 +1436,7 @@
       "prompt": "몇 개 픽셀의 차이까지 허용할지 정량적으로 설정하는 옵션은?",
       "options": [
         "mask 옵션",
-        "요소 locator 스크린샷",
+        "요소별 스크린샷",
         "toHaveScreenshot()",
         "기준 이미지 업데이트",
         "maxDiffPixels"
@@ -1461,7 +1461,7 @@
         "기준 이미지 업데이트",
         "maxDiffPixels",
         "mask 옵션",
-        "요소 locator 스크린샷",
+        "요소별 스크린샷",
         "toHaveScreenshot()"
       ],
       "answer": 3,
@@ -1481,14 +1481,14 @@
       "points": 4,
       "prompt": "페이지 전체가 아닌 카드 하나의 외형만 기준과 비교하고 싶다. 비교 대상은?",
       "options": [
-        "요소 locator 스크린샷",
+        "요소별 스크린샷",
         "toHaveScreenshot()",
         "기준 이미지 업데이트",
         "maxDiffPixels",
         "mask 옵션"
       ],
       "answer": 1,
-      "explanation": "요소 locator에 toHaveScreenshot()을 적용하면 해당 요소만 비교할 수 있습니다.",
+      "explanation": "요소에 toHaveScreenshot()을 적용하면 해당 요소만 비교할 수 있습니다.",
       "sources": [
         {
           "title": "Playwright — LocatorAssertions.toHaveScreenshot",
@@ -1534,7 +1534,7 @@
         "실패 후 새 worker"
       ],
       "answer": 2,
-      "explanation": "worker는 독립 프로세스로 테스트를 실행합니다.",
+      "explanation": "작업 프로세스(worker)는 격리된 환경에서 테스트를 실행합니다.",
       "sources": [
         {
           "title": "Playwright — Parallelism",
@@ -1778,7 +1778,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "유휴 20분 만료를 실제 대기 없이 앞당기되 그 사이의 반복 타이머를 전부 실행할 필요는 없다. 쓸 메서드는?",
+      "prompt": "20분 동안 사용하지 않으면 만료되는 동작을 실제 대기 없이 재현하되 그 사이의 반복 타이머를 전부 실행할 필요는 없다. 쓸 메서드는?",
       "options": [
         "clock.runFor()",
         "clock.resume()",
@@ -1847,16 +1847,16 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "CI 네 대에서 시험을 나눌 때 첫 머신이 수행할 조각을 지정하는 옵션은?",
+      "prompt": "CI 네 대에서 테스트를 나누어 실행할 때 첫 번째 머신이 맡을 분할(shard)을 지정하는 옵션은?",
       "options": [
         "blob reporter",
         "merge-reports",
-        "파일 단위 샤딩",
+        "파일 단위 나누어 실행(sharding)",
         "--shard=1/4",
         "fullyParallel: true"
       ],
       "answer": 4,
-      "explanation": "--shard=1/4는 전체 네 조각 중 첫 번째만 실행합니다.",
+      "explanation": "--shard=1/4는 전체 네 분할 중 첫 번째만 실행합니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -1870,16 +1870,16 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "샤드 간 개별 테스트 단위로 더 고르게 배분하려는 설정은?",
+      "prompt": "테스트를 파일보다 작은 단위로 고르게 나누어 병렬 실행하려면 어떤 설정을 켜야 하는가?",
       "options": [
         "--shard=1/4",
         "fullyParallel: true",
         "blob reporter",
         "merge-reports",
-        "파일 단위 샤딩"
+        "파일 단위 나누어 실행(sharding)"
       ],
       "answer": 2,
-      "explanation": "fullyParallel을 켜면 샤딩이 테스트 단위까지 세분화됩니다.",
+      "explanation": "fullyParallel을 켜면 테스트 파일 안의 개별 테스트도 나누어 실행(sharding)할 수 있습니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -1893,16 +1893,16 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "샤드별 결과를 나중에 합치기 위해 CI에서 저장할 보고 형식은?",
+      "prompt": "CI에서 샤드(shard)별 결과를 나중에 합치기 위해 저장할 보고 형식은?",
       "options": [
         "merge-reports",
-        "파일 단위 샤딩",
+        "파일 단위 나누어 실행(sharding)",
         "--shard=1/4",
         "fullyParallel: true",
         "blob reporter"
       ],
       "answer": 5,
-      "explanation": "blob reporter는 샤드 결과 병합에 사용할 보고 파일을 생성합니다.",
+      "explanation": "blob reporter는 샤드별 결과를 병합할 보고 파일을 생성합니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -1916,16 +1916,16 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "서로 다른 샤드의 blob 결과를 한 리포트로 합치는 Playwright 명령은?",
+      "prompt": "여러 샤드(shard)의 blob 결과를 하나의 보고서로 합치는 Playwright 명령은?",
       "options": [
         "fullyParallel: true",
         "blob reporter",
         "merge-reports",
-        "파일 단위 샤딩",
+        "파일 단위 나누어 실행(sharding)",
         "--shard=1/4"
       ],
       "answer": 3,
-      "explanation": "merge-reports 명령은 수집한 blob 보고서를 결합합니다.",
+      "explanation": "merge-reports 명령은 수집한 blob 보고서를 하나로 합칩니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -1939,16 +1939,16 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "fullyParallel이 꺼졌을 때 기본적인 샤딩 분배 단위는?",
+      "prompt": "fullyParallel을 끈 경우 Playwright는 테스트를 어떤 단위로 샤딩(sharding)하는가?",
       "options": [
-        "파일 단위 샤딩",
+        "파일 단위 나누어 실행(sharding)",
         "--shard=1/4",
         "fullyParallel: true",
         "blob reporter",
         "merge-reports"
       ],
       "answer": 1,
-      "explanation": "fullyParallel이 없으면 샤딩은 테스트 파일 단위로 이루어집니다.",
+      "explanation": "fullyParallel이 꺼져 있으면 테스트 파일 단위로 나누어 실행합니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -2031,7 +2031,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "결제 위젯이 iframe 내부에 렌더된다. 그 안의 버튼을 찾는 시작 locator는?",
+      "prompt": "결제 위젯이 iframe 안에 렌더된다. 그 안의 버튼을 찾는 요소 찾기(locator) API는?",
       "options": [
         "page.waitForEvent('popup')",
         "page.waitForEvent('download')",

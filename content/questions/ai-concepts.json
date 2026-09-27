@@ -9,14 +9,14 @@
       "points": 2,
       "prompt": "언어 모델이 다음 단위를 예측할 때 사용하는 텍스트의 기본 단위는 무엇인가?",
       "options": [
-        "토큰",
+        "토큰(token)",
         "토큰화",
         "임베딩",
         "컨텍스트 창",
         "추론"
       ],
       "answer": 1,
-      "explanation": "정답은 토큰입니다. 토큰은 단어·하위 단어·문자 등이 될 수 있는 예측 단위다.",
+      "explanation": "정답은 토큰(token)입니다. 토큰(token)은 단어·하위 단어·문자 등이 될 수 있는 예측 단위다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -37,13 +37,13 @@
       "prompt": "입력 문자열을 모델이 처리할 작은 단위로 나누는 과정은 무엇인가?",
       "options": [
         "토큰",
-        "토큰화",
+        "토큰화(tokenization)",
         "임베딩",
         "컨텍스트 창",
         "추론"
       ],
       "answer": 2,
-      "explanation": "정답은 토큰화입니다. 토큰화는 텍스트를 토큰 시퀀스로 바꾸는 과정이다.",
+      "explanation": "정답은 토큰화(tokenization)입니다. 토큰화(tokenization)는 텍스트를 토큰 시퀀스로 바꾸는 과정이다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -65,12 +65,12 @@
       "options": [
         "토큰",
         "토큰화",
-        "임베딩",
+        "임베딩(embedding)",
         "컨텍스트 창",
         "추론"
       ],
       "answer": 3,
-      "explanation": "정답은 임베딩입니다. 임베딩은 입력을 수치 벡터 공간에 나타낸 표현이다.",
+      "explanation": "정답은 임베딩(embedding)입니다. 임베딩(embedding)은 입력을 수치 벡터 공간에 나타낸 표현이다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -93,11 +93,11 @@
         "토큰",
         "토큰화",
         "임베딩",
-        "컨텍스트 창",
+        "컨텍스트 창(context window)",
         "추론"
       ],
       "answer": 4,
-      "explanation": "정답은 컨텍스트 창입니다. 컨텍스트 창은 모델이 한 번에 다룰 수 있는 문맥의 범위다.",
+      "explanation": "정답은 컨텍스트 창(context window)입니다. 컨텍스트 창(context window)은 모델이 한 번에 다룰 수 있는 문맥의 범위다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -121,10 +121,10 @@
         "토큰화",
         "임베딩",
         "컨텍스트 창",
-        "추론"
+        "추론(inference)"
       ],
       "answer": 5,
-      "explanation": "정답은 추론입니다. 추론은 학습된 모델을 사용해 새 입력에 대한 출력을 계산한다.",
+      "explanation": "정답은 추론(inference)입니다. 추론(inference)은 학습된 모델을 사용해 새 입력에 대한 출력을 계산한다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -287,13 +287,13 @@
       "prompt": "앞서 생성한 토큰을 다시 문맥에 넣어 다음 토큰을 이어 만드는 방식은?",
       "options": [
         "언어 모델",
-        "자기회귀",
+        "자기회귀 생성(autoregressive generation)",
         "자기주의",
         "위치 인코딩",
         "파인튜닝"
       ],
       "answer": 2,
-      "explanation": "정답은 자기회귀입니다. 자기회귀 생성은 이전 출력을 조건으로 다음 출력을 예측한다.",
+      "explanation": "정답은 자기회귀 생성(autoregressive generation)입니다. 이전 출력을 조건으로 다음 출력을 예측합니다.",
       "sources": [
         {
           "title": "Google Machine Learning Crash Course — LLM",
@@ -315,12 +315,12 @@
       "options": [
         "언어 모델",
         "자기회귀",
-        "자기주의",
+        "자기 주의(self-attention)",
         "위치 인코딩",
         "파인튜닝"
       ],
       "answer": 3,
-      "explanation": "정답은 자기주의입니다. 자기주의는 시퀀스 내부 토큰 사이의 관계에 가중치를 둔다.",
+      "explanation": "정답은 자기 주의(self-attention)입니다. 자기 주의(self-attention)는 시퀀스 내부 토큰 사이의 관계에 가중치를 둔다.",
       "sources": [
         {
           "title": "Google Machine Learning Crash Course — LLM",
@@ -343,11 +343,11 @@
         "언어 모델",
         "자기회귀",
         "자기주의",
-        "위치 인코딩",
+        "위치 인코딩(positional encoding)",
         "파인튜닝"
       ],
       "answer": 4,
-      "explanation": "정답은 위치 인코딩입니다. 위치 인코딩은 시퀀스에서 토큰의 위치 정보를 제공한다.",
+      "explanation": "정답은 위치 인코딩(positional encoding)입니다. 위치 인코딩(positional encoding)은 시퀀스에서 토큰의 위치 정보를 제공한다.",
       "sources": [
         {
           "title": "Google Machine Learning Crash Course — LLM",
@@ -371,10 +371,10 @@
         "자기회귀",
         "자기주의",
         "위치 인코딩",
-        "파인튜닝"
+        "파인튜닝(fine-tuning)"
       ],
       "answer": 5,
-      "explanation": "정답은 파인튜닝입니다. 파인튜닝은 사전 학습된 모델을 추가 데이터로 조정한다.",
+      "explanation": "정답은 파인튜닝(fine-tuning)입니다. 파인튜닝(fine-tuning)은 사전 학습된 모델을 추가 데이터로 조정한다.",
       "sources": [
         {
           "title": "Google Machine Learning Crash Course — LLM",
@@ -394,14 +394,14 @@
       "points": 2,
       "prompt": "토큰 선택 확률 분포의 무작위성 정도를 조정하는 값은?",
       "options": [
-        "temperature",
+        "온도(temperature)",
         "top-p",
         "greedy decoding",
         "최대 출력 토큰 수",
         "중단 시퀀스"
       ],
       "answer": 1,
-      "explanation": "정답은 temperature입니다. temperature는 샘플링 분포의 무작위성에 영향을 준다.",
+      "explanation": "정답은 온도(temperature)입니다. 온도(temperature)는 샘플링 분포의 무작위성에 영향을 준다.",
       "sources": [
         {
           "title": "Hugging Face Transformers — Generation strategies",
@@ -430,13 +430,13 @@
       "prompt": "누적 확률이 정한 비율에 이를 때까지의 후보 토큰에서 샘플링하는 방식은?",
       "options": [
         "temperature",
-        "top-p",
+        "누적 확률 샘플링(top-p sampling)",
         "greedy decoding",
         "최대 출력 토큰 수",
         "중단 시퀀스"
       ],
       "answer": 2,
-      "explanation": "정답은 top-p입니다. top-p는 누적 확률 기준으로 후보 집합을 제한한다.",
+      "explanation": "정답은 누적 확률 샘플링(top-p sampling)입니다. 누적 확률 샘플링은 누적 확률 기준으로 후보 집합을 제한한다.",
       "sources": [
         {
           "title": "Hugging Face Transformers — Generation strategies",
@@ -466,12 +466,12 @@
       "options": [
         "temperature",
         "top-p",
-        "greedy decoding",
+        "그리디 디코딩(greedy decoding)",
         "최대 출력 토큰 수",
         "중단 시퀀스"
       ],
       "answer": 3,
-      "explanation": "정답은 greedy decoding입니다. greedy decoding은 단계마다 가장 가능성 높은 토큰을 택한다.",
+      "explanation": "정답은 그리디 디코딩(greedy decoding)입니다. 그리디 디코딩(greedy decoding)은 단계마다 가장 가능성 높은 토큰을 택한다.",
       "sources": [
         {
           "title": "Hugging Face Transformers — Generation strategies",
@@ -538,10 +538,10 @@
         "top-p",
         "greedy decoding",
         "최대 출력 토큰 수",
-        "중단 시퀀스"
+        "중단 시퀀스(stop sequence)"
       ],
       "answer": 5,
-      "explanation": "정답은 중단 시퀀스입니다. 중단 시퀀스는 해당 패턴이 나오면 생성을 종료하는 조건이다.",
+      "explanation": "정답은 중단 시퀀스(stop sequence)입니다. 중단 시퀀스(stop sequence)는 해당 패턴이 나오면 생성을 종료하는 조건이다.",
       "sources": [
         {
           "title": "Hugging Face Transformers — Generation strategies",
@@ -569,14 +569,14 @@
       "points": 2,
       "prompt": "예시 정답을 주지 않고 작업 설명만으로 답을 요청하는 방식은?",
       "options": [
-        "제로샷 프롬프트",
+        "제로샷 프롬프트(zero-shot prompt)",
         "퓨샷 프롬프트",
         "검색 증강 생성(RAG)",
         "구조화 출력",
         "의미 검색"
       ],
       "answer": 1,
-      "explanation": "정답은 제로샷 프롬프트입니다. 제로샷 프롬프트는 시범 예시 없이 작업을 요청한다.",
+      "explanation": "정답은 제로샷 프롬프트(zero-shot prompt)입니다. 제로샷 프롬프트(zero-shot prompt)는 시범 예시 없이 작업을 요청한다.",
       "sources": [
         {
           "title": "Google AI — Prompt design strategies",
@@ -601,13 +601,13 @@
       "prompt": "입출력 예시 몇 개를 함께 주어 응답 형식을 유도하는 방식은?",
       "options": [
         "제로샷 프롬프트",
-        "퓨샷 프롬프트",
+        "퓨샷 프롬프트(few-shot prompt)",
         "검색 증강 생성(RAG)",
         "구조화 출력",
         "의미 검색"
       ],
       "answer": 2,
-      "explanation": "정답은 퓨샷 프롬프트입니다. 퓨샷 프롬프트는 소수의 예시를 문맥에 포함한다.",
+      "explanation": "정답은 퓨샷 프롬프트(few-shot prompt)입니다. 퓨샷 프롬프트(few-shot prompt)는 소수의 예시를 문맥에 포함한다.",
       "sources": [
         {
           "title": "Google AI — Prompt design strategies",
@@ -633,12 +633,12 @@
       "options": [
         "제로샷 프롬프트",
         "퓨샷 프롬프트",
-        "검색 증강 생성(RAG)",
+        "검색 증강 생성(Retrieval-Augmented Generation, RAG)",
         "구조화 출력",
         "의미 검색"
       ],
       "answer": 3,
-      "explanation": "정답은 검색 증강 생성(RAG)입니다. RAG는 검색된 자료를 생성 단계의 문맥으로 사용한다.",
+      "explanation": "정답은 검색 증강 생성(Retrieval-Augmented Generation, RAG)입니다. RAG는 검색된 자료를 생성 단계의 문맥으로 사용한다.",
       "sources": [
         {
           "title": "Google AI — Prompt design strategies",
@@ -665,11 +665,11 @@
         "제로샷 프롬프트",
         "퓨샷 프롬프트",
         "검색 증강 생성(RAG)",
-        "구조화 출력",
+        "구조화 출력(structured output)",
         "의미 검색"
       ],
       "answer": 4,
-      "explanation": "정답은 구조화 출력입니다. 구조화 출력은 응답을 지정한 구조에 맞춘다.",
+      "explanation": "정답은 구조화 출력(structured output)입니다. 구조화 출력(structured output)은 응답을 지정한 구조에 맞춘다.",
       "sources": [
         {
           "title": "Google AI — Prompt design strategies",
@@ -697,10 +697,10 @@
         "퓨샷 프롬프트",
         "검색 증강 생성(RAG)",
         "구조화 출력",
-        "의미 검색"
+        "의미 검색(semantic search)"
       ],
       "answer": 5,
-      "explanation": "정답은 의미 검색입니다. 의미 검색은 임베딩 등의 의미 표현을 활용한다.",
+      "explanation": "정답은 의미 검색(semantic search)입니다. 의미 검색(semantic search)은 임베딩 등의 의미 표현을 활용한다.",
       "sources": [
         {
           "title": "Google AI — Prompt design strategies",
@@ -724,14 +724,14 @@
       "points": 3,
       "prompt": "모델의 가중치를 실제로 조정하는 데 쓰는 데이터 부분집합은?",
       "options": [
-        "학습 세트",
+        "학습 세트(training set)",
         "검증 세트",
         "테스트 세트",
         "데이터 누수",
         "과적합"
       ],
       "answer": 1,
-      "explanation": "정답은 학습 세트입니다. 학습 세트는 모델이 패턴을 학습하는 데 사용된다.",
+      "explanation": "정답은 학습 세트(training set)입니다. 학습 세트(training set)는 모델이 패턴을 학습하는 데 사용된다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Dividing datasets",
@@ -752,13 +752,13 @@
       "prompt": "학습 중 모델이나 하이퍼파라미터 선택을 비교하는 데 쓰는 데이터 부분집합은?",
       "options": [
         "학습 세트",
-        "검증 세트",
+        "검증 세트(validation set)",
         "테스트 세트",
         "데이터 누수",
         "과적합"
       ],
       "answer": 2,
-      "explanation": "정답은 검증 세트입니다. 검증 세트는 개발 중 선택과 조정에 사용된다.",
+      "explanation": "정답은 검증 세트(validation set)입니다. 검증 세트(validation set)는 개발 중 선택과 조정에 사용된다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Dividing datasets",
@@ -780,12 +780,12 @@
       "options": [
         "학습 세트",
         "검증 세트",
-        "테스트 세트",
+        "테스트 세트(test set)",
         "데이터 누수",
         "과적합"
       ],
       "answer": 3,
-      "explanation": "정답은 테스트 세트입니다. 테스트 세트는 최종 일반화 성능을 확인하기 위해 분리한다.",
+      "explanation": "정답은 테스트 세트(test set)입니다. 테스트 세트(test set)는 최종 일반화 성능을 확인하기 위해 분리한다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Dividing datasets",
@@ -808,11 +808,11 @@
         "학습 세트",
         "검증 세트",
         "테스트 세트",
-        "데이터 누수",
+        "데이터 누수(data leakage)",
         "과적합"
       ],
       "answer": 4,
-      "explanation": "정답은 데이터 누수입니다. 데이터 누수는 평가에서만 알아야 할 정보가 학습으로 넘어오는 현상이다.",
+      "explanation": "정답은 데이터 누수(data leakage)입니다. 데이터 누수(data leakage)는 평가에서만 알아야 할 정보가 학습으로 넘어오는 현상이다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Dividing datasets",
@@ -836,10 +836,10 @@
         "검증 세트",
         "테스트 세트",
         "데이터 누수",
-        "과적합"
+        "과적합(overfitting)"
       ],
       "answer": 5,
-      "explanation": "정답은 과적합입니다. 과적합은 학습 자료에 지나치게 맞춰져 일반화가 떨어지는 상태다.",
+      "explanation": "정답은 과적합(overfitting)입니다. 과적합(overfitting)은 학습 자료에 지나치게 맞춰져 일반화가 떨어지는 상태다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Dividing datasets",
@@ -859,14 +859,14 @@
       "points": 3,
       "prompt": "전체 예측 가운데 맞힌 비율을 뜻하는 지표는?",
       "options": [
-        "정확도",
+        "정확도(accuracy)",
         "정밀도",
         "재현율",
         "F1 점수",
         "혼동 행렬"
       ],
       "answer": 1,
-      "explanation": "정답은 정확도입니다. 정확도는 TP와 TN을 전체 사례 수로 나눈 값이다.",
+      "explanation": "정답은 정확도(accuracy)입니다. 정확도(accuracy)는 TP와 TN을 전체 사례 수로 나눈 값이다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Accuracy, precision, recall",
@@ -883,13 +883,13 @@
       "prompt": "양성이라고 예측한 것 중 실제 양성의 비율은?",
       "options": [
         "정확도",
-        "정밀도",
+        "정밀도(precision)",
         "재현율",
         "F1 점수",
         "혼동 행렬"
       ],
       "answer": 2,
-      "explanation": "정답은 정밀도입니다. 정밀도는 TP/(TP+FP)다.",
+      "explanation": "정답은 정밀도(precision)입니다. 정밀도(precision)는 TP/(TP+FP)다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Accuracy, precision, recall",
@@ -907,12 +907,12 @@
       "options": [
         "정확도",
         "정밀도",
-        "재현율",
+        "재현율(recall)",
         "F1 점수",
         "혼동 행렬"
       ],
       "answer": 3,
-      "explanation": "정답은 재현율입니다. 재현율은 TP/(TP+FN)이다.",
+      "explanation": "정답은 재현율(recall)입니다. 재현율(recall)은 TP/(TP+FN)이다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Accuracy, precision, recall",
@@ -931,11 +931,11 @@
         "정확도",
         "정밀도",
         "재현율",
-        "F1 점수",
+        "F1 점수(F1 score)",
         "혼동 행렬"
       ],
       "answer": 4,
-      "explanation": "정답은 F1 점수입니다. F1 점수는 정밀도와 재현율을 함께 요약한다.",
+      "explanation": "정답은 F1 점수(F1 score)입니다. F1 점수(F1 score)는 정밀도와 재현율을 함께 요약한다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Accuracy, precision, recall",
@@ -955,10 +955,10 @@
         "정밀도",
         "재현율",
         "F1 점수",
-        "혼동 행렬"
+        "혼동 행렬(confusion matrix)"
       ],
       "answer": 5,
-      "explanation": "정답은 혼동 행렬입니다. 혼동 행렬은 실제 범주와 예측 범주의 조합을 센다.",
+      "explanation": "정답은 혼동 행렬(confusion matrix)입니다. 혼동 행렬(confusion matrix)은 실제 범주와 예측 범주의 조합을 센다.",
       "sources": [
         {
           "title": "Google ML Crash Course — Accuracy, precision, recall",
@@ -974,14 +974,14 @@
       "points": 3,
       "prompt": "긴 사내 문서를 검색 가능한 작은 단위로 나누는 단계는?",
       "options": [
-        "문서 분할",
+        "문서 분할(chunking)",
         "임베딩 생성",
         "벡터 인덱싱",
         "유사도 검색",
         "검색된 문맥 제공"
       ],
       "answer": 1,
-      "explanation": "정답은 문서 분할입니다. 문서 분할은 긴 자료를 검색에 쓸 단위로 자른다.",
+      "explanation": "정답은 문서 분할(chunking)입니다. 문서 분할(chunking)은 긴 자료를 검색에 쓸 단위로 자른다.",
       "sources": [
         {
           "title": "Google AI — Embeddings",
@@ -998,13 +998,13 @@
       "prompt": "나눈 문서와 질문을 비교 가능한 수치 표현으로 바꾸는 단계는?",
       "options": [
         "문서 분할",
-        "임베딩 생성",
+        "임베딩 생성(embedding generation)",
         "벡터 인덱싱",
         "유사도 검색",
         "검색된 문맥 제공"
       ],
       "answer": 2,
-      "explanation": "정답은 임베딩 생성입니다. 임베딩 생성은 텍스트를 벡터로 변환한다.",
+      "explanation": "정답은 임베딩 생성(embedding generation)입니다. 임베딩 생성(embedding generation)은 텍스트를 벡터로 변환한다.",
       "sources": [
         {
           "title": "Google AI — Embeddings",
@@ -1022,12 +1022,12 @@
       "options": [
         "문서 분할",
         "임베딩 생성",
-        "벡터 인덱싱",
+        "벡터 인덱싱(vector indexing)",
         "유사도 검색",
         "검색된 문맥 제공"
       ],
       "answer": 3,
-      "explanation": "정답은 벡터 인덱싱입니다. 벡터 인덱싱은 검색 대상 벡터를 저장하고 찾기 쉽게 만든다.",
+      "explanation": "정답은 벡터 인덱싱(vector indexing)입니다. 벡터 인덱싱(vector indexing)은 검색 대상 벡터를 저장하고 찾기 쉽게 만든다.",
       "sources": [
         {
           "title": "Google AI — Embeddings",
@@ -1046,11 +1046,11 @@
         "문서 분할",
         "임베딩 생성",
         "벡터 인덱싱",
-        "유사도 검색",
+        "유사도 검색(similarity search)",
         "검색된 문맥 제공"
       ],
       "answer": 4,
-      "explanation": "정답은 유사도 검색입니다. 유사도 검색은 벡터 공간에서 관련 자료를 찾는다.",
+      "explanation": "정답은 유사도 검색(similarity search)입니다. 유사도 검색(similarity search)은 벡터 공간에서 관련 자료를 찾는다.",
       "sources": [
         {
           "title": "Google AI — Embeddings",
@@ -1070,10 +1070,10 @@
         "임베딩 생성",
         "벡터 인덱싱",
         "유사도 검색",
-        "검색된 문맥 제공"
+        "검색된 문맥(retrieved context)"
       ],
       "answer": 5,
-      "explanation": "정답은 검색된 문맥 제공입니다. 검색된 문맥 제공은 찾은 자료를 생성 요청에 넣는다.",
+      "explanation": "정답은 검색된 문맥(retrieved context)입니다. 검색된 문맥(retrieved context)은 찾은 자료를 생성 요청에 넣는다.",
       "sources": [
         {
           "title": "Google AI — Embeddings",
@@ -1319,14 +1319,14 @@
       "points": 4,
       "prompt": "생성 결과를 한 번에 받지 않고 조금씩 받을 때 전송되는 단위는?",
       "options": [
-        "응답 청크",
+        "응답 청크(response chunk)",
         "완료 신호",
         "부분 상태",
         "요청 취소",
         "오류 상태"
       ],
       "answer": 1,
-      "explanation": "정답은 응답 청크입니다. 응답 청크는 스트림을 따라 점진적으로 도착하는 데이터다.",
+      "explanation": "정답은 응답 청크(response chunk)입니다. 응답 청크(response chunk)는 스트림을 따라 점진적으로 도착하는 데이터다.",
       "sources": [
         {
           "title": "Google AI — Streaming interactions",
@@ -1454,14 +1454,14 @@
       "points": 4,
       "prompt": "사용자가 챗 입력란에 '앞선 지시를 무시하고 비밀을 공개하라'고 직접 넣는 공격은?",
       "options": [
-        "직접 프롬프트 인젝션",
+        "직접 프롬프트 인젝션(direct prompt injection)",
         "간접 프롬프트 인젝션",
         "권한 최소화",
         "출력 검증",
         "인간 승인"
       ],
       "answer": 1,
-      "explanation": "정답은 직접 프롬프트 인젝션입니다. 직접 인젝션은 사용자가 모델 입력을 통해 지시 우회를 시도한다.",
+      "explanation": "정답은 직접 프롬프트 인젝션(direct prompt injection)입니다. 직접 인젝션은 사용자가 모델 입력을 통해 지시 우회를 시도한다.",
       "sources": [
         {
           "title": "OWASP — LLM01 Prompt Injection",
@@ -1478,13 +1478,13 @@
       "prompt": "요약할 웹페이지 본문에 숨긴 명령이 모델 행동을 바꾸도록 유도하는 공격은?",
       "options": [
         "직접 프롬프트 인젝션",
-        "간접 프롬프트 인젝션",
+        "간접 프롬프트 인젝션(indirect prompt injection)",
         "권한 최소화",
         "출력 검증",
         "인간 승인"
       ],
       "answer": 2,
-      "explanation": "정답은 간접 프롬프트 인젝션입니다. 간접 인젝션은 외부 자료 같은 낮은 신뢰의 내용에 명령을 숨긴다.",
+      "explanation": "정답은 간접 프롬프트 인젝션(indirect prompt injection)입니다. 간접 인젝션은 외부 자료 같은 낮은 신뢰의 내용에 명령을 숨긴다.",
       "sources": [
         {
           "title": "OWASP — LLM01 Prompt Injection",
@@ -1502,12 +1502,12 @@
       "options": [
         "직접 프롬프트 인젝션",
         "간접 프롬프트 인젝션",
-        "권한 최소화",
+        "최소 권한 원칙(least privilege)",
         "출력 검증",
         "인간 승인"
       ],
       "answer": 3,
-      "explanation": "정답은 권한 최소화입니다. 권한 최소화는 인젝션이 성공해도 피해 범위를 제한한다.",
+      "explanation": "정답은 최소 권한 원칙(least privilege)입니다. 최소 권한 원칙은 인젝션이 성공해도 피해 범위를 제한한다.",
       "sources": [
         {
           "title": "OWASP — LLM01 Prompt Injection",
@@ -1550,10 +1550,10 @@
         "간접 프롬프트 인젝션",
         "권한 최소화",
         "출력 검증",
-        "인간 승인"
+        "사람의 승인(human approval)"
       ],
       "answer": 5,
-      "explanation": "정답은 인간 승인입니다. 인간 승인은 고위험 작업의 자동 실행을 제한한다.",
+      "explanation": "정답은 사람의 승인(human approval)입니다. 사람의 승인(human approval)은 고위험 작업의 자동 실행을 제한한다.",
       "sources": [
         {
           "title": "OWASP — LLM01 Prompt Injection",
@@ -1684,14 +1684,14 @@
       "points": 4,
       "prompt": "검색된 문서 조각마다 핵심 문장이 중간에서 끊겨 맥락이 빠진다. 우선 손볼 단계는?",
       "options": [
-        "문서 청크 조정",
+        "문서 청크(chunk) 조정",
         "임베딩 재생성",
         "검색 범위 조정",
         "재순위화",
         "출처 표시"
       ],
       "answer": 1,
-      "explanation": "정답은 문서 청크 조정입니다. 청크 크기와 겹침을 조정하면 검색 단위의 문맥을 보완할 수 있다.",
+      "explanation": "정답은 문서 청크(chunk) 조정입니다. 청크 크기와 겹침을 조정하면 검색 단위의 문맥을 보완할 수 있다.",
       "sources": [
         {
           "title": "Google AI — File search",
@@ -1716,13 +1716,13 @@
       "prompt": "문서 벡터는 예전 임베딩 모델로, 질문 벡터는 새 모델로 만들었다. 우선 필요한 작업은?",
       "options": [
         "문서 청크 조정",
-        "임베딩 재생성",
+        "임베딩 재생성(embedding regeneration)",
         "검색 범위 조정",
         "재순위화",
         "출처 표시"
       ],
       "answer": 2,
-      "explanation": "정답은 임베딩 재생성입니다. 비교하려면 문서와 질문 벡터를 호환되는 임베딩으로 맞춰야 한다.",
+      "explanation": "정답은 임베딩 재생성(embedding regeneration)입니다. 비교하려면 문서와 질문 벡터를 호환되는 임베딩으로 맞춰야 한다.",
       "sources": [
         {
           "title": "Google AI — File search",
@@ -1780,11 +1780,11 @@
         "문서 청크 조정",
         "임베딩 재생성",
         "검색 범위 조정",
-        "재순위화",
+        "재순위화(reranking)",
         "출처 표시"
       ],
       "answer": 4,
-      "explanation": "정답은 재순위화입니다. 재순위화는 1차 후보의 관련성을 다시 평가해 순서를 개선한다.",
+      "explanation": "정답은 재순위화(reranking)입니다. 재순위화(reranking)는 1차 후보의 관련성을 다시 평가해 순서를 개선한다.",
       "sources": [
         {
           "title": "Google AI — File search",
@@ -1839,14 +1839,14 @@
       "points": 4,
       "prompt": "검색 결과에 없는 논문 제목과 DOI를 모델이 그럴듯하게 지어냈다. 이 현상은?",
       "options": [
-        "환각",
+        "환각(hallucination)",
         "컨텍스트 한도 초과",
         "편향",
         "과적합",
         "데이터 누수"
       ],
       "answer": 1,
-      "explanation": "정답은 환각입니다. 근거 없이 사실처럼 내용을 만들어내는 것은 환각이다.",
+      "explanation": "정답은 환각(hallucination)입니다. 근거 없이 사실처럼 내용을 만들어내는 것은 환각(hallucination)이다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -1879,13 +1879,13 @@
       "prompt": "입력 문서가 너무 길어 일부 내용이 모델에 전달되지 못했다. 직접적인 원인은?",
       "options": [
         "환각",
-        "컨텍스트 한도 초과",
+        "컨텍스트 한도(context limit) 초과",
         "편향",
         "과적합",
         "데이터 누수"
       ],
       "answer": 2,
-      "explanation": "정답은 컨텍스트 한도 초과입니다. 요청의 토큰 범위가 컨텍스트 한도를 넘으면 전체 문맥을 담지 못한다.",
+      "explanation": "정답은 컨텍스트 한도(context limit) 초과입니다. 요청의 토큰 범위가 컨텍스트 한도를 넘으면 전체 문맥을 담지 못한다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -1919,12 +1919,12 @@
       "options": [
         "환각",
         "컨텍스트 한도 초과",
-        "편향",
+        "편향(bias)",
         "과적합",
         "데이터 누수"
       ],
       "answer": 3,
-      "explanation": "정답은 편향입니다. 하위집단 성능 차이는 데이터나 모델의 편향을 살펴야 한다.",
+      "explanation": "정답은 편향(bias)입니다. 하위집단 성능 차이는 데이터나 모델의 편향(bias)을 살펴야 한다.",
       "sources": [
         {
           "title": "Google Machine Learning Glossary",
@@ -2034,14 +2034,14 @@
       "points": 5,
       "prompt": "매주 바뀌는 내부 규정 문서를 인용하며 질문에 답해야 한다. 모델 가중치를 다시 학습하지 않는 구성은?",
       "options": [
-        "검색 증강 생성(RAG)",
+        "검색 증강 생성(Retrieval-Augmented Generation, RAG)",
         "파인튜닝",
         "구조화 출력",
         "함수 호출",
         "결정적 코드"
       ],
       "answer": 1,
-      "explanation": "정답은 검색 증강 생성(RAG)입니다. RAG는 최신 외부 문서를 검색해 답변 문맥에 넣을 수 있다.",
+      "explanation": "정답은 검색 증강 생성(Retrieval-Augmented Generation, RAG)입니다. RAG는 최신 외부 문서를 검색해 답변 문맥에 넣을 수 있다.",
       "sources": [
         {
           "title": "Google AI — File search",
@@ -2070,13 +2070,13 @@
       "prompt": "충분한 정답 예시로 특정 문체와 작업에 맞춰 모델 가중치를 추가 조정하려 한다. 해당 방식은?",
       "options": [
         "검색 증강 생성(RAG)",
-        "파인튜닝",
+        "파인튜닝(fine-tuning)",
         "구조화 출력",
         "함수 호출",
         "결정적 코드"
       ],
       "answer": 2,
-      "explanation": "정답은 파인튜닝입니다. 파인튜닝은 예시 데이터를 이용해 기존 모델 가중치를 조정한다.",
+      "explanation": "정답은 파인튜닝(fine-tuning)입니다. 파인튜닝(fine-tuning)은 예시 데이터를 이용해 기존 모델 가중치를 조정한다.",
       "sources": [
         {
           "title": "Google AI — File search",
@@ -2106,12 +2106,12 @@
       "options": [
         "검색 증강 생성(RAG)",
         "파인튜닝",
-        "구조화 출력",
+        "구조화 출력(structured output)",
         "함수 호출",
         "결정적 코드"
       ],
       "answer": 3,
-      "explanation": "정답은 구조화 출력입니다. 구조화 출력은 응답의 형태를 스키마로 지정한다.",
+      "explanation": "정답은 구조화 출력(structured output)입니다. 구조화 출력(structured output)은 응답의 형태를 스키마로 지정한다.",
       "sources": [
         {
           "title": "Google AI — File search",

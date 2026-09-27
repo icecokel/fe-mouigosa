@@ -8,7 +8,7 @@
       "type": "개념 판단",
       "points": 3,
       "answer": 2,
-      "prompt": "Cumulative Layout Shift(CLS)를 낮추는 방법으로 가장 적절한 것은?",
+      "prompt": "누적 레이아웃 이동(Cumulative Layout Shift, CLS)을 줄이는 방법으로 가장 적절한 것은?",
       "options": [
         "모든 이미지의 파일 이름을 짧게 한다.",
         "이미지와 광고 영역의 크기를 미리 확보한다.",
@@ -22,7 +22,7 @@
           "url": "https://web.dev/articles/optimize-cls?hl=en"
         }
       ],
-      "explanation": "이미지·광고가 늦게 나타날 때 공간을 미리 확보하지 않으면 기존 콘텐츠가 밀립니다. width·height·aspect-ratio 또는 예약 영역으로 이동을 줄일 수 있습니다."
+      "explanation": "누적 레이아웃 이동(Cumulative Layout Shift, CLS)은 예상하지 못한 화면 요소의 이동 정도를 나타냅니다. 이미지·광고 영역을 미리 확보하면 기존 콘텐츠가 밀리는 현상을 줄일 수 있습니다."
     },
     {
       "id": "performance-lcp-lazy-loading",
@@ -54,7 +54,7 @@
       "type": "개념 판단",
       "points": 2,
       "answer": 3,
-      "prompt": "Largest Contentful Paint(LCP)가 주로 나타내는 것은?",
+      "prompt": "가장 큰 콘텐츠 표시(Largest Contentful Paint, LCP)가 주로 나타내는 것은?",
       "options": [
         "첫 입력을 처리하는 데 걸린 시간",
         "페이지의 모든 리소스가 내려받아진 시점",
@@ -68,7 +68,7 @@
           "url": "https://web.dev/articles/lcp?hl=en"
         }
       ],
-      "explanation": "LCP는 뷰포트 안에서 가장 큰 이미지 또는 텍스트 블록이 표시되는 시점을 측정하는 지표입니다. 모든 리소스의 로딩 완료나 첫 입력 지연, 레이아웃 이동량과는 구별됩니다."
+      "explanation": "가장 큰 콘텐츠 표시(LCP)는 뷰포트 안에서 가장 큰 이미지 또는 텍스트 블록이 표시되는 시점을 측정합니다. 모든 리소스의 로딩 완료나 첫 입력 지연, 레이아웃 이동량과는 구별됩니다."
     },
     {
       "id": "performance-code-splitting",
@@ -260,11 +260,11 @@
       "format": "객관식 단일",
       "points": 2,
       "prompt": "실제 사용자 환경에서 수집한 성능 데이터는?",
-      "explanation": "필드 데이터는 다양한 실제 환경을 반영한다.",
+      "explanation": "실사용 데이터(field data)는 다양한 실제 환경을 반영한다.",
       "type": "개념 판단",
       "options": [
         "합성 실험실 데이터만",
-        "필드 데이터",
+        "실사용 데이터(field data)",
         "단위 테스트 결과만",
         "소스 코드 줄 수",
         "번들 파일명"
@@ -282,8 +282,8 @@
       "category": "Web Performance",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "조건을 통제한 성능 실험의 장점은?",
-      "explanation": "실험실 측정은 재현성과 진단에 유용하다.",
+      "prompt": "조건을 통제한 실험실 측정(lab measurement)의 장점은?",
+      "explanation": "실험실 측정(lab measurement)은 같은 조건에서 성능 저하의 원인을 재현하고 비교하기 쉽습니다.",
       "type": "개념 판단",
       "options": [
         "모든 실제 사용자를 완벽히 대표한다.",
@@ -926,8 +926,8 @@
       "category": "Web Performance",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "tree shaking의 목적은?",
-      "explanation": "정적 분석 가능한 모듈 구조가 제거를 돕는다.",
+      "prompt": "사용하지 않는 코드를 제거하는 트리 셰이킹(tree shaking)의 목적은?",
+      "explanation": "ES 모듈처럼 정적으로 분석할 수 있는 구조는 사용하지 않는 코드를 제거하는 데 도움이 됩니다.",
       "type": "개념 판단",
       "options": [
         "사용하지 않는 모듈 export 등의 코드를 제거",
@@ -1157,10 +1157,10 @@
       "format": "객관식 단일",
       "points": 3,
       "prompt": "수만 개 행에서 보이는 구간 중심으로만 DOM을 만드는 기법은?",
-      "explanation": "가상화는 렌더되는 항목 수를 제한한다.",
+      "explanation": "가상화(virtualization)는 렌더되는 항목 수를 제한한다.",
       "type": "개념 판단",
       "options": [
-        "가상화",
+        "가상화(virtualization)",
         "gzip",
         "preconnect",
         "폰트 서브셋",
@@ -1202,7 +1202,7 @@
       "category": "Web Performance",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "레이아웃 thrashing을 줄이는 접근은?",
+      "prompt": "레이아웃 반복 계산(layout thrashing)을 줄이는 접근은?",
       "explanation": "읽기·쓰기 순서를 정리해 반복 레이아웃을 줄인다.",
       "type": "개념 판단",
       "options": [
@@ -2268,8 +2268,8 @@
       "category": "Web Performance",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "실험실 TBT를 줄였다고 실제 사용자 INP 개선을 확정할 수 없는 이유는?",
-      "explanation": "실험실 병목 개선과 실제 상호작용 지표를 함께 확인한다.",
+      "prompt": "실험실 총 차단 시간(Total Blocking Time, TBT)을 줄였다고 실제 사용자 환경의 다음 페인트까지의 상호작용 지연(Interaction to Next Paint, INP) 개선을 확정할 수 없는 이유는?",
+      "explanation": "총 차단 시간(TBT)은 실험실 지표이고, 다음 페인트까지의 상호작용 지연(INP)은 실제 사용자 환경에서 측정합니다. 실험실 개선만으로 실사용 성능이 나아졌다고 단정할 수 없습니다.",
       "type": "개념 판단",
       "options": [
         "TBT가 항상 바이트 단위여서",

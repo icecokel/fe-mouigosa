@@ -78,14 +78,14 @@
       "format": "객관식 단일",
       "type": "결과 예측",
       "points": 3,
-      "prompt": "기본 가로 쓰기 방향에서 다음 컨테이너의 주축 방향은?",
+      "prompt": "기본 가로 쓰기 방향에서 다음 컨테이너의 주축(main axis) 방향은?",
       "code": ".container {\n  display: flex;\n  flex-direction: column;\n}",
       "options": [
         "왼쪽에서 오른쪽",
         "오른쪽에서 왼쪽",
         "위에서 아래",
         "아래에서 위",
-        "주축이 없다."
+        "주축(main axis)이 없다."
       ],
       "answer": 3,
       "sources": [
@@ -94,7 +94,7 @@
           "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction"
         }
       ],
-      "explanation": "column은 주축을 블록 축으로 설정합니다. 지문의 기본 가로 쓰기 방향에서는 블록 축이 위에서 아래로 흐릅니다."
+      "explanation": "column은 주축(main axis)을 블록 축으로 설정합니다. 지문의 기본 가로 쓰기 방향에서는 블록 축이 위에서 아래로 흐릅니다."
     },
     {
       "id": "css-display-none",
@@ -424,8 +424,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "일반적인 비대체 인라인 span에 width만 지정했을 때 옳은 것은?",
-      "explanation": "비대체 인라인 박스에는 width가 일반 블록과 같이 적용되지 않는다.",
+      "prompt": "일반적인 텍스트 인라인 요소인 span에 width만 지정했을 때 옳은 것은?",
+      "explanation": "span처럼 일반적인 텍스트 인라인 요소(non-replaced inline)에는 width가 일반 블록처럼 적용되지 않는다.",
       "type": "개념 판단",
       "options": [
         "항상 부모 전체 너비가 된다.",
@@ -884,8 +884,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "기본 row flex에서 주축 정렬을 제어하는 속성은?",
-      "explanation": "justify-content는 주축의 여유 공간 배치를 제어한다.",
+      "prompt": "기본 row flex에서 주축(main axis) 정렬을 제어하는 속성은?",
+      "explanation": "justify-content는 주축(main axis)의 여유 공간 배치를 제어한다.",
       "type": "개념 판단",
       "options": [
         "align-items",
@@ -907,8 +907,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "기본 row flex에서 항목의 교차축 정렬을 제어하는 속성은?",
-      "explanation": "align-items는 교차축에서 각 항목을 정렬한다.",
+      "prompt": "기본 row flex에서 항목의 교차축(cross axis) 정렬을 제어하는 속성은?",
+      "explanation": "align-items는 교차축(cross axis)에서 각 항목을 정렬한다.",
       "type": "개념 판단",
       "options": [
         "justify-content",
@@ -1000,13 +1000,13 @@
       "format": "객관식 단일",
       "points": 3,
       "prompt": "flex-basis의 역할은?",
-      "explanation": "basis는 주축 크기 계산의 출발점이다.",
+      "explanation": "basis는 주축(main axis) 크기 계산의 출발점이다.",
       "type": "개념 판단",
       "options": [
         "항목 순서",
-        "교차축의 줄 개수",
+        "교차축(cross axis)의 줄 개수",
         "텍스트 기준선",
-        "여유 공간 분배 전 주축의 기준 크기",
+        "여유 공간 분배 전 주축(main axis)의 기준 크기",
         "쌓임 순서"
       ],
       "answer": 4,
@@ -1253,7 +1253,7 @@
       "format": "객관식 단일",
       "points": 4,
       "prompt": "같은 출처·레이어·중요도에서 #app과 .app이 같은 요소에 충돌한다. 우선하는 것은?",
-      "explanation": "ID 선택자의 명시도가 클래스보다 높다.",
+      "explanation": "ID 선택자의 명시도(specificity)가 클래스보다 높다.",
       "type": "개념 판단",
       "options": [
         ".app",
@@ -1275,8 +1275,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": ":where(#app .item)의 명시도는?",
-      "explanation": ":where와 인수의 명시도는 0이다.",
+      "prompt": ":where(#app .item)의 명시도(specificity)는?",
+      "explanation": ":where와 인수의 명시도(specificity)는 0이다.",
       "type": "개념 판단",
       "options": [
         "0-0-0",
@@ -1298,8 +1298,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": ":is(.item, #main)의 명시도는?",
-      "explanation": ":is는 인수 목록 중 가장 높은 명시도를 사용한다.",
+      "prompt": ":is(.item, #main)의 명시도(specificity)는?",
+      "explanation": ":is는 인수 목록 중 가장 높은 명시도(specificity)를 사용한다.",
       "type": "개념 판단",
       "options": [
         "0-1-0",
@@ -1321,7 +1321,7 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "출처·중요도·레이어·명시도·스코프 근접도가 같은 선언이 충돌하면?",
+      "prompt": "출처·중요도·레이어·명시도(specificity)·스코프 근접도(scope proximity)가 같은 선언이 충돌하면?",
       "explanation": "이전 조건이 같으면 소스 순서가 승패를 정한다.",
       "type": "개념 판단",
       "options": [
@@ -1352,7 +1352,7 @@
         "선언 하나에 적용됨",
         "속성 값 뒤에 작성함",
         "어떤 출처의 어떤 선언보다 항상 우선함",
-        "선택자 자체의 명시도는 바꾸지 않음"
+        "선택자 자체의 명시도(specificity)는 바꾸지 않음"
       ],
       "answer": 4,
       "sources": [
@@ -1373,7 +1373,7 @@
       "options": [
         "항상 첫 레이어",
         "항상 마지막으로 만든 클래스",
-        "명시도가 낮은 선언",
+        "명시도(specificity)가 낮은 선언",
         "항상 레이어 안 선언",
         "레이어 밖 일반 선언"
       ],
@@ -1597,8 +1597,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "일반 블록의 인접한 양수 수직 margin이 상쇄된다. 20px과 30px의 결과는?",
-      "explanation": "양수 여백끼리 상쇄되면 더 큰 쪽을 사용한다.",
+      "prompt": "일반 블록의 인접한 양수 세로 마진이 병합된다. 20px과 30px의 결과는?",
+      "explanation": "양수 마진은 병합될 때 더 큰 값을 사용한다.",
       "type": "개념 판단",
       "options": [
         "50px",
@@ -1620,8 +1620,8 @@
       "category": "CSS",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "float를 포함한 부모가 독립적인 블록 서식 맥락을 만들게 하는 값은?",
-      "explanation": "flow-root는 새 BFC를 만들어 내부 float를 포함한다.",
+      "prompt": "float를 포함한 부모가 독립적인 블록 서식 맥락(block formatting context, BFC)을 만들게 하는 값은?",
+      "explanation": "flow-root는 새 블록 서식 맥락(block formatting context, BFC)을 만들어 내부 float를 포함한다.",
       "type": "개념 판단",
       "options": [
         "display: flow-root",
@@ -1720,7 +1720,7 @@
         "모든 z-index를 삭제한다.",
         "항상 부모 뒤로 간다.",
         "레이아웃 공간을 제거한다.",
-        "새 stacking context를 만든다."
+        "새 쌓임 맥락(stacking context)을 만든다."
       ],
       "answer": 5,
       "sources": [
@@ -2247,7 +2247,7 @@
       "options": [
         "DOM 격리 iframe 생성",
         "별도 JavaScript 스레드 생성",
-        "새 stacking context 생성",
+        "새 쌓임 맥락(stacking context) 생성",
         "네트워크 요청 차단",
         "부모 스타일 전부 초기화"
       ],

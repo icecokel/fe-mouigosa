@@ -355,7 +355,7 @@
       "answer": 1,
       "prompt": "사용자 입력을 onclick HTML 속성의 일부로 넣는 설계는?",
       "options": [
-        "실행 문맥이므로 피하고 이벤트 리스너와 안전한 데이터 처리를 사용",
+        "값이 JavaScript 코드로 실행될 수 있으므로 피하고 이벤트 리스너와 안전한 데이터 처리를 사용",
         "HTML 인코딩만으로 항상 완전 안전",
         "내용을 Base64로 바꾸면 완전 안전",
         "aria-label에 같은 값을 추가하면 해결",
@@ -367,7 +367,7 @@
           "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
         }
       ],
-      "explanation": "이벤트 핸들러 속성은 JS 실행 문맥이어서 비신뢰 데이터를 직접 넣지 않아야 한다."
+      "explanation": "이벤트 핸들러 속성은 JavaScript 코드를 실행할 수 있으므로 신뢰할 수 없는 데이터를 직접 넣지 않아야 한다."
     },
     {
       "id": "web-security-xss-trusted-types",
@@ -882,7 +882,7 @@
       "type": "브라우저 동작",
       "points": 4,
       "answer": 2,
-      "prompt": "인라인 스크립트를 제한적으로 허용하는 CSP nonce의 운영 원칙은?",
+      "prompt": "콘텐츠 보안 정책(Content Security Policy, CSP)에서 인라인 스크립트를 허용할 때 임의 값(nonce)을 사용하는 원칙은?",
       "options": [
         "스크립트 본문을 Base64로 변환",
         "응답마다 예측 불가능한 새 값을 생성",
@@ -896,7 +896,7 @@
           "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
         }
       ],
-      "explanation": "nonce는 공격자가 예측하거나 재사용할 수 없게 응답마다 새로 생성해야 한다."
+      "explanation": "임의 값(nonce)은 공격자가 예측하거나 재사용할 수 없게 응답마다 새로 생성해야 한다."
     },
     {
       "id": "web-security-csp-hash",

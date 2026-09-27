@@ -265,7 +265,7 @@
       "options": [
         "autocomplete 제거",
         "입력 유형을 text로 통일",
-        "\"필수\"라는 텍스트 또는 동등한 프로그램적 표시",
+        "\"필수\"라는 텍스트 또는 보조 기술이 인식할 수 있는 필수 상태 표시",
         "별표의 빨간색만 더 진하게",
         "필드 순서 무작위 변경"
       ],
@@ -873,7 +873,7 @@
           "url": "https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html"
         }
       ],
-      "explanation": "링크 목적은 텍스트 또는 프로그램적으로 연결된 문맥에서 파악할 수 있어야 한다."
+      "explanation": "링크 목적은 링크 문구나 링크와 연결된 안내만으로 파악할 수 있어야 한다."
     },
     {
       "id": "accessibility-seo-lang-korean",
@@ -997,7 +997,7 @@
       "type": "개념 판단",
       "points": 5,
       "answer": 2,
-      "prompt": "\"하이픈 없이 입력\"이라는 도움말을 전화번호 입력과 프로그램적으로 연결하는 속성은?",
+      "prompt": "\"하이픈 없이 입력\"이라는 도움말을 보조 기술이 전화번호 입력의 설명으로 읽도록 연결하는 속성은?",
       "options": [
         "aria-modal",
         "aria-describedby",

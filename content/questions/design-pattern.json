@@ -6,7 +6,7 @@
       "category": "Design Pattern",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "한 실행 문맥에서 인스턴스 하나를 공유하도록 생성·접근을 관리하는 패턴은?",
+      "prompt": "한 클래스의 인스턴스 생성을 하나로 제한하고, 그 인스턴스에 공통 접근점을 제공하는 패턴은?",
       "explanation": "Singleton은 인스턴스 수와 공유 접근을 제한한다.",
       "type": "개념 판단",
       "options": [
@@ -443,7 +443,7 @@
       "category": "Design Pattern",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "전체 알고리즘의 골격을 고정하고 일부 단계를 하위 구현에 맡기는 패턴은?",
+      "prompt": "알고리즘의 전체 흐름을 고정하고 일부 단계를 하위 구현에 맡기는 패턴은?",
       "explanation": "템플릿 메서드는 공통 절차와 변동 단계를 나눈다.",
       "type": "개념 판단",
       "options": [
@@ -1595,7 +1595,7 @@
       "format": "객관식 단일",
       "points": 4,
       "prompt": "Template Method와 Strategy의 전형적인 차이는?",
-      "explanation": "골격 내 단계 확장과 별도 알고리즘 객체 주입을 구분한다.",
+      "explanation": "전체 흐름 안의 단계 확장과 별도 알고리즘 객체 주입을 구분한다.",
       "type": "개념 판단",
       "options": [
         "둘 다 반드시 전역 변수 사용",
@@ -1618,7 +1618,7 @@
       "format": "객관식 단일",
       "points": 4,
       "prompt": "Template Method 안의 선택적 확장 지점인 hook의 용도는?",
-      "explanation": "hook은 알고리즘 골격의 통제된 확장 지점이다.",
+      "explanation": "hook은 알고리즘의 전체 흐름에서 허용한 확장 지점이다.",
       "type": "개념 판단",
       "options": [
         "반드시 모든 메서드를 제거",

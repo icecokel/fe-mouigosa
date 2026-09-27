@@ -610,7 +610,7 @@
       "prompt": "같은 PUT 요청을 여러 번 보내도 의도된 서버 상태가 같아지는 성질은?",
       "options": [
         "직렬화",
-        "멱등성",
+        "멱등성(idempotency)",
         "압축",
         "암호화",
         "스트리밍"
@@ -644,7 +644,7 @@
           "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
         }
       ],
-      "explanation": "POST는 일반적으로 멱등성이 보장되지 않아 재시도가 같은 효과라는 전제가 없다."
+      "explanation": "POST는 일반적으로 멱등성(idempotency)이 보장되지 않아 재시도가 같은 효과라는 전제가 없다."
     },
     {
       "id": "web-fundamentals-head-method",
@@ -1666,7 +1666,7 @@
       "type": "개념 판단",
       "points": 4,
       "answer": 3,
-      "prompt": "같은 전체 리소스 표현으로 PUT /profile을 두 번 보냈다. 멱등성의 정확한 의미는?",
+      "prompt": "같은 전체 리소스 표현으로 PUT /profile을 두 번 보냈다. 멱등성(idempotency)의 정확한 의미는?",
       "options": [
         "두 응답의 상태 코드가 반드시 같다.",
         "네트워크 요청이 하나로 합쳐진다.",
@@ -2150,7 +2150,7 @@
       "type": "개념 판단",
       "points": 5,
       "answer": 4,
-      "prompt": "OIDC 인증 요청의 nonce가 ID Token에서 다시 확인되는 이유는?",
+      "prompt": "OIDC 인증 요청의 임의 값(nonce)이 ID Token에서 다시 확인되는 이유는?",
       "options": [
         "HTTP 캐시 수명을 늘리기 위해서",
         "모든 사용자를 같은 계정으로 묶기 위해서",
@@ -2164,7 +2164,7 @@
           "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
         }
       ],
-      "explanation": "nonce는 클라이언트가 요청에 넣은 값과 ID Token claim을 대조하게 한다."
+      "explanation": "임의 값(nonce)은 클라이언트가 요청에 넣은 값과 ID Token의 클레임(claim)을 대조하는 데 사용합니다."
     },
     {
       "id": "web-fundamentals-oauth-state",

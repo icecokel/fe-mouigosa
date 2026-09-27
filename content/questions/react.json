@@ -94,7 +94,7 @@
           "url": "https://react.dev/reference/react/useEffect"
         }
       ],
-      "explanation": "빈 의존성 배열로 등록한 타이머는 최초 렌더의 count=0을 캡처합니다. 매번 setCount(1)을 호출하므로 1에서 멈춥니다. setCount(value => value + 1)을 사용하면 최신 이전 상태에 누적할 수 있습니다."
+      "explanation": "빈 의존성 배열로 등록한 타이머의 클로저(closure)는 최초 렌더의 count=0을 기억합니다. 매번 setCount(1)을 호출하므로 1에서 멈춥니다. setCount(value => value + 1)을 사용하면 최신 이전 상태에 누적할 수 있습니다."
     },
     {
       "id": "react-functional-update",
@@ -1806,8 +1806,8 @@
       "category": "React",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "서버 렌더링 HTML을 hydrate할 때 초기 클라이언트 렌더는?",
-      "explanation": "초기 마크업 불일치는 hydration 오류를 만들 수 있다.",
+      "prompt": "서버 렌더링 HTML에 하이드레이션(hydration)을 할 때 초기 클라이언트 렌더는?",
+      "explanation": "초기 마크업 불일치는 하이드레이션(hydration) 오류를 만들 수 있다.",
       "type": "개념 판단",
       "options": [
         "항상 무작위로 달라야 한다.",
@@ -2128,8 +2128,8 @@
       "category": "React",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "낙관적 UI의 핵심 동작은?",
-      "explanation": "응답성을 높이되 실패·충돌을 처리해야 한다.",
+      "prompt": "낙관적 UI(optimistic UI)의 핵심 동작은?",
+      "explanation": "서버 응답을 기다리는 동안 예상 결과를 먼저 보여 주어 반응성을 높이고, 실패하면 상태를 조정해야 한다.",
       "type": "개념 판단",
       "options": [
         "항상 오류를 숨김",
@@ -2289,7 +2289,7 @@
       "category": "React",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "동시 렌더링에서 중단되거나 버려지는 렌더가 있을 수 있다. 따라서 필요한 성질은?",
+      "prompt": "동시 렌더링(concurrent rendering)에서 중단되거나 버려지는 렌더가 있을 수 있다. 따라서 필요한 성질은?",
       "explanation": "실제로 커밋되지 않는 렌더에서도 안전하도록 순수성을 지킨다.",
       "type": "개념 판단",
       "options": [
