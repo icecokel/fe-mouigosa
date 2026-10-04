@@ -264,7 +264,7 @@
       "type": "개념 판단",
       "options": [
         "합성 실험실 데이터만",
-        "실사용 데이터(field data)",
+        "실사용 데이터",
         "단위 테스트 결과만",
         "소스 코드 줄 수",
         "번들 파일명"
@@ -926,7 +926,7 @@
       "category": "Web Performance",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "사용하지 않는 코드를 제거하는 트리 셰이킹(tree shaking)의 목적은?",
+      "prompt": "트리 셰이킹(tree shaking)의 목적은?",
       "explanation": "ES 모듈처럼 정적으로 분석할 수 있는 구조는 사용하지 않는 코드를 제거하는 데 도움이 됩니다.",
       "type": "개념 판단",
       "options": [
@@ -1160,7 +1160,7 @@
       "explanation": "가상화(virtualization)는 렌더되는 항목 수를 제한한다.",
       "type": "개념 판단",
       "options": [
-        "가상화(virtualization)",
+        "가상화",
         "gzip",
         "preconnect",
         "폰트 서브셋",

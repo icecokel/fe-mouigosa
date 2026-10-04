@@ -16,7 +16,7 @@
         "getByLabel"
       ],
       "answer": 4,
-      "explanation": "getByRole은 Playwright의 요소 찾기(locator) API로, 역할과 접근 가능한 이름을 기준으로 요소를 찾습니다.",
+      "explanation": "getByRole은 Playwright의 로케이터(locator) API로, 역할과 접근 가능한 이름을 기준으로 요소를 찾습니다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -559,7 +559,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "한 머신에서 동시 실행할 worker 프로세스 수를 제한하는 설정은?",
+      "prompt": "한 머신에서 동시 실행할 워커 프로세스 수를 제한하는 설정은?",
       "options": [
         "workers",
         "webServer",
@@ -1203,7 +1203,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "고정된 순서가 명세일 때 요소 찾기(locator) 결과에서 첫 번째 항목을 고르는 API는?",
+      "prompt": "요소의 순서가 명세에 고정되어 있을 때, 로케이터(locator)에 일치하는 첫 번째 요소를 고르는 API는?",
       "options": [
         "getByTestId",
         "frameLocator",
@@ -1212,7 +1212,7 @@
         "locator.nth(0)"
       ],
       "answer": 5,
-      "explanation": "nth(0)은 첫 번째 매칭 요소를 고르지만 순서가 계약인지 확인해야 합니다.",
+      "explanation": "nth(0)은 첫 번째로 일치하는 요소를 고른다. 테스트가 순서에 의존해도 되는지 명세에서 확인해야 한다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -1226,7 +1226,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "캔버스처럼 사용자 의미로 찾기 어려운 내부 표시를 명시적 테스트 계약으로 고른다. 기준은?",
+      "prompt": "역할이나 텍스트로 찾기 어려운 요소에 테스트용 식별자를 지정했다. 이 식별자로 요소를 찾는 API는?",
       "options": [
         "locator.filter({ hasText })",
         "locator.nth(0)",
@@ -1235,7 +1235,7 @@
         "getByRole의 name 옵션"
       ],
       "answer": 3,
-      "explanation": "getByTestId는 test id가 제공된 경우 안정적인 계약을 사용할 수 있습니다.",
+      "explanation": "getByTestId는 data-testid 같은 테스트용 식별자로 요소를 찾는다. 식별자를 일정하게 유지하면 화면의 텍스트나 DOM 구조가 바뀌어도 요소를 찾을 수 있다.",
       "sources": [
         {
           "title": "Playwright — Locators",
@@ -1249,7 +1249,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "결제 폼이 iframe 안에 있다. 그 안의 입력창을 찾는 요소 찾기(locator) API는?",
+      "prompt": "결제 폼이 iframe 안에 있다. 그 안의 입력창을 찾는 로케이터(locator) API는?",
       "options": [
         "frameLocator",
         "getByRole의 name 옵션",
@@ -1506,9 +1506,9 @@
       "options": [
         "fullyParallel",
         "workers: 1",
-        "실패 후 새 worker",
+        "실패 후 새 워커",
         "독립 테스트 데이터",
-        "worker 프로세스"
+        "워커 프로세스"
       ],
       "answer": 4,
       "explanation": "각 테스트가 별도 주문 등 독립 데이터를 사용해야 서로 간섭하지 않습니다.",
@@ -1528,13 +1528,13 @@
       "prompt": "Playwright가 병렬 실행을 위해 띄우는 격리된 OS 실행 단위는?",
       "options": [
         "독립 테스트 데이터",
-        "worker 프로세스",
+        "워커 프로세스",
         "fullyParallel",
         "workers: 1",
-        "실패 후 새 worker"
+        "실패 후 새 워커"
       ],
       "answer": 2,
-      "explanation": "작업 프로세스(worker)는 격리된 환경에서 테스트를 실행합니다.",
+      "explanation": "워커 프로세스(worker process)는 격리된 환경에서 테스트를 실행합니다.",
       "sources": [
         {
           "title": "Playwright — Parallelism",
@@ -1548,12 +1548,12 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "한 파일 안의 테스트도 별도 worker에서 병렬화하려는 프로젝트 설정은?",
+      "prompt": "한 파일 안의 테스트도 별도 워커에서 병렬화하려는 프로젝트 설정은?",
       "options": [
         "workers: 1",
-        "실패 후 새 worker",
+        "실패 후 새 워커",
         "독립 테스트 데이터",
-        "worker 프로세스",
+        "워커 프로세스",
         "fullyParallel"
       ],
       "answer": 5,
@@ -1573,14 +1573,14 @@
       "points": 4,
       "prompt": "전역 병렬 실행을 잠시 끄고 원인을 조사한다. 설정은?",
       "options": [
-        "worker 프로세스",
+        "워커 프로세스",
         "fullyParallel",
         "workers: 1",
-        "실패 후 새 worker",
+        "실패 후 새 워커",
         "독립 테스트 데이터"
       ],
       "answer": 3,
-      "explanation": "workers: 1은 동시에 실행하는 worker를 하나로 제한합니다.",
+      "explanation": "workers: 1은 동시에 실행하는 워커를 하나로 제한합니다.",
       "sources": [
         {
           "title": "Playwright — Parallelism",
@@ -1596,14 +1596,14 @@
       "points": 4,
       "prompt": "테스트 실패 뒤 다음 테스트에 깨끗한 환경을 주는 Playwright 동작은?",
       "options": [
-        "실패 후 새 worker",
+        "실패 후 새 워커",
         "독립 테스트 데이터",
-        "worker 프로세스",
+        "워커 프로세스",
         "fullyParallel",
         "workers: 1"
       ],
       "answer": 1,
-      "explanation": "Playwright는 실패 후 worker를 종료하고 새 worker에서 후속 테스트를 실행합니다.",
+      "explanation": "Playwright는 실패 후 워커를 종료하고 새 워커에서 후속 테스트를 실행합니다.",
       "sources": [
         {
           "title": "Playwright — Parallelism",
@@ -1847,11 +1847,11 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "CI 네 대에서 테스트를 나누어 실행할 때 첫 번째 머신이 맡을 분할(shard)을 지정하는 옵션은?",
+      "prompt": "CI 네 대에서 테스트를 나누어 실행할 때 첫 번째 머신이 맡을 샤드(shard)를 지정하는 옵션은?",
       "options": [
         "blob reporter",
         "merge-reports",
-        "파일 단위 나누어 실행(sharding)",
+        "파일 단위 샤딩",
         "--shard=1/4",
         "fullyParallel: true"
       ],
@@ -1876,10 +1876,10 @@
         "fullyParallel: true",
         "blob reporter",
         "merge-reports",
-        "파일 단위 나누어 실행(sharding)"
+        "파일 단위 샤딩"
       ],
       "answer": 2,
-      "explanation": "fullyParallel을 켜면 테스트 파일 안의 개별 테스트도 나누어 실행(sharding)할 수 있습니다.",
+      "explanation": "fullyParallel을 켜면 테스트 파일 안의 개별 테스트도 샤딩(sharding)할 수 있습니다.",
       "sources": [
         {
           "title": "Playwright — Sharding",
@@ -1896,7 +1896,7 @@
       "prompt": "CI에서 샤드(shard)별 결과를 나중에 합치기 위해 저장할 보고 형식은?",
       "options": [
         "merge-reports",
-        "파일 단위 나누어 실행(sharding)",
+        "파일 단위 샤딩",
         "--shard=1/4",
         "fullyParallel: true",
         "blob reporter"
@@ -1921,7 +1921,7 @@
         "fullyParallel: true",
         "blob reporter",
         "merge-reports",
-        "파일 단위 나누어 실행(sharding)",
+        "파일 단위 샤딩",
         "--shard=1/4"
       ],
       "answer": 3,
@@ -1941,7 +1941,7 @@
       "points": 5,
       "prompt": "fullyParallel을 끈 경우 Playwright는 테스트를 어떤 단위로 샤딩(sharding)하는가?",
       "options": [
-        "파일 단위 나누어 실행(sharding)",
+        "파일 단위 샤딩",
         "--shard=1/4",
         "fullyParallel: true",
         "blob reporter",
@@ -2031,7 +2031,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 5,
-      "prompt": "결제 위젯이 iframe 안에 렌더된다. 그 안의 버튼을 찾는 요소 찾기(locator) API는?",
+      "prompt": "결제 위젯이 iframe 안에 렌더된다. 그 안의 버튼을 찾는 로케이터(locator) API는?",
       "options": [
         "page.waitForEvent('popup')",
         "page.waitForEvent('download')",
@@ -2081,7 +2081,7 @@
       "options": [
         "failed",
         "retries: 0",
-        "새 worker에서 재시도",
+        "새 워커에서 재시도",
         "passed",
         "flaky"
       ],
@@ -2106,7 +2106,7 @@
         "flaky",
         "failed",
         "retries: 0",
-        "새 worker에서 재시도"
+        "새 워커에서 재시도"
       ],
       "answer": 2,
       "explanation": "재시도에서만 성공한 테스트는 flaky로 분류됩니다.",
@@ -2126,7 +2126,7 @@
       "prompt": "초기 실행과 허용된 모든 재시도가 실패했다. 분류 상태는?",
       "options": [
         "retries: 0",
-        "새 worker에서 재시도",
+        "새 워커에서 재시도",
         "passed",
         "flaky",
         "failed"
@@ -2151,7 +2151,7 @@
         "flaky",
         "failed",
         "retries: 0",
-        "새 worker에서 재시도",
+        "새 워커에서 재시도",
         "passed"
       ],
       "answer": 3,
@@ -2171,14 +2171,14 @@
       "points": 5,
       "prompt": "이전 실패가 남긴 테스트 프로세스 상태를 재시도에 섞지 않는 Playwright 동작은?",
       "options": [
-        "새 worker에서 재시도",
+        "새 워커에서 재시도",
         "passed",
         "flaky",
         "failed",
         "retries: 0"
       ],
       "answer": 1,
-      "explanation": "실패한 worker는 종료되고 테스트는 새 worker에서 재시도됩니다.",
+      "explanation": "실패한 워커는 종료되고 테스트는 새 워커에서 재시도됩니다.",
       "sources": [
         {
           "title": "Playwright — Retries",

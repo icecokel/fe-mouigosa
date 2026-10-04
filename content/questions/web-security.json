@@ -528,7 +528,7 @@
           "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
         }
       ],
-      "explanation": "커스텀 헤더는 동일 출처 정책과 프리플라이트 특성을 이용한 방어에 유용하다."
+      "explanation": "커스텀 헤더는 동일 출처 정책과 프리플라이트 요청(preflight request)의 특성을 이용한 방어에 유용하다."
     },
     {
       "id": "web-security-csrf-samesite",
@@ -882,7 +882,7 @@
       "type": "브라우저 동작",
       "points": 4,
       "answer": 2,
-      "prompt": "콘텐츠 보안 정책(Content Security Policy, CSP)에서 인라인 스크립트를 허용할 때 임의 값(nonce)을 사용하는 원칙은?",
+      "prompt": "콘텐츠 보안 정책(Content Security Policy, CSP)에서 인라인 스크립트를 허용할 때 논스(nonce)를 사용하는 원칙은?",
       "options": [
         "스크립트 본문을 Base64로 변환",
         "응답마다 예측 불가능한 새 값을 생성",
@@ -896,7 +896,7 @@
           "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
         }
       ],
-      "explanation": "임의 값(nonce)은 공격자가 예측하거나 재사용할 수 없게 응답마다 새로 생성해야 한다."
+      "explanation": "논스(nonce)는 재사용하지 않는 값이다. CSP에서는 공격자가 예측하거나 재사용할 수 없도록 응답마다 새로 생성해야 한다."
     },
     {
       "id": "web-security-csp-hash",
@@ -1023,7 +1023,7 @@
       "prompt": "script-src의 'unsafe-eval' 허용이 늘리는 공격 표면은?",
       "options": [
         "쿠키 Secure 강제",
-        "CORS 프리플라이트",
+        "CORS 프리플라이트 요청",
         "접근성 트리 생성",
         "문자열을 코드로 평가하는 실행",
         "이미지 지연 로딩"
@@ -1183,7 +1183,7 @@
       "answer": 3,
       "prompt": "쿠키를 포함한 교차 출처 요청에 Access-Control-Allow-Origin: *를 사용한다. 결과는?",
       "options": [
-        "프리플라이트가 완전히 사라진다",
+        "프리플라이트 요청이 완전히 사라진다",
         "응답이 무조건 301이 된다",
         "자격 증명을 포함한 응답을 JS가 읽도록 허용되지 않는다",
         "항상 모든 쿠키가 읽힌다",
@@ -1218,7 +1218,7 @@
           "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS"
         }
       ],
-      "explanation": "브라우저는 필요할 때 OPTIONS 프리플라이트로 실제 요청의 허용 여부를 확인한다."
+      "explanation": "브라우저는 필요할 때 OPTIONS 메서드의 프리플라이트 요청(preflight request)으로 실제 요청의 허용 여부를 확인한다."
     },
     {
       "id": "web-security-cors-preflight-method",
@@ -1227,7 +1227,7 @@
       "type": "브라우저 동작",
       "points": 3,
       "answer": 2,
-      "prompt": "프리플라이트 응답에서 허용할 실제 HTTP 메서드를 알려주는 헤더는?",
+      "prompt": "프리플라이트 요청(preflight request)에 대한 응답에서 허용할 실제 HTTP 메서드를 알려주는 헤더는?",
       "options": [
         "Cross-Origin-Opener-Policy",
         "Access-Control-Allow-Methods",
@@ -1250,7 +1250,7 @@
       "type": "브라우저 동작",
       "points": 4,
       "answer": 4,
-      "prompt": "요청의 커스텀 헤더가 허용되는지 알려주는 프리플라이트 응답 헤더는?",
+      "prompt": "프리플라이트 요청(preflight request)에 대한 응답에서 실제 요청의 커스텀 헤더가 허용되는지 알려주는 헤더는?",
       "options": [
         "Access-Control-Expose-Headers",
         "Referrer-Policy",
@@ -1273,7 +1273,7 @@
       "type": "브라우저 동작",
       "points": 5,
       "answer": 1,
-      "prompt": "교차 출처 단순 POST가 프리플라이트 없이 전송됐다. CORS가 막으면 서버 상태 변경도 취소되는가?",
+      "prompt": "교차 출처 단순 POST가 프리플라이트 요청(preflight request) 없이 전송됐다. CORS가 막으면 서버 상태 변경도 취소되는가?",
       "options": [
         "아니오, 요청 자체가 서버에 도달할 수 있어 CSRF 방어가 별도로 필요",
         "예, 브라우저가 항상 전송 전 취소",
@@ -1669,7 +1669,7 @@
         "CSRF 토큰 검증",
         "SRI 검사",
         "HSTS 적용",
-        "CORS 프리플라이트",
+        "CORS 프리플라이트 요청",
         "클릭재킹"
       ],
       "sources": [
@@ -2207,7 +2207,7 @@
           "url": "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API"
         }
       ],
-      "explanation": "정책은 위험한 sink에 전달할 값을 검증·변환하여 TrustedHTML 등으로 만든다."
+      "explanation": "정책은 위험한 DOM API의 입력 지점(sink)에 전달할 값을 검증·변환하여 TrustedHTML 등으로 만든다."
     },
     {
       "id": "web-security-trusted-csp",

@@ -1323,7 +1323,7 @@
       "category": "React",
       "format": "객관식 단일",
       "points": 4,
-      "prompt": "메모된 자식에 매번 새 화살표 함수를 prop으로 전달하면?",
+      "prompt": "React.memo로 감싼 자식 컴포넌트에 매번 새 화살표 함수를 prop으로 전달하면?",
       "explanation": "수동 메모화에서 참조 안정성은 중요하다.",
       "type": "개념 판단",
       "options": [
@@ -1393,7 +1393,7 @@
       "format": "객관식 단일",
       "points": 4,
       "prompt": "useMemo 캐시가 사라져도 코드가 올바르게 작동해야 하는 이유는?",
-      "explanation": "캐시 유지에 프로그램의 정합성을 의존시키지 않는다.",
+      "explanation": "useMemo는 성능 최적화를 위한 기능이며 캐시 유지를 보장하지 않는다. 캐시가 사라져도 코드가 올바르게 동작해야 한다.",
       "type": "개념 판단",
       "options": [
         "메모화는 의미적 보장이 아닌 성능 최적화이기 때문",

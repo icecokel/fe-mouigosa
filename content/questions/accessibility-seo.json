@@ -1025,7 +1025,7 @@
         "화면 맨 밑에 색만 변경",
         "입력 포커스를 주소창으로 이동",
         "오류를 이미지 alt에만 저장",
-        "적절한 live region으로 변경을 알린다",
+        "적절한 라이브 영역으로 변경을 알린다",
         "오류 텍스트를 display:none만 설정"
       ],
       "sources": [
@@ -1034,7 +1034,7 @@
           "url": "https://www.w3.org/WAI/tutorials/forms/validation/"
         }
       ],
-      "explanation": "동적으로 추가된 중요한 상태는 live region 등을 통해 보조 기술에 전달할 수 있다."
+      "explanation": "동적으로 추가된 중요한 상태는 라이브 영역(live region) 등을 통해 보조 기술에 전달할 수 있다."
     },
     {
       "id": "accessibility-seo-focus-order",
@@ -1227,7 +1227,7 @@
       "type": "개념 판단",
       "points": 3,
       "answer": 2,
-      "prompt": "중복 페이지의 선호 URL을 HTML에서 알리는 방법은?",
+      "prompt": "중복 페이지의 표준 URL(canonical URL)을 HTML에서 알리는 방법은?",
       "options": [
         "모든 링크에 download 지정",
         "link rel=\"canonical\"의 href 지정",
@@ -1241,7 +1241,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "rel=canonical은 중복 URL 집합에서 선호 URL을 알리는 강한 신호다."
+      "explanation": "rel=canonical은 중복 URL 집합에서 표준 URL을 알리는 강한 신호다."
     },
     {
       "id": "accessibility-seo-canonical-not-guarantee",
@@ -1255,7 +1255,7 @@
         "모든 검색 엔진에서 법적 명령이다",
         "중복 내용을 자동 삭제한다",
         "동일한 페이지를 404로 바꾼다",
-        "선호 URL을 나타내는 신호이며 Google이 다른 URL을 선택할 수 있다",
+        "표준 URL을 나타내는 신호이며 Google이 다른 URL을 선택할 수 있다",
         "항상 강제 리디렉션을 일으킨다"
       ],
       "sources": [
@@ -1264,7 +1264,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "canonical은 신호이지 강제 명령이 아니며 Google이 최종 대표 URL을 선택한다."
+      "explanation": "canonical은 신호이지 강제 명령이 아니며 Google이 최종 표준 URL(canonical URL)을 선택한다."
     },
     {
       "id": "accessibility-seo-canonical-redirect",
@@ -1287,7 +1287,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "리디렉션은 사용자와 크롤러를 새 URL로 이동시키고 강한 canonical 신호가 된다."
+      "explanation": "리디렉션은 사용자와 크롤러를 새 URL로 이동시키고 표준 URL(canonical URL) 선택의 강한 신호가 된다."
     },
     {
       "id": "accessibility-seo-canonical-sitemap",
@@ -1296,11 +1296,11 @@
       "type": "개념 판단",
       "points": 2,
       "answer": 3,
-      "prompt": "사이트맵에 URL을 넣는 것은 대표 URL 선택에서 어떤 신호인가?",
+      "prompt": "사이트맵에 URL을 넣는 것은 표준 URL(canonical URL) 선택에서 어떤 신호인가?",
       "options": [
         "noindex와 동일",
         "robots.txt 차단 규칙",
-        "상대적으로 약한 canonical 신호",
+        "표준 URL 선택의 상대적으로 약한 신호",
         "무조건적인 강제 선택",
         "사용자 브라우저 리디렉션"
       ],
@@ -1310,7 +1310,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "사이트맵 포함은 선호 URL에 대한 약한 신호이며 강제 선택은 아니다."
+      "explanation": "사이트맵 포함은 표준 URL에 대한 약한 신호이며 강제 선택은 아니다."
     },
     {
       "id": "accessibility-seo-canonical-fragment",
@@ -1319,13 +1319,13 @@
       "type": "개념 판단",
       "points": 3,
       "answer": 5,
-      "prompt": "중복 콘텐츠의 대표 URL 신호를 일관되게 주려면 무엇이 중요한가?",
+      "prompt": "중복 콘텐츠의 표준 URL(canonical URL) 신호를 일관되게 주려면 무엇이 중요한가?",
       "options": [
         "페이지마다 무작위 canonical 지정",
         "모든 페이지를 홈으로 canonical 지정",
         "사이트맵에 중복 URL을 모두 넣고 충돌 유지",
         "canonical 없이 제목만 같게 한다",
-        "내부 링크·사이트맵·canonical이 같은 선호 URL을 가리키도록 한다"
+        "내부 링크·사이트맵·canonical이 같은 표준 URL을 가리키도록 한다"
       ],
       "sources": [
         {
@@ -1333,7 +1333,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "서로 일치하는 신호가 선호 URL 판단을 돕는다."
+      "explanation": "서로 일치하는 신호가 표준 URL 판단을 돕는다."
     },
     {
       "id": "accessibility-seo-sitemap-purpose",
@@ -2175,7 +2175,7 @@
         "서버가 자동으로 401 반환",
         "각 URL의 검색 순위가 무조건 합산된다",
         "robots.txt가 파일을 삭제한다",
-        "검색 엔진이 대표 URL을 선택해 중복을 묶을 수 있다",
+        "검색 엔진이 표준 URL을 선택해 중복을 묶을 수 있다",
         "모든 URL이 반드시 서로 다른 내용으로 바뀐다"
       ],
       "sources": [
@@ -2184,7 +2184,7 @@
           "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
         }
       ],
-      "explanation": "유사한 페이지는 중복 집합으로 판단되어 대표 URL이 선택될 수 있다."
+      "explanation": "유사한 페이지는 중복 집합으로 판단되어 표준 URL(canonical URL)이 선택될 수 있다."
     },
     {
       "id": "accessibility-seo-seo-url",
@@ -2289,7 +2289,7 @@
       "options": [
         "각 쿼리마다 다른 title만 지정",
         "모든 URL에 nofollow만 설정",
-        "선호 URL을 rel=canonical로 일관되게 지정",
+        "표준 URL을 rel=canonical로 일관되게 지정",
         "URL을 이미지 alt에 기록",
         "사이트맵에서 모든 변형을 우선 등록"
       ],
@@ -2299,7 +2299,7 @@
           "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
         }
       ],
-      "explanation": "유사한 URL에는 선호하는 대표 URL을 canonical 신호로 알릴 수 있다."
+      "explanation": "내용이 유사한 여러 URL에는 rel=\"canonical\"로 표준 URL(canonical URL)을 일관되게 지정할 수 있다."
     }
   ]
 }

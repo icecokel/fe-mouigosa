@@ -10,10 +10,10 @@
       "prompt": "color.text.primary처럼 이름과 시각적 값을 묶은 재사용 가능한 설계 결정은?",
       "options": [
         "토큰 그룹",
-        "별칭(alias)",
-        "복합 토큰(composite token)",
+        "별칭",
+        "복합 토큰",
         "변환 도구",
-        "디자인 토큰(design token)"
+        "디자인 토큰"
       ],
       "answer": 5,
       "explanation": "디자인 토큰(design token)은 이름과 값의 쌍을 중심으로 설계 결정을 표현합니다.",
@@ -33,10 +33,10 @@
       "prompt": "관련 색상 토큰들을 하나의 계층 아래에 조직하는 구조는?",
       "options": [
         "변환 도구",
-        "디자인 토큰(design token)",
+        "디자인 토큰",
         "토큰 그룹",
-        "별칭(alias)",
-        "복합 토큰(composite token)"
+        "별칭",
+        "복합 토큰"
       ],
       "answer": 3,
       "explanation": "토큰 그룹은 여러 토큰과 하위 그룹을 계층적으로 묶습니다.",
@@ -55,10 +55,10 @@
       "points": 2,
       "prompt": "새 값을 복사하지 않고 다른 토큰 값을 참조하는 관계는?",
       "options": [
-        "별칭(alias)",
-        "복합 토큰(composite token)",
+        "별칭",
+        "복합 토큰",
         "변환 도구",
-        "디자인 토큰(design token)",
+        "디자인 토큰",
         "토큰 그룹"
       ],
       "answer": 1,
@@ -78,10 +78,10 @@
       "points": 2,
       "prompt": "그림자처럼 여러 속성을 하나의 값으로 묶어 표현하는 토큰은?",
       "options": [
-        "디자인 토큰(design token)",
+        "디자인 토큰",
         "토큰 그룹",
-        "별칭(alias)",
-        "복합 토큰(composite token)",
+        "별칭",
+        "복합 토큰",
         "변환 도구"
       ],
       "answer": 4,
@@ -101,11 +101,11 @@
       "points": 2,
       "prompt": "공통 JSON 토큰을 웹 CSS와 모바일 코드 등으로 내보내는 도구의 역할은?",
       "options": [
-        "복합 토큰(composite token)",
+        "복합 토큰",
         "변환 도구",
-        "디자인 토큰(design token)",
+        "디자인 토큰",
         "토큰 그룹",
-        "별칭(alias)"
+        "별칭"
       ],
       "answer": 2,
       "explanation": "변환 도구는 플랫폼 중립적인 토큰 데이터를 대상 플랫폼 형식으로 바꿉니다.",
@@ -697,7 +697,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "MUI primary 팔레트의 대표 색상에 해당하는 슬롯(slot)은?",
+      "prompt": "MUI primary 팔레트의 대표 색상에 해당하는 색상 토큰(color token)은?",
       "options": [
         "light",
         "dark",
@@ -720,7 +720,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "대표 색상보다 밝은 변형을 지정하는 슬롯(slot)은?",
+      "prompt": "MUI 팔레트에서 대표 색상보다 밝은 변형을 지정하는 색상 토큰(color token)은?",
       "options": [
         "error",
         "main",
@@ -743,7 +743,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "대표 색상보다 어두운 변형을 지정하는 슬롯(slot)은?",
+      "prompt": "MUI 팔레트에서 대표 색상보다 어두운 변형을 지정하는 색상 토큰(color token)은?",
       "options": [
         "dark",
         "contrastText",
@@ -766,7 +766,7 @@
       "type": "개념 판단",
       "format": "객관식 단일",
       "points": 3,
-      "prompt": "배경이 primary.main일 때 그 위 텍스트 색을 지정하는 슬롯(slot)은?",
+      "prompt": "MUI 팔레트에서 primary.main 배경 위에 표시할 텍스트 색을 지정하는 색상 토큰(color token)은?",
       "options": [
         "main",
         "light",
@@ -816,7 +816,7 @@
       "options": [
         "styleOverrides",
         "variants",
-        "root 슬롯(slot)",
+        "root 슬롯",
         "ThemeProvider",
         "defaultProps"
       ],
@@ -841,7 +841,7 @@
         "defaultProps",
         "styleOverrides",
         "variants",
-        "root 슬롯(slot)"
+        "root 슬롯"
       ],
       "answer": 3,
       "explanation": "styleOverrides는 슬롯(slot)별 스타일 재정의를 담습니다.",
@@ -861,7 +861,7 @@
       "prompt": "variant=\"outlined\"일 때만 다른 테두리 규칙을 적용하는 설정은?",
       "options": [
         "variants",
-        "root 슬롯(slot)",
+        "root 슬롯",
         "ThemeProvider",
         "defaultProps",
         "styleOverrides"
@@ -886,7 +886,7 @@
         "defaultProps",
         "styleOverrides",
         "variants",
-        "root 슬롯(slot)",
+        "root 슬롯",
         "ThemeProvider"
       ],
       "answer": 4,
@@ -906,7 +906,7 @@
       "points": 3,
       "prompt": "생성한 테마를 하위 컴포넌트 전체에 공급하는 React 컴포넌트는?",
       "options": [
-        "root 슬롯(slot)",
+        "root 슬롯",
         "ThemeProvider",
         "defaultProps",
         "styleOverrides",
@@ -1278,7 +1278,7 @@
         "gradient",
         "typography",
         "transition",
-        "테두리(border)"
+        "테두리"
       ],
       "answer": 5,
       "explanation": "테두리(border) 타입은 테두리의 여러 속성을 함께 표현합니다.",
@@ -1738,7 +1738,7 @@
         "JSON Pointer로 속성 지정",
         "그룹 확장 후 자식 토큰 덮어쓰기",
         "기존 토큰의 사용 중단 표시",
-        "기본 토큰을 참조하는 별칭(alias)"
+        "기본 토큰을 참조하는 별칭"
       ],
       "answer": 5,
       "explanation": "button.background가 brand.primary를 별칭(alias)으로 참조하면 값 변경이 참조를 통해 전달됩니다.",
@@ -1758,7 +1758,7 @@
       "prompt": "color.a의 값이 {color.b}이고 color.b가 다시 {color.a}다. 처리 결과는?",
       "options": [
         "기존 토큰의 사용 중단 표시",
-        "기본 토큰을 참조하는 별칭(alias)",
+        "기본 토큰을 참조하는 별칭",
         "해석을 중단해야 하는 순환 참조",
         "JSON Pointer로 속성 지정",
         "그룹 확장 후 자식 토큰 덮어쓰기"
@@ -1783,7 +1783,7 @@
         "JSON Pointer로 속성 지정",
         "그룹 확장 후 자식 토큰 덮어쓰기",
         "기존 토큰의 사용 중단 표시",
-        "기본 토큰을 참조하는 별칭(alias)",
+        "기본 토큰을 참조하는 별칭",
         "해석을 중단해야 하는 순환 참조"
       ],
       "answer": 1,
@@ -1803,7 +1803,7 @@
       "points": 5,
       "prompt": "브랜드 B 그룹이 브랜드 A의 그룹 구조를 확장하고 일부 값을 바꾸려 한다. 적합한 동작은?",
       "options": [
-        "기본 토큰을 참조하는 별칭(alias)",
+        "기본 토큰을 참조하는 별칭",
         "해석을 중단해야 하는 순환 참조",
         "JSON Pointer로 속성 지정",
         "그룹 확장 후 자식 토큰 덮어쓰기",
@@ -1828,7 +1828,7 @@
       "options": [
         "그룹 확장 후 자식 토큰 덮어쓰기",
         "기존 토큰의 사용 중단 표시",
-        "기본 토큰을 참조하는 별칭(alias)",
+        "기본 토큰을 참조하는 별칭",
         "해석을 중단해야 하는 순환 참조",
         "JSON Pointer로 속성 지정"
       ],
@@ -2198,7 +2198,7 @@
         "props별 variants 규칙",
         "Storybook story 추가",
         "토큰 변환 도구 수정",
-        "의미 토큰의 별칭(alias) 값 변경"
+        "의미 토큰의 별칭 값 변경"
       ],
       "answer": 5,
       "explanation": "danger 의미 토큰의 참조 값을 바꾸면 그 역할을 쓰는 화면에 일관되게 적용됩니다.",
@@ -2218,7 +2218,7 @@
       "prompt": "모든 Dialog 컴포넌트의 최상위 여백만 테마에서 고친다. 적합한 설정은?",
       "options": [
         "토큰 변환 도구 수정",
-        "의미 토큰의 별칭(alias) 값 변경",
+        "의미 토큰의 별칭 값 변경",
         "컴포넌트 styleOverrides",
         "props별 variants 규칙",
         "Storybook story 추가"
@@ -2243,7 +2243,7 @@
         "props별 variants 규칙",
         "Storybook story 추가",
         "토큰 변환 도구 수정",
-        "의미 토큰의 별칭(alias) 값 변경",
+        "의미 토큰의 별칭 값 변경",
         "컴포넌트 styleOverrides"
       ],
       "answer": 1,
@@ -2263,7 +2263,7 @@
       "points": 5,
       "prompt": "새 Button loading 상태를 소비자가 문서에서 직접 조작해 보도록 예시를 추가한다. 무엇을 작성할까?",
       "options": [
-        "의미 토큰의 별칭(alias) 값 변경",
+        "의미 토큰의 별칭 값 변경",
         "컴포넌트 styleOverrides",
         "props별 variants 규칙",
         "Storybook story 추가",
@@ -2288,7 +2288,7 @@
       "options": [
         "Storybook story 추가",
         "토큰 변환 도구 수정",
-        "의미 토큰의 별칭(alias) 값 변경",
+        "의미 토큰의 별칭 값 변경",
         "컴포넌트 styleOverrides",
         "props별 variants 규칙"
       ],

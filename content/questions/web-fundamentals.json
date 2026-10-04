@@ -610,7 +610,7 @@
       "prompt": "같은 PUT 요청을 여러 번 보내도 의도된 서버 상태가 같아지는 성질은?",
       "options": [
         "직렬화",
-        "멱등성(idempotency)",
+        "멱등성",
         "압축",
         "암호화",
         "스트리밍"
@@ -2150,7 +2150,7 @@
       "type": "개념 판단",
       "points": 5,
       "answer": 4,
-      "prompt": "OIDC 인증 요청의 임의 값(nonce)이 ID Token에서 다시 확인되는 이유는?",
+      "prompt": "OIDC 인증 요청의 논스(nonce)가 ID Token에서 다시 확인되는 이유는?",
       "options": [
         "HTTP 캐시 수명을 늘리기 위해서",
         "모든 사용자를 같은 계정으로 묶기 위해서",
@@ -2164,7 +2164,7 @@
           "url": "https://openid.net/specs/openid-connect-core-1_0-18.html"
         }
       ],
-      "explanation": "임의 값(nonce)은 클라이언트가 요청에 넣은 값과 ID Token의 클레임(claim)을 대조하는 데 사용합니다."
+      "explanation": "논스(nonce)는 인증 요청마다 새로 사용하는 값이다. 클라이언트는 요청에 넣은 값과 ID Token의 nonce 클레임(claim)을 대조해 해당 인증 요청의 응답인지 확인한다."
     },
     {
       "id": "web-fundamentals-oauth-state",

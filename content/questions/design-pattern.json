@@ -282,7 +282,7 @@
       "category": "Design Pattern",
       "format": "객관식 단일",
       "points": 2,
-      "prompt": "여러 알고리즘을 공통 계약 뒤에서 교체하려 한다. 적절한 패턴은?",
+      "prompt": "공통 인터페이스를 통해 여러 알고리즘을 교체하려 한다. 적절한 패턴은?",
       "explanation": "Strategy는 행동 알고리즘을 분리해 선택·교체한다.",
       "type": "개념 판단",
       "options": [
